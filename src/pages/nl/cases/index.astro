@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
+import nl from '../../../i18n/nl.json';
+
+const cases = nl.home.cases.items;
+function cleanTitle(t: string) { return t.replace(/^\[TBD\]\s*/, ''); }
+---
+
+<BaseLayout
+  title="Cases — Blue Business"
+  description="Apps die Blue Business heeft gebouwd: Bonaire App, Medewerker App, GAST. Live in production, dagelijks in gebruik."
+  canonicalPath="/nl/cases/"
+>
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Live in production" tone="accent-hi" class="mb-5 block" />
+      <h1 class="text-h1 font-medium max-w-[18ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Apps die mensen</span>
+        <span class="block text-accent">dagelijks openen.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Elk van deze producten wordt nu, terwijl je dit leest, door iemand gebruikt. Dat is de enige test die telt.
+      </p>
+    </Container>
+  </section>
+
+  <section class="pb-24 md:pb-32">
+    <Container>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+        {cases.map((c) => (
+          <li>
+            <a
+              href={`/nl/cases/${c.id}/`}
+              class="case-card block h-full p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]"
+            >
+              <div
+                class="h-[200px] rounded-[10px] mb-6 relative overflow-hidden"
+                style={`background: linear-gradient(135deg, ${c.accentColor}22 0%, ${c.accentColor}08 100%); border: 0.5px solid ${c.accentColor}33;`}
+                aria-hidden="true"
+              >
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                    <span class="font-mono text-[18px] font-medium" style={`color: ${c.accentColor};`}>
+                      {c.id === 'bonaire-app' ? 'B' : c.id === 'medewerker-app' ? 'M' : 'G'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="font-mono text-[12px] text-accent-hi mb-3 block">{c.label}</span>
+              <h2 class="text-[22px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug); line-height: 1.2;">
+                {cleanTitle(c.title)}
+              </h2>
+              <p class="text-[15px] text-fg-dim mb-5" style="line-height: 1.6;">{c.body}</p>
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--color-accent-line)] bg-[var(--color-accent)]/[0.06] font-mono text-[12px] text-accent-hi">
+                {c.datapoint}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-card:hover {
+    border-color: var(--color-accent-line);
+    transform: translateY(-2px);
+  }
+</style>

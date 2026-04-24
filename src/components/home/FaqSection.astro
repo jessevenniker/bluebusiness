@@ -1,0 +1,47 @@
+---
+import nl from '../../i18n/nl.json';
+import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
+
+const t = nl.home.faq;
+---
+
+<section class="py-24 md:py-32 reveal">
+  <Container size="narrow">
+    <div class="mb-12 md:mb-14">
+      <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">{t.h2Line1}</span>
+        <span class="block text-accent">{t.h2Line2}</span>
+      </h2>
+    </div>
+
+    <ul class="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]" role="list">
+      {t.items.map((item) => (
+        <li>
+          <details class="group">
+            <summary class="flex items-center justify-between gap-4 py-5 px-1 cursor-pointer list-none text-[17px] md:text-[18px] font-medium text-fg transition-colors hover:text-accent">
+              <span>{item.q}</span>
+              <svg
+                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                class="flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-fg-faint"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </summary>
+            <div class="pb-5 px-1 text-[15px] text-fg-dim max-w-[68ch]" style="line-height: 1.65;">
+              {item.a}
+            </div>
+          </details>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</section>
+
+<style>
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { content: ''; }
+</style>

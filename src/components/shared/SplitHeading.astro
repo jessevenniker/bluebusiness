@@ -1,0 +1,32 @@
+---
+interface Props {
+  line1: string;
+  line2: string;
+  level?: 1 | 2 | 3;
+  align?: 'left' | 'center';
+  class?: string;
+}
+const { line1, line2, level = 2, align = 'left', class: className = '' } = Astro.props;
+
+const sizeClass = level === 1 ? 'text-h1' : level === 2 ? 'text-h2' : 'text-h3';
+const alignClass = align === 'center' ? 'text-center' : 'text-left';
+---
+
+{level === 1 && (
+  <h1 class={`${sizeClass} ${alignClass} font-medium ${className}`}>
+    <span class="block text-fg">{line1}</span>
+    <span class="block text-accent">{line2}</span>
+  </h1>
+)}
+{level === 2 && (
+  <h2 class={`${sizeClass} ${alignClass} font-medium ${className}`}>
+    <span class="block text-fg">{line1}</span>
+    <span class="block text-accent">{line2}</span>
+  </h2>
+)}
+{level === 3 && (
+  <h3 class={`${sizeClass} ${alignClass} font-medium ${className}`}>
+    <span class="block text-fg">{line1}</span>
+    <span class="block text-accent">{line2}</span>
+  </h3>
+)}

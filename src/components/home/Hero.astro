@@ -1,0 +1,93 @@
+---
+import nl from '../../i18n/nl.json';
+import { routeMap } from '../../i18n/routes';
+import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
+import ArrowButton from '../shared/ArrowButton.astro';
+
+const t = nl.home.hero;
+const r = routeMap.nl;
+---
+
+<section class="relative pt-[120px] md:pt-[160px] pb-20 md:pb-28 overflow-hidden">
+  <!-- Subtle accent glow top-right -->
+  <div
+    aria-hidden="true"
+    class="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] rounded-full opacity-[0.12] blur-[120px] pointer-events-none"
+    style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"
+  ></div>
+
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8 items-center">
+      <!-- Copy (60%) -->
+      <div class="md:col-span-3 enter">
+        <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-6 block" />
+
+        <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+          <span class="block text-fg">{t.h1Line1}</span>
+          <span class="block text-accent">{t.h1Line2}</span>
+        </h1>
+
+        <p class="text-lead text-fg-dim mb-8 max-w-[52ch]">{t.lead}</p>
+
+        <div class="flex flex-wrap items-center gap-3 mb-14">
+          <ArrowButton href={r.contact} variant="primary">{t.ctaPrimary}</ArrowButton>
+          <ArrowButton href={r.cases} variant="secondary">{t.ctaSecondary}</ArrowButton>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 md:gap-8 pt-6 border-t border-[var(--color-accent-line)]">
+          {t.stats.map((s) => (
+            <div>
+              <div class="text-[20px] md:text-[24px] font-medium text-fg mb-1" style="letter-spacing: var(--tracking-snug);">
+                {s.value}
+              </div>
+              <div class="font-mono text-[11px] md:text-[12px] text-fg-faint uppercase tracking-[0.04em]">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Visual (40%) -->
+      <div class="md:col-span-2 relative enter flex justify-center md:justify-end">
+        <div class="relative w-[220px] md:w-[260px] aspect-[1/2] rounded-[28px] border border-[var(--color-accent)]/40 p-4 flex items-start" aria-hidden="true">
+          <!-- notch -->
+          <div class="absolute top-3 left-1/2 -translate-x-1/2 w-[70px] h-[18px] rounded-full border border-[var(--color-accent)]/40"></div>
+
+          <!-- inside content -->
+          <div class="mt-10 w-full">
+            <div id="hero-cycler" class="font-mono text-[12px] md:text-[13px] text-accent-hi whitespace-nowrap overflow-hidden">
+              {t.cycler[0]}
+            </div>
+          </div>
+
+          <!-- home indicator -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[60px] h-[3px] rounded-full bg-[var(--color-accent)]/40"></div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script is:inline define:vars={{ lines: nl.home.hero.cycler }}>
+  (function () {
+    const el = document.getElementById('hero-cycler');
+    if (!el) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      el.textContent = lines[lines.length - 1];
+      return;
+    }
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % lines.length;
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.textContent = lines[i];
+        el.style.opacity = '1';
+      }, 180);
+    }, 4000);
+    el.style.transition = 'opacity 180ms cubic-bezier(0.16, 1, 0.3, 1)';
+  })();
+</script>

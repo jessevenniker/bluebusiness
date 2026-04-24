@@ -1,0 +1,33 @@
+---
+import nl from '../../i18n/nl.json';
+import { routeMap } from '../../i18n/routes';
+import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
+import ArrowButton from '../shared/ArrowButton.astro';
+
+const t = nl.home.cta;
+const r = routeMap.nl;
+---
+
+<section class="py-40 md:py-48 reveal relative overflow-hidden">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"
+  ></div>
+
+  <Container size="narrow">
+    <div class="text-center relative">
+      <MonoEyebrow text={t.eyebrow} tone="dim" class="mb-6 block" />
+      <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">{t.h2Line1}</span>
+        <span class="block text-accent">{t.h2Line2}</span>
+      </h2>
+      <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">{t.lead}</p>
+      <div class="flex justify-center mb-5">
+        <ArrowButton href={r.contact} variant="primary">{t.ctaPrimary}</ArrowButton>
+      </div>
+      <p class="font-mono text-[12px] text-fg-faint">{t.mailTo}</p>
+    </div>
+  </Container>
+</section>

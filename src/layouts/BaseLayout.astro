@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import { getCurrentLocale } from '../i18n/routes';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogImage?: string;
+  noindex?: boolean;
+  includeFaqSchema?: boolean;
+}
+const {
+  title,
+  description,
+  canonicalPath,
+  ogImage = '/og/home.png',
+  noindex = false,
+  includeFaqSchema = false,
+} = Astro.props;
+
+const baseUrl = 'https://bluebusiness.nl';
+const canonical = `${baseUrl}${canonicalPath}`;
+const locale = getCurrentLocale(Astro.url.pathname);
+
+const altNl = canonicalPath.replace(/^\/en\//, '/nl/');
+const altEn = canonicalPath.replace(/^\/nl\//, '/en/');
+---
+
+<!doctype html>
+<html lang={locale === 'nl' ? 'nl-NL' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08142A" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="nl-NL" href={`${baseUrl}${altNl}`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}${altEn}`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}/nl/`} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${baseUrl}${ogImage}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'nl' ? 'nl_NL' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'nl' ? 'en_US' : 'nl_NL'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${baseUrl}${ogImage}`} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"
+    />
+
+    <SchemaOrg locale={locale} includeFaq={includeFaqSchema} />
+  </head>
+  <body>
+    <Nav />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

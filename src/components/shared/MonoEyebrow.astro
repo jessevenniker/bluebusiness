@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+  tone?: 'accent' | 'dim';
+  class?: string;
+}
+const { text, tone = 'accent-hi', class: className = '' } = Astro.props as Props & { tone?: 'accent' | 'accent-hi' | 'dim' };
+
+const colorClass =
+  tone === 'dim' ? 'text-fg-dim' : tone === 'accent' ? 'text-accent' : 'text-accent-hi';
+---
+
+<span class={`font-mono text-eyebrow uppercase ${colorClass} ${className}`}>{text}</span>

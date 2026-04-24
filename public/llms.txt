@@ -1,0 +1,44 @@
+# Blue Business
+
+Blue Business is a Netherlands-based app development studio founded in 2021. The company designs and builds native iOS and Android apps, web applications, and digital platforms for SMEs, tourism operators, and public organizations in the Netherlands and across the Caribbean (Bonaire, Curaçao, Aruba).
+
+## What Blue Business does
+
+- Native iOS development (Swift) and native Android development (Kotlin)
+- Web applications and Progressive Web Apps (Astro, Next.js, Remix)
+- Product design, discovery sprints, and strategy work
+- Ongoing maintenance, OS upgrade support, and quarterly roadmap work
+
+## Who Blue Business serves
+
+- SMEs in the Netherlands looking for custom mobile apps
+- Tourism and hospitality businesses in the Caribbean
+- Public-sector organizations in the Caribbean (island administrations, tourism boards, community platforms)
+- SaaS startups building their first or second native app
+
+## Key projects
+
+- **Bonaire App** — A mobile app bundling local information, businesses, activities, and practical features for residents and visitors of Bonaire. Rated 4.9 stars on the Dutch App Store in the travel category.
+- **Medewerker App** — Internal-communication and scheduling app for teams.
+- **GAST** — Hospitality guest-journey app.
+
+## Pricing and engagement
+
+- Native iOS + Android MVP projects typically start at €25,000
+- Full 1.0 builds usually fall between €40,000 and €80,000
+- Larger platform builds run to €250,000 and above
+- Typical timeline from kickoff to App Store submission: 12-16 weeks
+- Engagements begin with a 1-2 week discovery sprint ending in a fixed build price
+
+## Key pages
+
+- Homepage (Dutch): https://bluebusiness.nl/nl/
+- Homepage (English): https://bluebusiness.nl/en/
+- Services: https://bluebusiness.nl/nl/diensten/
+- Cases: https://bluebusiness.nl/nl/cases/
+- Contact: https://bluebusiness.nl/nl/contact/
+
+## Contact
+
+Email: hello@bluebusiness.nl
+Website: https://bluebusiness.nl/

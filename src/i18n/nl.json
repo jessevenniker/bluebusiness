@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "services": "Diensten",
+    "cases": "Cases",
+    "about": "Over",
+    "contact": "Contact",
+    "skipToMain": "Ga naar hoofdinhoud"
+  },
+  "home": {
+    "meta": {
+      "title": "Blue Business — Native app development uit Nederland, voor NL & Caribbean",
+      "description": "Native iOS en Android apps voor MKB, toerisme en Caribbean overheid. Nederlandse app studio, sinds 2021. Cases: Bonaire App, Medewerker App, GAST."
+    },
+    "hero": {
+      "eyebrow": "// Nederlandse app studio — NL & Caribbean",
+      "h1Line1": "Native apps die mensen",
+      "h1Line2": "dagelijks openen.",
+      "lead": "Blue Business ontwerpt en bouwt native iOS- en Android-apps voor MKB Nederland, Caribbean tourism en overheid. Geen landing pages met scroll-gimmicks — producten die users dagelijks openen.",
+      "ctaPrimary": "Start een project",
+      "ctaSecondary": "Bekijk onze cases",
+      "stats": [
+        { "value": "2021", "label": "opgericht in Nederland" },
+        { "value": "4.9★", "label": "Bonaire App · App Store NL" },
+        { "value": "iOS · Android", "label": "native ontwikkeling" }
+      ],
+      "cycler": [
+        "> build succeeded in 12.3s",
+        "> submitted to App Store",
+        "> 4.9 ★ — Bonaire App"
+      ]
+    },
+    "trust": {
+      "text": "Gemaakt voor ondernemers in Nederland én de Caribbean — van familiebedrijven tot toerisme-platforms tot overheidsdiensten."
+    },
+    "services": {
+      "eyebrow": "// Wat we bouwen",
+      "h2Line1": "Vier disciplines.",
+      "h2Line2": "Eén team.",
+      "lead": "Geen 40-koppig bureau met losse afdelingen. Eén team dat ontwerp, native development en product-strategie combineert — zodat de developer die je app bouwt ook weet waarom 'ie 'm zo bouwt.",
+      "readMore": "Lees meer",
+      "items": [
+        {
+          "id": "native",
+          "icon": "ios-native",
+          "title": "Native iOS & Android",
+          "body": "Swift op iOS, Kotlin op Android. Niet één codebase die zich voordoet als beide. Native betekent: platform-conventies, snelste scroll, volledige toegang tot system APIs, en een app die over drie OS-upgrades nog werkt. Voor producten die mensen dagelijks gebruiken is dit altijd het juiste antwoord."
+        },
+        {
+          "id": "web",
+          "icon": "web-layer",
+          "title": "Web & PWA",
+          "body": "Astro, Next.js of Remix — afhankelijk van het probleem, niet van wat in 2026 hip is. Edge deploys, Core Web Vitals boven 95 als vaste gate, en een CMS alleen als je klant echt zelf content wil bewerken. Geen WordPress-herbouw met meer JavaScript."
+        },
+        {
+          "id": "design",
+          "icon": "design-compass",
+          "title": "Product design & strategie",
+          "body": "We ontwerpen voordat we bouwen. Discovery-sprint van 1-2 weken waarin we je belangrijkste user flows valideren — soms met een Figma-prototype, soms met één pagina HTML die we 's ochtends in gebruik nemen. Zo weten we samen wat we bouwen voordat er regel code geschreven is."
+        },
+        {
+          "id": "maintain",
+          "icon": "maintain-loop",
+          "title": "Onderhoud & groei",
+          "body": "Ge-ship'te apps vallen stil als niemand ze onderhoudt. Wij draaien maandelijkse release cycles, monitoren crash-rates via Sentry, en sturen je elk kwartaal een roadmap-voorstel op basis van gebruiksdata — niet op basis van wat we graag nog zouden willen bouwen."
+        }
+      ]
+    },
+    "cases": {
+      "eyebrow": "// Live in production",
+      "h2Line1": "Apps die mensen",
+      "h2Line2": "dagelijks openen.",
+      "lead": "Elk van deze producten wordt nu, terwijl je dit leest, door iemand gebruikt. Dat is de enige test die telt.",
+      "seeAll": "Bekijk alle cases",
+      "items": [
+        {
+          "id": "bonaire-app",
+          "featured": true,
+          "label": "// tourism — Caribbean",
+          "title": "Bonaire App — you explore, we guide you.",
+          "body": "De ultieme reisgids voor Bonaire. Offline navigatie via Mapbox, alle points-of-interest, op maat gemaakte routes en cruise-tours. Realtime data via Firebase.",
+          "datapoint": "4.9★ · 1.000+ downloads in eerste maand",
+          "accentColor": "#3B82F6"
+        },
+        {
+          "id": "medewerker-app",
+          "featured": false,
+          "label": "// B2B — medewerker-platform",
+          "title": "[TBD] Eén app voor het hele team.",
+          "body": "[PLACEHOLDER — klantgoedkeuring nodig] Medewerker-app voor interne communicatie, roosters en updates. Vervangt losse tools met één platform dat zowel managers als medewerkers vrijwillig openen.",
+          "datapoint": "[TBD — aantal bedrijven / users]",
+          "accentColor": "#60A5FA"
+        },
+        {
+          "id": "gast",
+          "featured": false,
+          "label": "// hospitality",
+          "title": "[TBD] Gast-app voor de hospitality-sector.",
+          "body": "[PLACEHOLDER — klantgoedkeuring nodig] App die het gasten-traject digitaliseert — van boeking tot verblijf tot check-out — zonder zware hotel-software-suite.",
+          "datapoint": "[TBD — cijfers invoegen]",
+          "accentColor": "#22D3EE"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "// Hoe we werken",
+      "h2Line1": "Van idee tot",
+      "h2Line2": "App Store submission.",
+      "lead": "Vier stappen, elk met een duidelijke output. Geen time-and-materials, geen 40-pagina Gantt charts.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Discovery",
+          "duration": "1-2 weken",
+          "body": "Korte sprint om de échte use case te vinden. Eindigt met een klikbare prototype en een vaste build-prijs."
+        },
+        {
+          "number": "02",
+          "title": "Build",
+          "duration": "12-16 weken",
+          "body": "Wekelijkse TestFlight builds. Je ziet elke maandag de voortgang, niet één grote reveal na 4 maanden."
+        },
+        {
+          "number": "03",
+          "title": "Ship",
+          "duration": "1 week",
+          "body": "Submission naar App Store en Play Store, inclusief privacy policy, screenshots, en store-copy in NL en EN."
+        },
+        {
+          "number": "04",
+          "title": "Maintain",
+          "duration": "doorlopend",
+          "body": "Monthly retainer vanaf €1.200/maand. OS-upgrades, crash fixes, en kwartaal-roadmaps op basis van real usage."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "// FAQ",
+      "h2Line1": "Vragen die prospects",
+      "h2Line2": "altijd stellen.",
+      "items": [
+        {
+          "q": "Wat kost een app bij Blue Business?",
+          "a": "Een native iOS en Android MVP start bij €25.000 en komt doorgaans uit tussen €40.000–€80.000 voor een afgeronde 1.0. Grote platform-builds lopen tot €250.000+. Eerste twee gesprekken zijn gratis en eindigen met een vaste prijs — geen open time-and-materials."
+        },
+        {
+          "q": "Hoelang duurt het van idee tot App Store?",
+          "a": "Typisch 12-16 weken vanaf kick-off. Discovery sprint (1-2 weken), build (8-12 weken met weekly TestFlight builds), en submission (1 week inclusief Apple/Google review). Snellere MVPs in 6-8 weken zijn mogelijk als de scope strak is."
+        },
+        {
+          "q": "Native of cross-platform (React Native, Flutter)?",
+          "a": "Native als performance, platform-features of lange-termijn-onderhoud belangrijk zijn. Cross-platform als time-to-market domineert en de app onder de 100K users blijft. We bouwen beide en adviseren eerlijk welke past — ook als dat betekent dat we een kleiner project aanraden."
+        },
+        {
+          "q": "Werken jullie ook met bestaande apps?",
+          "a": "Ja. We nemen regelmatig apps over die ergens anders zijn begonnen. Audit (2 dagen, vaste prijs) waarin we de codebase, infrastructuur en App Store-status doorlopen, daarna een take-over plan. Ongeveer een derde van ons werk is \"reanimatie\" van bestaande producten."
+        },
+        {
+          "q": "Werken jullie ook voor klanten in de Caribbean?",
+          "a": "Ja. Een deel van ons portfolio ligt in de Caribbean — Bonaire App is daar het meest zichtbare voorbeeld. We zijn Nederland-based maar hebben ruime ervaring met toerisme- en overheidsprojecten op Bonaire, Curaçao en Aruba, inclusief de culturele en operationele context die daarbij hoort."
+        },
+        {
+          "q": "Nemen jullie kleine projecten aan?",
+          "a": "Niet onder €25.000. Onder dat bedrag kunnen we geen full-stack native app bouwen zonder korners te snijden die zich later wreken. Voor kleinere budgets verwijzen we graag door naar collega-bureaus die freelance of template-gebaseerd werken."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "// geen verplichtingen, geen NDA, geen sales-funnel",
+      "h2Line1": "Een app-idee?",
+      "h2Line2": "Plan een gesprek.",
+      "lead": "30 minuten met de developer die het zou bouwen — niet met een account executive. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past.",
+      "ctaPrimary": "Plan een gesprek",
+      "mailTo": "of mail direct: info@bluebusiness.nl"
+    }
+  },
+  "footer": {
+    "tagline": "Native apps uit Nederland, sinds 2021.",
+    "columns": {
+      "services": "Diensten",
+      "cases": "Cases",
+      "contact": "Contact"
+    },
+    "address": {
+      "line1": "Blue Innovation B.V.",
+      "line2": "Rietsingel 46",
+      "line3": "2136 LB Zwaanshoek",
+      "kvk": "KvK 80387578"
+    },
+    "email": "info@bluebusiness.nl",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Voorwaarden",
+      "llms": "llms.txt"
+    },
+    "allCases": "Alle cases",
+    "copyright": "© 2026 Blue Business"
+  }
+}

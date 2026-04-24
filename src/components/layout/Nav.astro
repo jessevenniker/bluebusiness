@@ -1,0 +1,90 @@
+---
+import { routeMap, getAlternateUrl, getCurrentLocale } from '../../i18n/routes';
+import nl from '../../i18n/nl.json';
+
+const pathname = Astro.url.pathname;
+const locale = getCurrentLocale(pathname);
+const r = routeMap[locale];
+const altUrl = getAlternateUrl(pathname, locale === 'nl' ? 'en' : 'nl');
+const t = nl.nav;
+---
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-white focus:px-3 focus:py-2 focus:rounded-md">
+  {t.skipToMain}
+</a>
+
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-200">
+  <div class="mx-auto w-full max-w-[1200px] px-6 md:px-10 flex items-center justify-between h-[64px]">
+    <a href={r.home} class="flex items-center gap-2.5 group" aria-label="Blue Business home">
+      <span class="block w-[14px] h-[14px] rounded-[3px] bg-[var(--color-accent)] transition-transform duration-200 group-hover:scale-110"></span>
+      <span class="text-[15px] font-medium tracking-[-0.01em]">Blue Business</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+      <a href={r.services} class="nav-link">{t.services}</a>
+      <a href={r.cases} class="nav-link">{t.cases}</a>
+      <a href={r.about} class="nav-link">{t.about}</a>
+      <a href={r.contact} class="nav-link">{t.contact}</a>
+    </nav>
+
+    <div class="flex items-center gap-1 font-mono text-[13px]">
+      <a
+        href={locale === 'nl' ? pathname : altUrl}
+        hreflang="nl-NL"
+        lang="nl"
+        class={locale === 'nl' ? 'text-accent font-medium' : 'text-fg-dim hover:text-fg transition-colors'}
+      >NL</a>
+      <span class="text-fg-faint px-1">/</span>
+      <a
+        href={locale === 'en' ? pathname : altUrl}
+        hreflang="en"
+        lang="en"
+        class={locale === 'en' ? 'text-accent font-medium' : 'text-fg-dim hover:text-fg transition-colors'}
+      >EN</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  #site-nav.scrolled {
+    background: rgba(8, 20, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--color-accent-line);
+  }
+  .nav-link {
+    font-size: 14px;
+    color: var(--color-fg-dim);
+    position: relative;
+    transition: color 180ms var(--ease);
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 0;
+    background: var(--color-fg);
+    transition: width 180ms var(--ease);
+  }
+  .nav-link:hover {
+    color: var(--color-fg);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const nav = document.getElementById('site-nav');
+    if (!nav) return;
+    const onScroll = () => {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>

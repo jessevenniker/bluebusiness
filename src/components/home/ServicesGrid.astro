@@ -1,0 +1,64 @@
+---
+import nl from '../../i18n/nl.json';
+import { routeMap } from '../../i18n/routes';
+import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
+import Icons from '../shared/Icons.astro';
+
+const t = nl.home.services;
+const r = routeMap.nl;
+---
+
+<section class="py-24 md:py-32 reveal">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 mb-14 md:mb-16">
+      <div>
+        <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+        <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">{t.h2Line1}</span>
+          <span class="block text-accent">{t.h2Line2}</span>
+        </h2>
+      </div>
+      <div class="flex md:items-end">
+        <p class="text-body text-fg-dim max-w-[52ch]">{t.lead}</p>
+      </div>
+    </div>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+      {t.items.map((item, idx) => (
+        <li>
+          <a
+            href={`${r.services}#${item.id}`}
+            class="service-card relative block h-full p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]"
+            aria-labelledby={`svc-${item.id}`}
+          >
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-accent inline-flex items-center justify-center w-[32px] h-[32px]">
+                <Icons name={item.icon} size={32} />
+              </span>
+              <span class="font-mono text-[11px] text-fg-faint">0{idx + 1}</span>
+            </div>
+            <h3 id={`svc-${item.id}`} class="text-[20px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug);">
+              {item.title}
+            </h3>
+            <p class="text-[15px] text-fg-dim" style="line-height: 1.6;">{item.body}</p>
+            <div class="mt-5 flex items-center gap-1.5 text-[13px] text-accent" style="text-underline-offset: 3px;">
+              <span class="underline decoration-[var(--color-accent-line)]">{t.readMore}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</section>
+
+<style>
+  .service-card:hover {
+    border-color: var(--color-accent-line);
+    transform: translateY(-2px);
+  }
+</style>

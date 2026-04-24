@@ -1,0 +1,59 @@
+---
+import nl from '../../i18n/nl.json';
+
+interface Props {
+  locale?: 'nl' | 'en';
+  includeFaq?: boolean;
+}
+const { locale = 'nl', includeFaq = false } = Astro.props;
+
+const baseUrl = 'https://bluebusiness.nl';
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': `${baseUrl}/#organization`,
+    name: 'Blue Business',
+    url: `${baseUrl}/`,
+    logo: `${baseUrl}/logo.svg`,
+    foundingDate: '2021',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'NL',
+    },
+    areaServed: ['NL', 'CW', 'AW', 'BQ'],
+    sameAs: ['https://www.linkedin.com/company/bluebusiness-nl'],
+    description:
+      'Blue Business is een Nederlandse app development studio opgericht in 2021, gespecialiseerd in native iOS en Android apps voor MKB, toerisme en Caribbean overheid.',
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    url: `${baseUrl}/`,
+    name: 'Blue Business',
+    publisher: { '@id': `${baseUrl}/#organization` },
+    inLanguage: ['nl-NL', 'en'],
+  },
+];
+
+if (includeFaq && locale === 'nl') {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: nl.home.faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  });
+}
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': graph,
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+
+const articles = [
+  {
+    n: 1, t: 'Begrippen',
+    items: [
+      'In deze algemene voorwaarden worden de hiernavolgende termen in de navolgende betekenis gebruikt, tenzij uitdrukkelijk anders is aangegeven.',
+      'Aanbod: iedere aanbieding of offerte aan Klant tot het verrichten van Diensten door Blue Innovation.',
+      'Bedrijf: de natuurlijke- of rechtspersoon die handelt in de uitoefening van beroep of bedrijf.',
+      'Consument: de natuurlijke persoon die niet handelt in de uitoefening van beroep of bedrijf.',
+      'Klant: de consument en ondernemer gezamenlijk.',
+      'Diensten: de Diensten die Blue Innovation aanbiedt zijn het ter beschikking stellen van de SaaS-dienst Bluebusiness, inclusief de Website en de Mobiele app.',
+      'Dienstverlener: de besloten vennootschap Blue Innovation B.V., opgericht naar Nederlands recht, gevestigd in Nederland die Diensten aan Klant aanbiedt hierna: Blue Innovation.',
+      'Overeenkomst: Elke overeenkomst en andere verplichting tussen Klant en Blue Innovation, alsmede voorstellen van Blue Innovation voor zowel Diensten als de SaaS-dienst, die door Blue Innovation aan Klant worden verstrekt en die door Klant worden aanvaard en zijn geaccepteerd en uitgevoerd door Blue Innovation waar deze algemene voorwaarden een onverbrekelijk geheel mee vormen.',
+      'Software-as-a-Service (SaaS) dienst: het op afstand beschikbaar stellen en houden (via internet) van de Blue Business software bestaande uit zowel de Website als Mobiele app, zonder dat aan Klant een fysieke drager met de betreffende software wordt verstrekt.',
+      'Website: de website Bluebusiness.app die toegang geeft tot de Bluebusiness software (SaaS-dienst).',
+      'Mobiele app, de mobiele Android en iOS op die toegang geeft tot de Bluebusiness software (SaaS-dienst).',
+    ],
+  },
+  {
+    n: 2, t: 'Toepasselijkheid',
+    items: [
+      'Deze algemene voorwaarden zijn van toepassing op elk aanbod van Blue Innovation en op elke tot stand gekomen overeenkomst op afstand tussen Blue Innovation en de Klant.',
+      'Voordat de overeenkomst op afstand wordt gesloten, wordt de tekst van deze algemene voorwaarden aan de klant beschikbaar gesteld. Indien dit redelijkerwijs niet mogelijk is, zal voordat de overeenkomst op afstand wordt gesloten, worden aangegeven dat de algemene voorwaarden bij Blue Innovation zijn in te zien en zij op verzoek van de klant zo spoedig mogelijk kosteloos worden toegezonden.',
+      'Indien de overeenkomst op afstand elektronisch wordt gesloten, kan in afwijking van het vorige lid en voordat de overeenkomst op afstand wordt gesloten, de tekst van deze algemene voorwaarden langs elektronische weg aan de klant ter beschikking worden gesteld op zodanige wijze dat deze door de klant op een eenvoudige manier kan worden opgeslagen op een duurzame gegevensdrager.',
+      'Voor het geval dat naast deze algemene voorwaarden tevens specifieke product- of dienstenvoorwaarden van toepassing zijn, is het tweede en derde lid van overeenkomstige toepassing.',
+      'Eventuele algemene voorwaarden van klanten en/of derden zijn niet van toepassing op de overeenkomst tussen de klant en Blue Innovation.',
+      'De rechten en verplichtingen uit hoofde van de Overeenkomst tussen Partijen kunnen niet door Klant aan een derde worden overgedragen tenzij Blue Innovation uitdrukkelijk en voorafgaande toestemming verleent aan Klant.',
+    ],
+  },
+  {
+    n: 3, t: 'Offertes en aanbiedingen',
+    items: [
+      'Alle door Blue Innovation gemaakte aanbiedingen en offertes zijn vrijblijvend, tenzij schriftelijk anders overeengekomen en hebben een geldigheid van 14 dagen.',
+      'Een aanbod in een offerte geldt enkel voor de specifieke opdracht en geeft geen garantie voor eenzelfde prijs bij toekomstige offertes en/of opdrachten.',
+      'De klant dient diverse (persoons)gegevens te verstrekken voor de opgestelde offertes en/of opdrachten. Blue Innovation mag ervan uitgaan dat de aangeleverde gegevens kloppen.',
+      'Het aanbod bevat een volledige en nauwkeurige omschrijving van de aangeboden producten en/of diensten. Kennelijke vergissingen of fouten in het aanbod binden Blue Innovation niet.',
+    ],
+  },
+  {
+    n: 4, t: 'De overeenkomst',
+    items: [
+      'De overeenkomst komt tot stand wanneer de klant laat blijken met de opdracht in te stemmen door middel van aanvaarding van de offerte, betaling van het bedrag of door de opdracht schriftelijk te aanvaarden.',
+      'Indien de klant het aanbod langs elektronische weg heeft aanvaard, bevestigt Blue Innovation onverwijld langs elektronische weg de ontvangst van de aanvaarding van het aanbod.',
+      'Indien de overeenkomst elektronisch tot stand komt, treft Blue Innovation passende technische en organisatorische maatregelen ter beveiliging van de elektronische overdracht van data en zorgt hij voor een veilige web omgeving.',
+      'Blue Innovation kan zich – binnen wettelijke kaders – op de hoogte stellen of de klant aan zijn betalingsverplichtingen kan voldoen. Indien Blue Innovation op grond van dit onderzoek goede gronden heeft om de overeenkomst niet aan te gaan, is hij gerechtigd gemotiveerd een bestelling of aanvraag te weigeren.',
+      'Indien Blue Innovation zich heeft verplicht tot het leveren van een reeks van producten of diensten is de bepaling in het vorige lid slechts van toepassing op de eerste levering.',
+    ],
+  },
+  {
+    n: 5, t: 'Herroepingsrecht',
+    items: [
+      'Bij de aankoop van producten heeft de Consument de mogelijkheid de overeenkomst zonder opgave van redenen te ontbinden gedurende 14 dagen. Deze termijn gaat in op de dag van ontvangst van het product door of namens de Consument.',
+      'Mocht een Consument gebruik willen maken van het herroepingsrecht dan is Blue Innovation gerechtigd om de kosten die tot dan gemaakt zijn in rekening te brengen.',
+      'Het Bedrijf dat een software abonnement met Blue Innovation is aangegaan heeft geen recht om deze overeenkomst te herroepen.',
+    ],
+  },
+  {
+    n: 6, t: 'Uitvoering van de Overeenkomst',
+    items: [
+      'Blue Innovation zal zich inspannen om de Overeenkomst met de grootst mogelijke zorgvuldigheid uit te voeren zoals van een goed opdrachtnemer verlangd mag worden.',
+      'De door Klant verstrekte informatie en gegevens zijn de basis waarop de door Blue Innovation aangeboden Diensten en de prijzen zijn gebaseerd.',
+      'Bij de uitvoering van de Diensten is Blue Innovation niet verplicht of gehouden om de aanwijzingen van Klant op te volgen als daardoor de inhoud of omvang van de overeengekomen Diensten wordt gewijzigd.',
+      'Klant maakt een gebruikersaccount aan voordat de betaling voor het abonnement plaatsvindt. Nadat Klant de betaling voor het abonnement heeft verricht, wordt het account van Klant geactiveerd.',
+      'Blue Innovation is gerechtigd om voor de uitvoering van de Diensten naar eigen inzicht derden in te schakelen.',
+      'De broncode alsmede de technische documentatie van SaaS-dienst, de Website en Mobiele App is te allen tijde uitgesloten van het gebruiksrecht of voorwerp van een overdracht aan Klant.',
+      'Zowel Klant als Blue Innovation kan wijzigingen aanbrengen aan de omvang en/of inhoud van de afgenomen SaaS-dienst. De meerkosten die hieraan verbonden zijn komen voor rekening van Klant.',
+    ],
+  },
+  {
+    n: 7, t: 'Toegang tot de SaaS-dienst',
+    items: [
+      'Blue Innovation biedt enkel en alleen het gebruik van de SaaS-dienst, inclusief Website en Mobiele app aan.',
+      'Op het gebruik van de Website zijn tevens de gebruiksvoorwaarden van Blue Innovation van toepassing.',
+      'Blue Innovation komt het recht toe Klant de toegang tot de SaaS-dienst te ontzeggen en/of het gebruik van de SaaS-dienst te beëindigen ingeval van misbruik en/of mogelijke strafbare feiten.',
+      'Blue Innovation is niet aansprakelijk voor schade veroorzaakt door complicaties in verband met de beschikbaarheid of werking van informatie van derden.',
+      'Blue Innovation streeft ernaar om zich in te spannen om de SaaS-dienst ononderbroken aan te bieden, doch staat niet in voor de te allen tijde volledige beschikbaarheid van de SaaS-dienst.',
+      'Het staat Blue Innovation vrij onderhoud te (laten) plegen aan de SaaS-dienst, inclusief de Website en de Mobiele app en deze ten gevolge daarvan buiten gebruik te stellen.',
+    ],
+  },
+  {
+    n: 8, t: 'Garanties SaaS-dienst',
+    items: [
+      'Blue Innovation voert de Diensten uit conform de in de branche geldende normen. Indien daarbij enige garantie is gegeven, is deze beperkt tot hetgeen uitdrukkelijk en schriftelijk is overeengekomen.',
+      'Klant kan slechts een beroep doen op de door Blue Innovation gegeven garantie indien Klant volledig voldaan heeft aan zijn betalingsverplichtingen.',
+      'Blue Innovation staat er niet voor in dat de Website en/of Mobiele app zonder fouten en/of onderbrekingen functioneert.',
+      'Klant accepteert zowel de Website als de Mobiel app als "AS IS".',
+      'Onder herstel wordt tevens verstaan het verstrekken van tijdelijke oplossingen. Onder de garantie valt nimmer het herstel van verminkte of verloren gegevens.',
+    ],
+  },
+  {
+    n: 9, t: 'Gebruiksrecht en gebruiksbeperkingen',
+    items: [
+      'Blue Innovation stelt de overeengekomen Bluebusiness software en gebruikersdocumentatie op basis van een gebruikslicentie gedurende de looptijd van de Overeenkomst ter beschikking aan Klant.',
+      'Het gebruik van de Bluebusiness software door Klant kan aan nadere beperkingen gebonden zijn.',
+      'Klant mag de Bluebusiness software uitsluitend in en ten behoeve van zijn eigen bedrijf gebruiken.',
+      'Het is Klant nimmer toegestaan de Bluebusiness software te verkopen, verhuren, vervreemden, daarop beperkte rechten te verlenen of ter beschikking te stellen aan een derde.',
+      'Klant is nimmer gerechtigd de Bluebusiness software geheel of gedeeltelijk te wijzigen zonder voorafgaande schriftelijke toestemming van Blue Innovation.',
+    ],
+  },
+  {
+    n: 10, t: 'Overmacht',
+    items: [
+      'Blue Innovation is niet aansprakelijk wanneer zij ten gevolge van een overmachtssituatie haar verplichtingen op grond van de Overeenkomst niet kan nakomen.',
+      'Onder overmacht wordt in elk geval verstaan: overmacht van toeleveranciers, gebrekkigheid van zaken van derden, overheidsmaatregelen, elektriciteitsstoring, storing van internet/telecom (cybercriminaliteit, hacking, DDoS), natuurrampen, oorlog en terrorisme.',
+      'Indien een overmachtssituatie langer duurt dan twee maanden, kan de Overeenkomst door elk van de Partijen schriftelijk ontbonden worden.',
+    ],
+  },
+  {
+    n: 11, t: 'Beperking van aansprakelijkheid',
+    items: [
+      'Indien enig resultaat dat is vastgelegd in de Overeenkomst niet wordt bereikt, wordt een tekortkoming van Blue Innovation alleen geacht te bestaan indien Blue Innovation dit resultaat bij het aanvaarden van de Overeenkomst uitdrukkelijk heeft beloofd.',
+      'Indien sprake is van toerekenbare tekortkoming, is Blue Innovation uitsluitend gehouden tot betaling van enige schadevergoeding indien Klant Blue Innovation binnen 14 dagen na ontdekking van de tekortkoming in gebreke heeft gesteld.',
+      'Indien het verrichten van Diensten leidt tot aansprakelijkheid, is die aansprakelijkheid beperkt tot de in verband met de SaaS-dienst in rekening gebrachte kosten (maximaal 6 maanden voorafgaand aan de ingebrekestelling) ten aanzien van directe schade.',
+      'Blue Innovation is niet aansprakelijk voor gevolgschade, indirecte schade, bedrijfsschade, winstderving, schade wegens verlies van gegevens of schade wegens overschrijding van leveringstermijnen.',
+      'Alle aanspraken van Klant wegens tekortschieten vervallen indien deze niet binnen één jaar schriftelijk en gemotiveerd zijn gemeld bij Blue Innovation.',
+    ],
+  },
+  {
+    n: 12, t: 'Intellectuele Eigendomsrechten',
+    items: [
+      'Alle rechten van intellectuele eigendom van Blue Innovation, waaronder de SaaS-dienst, de Website, Mobiele app, databestanden, Bluebusiness software, ontwerpen, analyses en documentatie, berusten uitsluitend bij Blue Innovation.',
+      'Het is Klant verboden om enig onderdeel van SaaS-dienst, de Website, Mobiele app en/of Bluebusiness software waarop de IE-rechten en auteursrechten van Blue Innovation rusten te openbaren, vermenigvuldigen, wijzigen of ter beschikking te stellen aan derden zonder voorafgaande schriftelijke toestemming.',
+      'Klant verkrijgt slechts een niet-exclusief niet-overdraagbaar gebruiksrecht van de Website en/of Mobiele app.',
+      'Elke inbreuk van Klant op de IE-rechten wordt bestraft met een eenmalige boete van € 10.000 en € 500 voor elke dag dat de inbreuk voortduurt.',
+    ],
+  },
+  {
+    n: 13, t: 'Prijs',
+    items: [
+      'Gedurende de in het aanbod vermelde geldigheidsduur worden de prijzen van de aangeboden producten en/of diensten niet verhoogd, behoudens prijswijzigingen als gevolg van veranderingen in btw-tarieven.',
+      'De in het aanbod genoemde prijzen zijn exclusief BTW.',
+      'Alle prijzen zijn onder voorbehoud van druk- en spelfouten.',
+      'Blue Innovation kan elk jaar de overeengekomen prijzen indexeren.',
+    ],
+  },
+  {
+    n: 14, t: 'Betaling en incassokosten',
+    items: [
+      'De klant moet te allen tijde binnen de overeengekomen termijnen op de factuur betalen, tenzij schriftelijk anders overeengekomen is.',
+      'De klant heeft de plicht om onjuistheden in verstrekte betaalgegevens onverwijld aan Blue Innovation te melden.',
+      'Als de klant de factuur niet op tijd betaalt, is de klant na het versturen van een herinnering van rechtswege in verzuim. De klant is dan de wettelijke rente (consument) of wettelijke handelsrente (onderneming) plus 1% verschuldigd.',
+      'Als klant in verzuim is, is hij tevens alle buitengerechtelijke incassokosten verschuldigd aan Blue Innovation, met een minimum van € 40 en een maximum van € 6.775.',
+    ],
+  },
+  {
+    n: 15, t: 'Conformiteit en garantie',
+    items: [
+      'Blue Innovation staat er voor in dat de producten voldoen aan de overeenkomst, de in het aanbod vermelde specificaties, aan de redelijke eisen van deugdelijkheid en/of bruikbaarheid.',
+      'Klant moet het geleverde onderzoeken op het moment dat hij het ter beschikking krijgt of toegang krijgt tot de systemen.',
+    ],
+  },
+  {
+    n: 16, t: 'Levering',
+    items: [
+      'Blue Innovation zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van bestellingen van producten.',
+      'Blue Innovation zal de opdracht naar zijn beste inzicht en vermogen en volgens de eisen van goed vakmanschap uitvoeren en is gerechtigd om derden in te schakelen.',
+      'Blue Innovation zal de geaccepteerde bestellingen uiterlijk binnen 14 dagen uitvoeren tenzij een langere leveringstermijn is overeengekomen.',
+      'In geval van ontbinding zal Blue Innovation het bedrag dat de klant heeft betaald uiterlijk binnen 30 dagen na ontbinding terugbetalen.',
+    ],
+  },
+  {
+    n: 17, t: 'Wijziging opdracht',
+    items: [
+      'Als tijdens de opdracht blijkt dat voor een behoorlijke uitvoering het noodzakelijk is om de inhoud te wijzigen of aan te vullen, dan zullen partijen dat in onderling overleg doen.',
+      'Blue Innovation kan de overeengekomen prijs verhogen of verlagen. Door een wijziging kan ook de opgegeven termijn van uitvoering veranderen.',
+      'Blue Innovation mag een verzoek tot wijziging weigeren als dit gevolgen kan hebben voor de werkzaamheden.',
+    ],
+  },
+  {
+    n: 18, t: 'Opzegging',
+    items: [
+      'De klant kan de overeenkomst tegen elk gewenst moment opzeggen met een opzegtermijn van één maand, ingaande aan het begin van de maand.',
+      'Indien de klant opzegt zal de klant per einddatum geen toegang meer hebben tot de software.',
+    ],
+  },
+  {
+    n: 19, t: 'Klachtenregeling',
+    items: [
+      'Blue Innovation beschikt over een voldoende bekendgemaakte klachtenprocedure en behandelt de klacht overeenkomstig deze klachtenprocedure.',
+      'Klachten over de uitvoering moeten binnen 7 dagen na ontvangst van het product volledig en duidelijk omschreven worden ingediend bij Blue Innovation.',
+      'Ingediende klachten worden binnen 14 dagen beantwoord.',
+      'De klant dient Blue Innovation in ieder geval 4 weken de tijd te geven om de klacht in onderling overleg op te lossen.',
+    ],
+  },
+  {
+    n: 20, t: 'Intellectueel eigendom',
+    items: [
+      'Blue Innovation behoudt alle rechten op door hem gemaakte aanbiedingen, documenten, afbeeldingen, tekeningen, programmatuur, domeinnamen, creaties en de hierop betrekking hebbende informatie.',
+      'Het is niet toegestaan om de website of enig gedeelte daarvan te verveelvoudigen of ter beschikking te stellen van derden zonder voorafgaande schriftelijke toestemming van Blue Innovation.',
+      'Alles dat Blue Innovation levert, blijft eigendom van Blue Innovation totdat klant al zijn verplichtingen volledig is nagekomen.',
+    ],
+  },
+  {
+    n: 21, t: 'Aansprakelijkheid',
+    items: [
+      'Blue Innovation is alleen aansprakelijk voor directe schade van de klant, die rechtstreeks en uitsluitend het gevolg is van een tekortkoming van Blue Innovation.',
+      'Blue Innovation is niet aansprakelijk voor schade die is ontstaan doordat zij zijn uitgegaan van door de klant verstrekte onjuiste of onvolledige gegevens.',
+      'Indien Blue Innovation aansprakelijk is gesteld, is iedere aansprakelijkheid beperkt tot het bedrag dat wordt uitgekeerd door de aansprakelijkheidsverzekering, of — indien deze niet uitkeert — eenmaal het factuurbedrag.',
+    ],
+  },
+  {
+    n: 22, t: 'Nietigheid, geschillen en toepasselijk recht',
+    items: [
+      'Als een deel van deze voorwaarden nietig of vernietigbaar is, verandert dat niets aan de geldigheid van de rest van de algemene voorwaarden.',
+      'Op alle overeenkomsten, diensten, aanbiedingen en bestellingen is het Nederlands recht van toepassing. Eventuele geschillen dienen voorgelegd te worden aan de bevoegde rechtbank te Nederland.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Algemene Voorwaarden — Blue Business"
+  description="Algemene voorwaarden van Blue Innovation B.V. (Blue Business), versie 2021. Ingeschreven bij KvK onder nummer 80387578."
+  canonicalPath="/nl/voorwaarden/"
+>
+  <section class="pt-[140px] md:pt-[180px] pb-10">
+    <Container size="narrow">
+      <MonoEyebrow text="// Legal" tone="accent-hi" class="mb-5 block" />
+      <h1 class="text-h1 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Algemene</span>
+        <span class="block text-accent">voorwaarden.</span>
+      </h1>
+      <p class="text-body text-fg-dim mt-6 max-w-[60ch]">
+        Blue Innovation B.V., versie 2021. Ingeschreven bij de Kamer van Koophandel onder nummer 80387578, gevestigd Rietsingel 46, 2136 LB Zwaanshoek.
+      </p>
+    </Container>
+  </section>
+
+  <section class="pb-24">
+    <Container size="narrow">
+      <div class="space-y-14">
+        {articles.map((a) => (
+          <article id={`artikel-${a.n}`}>
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="font-mono text-[13px] text-accent-hi">Artikel {a.n.toString().padStart(2, '0')}</span>
+            </div>
+            <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">{a.t}</h2>
+            <ol class="space-y-3 text-[15px] text-fg-dim" style="line-height: 1.7;" role="list">
+              {a.items.map((item, idx) => (
+                <li class="grid grid-cols-[auto_1fr] gap-3">
+                  <span class="font-mono text-[12px] text-fg-faint pt-[3px]">{idx + 1}.</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </article>
+        ))}
+      </div>
+
+      <p class="text-body text-fg-faint mt-16 pt-6 border-t border-[var(--color-border)]">
+        Zwaanshoek, augustus 2021.
+      </p>
+    </Container>
+  </section>
+</BaseLayout>

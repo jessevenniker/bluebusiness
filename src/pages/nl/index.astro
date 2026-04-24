@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/home/Hero.astro';
+import TrustStrip from '../../components/home/TrustStrip.astro';
+import ServicesGrid from '../../components/home/ServicesGrid.astro';
+import CasesPreview from '../../components/home/CasesPreview.astro';
+import ProcessTimeline from '../../components/home/ProcessTimeline.astro';
+import FaqSection from '../../components/home/FaqSection.astro';
+import ClosingCta from '../../components/home/ClosingCta.astro';
+import nl from '../../i18n/nl.json';
+---
+
+<BaseLayout
+  title={nl.home.meta.title}
+  description={nl.home.meta.description}
+  canonicalPath="/nl/"
+  includeFaqSchema={true}
+>
+  <Hero />
+  <TrustStrip />
+  <ServicesGrid />
+  <CasesPreview />
+  <ProcessTimeline />
+  <FaqSection />
+  <ClosingCta />
+</BaseLayout>

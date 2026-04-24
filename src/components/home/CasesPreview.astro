@@ -1,0 +1,101 @@
+---
+import nl from '../../i18n/nl.json';
+import { routeMap } from '../../i18n/routes';
+import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
+
+const t = nl.home.cases;
+const r = routeMap.nl;
+const featured = t.items.find((c) => c.featured)!;
+const rest = t.items.filter((c) => !c.featured);
+
+function cleanTitle(title: string) {
+  return title.replace(/^\[TBD\]\s*/, '');
+}
+---
+
+<section class="py-24 md:py-32 reveal">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 mb-14 md:mb-16">
+      <div>
+        <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+        <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">{t.h2Line1}</span>
+          <span class="block text-accent">{t.h2Line2}</span>
+        </h2>
+      </div>
+      <div class="flex md:items-end">
+        <p class="text-body text-fg-dim max-w-[52ch]">{t.lead}</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <!-- Featured -->
+      <a href={`${r.cases}${featured.id}/`} class="case-card relative md:col-span-3 p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms] flex flex-col">
+        <div
+          class="h-[180px] md:h-[220px] rounded-[10px] mb-6 relative overflow-hidden"
+          style={`background: linear-gradient(135deg, ${featured.accentColor}22 0%, ${featured.accentColor}08 100%); border: 0.5px solid ${featured.accentColor}33;`}
+          aria-hidden="true"
+        >
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+              <span class="font-mono text-[18px] font-medium text-accent">B</span>
+            </div>
+          </div>
+        </div>
+        <span class="font-mono text-[12px] text-accent-hi mb-3">{featured.label}</span>
+        <h3 class="text-[22px] md:text-[26px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug); line-height: 1.15;">
+          {cleanTitle(featured.title)}
+        </h3>
+        <p class="text-[15px] text-fg-dim mb-5 flex-1" style="line-height: 1.6;">{featured.body}</p>
+        <div class="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--color-accent-line)] bg-[var(--color-accent)]/[0.06] font-mono text-[12px] text-accent-hi">
+          {featured.datapoint}
+        </div>
+      </a>
+
+      <!-- Stacked right -->
+      <div class="md:col-span-2 grid grid-cols-1 gap-4">
+        {rest.map((c) => (
+          <a href={`${r.cases}${c.id}/`} class="case-card relative p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms] flex flex-col">
+            <div
+              class="h-[90px] rounded-[8px] mb-4 relative overflow-hidden"
+              style={`background: linear-gradient(135deg, ${c.accentColor}22 0%, ${c.accentColor}08 100%); border: 0.5px solid ${c.accentColor}33;`}
+              aria-hidden="true"
+            >
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[42px] h-[42px] rounded-[10px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                  <span class="font-mono text-[13px] font-medium" style={`color: ${c.accentColor};`}>
+                    {c.id === 'medewerker-app' ? 'M' : 'G'}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span class="font-mono text-[11px] text-accent-hi mb-2">{c.label}</span>
+            <h3 class="text-[17px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug); line-height: 1.25;">
+              {cleanTitle(c.title)}
+            </h3>
+            <p class="text-[13px] text-fg-dim mb-3 flex-1" style="line-height: 1.55;">{c.body}</p>
+            <span class="font-mono text-[11px] text-fg-faint">{c.datapoint}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href={r.cases} class="inline-flex items-center gap-2 text-[15px] text-accent hover:text-accent-hi transition-colors">
+        {t.seeAll}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </a>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .case-card:hover {
+    border-color: var(--color-accent-line);
+    transform: translateY(-2px);
+  }
+</style>
