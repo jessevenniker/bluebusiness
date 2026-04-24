@@ -1,12 +1,14 @@
 ---
-import nl from '../../i18n/nl.json';
-import { routeMap } from '../../i18n/routes';
+import { routeMap, getCurrentLocale } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import MonoEyebrow from '../shared/MonoEyebrow.astro';
 import Icons from '../shared/Icons.astro';
 
-const t = nl.home.services;
-const r = routeMap.nl;
+const locale = getCurrentLocale(Astro.url.pathname);
+const content = getContent(locale);
+const t = content.home.services;
+const r = routeMap[locale];
 ---
 
 <section class="py-24 md:py-32 reveal">

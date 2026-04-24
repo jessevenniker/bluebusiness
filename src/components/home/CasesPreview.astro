@@ -1,11 +1,13 @@
 ---
-import nl from '../../i18n/nl.json';
-import { routeMap } from '../../i18n/routes';
+import { routeMap, getCurrentLocale } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import MonoEyebrow from '../shared/MonoEyebrow.astro';
 
-const t = nl.home.cases;
-const r = routeMap.nl;
+const locale = getCurrentLocale(Astro.url.pathname);
+const content = getContent(locale);
+const t = content.home.cases;
+const r = routeMap[locale];
 const featured = t.items.find((c) => c.featured)!;
 const rest = t.items.filter((c) => !c.featured);
 
@@ -30,7 +32,6 @@ function cleanTitle(title: string) {
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-      <!-- Featured -->
       <a href={`${r.cases}${featured.id}/`} class="case-card relative md:col-span-3 p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms] flex flex-col">
         <div
           class="h-[180px] md:h-[220px] rounded-[10px] mb-6 relative overflow-hidden"
@@ -53,7 +54,6 @@ function cleanTitle(title: string) {
         </div>
       </a>
 
-      <!-- Stacked right -->
       <div class="md:col-span-2 grid grid-cols-1 gap-4">
         {rest.map((c) => (
           <a href={`${r.cases}${c.id}/`} class="case-card relative p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms] flex flex-col">

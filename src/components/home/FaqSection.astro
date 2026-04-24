@@ -1,9 +1,11 @@
 ---
-import nl from '../../i18n/nl.json';
+import { getCurrentLocale } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import MonoEyebrow from '../shared/MonoEyebrow.astro';
 
-const t = nl.home.faq;
+const locale = getCurrentLocale(Astro.url.pathname);
+const t = getContent(locale).home.faq;
 ---
 
 <section class="py-24 md:py-32 reveal">

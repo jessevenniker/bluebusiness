@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import Icons from '../../components/shared/Icons.astro';
+import nl from '../../i18n/nl.json';
+
+const t = nl.services;
+const items = nl.home.services.items;
+const detail = t.detail as Record<string, any>;
+
+const baseUrl = 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': items.map((s: any) => ({
+    '@type': 'Service',
+    '@id': `${baseUrl}/nl/diensten/#${s.id}`,
+    name: s.title,
+    description: s.body,
+    provider: { '@id': `${baseUrl}/#organization` },
+    areaServed: ['NL', 'CW', 'AW', 'BQ'],
+    serviceType: s.title,
+  })),
+};
+---
+
+<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath="/nl/diensten/">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+      <h1 class="text-h1 font-medium max-w-[18ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">{t.h1Line1}</span>
+        <span class="block text-accent">{t.h1Line2}</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">{t.lead}</p>
+    </Container>
+  </section>
+
+  <!-- Index nav -->
+  <section class="pb-12 md:pb-16">
+    <Container>
+      <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.06em] mb-4">{t.indexLabel}</p>
+      <ul class="flex flex-wrap gap-2" role="list">
+        {items.map((s: any, i: number) => (
+          <li>
+            <a href={`#${s.id}`} class="inline-flex items-center gap-2 px-4 py-2 rounded-[8px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[14px] text-fg-dim hover:border-[var(--color-accent-line)] hover:text-fg transition-colors">
+              <span class="font-mono text-[11px] text-accent-hi">0{i + 1}</span>
+              {s.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <!-- Services detailed -->
+  {items.map((s: any, idx: number) => {
+    const d = detail[s.id] ?? null;
+    return (
+      <section id={s.id} class="py-20 md:py-28 border-t border-[var(--color-accent-line)]">
+        <Container>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 mb-12">
+            <div class="md:col-span-3">
+              <div class="flex items-center gap-3 mb-5">
+                <span class="text-accent inline-flex items-center justify-center w-[32px] h-[32px]">
+                  <Icons name={s.icon} size={32} />
+                </span>
+                <span class="font-mono text-[13px] text-accent-hi uppercase tracking-[0.04em]">0{idx + 1}</span>
+              </div>
+              <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+                <span class="block text-fg">{s.title}</span>
+              </h2>
+              <p class="text-lead text-fg-dim max-w-[56ch]">{s.body}</p>
+            </div>
+          </div>
+
+          {d && (
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-4">{d.forWhom.title}</h3>
+                <ul class="space-y-3" role="list">
+                  {d.forWhom.items.map((item: string) => (
+                    <li class="flex gap-3 text-[14px] text-fg-dim" style="line-height: 1.55;">
+                      <span class="text-accent mt-[6px] w-[6px] h-[6px] rounded-full bg-[var(--color-accent)] flex-shrink-0"></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-4">{d.includes.title}</h3>
+                <ul class="space-y-3" role="list">
+                  {d.includes.items.map((item: string) => (
+                    <li class="flex gap-3 text-[14px] text-fg-dim" style="line-height: 1.55;">
+                      <span class="w-[6px] h-[6px] mt-[6px] rounded-full bg-[var(--color-accent)] flex-shrink-0"></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-4">{d.tech.title}</h3>
+                <ul class="space-y-3" role="list">
+                  {d.tech.items.map((item: string) => (
+                    <li class="flex gap-3 text-[14px] text-fg-dim font-mono" style="line-height: 1.55;">
+                      <span class="text-accent-hi">›</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+        </Container>
+      </section>
+    );
+  })}
+
+  <!-- CTA -->
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text={t.ctaEyebrow} tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">{t.ctaTitle1}</span>
+          <span class="block text-accent">{t.ctaTitle2}</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[52ch] mx-auto">{t.ctaLead}</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

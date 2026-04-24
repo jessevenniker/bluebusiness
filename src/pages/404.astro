@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/shared/Container.astro';
+import MonoEyebrow from '../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../components/shared/ArrowButton.astro';
+import nl from '../i18n/nl.json';
+
+const t = nl.notFound;
+---
+
+<BaseLayout
+  title="404 — Pagina niet gevonden | Blue Business"
+  description="De pagina die je zocht bestaat niet. Terug naar home of bekijk onze cases."
+  canonicalPath="/404/"
+  noindex={true}
+>
+  <section class="min-h-[80vh] pt-[140px] md:pt-[180px] pb-24 flex items-center">
+    <Container size="narrow">
+      <div class="text-center">
+        <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-6 block" />
+        <h1 class="text-h1 font-medium mb-8" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+          <span class="block text-fg">{t.h1Line1}</span>
+          <span class="block text-accent">{t.h1Line2}</span>
+        </h1>
+        <p class="text-lead text-fg-dim mb-12 max-w-[52ch] mx-auto">{t.lead}</p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <ArrowButton href="/nl/" variant="primary">{t.ctaPrimary}</ArrowButton>
+          <ArrowButton href="/nl/cases/" variant="secondary">{t.ctaSecondary}</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

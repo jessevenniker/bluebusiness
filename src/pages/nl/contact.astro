@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import nl from '../../i18n/nl.json';
+
+const t = nl.contact;
+const f = t.form;
+
+const baseUrl = 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      '@id': `${baseUrl}/nl/contact/#contactpage`,
+      url: `${baseUrl}/nl/contact/`,
+      name: 'Contact — Blue Business',
+      about: { '@id': `${baseUrl}/#organization` },
+    },
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'info@bluebusiness.nl',
+      availableLanguage: ['nl', 'en'],
+      areaServed: ['NL', 'CW', 'AW', 'BQ'],
+    },
+  ],
+};
+---
+
+<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath="/nl/contact/">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-12">
+    <Container>
+      <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+      <h1 class="text-h1 font-medium max-w-[18ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">{t.h1Line1}</span>
+        <span class="block text-accent">{t.h1Line2}</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">{t.lead}</p>
+    </Container>
+  </section>
+
+  <section class="pb-24 md:pb-32">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12">
+        <!-- Form -->
+        <form id="contact-form" class="md:col-span-3 space-y-6" novalidate>
+          <!-- honeypot -->
+          <div class="hidden" aria-hidden="true">
+            <label>Laat leeg: <input type="text" name="website_url" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <input type="hidden" name="source" value="/nl/contact/" />
+          <input type="hidden" name="t_loaded" id="t_loaded" />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="field">
+              <label for="name">{f.nameLabel}</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder={f.namePlaceholder} />
+            </div>
+            <div class="field">
+              <label for="email">{f.emailLabel}</label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder={f.emailPlaceholder} />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company">{f.companyLabel}</label>
+            <input id="company" name="company" type="text" autocomplete="organization" placeholder={f.companyPlaceholder} />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="field">
+              <label for="type">{f.typeLabel}</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected>—</option>
+                {f.typeOptions.map((o) => <option value={o}>{o}</option>)}
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget">{f.budgetLabel}</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>—</option>
+                {f.budgetOptions.map((o) => <option value={o}>{o}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">{f.messageLabel}</label>
+            <textarea id="message" name="message" required rows="6" placeholder={f.messagePlaceholder}></textarea>
+          </div>
+
+          <button id="submit-btn" type="submit" class="submit-btn">
+            <span class="btn-label">{f.submit}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="arrow" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+
+          <div id="form-success" class="hidden p-5 rounded-[10px] bg-[var(--color-accent)]/[0.08] border border-[var(--color-accent-line)]" role="status">
+            <p class="text-[16px] font-medium text-fg mb-1">{f.successTitle}</p>
+            <p class="text-[14px] text-fg-dim">{f.successBody}</p>
+          </div>
+          <div id="form-error" class="hidden p-5 rounded-[10px] bg-red-500/[0.08] border border-red-500/30" role="alert">
+            <p class="text-[16px] font-medium text-fg mb-1">{f.errorTitle}</p>
+            <p class="text-[14px] text-fg-dim">{f.errorBody}</p>
+          </div>
+
+          <p class="text-[13px] text-fg-faint pt-2">
+            {t.fallback.text} <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">{t.fallback.link}</a>.
+          </p>
+        </form>
+
+        <!-- Sidebar -->
+        <aside class="md:col-span-2 space-y-6">
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">{t.sidebar.emailTitle}</h2>
+            <a href="mailto:info@bluebusiness.nl" class="text-[17px] font-medium text-fg hover:text-accent transition-colors">info@bluebusiness.nl</a>
+          </div>
+
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">{t.sidebar.addressTitle}</h2>
+            <address class="not-italic space-y-1 text-[15px] text-fg">
+              <p>{nl.footer.address.line1}</p>
+              <p class="text-fg-dim">{nl.footer.address.line2}</p>
+              <p class="text-fg-dim">{nl.footer.address.line3}</p>
+              <p class="font-mono text-[12px] text-fg-faint pt-2">{nl.footer.address.kvk}</p>
+            </address>
+          </div>
+
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">{t.sidebar.hoursTitle}</h2>
+            <p class="text-[15px] text-fg">{t.sidebar.hoursValue}</p>
+          </div>
+
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">{t.sidebar.responseTitle}</h2>
+            <p class="text-[15px] text-fg">{t.sidebar.responseValue}</p>
+          </div>
+        </aside>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .field { display: block; }
+  .field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-fg-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--color-fg);
+    font-size: 15px;
+    font-family: var(--font-sans);
+    transition: border-color 180ms var(--ease), background 180ms var(--ease);
+  }
+  .field textarea { resize: vertical; min-height: 140px; }
+  .field input::placeholder,
+  .field textarea::placeholder { color: var(--color-fg-faint); }
+  .field input:hover,
+  .field select:hover,
+  .field textarea:hover { border-color: var(--color-border-strong); }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--color-accent);
+    background: var(--color-bg-card);
+    outline: none;
+  }
+  .field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.55)' stroke-width='1.8'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+  }
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0;
+    transition: background 180ms var(--ease);
+  }
+  .submit-btn:hover { background: var(--color-accent-hi); }
+  .submit-btn .arrow { transition: transform 180ms var(--ease); }
+  .submit-btn:hover .arrow { transform: translateX(2px); }
+  .submit-btn:disabled { opacity: 0.6; cursor: progress; }
+  .hidden { display: none !important; }
+</style>
+
+<script is:inline>
+  (function () {
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const success = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+    const loadedAt = document.getElementById('t_loaded');
+    if (loadedAt) loadedAt.value = String(Date.now());
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      success.classList.add('hidden');
+      errorEl.classList.add('hidden');
+
+      // Honeypot check
+      const data = new FormData(form);
+      if (data.get('website_url')) return;
+
+      // Time check — bots fill instantly
+      const elapsed = Date.now() - Number(data.get('t_loaded') || '0');
+      if (elapsed < 2000) {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      const original = btn.querySelector('.btn-label').textContent;
+      btn.querySelector('.btn-label').textContent = 'Bezig met versturen…';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(data.entries())),
+        });
+        if (!res.ok) throw new Error('submit failed');
+        form.reset();
+        success.classList.remove('hidden');
+        success.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } catch (err) {
+        errorEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.querySelector('.btn-label').textContent = original;
+        if (loadedAt) loadedAt.value = String(Date.now());
+      }
+    });
+  })();
+</script>

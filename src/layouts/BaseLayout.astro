@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/layout/Nav.astro';
 import Footer from '../components/layout/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
-import { getCurrentLocale } from '../i18n/routes';
+import { getCurrentLocale, getAlternateUrl } from '../i18n/routes';
 
 interface Props {
   title: string;
@@ -26,8 +26,8 @@ const baseUrl = 'https://bluebusiness.nl';
 const canonical = `${baseUrl}${canonicalPath}`;
 const locale = getCurrentLocale(Astro.url.pathname);
 
-const altNl = canonicalPath.replace(/^\/en\//, '/nl/');
-const altEn = canonicalPath.replace(/^\/nl\//, '/en/');
+const altNl = locale === 'nl' ? canonicalPath : getAlternateUrl(canonicalPath, 'nl');
+const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, 'en');
 ---
 
 <!doctype html>

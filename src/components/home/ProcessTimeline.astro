@@ -1,9 +1,11 @@
 ---
-import nl from '../../i18n/nl.json';
+import { getCurrentLocale } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import MonoEyebrow from '../shared/MonoEyebrow.astro';
 
-const t = nl.home.process;
+const locale = getCurrentLocale(Astro.url.pathname);
+const t = getContent(locale).home.process;
 ---
 
 <section class="py-24 md:py-32 reveal">
@@ -21,7 +23,6 @@ const t = nl.home.process;
       </div>
     </div>
 
-    <!-- Desktop: horizontal timeline -->
     <ol class="hidden md:grid grid-cols-4 gap-6 relative">
       {t.steps.map((step, idx) => (
         <li class="relative">
@@ -39,14 +40,10 @@ const t = nl.home.process;
       ))}
     </ol>
 
-    <!-- Mobile: vertical stack with big faint numbers -->
     <ol class="md:hidden space-y-10">
       {t.steps.map((step) => (
         <li class="relative pl-1">
-          <span
-            aria-hidden="true"
-            class="absolute -left-1 -top-6 font-mono text-[64px] leading-none text-accent/20 select-none pointer-events-none"
-          >{step.number}</span>
+          <span aria-hidden="true" class="absolute -left-1 -top-6 font-mono text-[64px] leading-none text-accent/20 select-none pointer-events-none">{step.number}</span>
           <div class="relative">
             <h3 class="text-[18px] font-medium text-fg mb-1" style="letter-spacing: var(--tracking-snug);">{step.title}</h3>
             <p class="font-mono text-[12px] text-fg-faint mb-2 uppercase tracking-[0.04em]">{step.duration}</p>

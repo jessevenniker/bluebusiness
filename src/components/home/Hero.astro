@@ -1,16 +1,17 @@
 ---
-import nl from '../../i18n/nl.json';
-import { routeMap } from '../../i18n/routes';
+import { routeMap, getCurrentLocale } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import MonoEyebrow from '../shared/MonoEyebrow.astro';
 import ArrowButton from '../shared/ArrowButton.astro';
 
-const t = nl.home.hero;
-const r = routeMap.nl;
+const locale = getCurrentLocale(Astro.url.pathname);
+const content = getContent(locale);
+const t = content.home.hero;
+const r = routeMap[locale];
 ---
 
 <section class="relative pt-[120px] md:pt-[160px] pb-20 md:pb-28 overflow-hidden">
-  <!-- Subtle accent glow top-right -->
   <div
     aria-hidden="true"
     class="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] rounded-full opacity-[0.12] blur-[120px] pointer-events-none"
@@ -19,7 +20,6 @@ const r = routeMap.nl;
 
   <Container>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8 items-center">
-      <!-- Copy (60%) -->
       <div class="md:col-span-3 enter">
         <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-6 block" />
 
@@ -49,20 +49,16 @@ const r = routeMap.nl;
         </div>
       </div>
 
-      <!-- Visual (40%) -->
       <div class="md:col-span-2 relative enter flex justify-center md:justify-end">
         <div class="relative w-[220px] md:w-[260px] aspect-[1/2] rounded-[28px] border border-[var(--color-accent)]/40 p-4 flex items-start" aria-hidden="true">
-          <!-- notch -->
           <div class="absolute top-3 left-1/2 -translate-x-1/2 w-[70px] h-[18px] rounded-full border border-[var(--color-accent)]/40"></div>
 
-          <!-- inside content -->
           <div class="mt-10 w-full">
             <div id="hero-cycler" class="font-mono text-[12px] md:text-[13px] text-accent-hi whitespace-nowrap overflow-hidden">
               {t.cycler[0]}
             </div>
           </div>
 
-          <!-- home indicator -->
           <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[60px] h-[3px] rounded-full bg-[var(--color-accent)]/40"></div>
         </div>
       </div>
@@ -70,7 +66,7 @@ const r = routeMap.nl;
   </Container>
 </section>
 
-<script is:inline define:vars={{ lines: nl.home.hero.cycler }}>
+<script is:inline define:vars={{ lines: t.cycler }}>
   (function () {
     const el = document.getElementById('hero-cycler');
     if (!el) return;
@@ -80,6 +76,7 @@ const r = routeMap.nl;
       return;
     }
     let i = 0;
+    el.style.transition = 'opacity 180ms cubic-bezier(0.16, 1, 0.3, 1)';
     setInterval(() => {
       i = (i + 1) % lines.length;
       el.style.opacity = '0';
@@ -88,6 +85,5 @@ const r = routeMap.nl;
         el.style.opacity = '1';
       }, 180);
     }, 4000);
-    el.style.transition = 'opacity 180ms cubic-bezier(0.16, 1, 0.3, 1)';
   })();
 </script>

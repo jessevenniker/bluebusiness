@@ -194,5 +194,242 @@
     },
     "allCases": "Alle cases",
     "copyright": "© 2026 Blue Business"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Blue Business",
+      "description": "Neem contact op met Blue Business. 30 minuten met de developer die jouw app zou bouwen — geen account executive, geen sales-funnel."
+    },
+    "eyebrow": "// Laten we praten",
+    "h1Line1": "Vertel ons over",
+    "h1Line2": "je app-idee.",
+    "lead": "30 minuten met de developer die het zou bouwen — niet met een account executive. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past en wat een realistisch budget en tijdspad zijn.",
+    "form": {
+      "nameLabel": "Naam",
+      "namePlaceholder": "Jouw naam",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "naam@bedrijf.nl",
+      "companyLabel": "Bedrijf (optioneel)",
+      "companyPlaceholder": "Naam van je organisatie",
+      "typeLabel": "Type project",
+      "typeOptions": [
+        "Nieuwe native app (iOS + Android)",
+        "Nieuwe web / SaaS applicatie",
+        "Bestaande app overnemen of verbouwen",
+        "Onderhoud / doorontwikkeling",
+        "Anders / weet ik nog niet"
+      ],
+      "budgetLabel": "Indicatief budget",
+      "budgetOptions": [
+        "< €25.000 (niet wat we doen)",
+        "€25.000 – €50.000 (MVP)",
+        "€50.000 – €100.000 (full 1.0)",
+        "€100.000 – €250.000",
+        "€250.000+",
+        "Weet ik nog niet"
+      ],
+      "messageLabel": "Beschrijf je project",
+      "messagePlaceholder": "Wat wil je bouwen? Voor wie? Welke functies zijn essentieel? Hoe eerder hoe beter — we lezen geen slides, we lezen context.",
+      "submit": "Verstuur bericht",
+      "submittingText": "Bezig met versturen…",
+      "successTitle": "Bedankt voor je bericht.",
+      "successBody": "We reageren meestal binnen 1 à 2 werkdagen. Geen automatische reply, geen sales-funnel — gewoon een mens die terugschrijft.",
+      "errorTitle": "Er ging iets mis.",
+      "errorBody": "Probeer het opnieuw of mail direct naar info@bluebusiness.nl."
+    },
+    "sidebar": {
+      "emailTitle": "E-mail",
+      "addressTitle": "Vestiging",
+      "hoursTitle": "Bereikbaar",
+      "hoursValue": "Ma – vr · 09:00 – 18:00 CET",
+      "responseTitle": "Response tijd",
+      "responseValue": "Meestal binnen 1–2 werkdagen"
+    },
+    "fallback": {
+      "text": "Liever niet via een formulier? Mail dan direct naar",
+      "link": "info@bluebusiness.nl"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Diensten — Native iOS, Android, Web & onderhoud | Blue Business",
+      "description": "Blue Business ontwerpt en bouwt native iOS- en Android-apps, webapplicaties en SaaS-platformen. Plus product-design, strategie en doorlopend onderhoud."
+    },
+    "eyebrow": "// Diensten",
+    "h1Line1": "Vier disciplines.",
+    "h1Line2": "Eén team.",
+    "lead": "Blue Business werkt als één klein, senior team dat ontwerp, native development en product-strategie combineert. Niet vier losse afdelingen die elkaar per Jira-ticket vinden.",
+    "indexLabel": "In deze pagina",
+    "ctaEyebrow": "// Klaar om te beginnen?",
+    "ctaTitle1": "Welk van deze",
+    "ctaTitle2": "past bij je project?",
+    "ctaLead": "Twijfel je? Leg je case voor — we adviseren eerlijk welke dienst het beste past, ook als dat iets anders is dan wat je in eerste instantie vraagt.",
+    "detail": {
+      "native": {
+        "forWhom": {
+          "title": "Voor wie",
+          "items": [
+            "Bedrijven die een app maken voor hun klanten, gasten, bezoekers of medewerkers",
+            "Producten die performance, battery-efficiency of offline-werking nodig hebben",
+            "Toerisme-, horeca-, zorg- en overheidsdiensten die langer dan 3 jaar meegaan"
+          ]
+        },
+        "includes": {
+          "title": "Wat we leveren",
+          "items": [
+            "Swift voor iOS (iPhone + iPad + Apple Watch waar zinvol)",
+            "Kotlin voor Android (phone + tablet)",
+            "App Store + Play Store submissions, inclusief screenshots en store-copy",
+            "CI/CD pipelines (Fastlane + GitHub Actions) — één druk op de knop naar TestFlight",
+            "Analytics, crash reporting (Sentry), feature flags"
+          ]
+        },
+        "tech": {
+          "title": "Tech stack",
+          "items": [
+            "iOS: Swift, SwiftUI / UIKit, Combine, Core Data / SwiftData",
+            "Android: Kotlin, Jetpack Compose, Coroutines, Room",
+            "Backend integraties: REST, GraphQL, Firebase, Supabase",
+            "Maps: Mapbox voor offline, MapKit / Google Maps voor online"
+          ]
+        }
+      },
+      "web": {
+        "forWhom": {
+          "title": "Voor wie",
+          "items": [
+            "Startups die snel een product in de markt willen zetten",
+            "SaaS-bedrijven met een bestaande app die toe is aan een versie 2",
+            "Bedrijven die een klantportaal of dashboard laten maken"
+          ]
+        },
+        "includes": {
+          "title": "Wat we leveren",
+          "items": [
+            "Frontend in Astro, Next.js of Remix — gekozen per probleem",
+            "Edge deploys op Vercel of Cloudflare",
+            "Core Web Vitals ≥ 95 als vaste kwaliteits-gate",
+            "Authenticatie, billing, admin dashboard",
+            "Marketing site gecombineerd met productomgeving, of juist expliciet gescheiden"
+          ]
+        },
+        "tech": {
+          "title": "Tech stack",
+          "items": [
+            "TypeScript strict, React 19, Tailwind 4",
+            "Databases: Postgres via Supabase of Neon, Drizzle of Prisma",
+            "Auth: Clerk, Supabase Auth, of custom",
+            "Payments: Stripe, Mollie"
+          ]
+        }
+      },
+      "design": {
+        "forWhom": {
+          "title": "Voor wie",
+          "items": [
+            "Bedrijven met een idee maar zonder helder beeld van scope",
+            "Organisaties die eerder een teleurstellende app-build achter de rug hebben",
+            "Product-teams die een extern paar handen + ogen willen inschakelen"
+          ]
+        },
+        "includes": {
+          "title": "Wat we leveren",
+          "items": [
+            "1–2 weken discovery-sprint met user interviews en competitor-analyse",
+            "Klikbare Figma-prototype of soms gewoon één pagina HTML die we 's ochtends in gebruik nemen",
+            "Scope-document met user flows, features en een vaste build-prijs",
+            "UI/UX design system dat klaar is om tegenaan te ontwikkelen"
+          ]
+        },
+        "tech": {
+          "title": "Werkwijze",
+          "items": [
+            "Figma voor UI en prototypes",
+            "FigJam of Miro voor user-flow mapping",
+            "Notion voor scope-docs die tijdens de build leesbaar blijven"
+          ]
+        }
+      },
+      "maintain": {
+        "forWhom": {
+          "title": "Voor wie",
+          "items": [
+            "Klanten van wie we de app hebben gebouwd",
+            "Bedrijven die hun app ergens anders lieten bouwen en nu doorontwikkeling zoeken",
+            "Producten die stabiel draaien maar OS-upgrades bij moeten houden"
+          ]
+        },
+        "includes": {
+          "title": "Wat we leveren",
+          "items": [
+            "Monthly retainer vanaf €1.200/maand",
+            "Maandelijkse release cycles met crash-rate monitoring (Sentry)",
+            "OS-upgrade support (iOS 18, iOS 19, Android 15, 16…)",
+            "Kwartaal-roadmap-voorstel op basis van echte gebruiksdata",
+            "SLA voor kritieke bugs binnen 24 uur"
+          ]
+        },
+        "tech": {
+          "title": "Werkwijze",
+          "items": [
+            "Een vaste developer als technisch aanspreekpunt",
+            "Maandelijkse sync van 30 minuten over wat er leeft",
+            "Transparant time-tracking — je ziet precies waar de uren heen zijn gegaan"
+          ]
+        }
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Over ons — Blue Business, Nederlandse app studio",
+      "description": "Blue Business (Blue Innovation B.V.) is een Nederlandse app-development studio, opgericht in 2021 en gevestigd in Zwaanshoek. We bouwen native apps voor MKB en Caribbean."
+    },
+    "eyebrow": "// Over Blue Business",
+    "h1Line1": "Een klein team",
+    "h1Line2": "dat echt apps bouwt.",
+    "leadP1": "Blue Business is de handelsnaam van Blue Innovation B.V., een Nederlandse app-development studio opgericht in 2021. We werken vanuit Zwaanshoek en bouwen native iOS- en Android-apps, webapplicaties en SaaS-platformen voor MKB-bedrijven in Nederland en organisaties in de Caribbean.",
+    "leadP2": "Ons verhaal begint met iets simpels: te vaak zien we dat bedrijven een app laten bouwen door een groot bureau, 6 maanden later iets opgeleverd krijgen dat niet doet wat het moet doen, en niemand meer weet wat er precies is gebeurd. Blue Business is expliciet anders: klein team, senior mensen, je praat rechtstreeks met de developer die je app bouwt.",
+    "sections": [
+      {
+        "title": "Waarom klein en senior",
+        "body": "We hebben geen junior-senior piramide waarin seniors offertes verkopen en juniors code schrijven. Elke developer bij Blue Business heeft minimaal 5 jaar ervaring met het platform waar ze op werken. Dat betekent: minder tijd aan management, meer tijd aan bouwen, en een product dat niet in versie 2 volledig herbouwd hoeft te worden omdat de architectuur rammelt."
+      },
+      {
+        "title": "Waarom native",
+        "body": "We kennen React Native en Flutter, en gebruiken ze als ze passen. Maar voor het soort producten dat mensen dagelijks openen — toerisme-apps, medewerker-apps, klantportalen — adviseren we bijna altijd native. Betere scroll, volle toegang tot platform-APIs, en apps die over drie OS-upgrades nog werken zonder rewrite."
+      },
+      {
+        "title": "Waarom Nederland én Caribbean",
+        "body": "We zijn Nederland-based maar een flink deel van ons portfolio ligt in de Caribbean. Bonaire App is daar het zichtbaarste voorbeeld, maar we werken ook aan projecten voor ondernemers op Curaçao en Aruba. Dat geeft ons een bijzondere combinatie: Nederlandse bureaustandaarden met eerstehands ervaring in wat toerisme- en overheidsorganisaties in de Caribbean nodig hebben."
+      },
+      {
+        "title": "Hoe we werken",
+        "body": "Vaste prijzen na een discovery-sprint van 1–2 weken. Weekly TestFlight builds zodat je elke maandag de voortgang ziet. Geen open time-and-materials, geen 40-pagina Gantt-charts, geen account executives. Wat je krijgt is precies wat we afgesproken hebben — en een eerlijk gesprek als iets onderweg verandert."
+      }
+    ],
+    "facts": {
+      "title": "Korte feiten",
+      "items": [
+        { "k": "Handelsnaam", "v": "Blue Business" },
+        { "k": "Juridische entiteit", "v": "Blue Innovation B.V." },
+        { "k": "Opgericht", "v": "2021" },
+        { "k": "KvK", "v": "80387578" },
+        { "k": "Vestiging", "v": "Rietsingel 46, 2136 LB Zwaanshoek" },
+        { "k": "Rechtsvorm", "v": "Besloten vennootschap" }
+      ]
+    },
+    "ctaEyebrow": "// Klaar om samen te werken?",
+    "ctaTitle1": "Benieuwd of we",
+    "ctaTitle2": "bij elkaar passen?",
+    "ctaLead": "Een kennismakingsgesprek kost je 30 minuten. Daarna weet je of het klikt of niet — geen sales-druk, geen verplichtingen."
+  },
+  "notFound": {
+    "eyebrow": "// 404",
+    "h1Line1": "Deze pagina",
+    "h1Line2": "bestaat niet.",
+    "lead": "De link die je volgde wijst naar iets dat we niet kunnen vinden. Misschien is het verhuisd, of typte de browser ergens een verkeerd adres.",
+    "ctaPrimary": "Terug naar home",
+    "ctaSecondary": "Bekijk onze cases"
   }
 }

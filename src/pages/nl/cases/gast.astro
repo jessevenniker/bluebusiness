@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../../components/shared/ArrowButton.astro';
+---
+
+<BaseLayout
+  title="GAST — case study | Blue Business"
+  description="Gast-app voor de hospitality-sector. Case study volgt zodra de klant goedkeuring geeft voor publicatie."
+  canonicalPath="/nl/cases/gast/"
+  noindex={true}
+>
+  <section class="pt-[140px] md:pt-[180px] pb-20">
+    <Container>
+      <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/nl/" class="hover:text-accent-hi">Home</a></li>
+          <li>/</li>
+          <li><a href="/nl/cases/" class="hover:text-accent-hi">Cases</a></li>
+          <li>/</li>
+          <li class="text-fg-dim">GAST</li>
+        </ol>
+      </nav>
+
+      <MonoEyebrow text="// hospitality" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">GAST —</span>
+        <span class="block text-accent">case study in voorbereiding.</span>
+      </h1>
+
+      <div class="mt-10 p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] max-w-[60ch]">
+        <p class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">Status</p>
+        <p class="text-[16px] text-fg mb-3">Deze case wacht op schriftelijke goedkeuring van de klant voor publicatie van naam, cijfers en screenshots.</p>
+        <p class="text-[14px] text-fg-dim">In de tussentijd: wil je weten wat voor soort gast-app we hier hebben gebouwd? Stuur een mail — onder NDA delen we graag meer.</p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="pb-20 md:pb-24">
+    <Container size="narrow">
+      <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">Wat we hebben gebouwd</h2>
+      <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
+        Een gast-app die het hele traject van boeking tot verblijf tot check-out digitaliseert. Van reservering bevestigen, tot kamer-informatie delen, tot in-app aanvragen voor extra services — zonder dure all-in-one hotel-software-suite. Werkt op een eenvoudig backend dat het personeel in 15 minuten leert.
+      </p>
+
+      <h2 class="text-h3 font-medium text-fg mt-10 mb-4" style="letter-spacing: var(--tracking-snug);">Belangrijkste features</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Digitale check-in en check-out</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Kamer-informatie, wifi-codes en huisregels</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> In-app aanvragen (handdoeken, taxi, late check-out)</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Lokale aanbevelingen en partner-deals</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Review-verzoek na uitchecken</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Iets vergelijkbaars bouwen?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Hospitality-apps die</span>
+          <span class="block text-accent">gasten dagelijks openen.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Vertel wat je voor ogen hebt, dan delen we concrete ervaringen en cijfers uit vergelijkbare projecten.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

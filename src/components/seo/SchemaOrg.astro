@@ -1,5 +1,5 @@
 ---
-import nl from '../../i18n/nl.json';
+import { getContent } from '../../i18n/content';
 
 interface Props {
   locale?: 'nl' | 'en';
@@ -8,23 +8,37 @@ interface Props {
 const { locale = 'nl', includeFaq = false } = Astro.props;
 
 const baseUrl = 'https://bluebusiness.nl';
+const content = getContent(locale);
+
+const description =
+  locale === 'en'
+    ? 'Blue Business is a Dutch app development studio founded in 2021, specializing in native iOS and Android apps for SMEs, tourism operators, and Caribbean governments.'
+    : 'Blue Business is een Nederlandse app development studio opgericht in 2021, gespecialiseerd in native iOS en Android apps voor MKB, toerisme en Caribbean overheid.';
 
 const graph: Record<string, unknown>[] = [
   {
     '@type': 'Organization',
     '@id': `${baseUrl}/#organization`,
     name: 'Blue Business',
+    legalName: 'Blue Innovation B.V.',
     url: `${baseUrl}/`,
     logo: `${baseUrl}/logo.svg`,
     foundingDate: '2021',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Rietsingel 46',
+      postalCode: '2136 LB',
+      addressLocality: 'Zwaanshoek',
       addressCountry: 'NL',
     },
     areaServed: ['NL', 'CW', 'AW', 'BQ'],
-    sameAs: ['https://www.linkedin.com/company/bluebusiness-nl'],
-    description:
-      'Blue Business is een Nederlandse app development studio opgericht in 2021, gespecialiseerd in native iOS en Android apps voor MKB, toerisme en Caribbean overheid.',
+    sameAs: [
+      'https://www.linkedin.com/company/bluebusiness-nl',
+      'https://github.com/jessevenniker/bluebusiness',
+    ],
+    email: 'info@bluebusiness.nl',
+    identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: '80387578' },
+    description,
   },
   {
     '@type': 'WebSite',
@@ -36,10 +50,10 @@ const graph: Record<string, unknown>[] = [
   },
 ];
 
-if (includeFaq && locale === 'nl') {
+if (includeFaq) {
   graph.push({
     '@type': 'FAQPage',
-    mainEntity: nl.home.faq.items.map((item) => ({
+    mainEntity: content.home.faq.items.map((item) => ({
       '@type': 'Question',
       name: item.q,
       acceptedAnswer: {

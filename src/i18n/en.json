@@ -1,9 +1,198 @@
 {
   "nav": {
     "services": "Services",
-    "cases": "Cases",
+    "cases": "Work",
     "about": "About",
     "contact": "Contact",
     "skipToMain": "Skip to main content"
+  },
+  "home": {
+    "meta": {
+      "title": "Blue Business — Native app development from the Netherlands, for NL & the Caribbean",
+      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Bonaire App, Medewerker App, GAST."
+    },
+    "hero": {
+      "eyebrow": "// Dutch app studio — NL & Caribbean",
+      "h1Line1": "Native apps people",
+      "h1Line2": "open every day.",
+      "lead": "Blue Business designs and builds native iOS and Android apps for Dutch SMEs, Caribbean tourism and public-sector organizations. Not landing pages with scroll gimmicks — products users open daily.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "See our work",
+      "stats": [
+        { "value": "2021", "label": "founded in the Netherlands" },
+        { "value": "4.9★", "label": "Bonaire App · App Store NL" },
+        { "value": "iOS · Android", "label": "native development" }
+      ],
+      "cycler": [
+        "> build succeeded in 12.3s",
+        "> submitted to App Store",
+        "> 4.9 ★ — Bonaire App"
+      ]
+    },
+    "trust": {
+      "text": "Made for businesses in the Netherlands and the Caribbean — from family companies to tourism platforms to government services."
+    },
+    "services": {
+      "eyebrow": "// What we build",
+      "h2Line1": "Four disciplines.",
+      "h2Line2": "One team.",
+      "lead": "Not a 40-person agency with separate departments. One team combining design, native development and product strategy — so the developer building your app actually knows why it's built that way.",
+      "readMore": "Read more",
+      "items": [
+        {
+          "id": "native",
+          "icon": "ios-native",
+          "title": "Native iOS & Android",
+          "body": "Swift on iOS, Kotlin on Android. Not one codebase pretending to be both. Native means: platform conventions, fastest scroll, full access to system APIs, and an app that still works three OS upgrades from now. For products people use daily, this is always the right answer."
+        },
+        {
+          "id": "web",
+          "icon": "web-layer",
+          "title": "Web & PWA",
+          "body": "Astro, Next.js, or Remix — chosen per problem, not per trend. Edge deploys, Core Web Vitals above 95 as a fixed gate, and a CMS only when your client actually wants to edit content themselves. No WordPress rebuild with more JavaScript."
+        },
+        {
+          "id": "design",
+          "icon": "design-compass",
+          "title": "Product design & strategy",
+          "body": "We design before we build. A 1-2 week discovery sprint where we validate your key user flows — sometimes with a Figma prototype, sometimes with a single HTML page we put in people's hands the same morning. So we know together what we're building before a line of code is written."
+        },
+        {
+          "id": "maintain",
+          "icon": "maintain-loop",
+          "title": "Maintenance & growth",
+          "body": "Shipped apps stall when nobody maintains them. We run monthly release cycles, monitor crash rates via Sentry, and send you a quarterly roadmap proposal based on usage data — not on what we'd enjoy building next."
+        }
+      ]
+    },
+    "cases": {
+      "eyebrow": "// Live in production",
+      "h2Line1": "Apps people",
+      "h2Line2": "open every day.",
+      "lead": "Each of these products is being used right now, while you read this, by someone. That's the only test that matters.",
+      "seeAll": "See all work",
+      "items": [
+        {
+          "id": "bonaire-app",
+          "featured": true,
+          "label": "// tourism — Caribbean",
+          "title": "Bonaire App — you explore, we guide you.",
+          "body": "The ultimate guide to Bonaire. Offline navigation via Mapbox, all points of interest, tailored routes and cruise tours. Realtime data via Firebase.",
+          "datapoint": "4.9★ · 1,000+ downloads in first month",
+          "accentColor": "#3B82F6"
+        },
+        {
+          "id": "medewerker-app",
+          "featured": false,
+          "label": "// B2B — employee platform",
+          "title": "[TBD] One app for the whole team.",
+          "body": "[PLACEHOLDER — awaiting client approval] Employee app for internal communication, scheduling and team updates. Replaces scattered tools with one platform managers and staff actually open.",
+          "datapoint": "[TBD — companies / users]",
+          "accentColor": "#60A5FA"
+        },
+        {
+          "id": "gast",
+          "featured": false,
+          "label": "// hospitality",
+          "title": "[TBD] Guest app for the hospitality sector.",
+          "body": "[PLACEHOLDER — awaiting client approval] App that digitizes the guest journey — booking, stay, check-out — without a heavy hotel-software suite.",
+          "datapoint": "[TBD — numbers to follow]",
+          "accentColor": "#22D3EE"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "// How we work",
+      "h2Line1": "From idea to",
+      "h2Line2": "App Store submission.",
+      "lead": "Four steps, each with a clear output. No time-and-materials, no 40-page Gantt charts.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Discovery",
+          "duration": "1-2 weeks",
+          "body": "Short sprint to find the real use case. Ends with a clickable prototype and a fixed build price."
+        },
+        {
+          "number": "02",
+          "title": "Build",
+          "duration": "12-16 weeks",
+          "body": "Weekly TestFlight builds. You see progress every Monday, not one big reveal after four months."
+        },
+        {
+          "number": "03",
+          "title": "Ship",
+          "duration": "1 week",
+          "body": "Submission to App Store and Play Store, including privacy policy, screenshots, and store copy in NL and EN."
+        },
+        {
+          "number": "04",
+          "title": "Maintain",
+          "duration": "ongoing",
+          "body": "Monthly retainer from €1,200/month. OS upgrades, crash fixes, and quarterly roadmaps based on real usage."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "// FAQ",
+      "h2Line1": "Questions prospects",
+      "h2Line2": "always ask.",
+      "items": [
+        {
+          "q": "What does an app cost at Blue Business?",
+          "a": "A native iOS and Android MVP starts at €25,000 and typically lands between €40,000–€80,000 for a finished 1.0. Large platform builds run to €250,000+. First two conversations are free and end with a fixed price — no open time-and-materials."
+        },
+        {
+          "q": "How long from idea to App Store?",
+          "a": "Typically 12-16 weeks from kickoff. Discovery sprint (1-2 weeks), build (8-12 weeks with weekly TestFlight builds), and submission (1 week including Apple/Google review). Faster MVPs in 6-8 weeks are possible if scope is tight."
+        },
+        {
+          "q": "Native or cross-platform (React Native, Flutter)?",
+          "a": "Native when performance, platform features or long-term maintenance matter. Cross-platform when time-to-market dominates and the app stays under 100K users. We build both and advise honestly which fits — even if that means recommending a smaller project."
+        },
+        {
+          "q": "Do you work with existing apps?",
+          "a": "Yes. We regularly take over apps that started somewhere else. A 2-day fixed-price audit where we review the codebase, infrastructure and App Store status, followed by a take-over plan. Around a third of our work is 'resurrecting' existing products."
+        },
+        {
+          "q": "Do you work for Caribbean clients?",
+          "a": "Yes. A significant part of our portfolio is in the Caribbean — Bonaire App is the most visible example. We're Netherlands-based but have extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba, including the cultural and operational context that requires."
+        },
+        {
+          "q": "Do you take on small projects?",
+          "a": "Not under €25,000. Below that we can't build a full-stack native app without cutting corners that bite back later. For smaller budgets we happily refer you to freelance or template-based studios."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "// no commitments, no NDA, no sales funnel",
+      "h2Line1": "An app idea?",
+      "h2Line2": "Let's talk.",
+      "lead": "30 minutes with the developer who'd build it — not an account executive. You tell us what you have, we tell you honestly whether we're the right fit.",
+      "ctaPrimary": "Schedule a conversation",
+      "mailTo": "or email direct: info@bluebusiness.nl"
+    }
+  },
+  "footer": {
+    "tagline": "Native apps from the Netherlands, since 2021.",
+    "columns": {
+      "services": "Services",
+      "cases": "Work",
+      "contact": "Contact"
+    },
+    "address": {
+      "line1": "Blue Innovation B.V.",
+      "line2": "Rietsingel 46",
+      "line3": "2136 LB Zwaanshoek",
+      "kvk": "Dutch Chamber of Commerce 80387578"
+    },
+    "email": "info@bluebusiness.nl",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "llms": "llms.txt"
+    },
+    "allCases": "All work",
+    "copyright": "© 2026 Blue Business"
   }
 }

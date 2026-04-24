@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import nl from '../../i18n/nl.json';
+
+const t = nl.about;
+
+const baseUrl = 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${baseUrl}/nl/over-ons/#aboutpage`,
+  url: `${baseUrl}/nl/over-ons/`,
+  name: 'Over Blue Business',
+  mainEntity: { '@id': `${baseUrl}/#organization` },
+};
+---
+
+<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath="/nl/over-ons/">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">{t.h1Line1}</span>
+        <span class="block text-accent">{t.h1Line2}</span>
+      </h1>
+      <div class="mt-10 max-w-[62ch] space-y-5 text-lead text-fg-dim">
+        <p>{t.leadP1}</p>
+        <p>{t.leadP2}</p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Main story sections -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-2 space-y-14">
+          {t.sections.map((s, i) => (
+            <article>
+              <p class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">
+                {`0${i + 1}`.padStart(2, '0')}
+              </p>
+              <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">
+                {s.title}
+              </h2>
+              <p class="text-[16px] text-fg-dim max-w-[62ch]" style="line-height: 1.7;">{s.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <!-- Facts sidebar -->
+        <aside>
+          <div class="sticky top-[100px] p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-5">{t.facts.title}</h2>
+            <dl class="space-y-4">
+              {t.facts.items.map((f) => (
+                <div>
+                  <dt class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-0.5">{f.k}</dt>
+                  <dd class="text-[14px] text-fg">{f.v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </Container>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text={t.ctaEyebrow} tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">{t.ctaTitle1}</span>
+          <span class="block text-accent">{t.ctaTitle2}</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">{t.ctaLead}</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
