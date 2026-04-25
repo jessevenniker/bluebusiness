@@ -3,6 +3,7 @@ import { routeMap, getCurrentLocale } from '../../i18n/routes';
 import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
 import Icons from '../shared/Icons.astro';
+import Logomark from '../shared/Logomark.astro';
 
 const locale = getCurrentLocale(Astro.url.pathname);
 const content = getContent(locale);
@@ -23,7 +24,7 @@ function caseLabel(id: string) {
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
       <div class="col-span-2 md:col-span-1">
         <a href={r.home} class="flex items-center gap-2.5 mb-4">
-          <span class="block w-[14px] h-[14px] rounded-[3px] bg-[var(--color-accent)]"></span>
+          <Logomark size={15} />
           <span class="text-[15px] font-medium">Blue Business</span>
         </a>
         <p class="text-body text-fg-dim mb-5 max-w-[26ch]">{t.tagline}</p>

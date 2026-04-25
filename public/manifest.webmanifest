@@ -1,0 +1,15 @@
+{
+  "name": "Blue Business",
+  "short_name": "Blue Business",
+  "description": "Native iOS and Android app development from the Netherlands.",
+  "start_url": "/nl/",
+  "display": "browser",
+  "background_color": "#08142A",
+  "theme_color": "#08142A",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/logo-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/logo-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" },
+    { "src": "/logo-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

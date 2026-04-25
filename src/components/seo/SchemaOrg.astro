@@ -22,7 +22,12 @@ const graph: Record<string, unknown>[] = [
     name: 'Blue Business',
     legalName: 'Blue Innovation B.V.',
     url: `${baseUrl}/`,
-    logo: `${baseUrl}/logo.svg`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo-512.png`,
+      width: 512,
+      height: 512,
+    },
     foundingDate: '2021',
     address: {
       '@type': 'PostalAddress',

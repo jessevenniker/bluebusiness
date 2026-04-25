@@ -1,0 +1,40 @@
+---
+interface Props {
+  size?: number;
+  caret?: boolean;
+  class?: string;
+}
+const { size = 15, caret = true, class: className = '' } = Astro.props;
+const caretHeight = Math.round(size * 0.93);
+---
+
+<span
+  class={`bb-mark font-mono leading-none tracking-[-0.02em] ${className}`}
+  style={`font-size: ${size}px;`}
+  aria-hidden="true"
+>
+  <span class="text-[var(--color-accent)]">&lt;</span><span class="text-fg">B</span><span class="text-[var(--color-accent)]">/&gt;</span>{caret && (
+    <span class="bb-caret" style={`height: ${caretHeight}px;`}></span>
+  )}
+</span>
+
+<style is:global>
+  .bb-mark {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+  }
+  .bb-caret {
+    display: inline-block;
+    width: 2px;
+    background: #22d3ee;
+    margin-left: 4px;
+    animation: bb-blink 1s steps(1) infinite;
+  }
+  @keyframes bb-blink {
+    50% { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bb-caret { animation: none; }
+  }
+</style>
