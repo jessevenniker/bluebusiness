@@ -52,9 +52,9 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12">
         <!-- Form -->
         <form id="contact-form" class="md:col-span-3 space-y-6" novalidate>
-          <!-- honeypot -->
-          <div class="hidden" aria-hidden="true">
-            <label>Laat leeg: <input type="text" name="website_url" tabindex="-1" autocomplete="off" /></label>
+          <!-- honeypot — offscreen but rendered so bots fill it; hidden from users + a11y tree -->
+          <div class="hp" aria-hidden="true">
+            <input type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" />
           </div>
           <input type="hidden" name="source" value={r.contact} />
           <input type="hidden" name="t_loaded" id="t_loaded" />
@@ -214,6 +214,14 @@ const schema = {
   .submit-btn:hover .arrow { transform: translateX(2px); }
   .submit-btn:disabled { opacity: 0.6; cursor: progress; }
   .hidden { display: none !important; }
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    pointer-events: none;
+  }
 </style>
 
 <script is:inline>

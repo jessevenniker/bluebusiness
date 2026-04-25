@@ -26,6 +26,10 @@ const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const canonical = `${baseUrl}${canonicalPath}`;
 const locale = getCurrentLocale(Astro.url.pathname);
 
+// Auto-noindex on Vercel preview / development deployments — only production should be indexable.
+const isPreview = process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production';
+const shouldNoindex = noindex || isPreview;
+
 const altNl = locale === 'nl' ? canonicalPath : getAlternateUrl(canonicalPath, 'nl');
 const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, 'en');
 ---
@@ -39,7 +43,7 @@ const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, '
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
 
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="nl-NL" href={`${baseUrl}${altNl}`} />

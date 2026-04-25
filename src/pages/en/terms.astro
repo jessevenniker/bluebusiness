@@ -2,11 +2,204 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+
+const articles = [
+  {
+    n: 1,
+    t: 'Definitions',
+    items: [
+      'Blue Innovation: the private limited company Blue Innovation B.V. (trading as Blue Business), registered office at Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands, registered with the Dutch Chamber of Commerce under number 80387578.',
+      'Client: the natural person or legal entity that enters into an Agreement with Blue Innovation for the provision of Services.',
+      'Services: the design, development, delivery and (optionally) maintenance of native iOS and Android applications, web and SaaS applications, and related discovery, design, strategy and consultancy work.',
+      'Agreement: each signed or electronically accepted offer, order confirmation or statement of work between the Parties to which these terms are declared applicable.',
+      'Deliverable: the work produced by Blue Innovation under an Agreement, including source code, design files, documentation and compiled applications.',
+      'Parties: Blue Innovation and the Client jointly.',
+      'In writing: by letter or email, including a digital document accepted by both Parties.',
+    ],
+  },
+  {
+    n: 2,
+    t: 'Applicability',
+    items: [
+      'These general terms apply to all offers, quotations and Agreements of Blue Innovation, and to all legal acts arising from them.',
+      'Any general or purchasing terms of the Client are expressly rejected and do not apply, unless the Parties have expressly agreed otherwise in writing.',
+      'Deviations from these terms are valid only if expressly accepted in writing by Blue Innovation, and apply only to the Agreement for which they were agreed.',
+      'If a provision of these terms is found to be void or voidable, the remaining provisions remain in full force. The Parties shall replace the affected provision with a valid one that approximates its intent as closely as possible.',
+    ],
+  },
+  {
+    n: 3,
+    t: 'Offers and quotations',
+    items: [
+      'All offers and quotations from Blue Innovation are valid for thirty (30) calendar days from the date of issue, unless a different term is stated in the offer.',
+      'A quotation is based on the information provided by the Client at the time of issue. Changes in scope, planning or assumptions may lead to adjustment of the price and/or timeline.',
+      'Obvious errors or omissions in a quotation do not bind Blue Innovation.',
+      'Quotations do not automatically apply to future engagements, even if those are similar in nature.',
+    ],
+  },
+  {
+    n: 4,
+    t: 'Formation and term of the Agreement',
+    items: [
+      'The Agreement is concluded upon written acceptance of the offer by the Client, or by Blue Innovation actually starting the work at the Client\'s request.',
+      'The Agreement is entered into for the duration stated in the offer, or for the time required to complete the agreed Services.',
+      'For ongoing maintenance services, the Agreement is entered into for the term set out in the Agreement, with tacit renewal for periods of one (1) month thereafter, unless agreed otherwise in writing.',
+    ],
+  },
+  {
+    n: 5,
+    t: 'Performance of the Services',
+    items: [
+      'Blue Innovation performs the Services on a best-efforts basis with the care expected of a competent contractor. Unless a specific result is expressly agreed in the Agreement, the Services do not constitute an obligation of result.',
+      'Blue Innovation determines how the Services are performed and which staff are assigned. Blue Innovation may engage third parties for (parts of) the work, under its own responsibility.',
+      'Planning dates and delivery dates mentioned by either Party are target dates and do not constitute strict deadlines, unless expressly agreed otherwise in writing.',
+      'Blue Innovation works in iterative cycles. Unless agreed otherwise in writing, the Client receives interim deliveries at regular intervals (e.g. TestFlight or preview builds).',
+    ],
+  },
+  {
+    n: 6,
+    t: 'Client cooperation and obligations',
+    items: [
+      'The Client shall ensure that all data, information, materials, access and decisions required for the Services are provided to Blue Innovation in a timely and complete manner.',
+      'The Client warrants the accuracy, completeness and lawfulness of the data and materials it provides, and indemnifies Blue Innovation against third-party claims in this respect.',
+      'If the Client fails to meet its cooperation obligations on time, Blue Innovation may suspend the work and charge any additional costs and lost time at its applicable hourly rate.',
+      'For submissions to the Apple App Store, Google Play Store or comparable platforms, the Client is responsible for a valid developer account, the required legal texts (privacy policy, EULA), and any platform-required disclosures.',
+    ],
+  },
+  {
+    n: 7,
+    t: 'Scope and additional work',
+    items: [
+      'The scope of the Services is described in the Agreement. Work outside that scope qualifies as additional work.',
+      'Additional work is performed only after written approval by the Client, either through a revised quotation or an email-confirmed change request.',
+      'If additional work is not covered by a fixed price, it is billed at Blue Innovation\'s applicable hourly rate.',
+      'Blue Innovation may decline scope changes that disproportionately harm the quality, planning or feasibility of the project.',
+    ],
+  },
+  {
+    n: 8,
+    t: 'Delivery and acceptance',
+    items: [
+      'Blue Innovation shares Deliverables with the Client for acceptance. Unless agreed otherwise in writing, an acceptance period of fifteen (15) business days applies from the date of delivery.',
+      'If the Client does not send a substantiated written rejection within the acceptance period, the Deliverable is deemed accepted. The Deliverable is also deemed accepted as soon as the Client puts it into production or commercial use.',
+      'A rejection must clearly describe the defects and explain why they prevent production use. Items outside the agreed scope do not qualify as defects.',
+      'In case of a justified rejection, Blue Innovation is given a reasonable period to remedy the defects, after which the acceptance procedure is repeated.',
+    ],
+  },
+  {
+    n: 9,
+    t: 'Maintenance and continued development',
+    items: [
+      'Maintenance is provided only under a separate maintenance Agreement (retainer) defining scope, price and service level.',
+      'Within the retainer budget, Blue Innovation can respond to crash reports, OS upgrades, minor functional changes and quarterly evaluations based on usage data.',
+      'Work outside the agreed retainer budget qualifies as additional work under article 7.',
+      'In the absence of a maintenance Agreement, Blue Innovation is not obliged to remedy defects that arise after the warranty period (article 13).',
+    ],
+  },
+  {
+    n: 10,
+    t: 'Prices and payment',
+    items: [
+      'All prices are in euros and exclusive of VAT, unless stated otherwise.',
+      'Unless agreed otherwise in writing, Blue Innovation invoices as follows: 30% upon start of the Agreement, 40% on an interim milestone and 30% on delivery. Maintenance services are invoiced monthly in advance.',
+      'Invoices are due within fourteen (14) days of the invoice date, without right of set-off or suspension.',
+      'If the payment term is exceeded, the Client is in default by operation of law. Blue Innovation may charge statutory commercial interest and extrajudicial collection costs in accordance with applicable Dutch law.',
+      'Blue Innovation may index its rates annually on January 1 in line with the CBS price index for commercial services.',
+      'In case of late payment, Blue Innovation may suspend its work until full payment is received, without any liability for damages.',
+    ],
+  },
+  {
+    n: 11,
+    t: 'Intellectual property',
+    items: [
+      'All intellectual property rights to bespoke source code, designs and documentation produced by Blue Innovation under an Agreement (the Client-Specific Deliverable) transfer to the Client, subject to the suspensive condition of full payment of all outstanding invoices, at the moment of that payment.',
+      'Generic components, libraries, frameworks, tools and know-how that Blue Innovation has developed before or outside the Agreement (the Background IP) remain the property of Blue Innovation. The Client receives a non-exclusive, perpetual, worldwide, non-transferable licence to the Background IP to the extent required for ordinary use of the Deliverable.',
+      'Open-source components used by Blue Innovation in the Deliverable remain subject to their own licences. Blue Innovation only uses components whose licences are compatible with the Client\'s commercial use.',
+      'Blue Innovation retains the right to display the Deliverable — at a high level only — in its portfolio (e.g. on its website, in offers and pitches), unless the Parties have agreed confidentiality in writing.',
+      'The Client indemnifies Blue Innovation against third-party claims regarding intellectual property rights to materials, data or trademarks supplied by the Client.',
+    ],
+  },
+  {
+    n: 12,
+    t: 'Confidentiality and data protection',
+    items: [
+      'The Parties shall keep all information received from the other Party that is marked as confidential or reasonably regarded as confidential, secret, and use it only for the purpose for which it was provided.',
+      'The confidentiality obligation remains in effect for three (3) years after termination of the Agreement.',
+      'If personal data are processed in the course of the Services for which the Client is the controller and Blue Innovation the processor, the Parties enter into a data processing agreement in line with article 28 GDPR.',
+      'Blue Innovation takes appropriate technical and organisational measures to protect the data it processes against loss or unlawful processing, in line with the requirements of the GDPR.',
+    ],
+  },
+  {
+    n: 13,
+    t: 'Warranty',
+    items: [
+      'Blue Innovation warrants that the accepted Deliverable will materially function in line with the agreed specifications for thirty (30) days after acceptance.',
+      'During the warranty period, Blue Innovation will remedy at no cost defects attributable to its own work that materially impair the operation of the Deliverable.',
+      'The warranty does not apply to defects resulting from: (i) modifications made to the Deliverable without Blue Innovation\'s consent, (ii) use contrary to the instructions provided at delivery, (iii) changes in operating systems, third-party APIs or other external dependencies, or (iv) inaccurate or incomplete data provided by the Client.',
+      'After the warranty period, remedial work is carried out under a maintenance Agreement (article 9) or as additional work (article 7).',
+    ],
+  },
+  {
+    n: 14,
+    t: 'Liability',
+    items: [
+      'Blue Innovation\'s total liability towards the Client for attributable shortcoming, tort or any other ground is, per event (a series of related events counting as one event), limited to direct damages up to the amount paid by the Client to Blue Innovation under the relevant Agreement in the twelve (12) months preceding the event, with an absolute cap of fifty thousand euros (€50,000).',
+      'Blue Innovation is liable only for direct damages. Liability for indirect damages — including consequential loss, lost profits, missed savings, business interruption, reputational damage and damages from loss, corruption or alteration of data — is expressly excluded.',
+      'The limitations in this article do not apply if the damage results from intent or wilful recklessness on the part of Blue Innovation or its executive staff.',
+      'Any claim for damages lapses twelve (12) months after the damage arose, unless the Client has commenced legal proceedings within that period.',
+      'The Client shall report damages in writing and with substantiation as soon as possible, and in any event within thirty (30) days of discovery.',
+    ],
+  },
+  {
+    n: 15,
+    t: 'Force majeure',
+    items: [
+      'Neither Party is required to perform any obligation under the Agreement, except for payment obligations for Services already delivered, if it is prevented from doing so by force majeure.',
+      'Force majeure includes but is not limited to: outages or failures of the internet, telecommunications infrastructure, third-party APIs or cloud platforms; cyberattacks; epidemics or pandemics; government measures; fire or natural disasters; and strikes or staff outages outside the affected Party\'s control.',
+      'If a force majeure situation lasts longer than sixty (60) days, either Party may rescind the Agreement in writing, without any obligation to pay damages.',
+    ],
+  },
+  {
+    n: 16,
+    t: 'Suspension and rescission',
+    items: [
+      'Blue Innovation may suspend performance of the Agreement, or rescind the Agreement in whole or in part without judicial intervention, if the Client fails to perform its obligations and remains in default after a written notice with a reasonable cure period.',
+      'In addition, Blue Innovation may rescind the Agreement immediately and without notice if the Client is granted suspension of payment, declared bankrupt, becomes subject to the Dutch Debt Restructuring Natural Persons Act, or its business is liquidated.',
+      'Upon rescission, existing claims become immediately due. Services already performed are settled on a pro-rata basis.',
+    ],
+  },
+  {
+    n: 17,
+    t: 'Complaints',
+    items: [
+      'The Client shall report complaints about the performance of the Agreement to Blue Innovation in writing and with reasons as soon as possible, and in any event within fourteen (14) days of discovery.',
+      'Blue Innovation will respond within fourteen (14) days of receipt of a complaint. If a complaint requires more time, the Client receives an acknowledgement within that period with an indication of when Blue Innovation will respond.',
+      'Filing a complaint does not relieve the Client of its payment obligations.',
+    ],
+  },
+  {
+    n: 18,
+    t: 'Changes to these terms',
+    items: [
+      'Blue Innovation may amend these general terms. Amendments do not apply to ongoing Agreements, except to the extent that those amendments are reasonably required by changes in laws or regulations.',
+      'Amended terms will be made available to the Client at least thirty (30) days before they take effect, or published on the website www.bluebusiness.nl.',
+    ],
+  },
+  {
+    n: 19,
+    t: 'Governing law and disputes',
+    items: [
+      'These general terms and all Agreements to which they apply are governed exclusively by the laws of the Netherlands. Application of the United Nations Convention on Contracts for the International Sale of Goods (CISG) is excluded.',
+      'Disputes between the Parties that cannot be resolved by mutual consultation will be submitted exclusively to the competent court in the district of North Holland, Haarlem location.',
+      'For consumers, the foregoing applies without prejudice to the right to bring proceedings before the legally competent court.',
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title="Terms & Conditions — Blue Business"
-  description="General terms and conditions of Blue Innovation B.V. (Blue Business), version 2021. Registered with the Dutch Chamber of Commerce under number 80387578."
+  description="Terms and conditions for engagements and maintenance with Blue Innovation B.V. (Blue Business). Version April 2026, registered with the Dutch Chamber of Commerce under number 80387578."
   canonicalPath="/en/terms/"
 >
   <section class="pt-[140px] md:pt-[180px] pb-10">
@@ -14,14 +207,14 @@ import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
       <MonoEyebrow text="// Legal" tone="accent-hi" class="mb-5 block" />
       <h1 class="text-h1 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
         <span class="block text-fg">Terms &</span>
-        <span class="block text-accent">Conditions.</span>
+        <span class="block text-accent">conditions.</span>
       </h1>
       <p class="text-body text-fg-dim mt-6 max-w-[60ch]">
-        Blue Innovation B.V., version 2021. Registered with the Dutch Chamber of Commerce under number 80387578, with registered office at Rietsingel 46, 2136 LB Zwaanshoek.
+        Blue Innovation B.V., version April 2026. Registered with the Dutch Chamber of Commerce under number 80387578, with registered office at Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands. These terms apply to engagements for the design, development and maintenance of software (native apps, web and SaaS applications).
       </p>
       <div class="mt-6 p-4 rounded-[10px] bg-[var(--color-accent)]/[0.06] border border-[var(--color-accent-line)] max-w-[60ch]">
         <p class="text-[14px] text-fg-dim">
-          This is an informational English summary. The legally binding version is the Dutch Algemene Voorwaarden. <a href="/nl/voorwaarden/" class="text-accent hover:text-accent-hi underline underline-offset-2">Read the Dutch version</a>.
+          This English version is provided for convenience. The legally binding version is the Dutch <a href="/nl/voorwaarden/" class="text-accent hover:text-accent-hi underline underline-offset-2">Algemene voorwaarden</a>. In case of any discrepancy, the Dutch version prevails.
         </p>
       </div>
     </Container>
@@ -29,84 +222,28 @@ import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
 
   <section class="pb-24">
     <Container size="narrow">
-      <div class="space-y-6 text-[15px] text-fg-dim" style="line-height: 1.7;">
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Applicability</h2>
-        <p>
-          These terms and conditions apply to every offer from Blue Innovation and to every distance contract between Blue Innovation and the Client. Before a distance contract is concluded, the text of these terms and conditions is made available to the Client. Any general terms and conditions of Clients and/or third parties do not apply to the agreement between the Client and Blue Innovation. Rights and obligations under the Agreement may not be transferred by the Client to a third party without Blue Innovation's express prior consent.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Offers and quotes</h2>
-        <p>
-          All offers and quotes made by Blue Innovation are non-binding, unless otherwise agreed in writing, and are valid for 14 days. A quote applies only to the specific assignment and does not guarantee the same price for future quotes. The offer contains a complete and accurate description of the offered products and/or services.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">The agreement</h2>
-        <p>
-          The agreement is concluded when the Client indicates assent by accepting the offer, paying the amount, or accepting the assignment in writing. If the Client accepts the offer electronically, Blue Innovation will immediately confirm receipt of the acceptance electronically. Until receipt of this acceptance is confirmed, the Client may rescind the agreement free of charge.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Right of withdrawal</h2>
-        <p>
-          When purchasing products, the Consumer has the right to dissolve the agreement without giving reasons within 14 days. This period begins on the day the Consumer or a designated representative receives the product. If a Consumer invokes the right of withdrawal, Blue Innovation is entitled to charge the costs incurred up to that point. A Business that has entered into a software subscription with Blue Innovation does not have the right to withdraw from this agreement.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Performance of the agreement</h2>
-        <p>
-          Blue Innovation will endeavor to perform the Agreement with the greatest possible care as expected of a good contractor. All Services are performed on a best-efforts basis, unless a specific, detailed result has been expressly agreed in writing. Blue Innovation is entitled to engage third parties at its own discretion for the performance of the Services.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Access to the SaaS service</h2>
-        <p>
-          Blue Innovation only offers the use of the SaaS service, including the Website and Mobile app. Blue Innovation has no responsibility for or influence over the actual operation of the Client's business. Blue Innovation reserves the right to deny the Client access to the SaaS service and/or to terminate use of the SaaS service in case of misuse and/or possible criminal acts. Blue Innovation is free to perform maintenance on the SaaS service, Website and Mobile app, and to take them out of service as a result.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Warranties</h2>
-        <p>
-          Blue Innovation performs the Services in accordance with industry standards. Any warranty is limited to what is expressly agreed in writing. The Client can only invoke the warranty if the Client has fully met its payment obligations. Blue Innovation does not warrant that the Website and/or Mobile app will function without errors or interruptions. The Client accepts the Website and Mobile app "AS IS".
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Right of use and usage restrictions</h2>
-        <p>
-          Blue Innovation provides the agreed Bluebusiness software and user documentation to the Client on a license basis for the duration of the Agreement. The Client may use the Bluebusiness software only in and for its own business, and exclusively for the intended purpose. The Client may never sell, rent, transfer, or grant limited rights on the Bluebusiness software, nor provide it to a third party.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Force majeure</h2>
-        <p>
-          Blue Innovation is not liable when it cannot fulfill its obligations under the Agreement due to a force majeure situation. Force majeure includes, but is not limited to: force majeure at suppliers, failure of third-party suppliers to perform, defects in third-party goods, government measures, power outages, internet/telecom failures (cybercrime, hacking, DDoS), natural disasters, war and terrorism. If force majeure lasts longer than two months, either Party may rescind the Agreement in writing.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Limitation of liability</h2>
-        <p>
-          If performance of Services leads to liability on the part of Blue Innovation, that liability is limited to the costs charged in connection with the SaaS service (maximum 6 months preceding the notice of default) for direct damage. Blue Innovation is not liable for consequential damage, indirect damage, business losses, lost profits, loss of data, delay damage or interest damage. All claims of the Client for shortcomings lapse if not reported in writing and substantiated to Blue Innovation within one year.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Intellectual property</h2>
-        <p>
-          All intellectual property rights of Blue Innovation, including the SaaS service, Website, Mobile app, data files, Bluebusiness software, designs, analyses and documentation, belong exclusively to Blue Innovation. The Client may not disclose, reproduce, modify or provide to third parties any component of the SaaS service, Website, Mobile app or Bluebusiness software on which Blue Innovation's IP rights rest, without prior written consent. Each infringement by the Client is subject to a one-time penalty of €10,000 plus €500 for each day the infringement continues.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Price and payment</h2>
-        <p>
-          Prices in the offer are exclusive of VAT. The Client must pay within the agreed terms on the invoice. If the Client fails to pay on time, the Client is in default by operation of law after a reminder is sent. The Client is then owed statutory interest (consumer) or statutory commercial interest (business) plus 1%. Extrajudicial collection costs are calculated with a minimum of €40 and a maximum of €6,775.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Termination</h2>
-        <p>
-          The Client may terminate the agreement at any desired moment with one month's notice, effective at the beginning of the month. If the Client terminates, the Client will no longer have access to the software as of the end date.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Complaints</h2>
-        <p>
-          Blue Innovation has a sufficiently publicized complaints procedure and handles complaints in accordance with it. Complaints about the performance of the agreement must be submitted to Blue Innovation in full and clearly described within 7 days of receipt of the product. Submitted complaints are answered within 14 days. The Client must give Blue Innovation at least 4 weeks to resolve the complaint by mutual agreement.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Applicable law</h2>
-        <p>
-          Dutch law applies to all agreements, services, offers and orders. Any disputes must be submitted to the competent court in the Netherlands.
-        </p>
-
-        <p class="pt-6 font-mono text-[12px] text-fg-faint">Zwaanshoek, August 2021.</p>
+      <div class="space-y-14">
+        {articles.map((a) => (
+          <article id={`article-${a.n}`}>
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="font-mono text-[13px] text-accent-hi">Article {a.n.toString().padStart(2, '0')}</span>
+            </div>
+            <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">{a.t}</h2>
+            <ol class="space-y-3 text-[15px] text-fg-dim" style="line-height: 1.7;" role="list">
+              {a.items.map((item, idx) => (
+                <li class="grid grid-cols-[auto_1fr] gap-3">
+                  <span class="font-mono text-[12px] text-fg-faint pt-[3px]">{idx + 1}.</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </article>
+        ))}
       </div>
+
+      <p class="text-body text-fg-faint mt-16 pt-6 border-t border-[var(--color-border)]">
+        Zwaanshoek, April 2026.
+      </p>
     </Container>
   </section>
 </BaseLayout>
