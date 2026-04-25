@@ -3,7 +3,10 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
+    { "source": "/", "destination": "/nl/", "permanent": false },
     { "source": "/index.html", "destination": "/nl/", "permanent": true },
+    { "source": "/privacy-policy/", "destination": "/nl/privacy/", "permanent": true },
+    { "source": "/index/", "destination": "/nl/", "permanent": true },
     { "source": "/diensten.html", "destination": "/nl/diensten/", "permanent": true },
     { "source": "/projecten.html", "destination": "/nl/cases/", "permanent": true },
     { "source": "/projects.html", "destination": "/nl/cases/", "permanent": true },
