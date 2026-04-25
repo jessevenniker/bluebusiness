@@ -248,10 +248,18 @@ const schema = {
       btn.querySelector('.btn-label').textContent = btn.dataset.submitting || 'Sending…';
 
       try {
-        const res = await fetch('/api/contact', {
+        // Map fields to Formspree-friendly names (e.g. _replyto routes replies)
+        const payload = Object.fromEntries(data.entries());
+        if (payload.email) payload._replyto = payload.email;
+        payload._subject = `Nieuw contactbericht via bluebusiness.nl — ${payload.name || 'onbekend'}`;
+
+        const res = await fetch('https://formspree.io/f/myklvzeb', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(Object.fromEntries(data.entries())),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error('submit failed');
         form.reset();
