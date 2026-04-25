@@ -18,8 +18,8 @@ const schema = {
 };
 
 const clients = [
-  { name: 'Hof van Saksen', sector: 'Vakantieparken' },
-  { name: 'Roompot', sector: 'Vakantieparken' },
+  { name: 'Hof van Saksen', sector: 'Vakantieparken', logo: '/clients/hof-van-saksen.png' },
+  { name: 'Roompot', sector: 'Vakantieparken', logo: '/clients/roompot.png' },
 ];
 ---
 
@@ -58,12 +58,18 @@ const clients = [
       <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Onze opdrachtgevers</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {clients.map((c) => (
-          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
-            <p class="text-[18px] font-medium text-fg mb-2">{c.name}</p>
-            <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          <div class="p-6 rounded-[14px] bg-white border border-[var(--color-border)] flex items-center justify-center min-h-[140px]">
+            <img src={c.logo} alt={`${c.name} — ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
           </div>
         ))}
       </div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-3" aria-hidden="true">
+        {clients.map((c) => (
+          <li class="text-center">
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          </li>
+        ))}
+      </ul>
     </Container>
   </section>
 

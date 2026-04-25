@@ -15,12 +15,23 @@ const schema = {
   inLanguage: 'nl',
   publisher: { '@id': `${baseUrl}/#organization` },
   about: 'Native iOS- en Android-app voor interne communicatie, planning, leerpaden en gamification — live bij Hof van Saksen, Roompot en Run2Forty2.',
+  review: {
+    '@type': 'Review',
+    reviewBody: "Medewerker.app heeft de afgelopen twee jaar een belangrijke rol gespeeld in de communicatie met alle collega's in onze organisatie. Zo kunnen we iedereen op hetzelfde moment informeren met het laatste nieuws en successen delen. We gebruiken Medewerker.app als centrale app waarin medewerkers alle informatie kunnen vinden die ze nodig hebben, wegwijs maakt en waar iedereen zelf ideeën kan inbrengen.",
+    author: {
+      '@type': 'Person',
+      name: 'Eric van der Heijden',
+      jobTitle: 'General Manager',
+      worksFor: { '@type': 'Organization', name: 'Hof van Saksen' },
+    },
+    inLanguage: 'nl',
+  },
 };
 
 const clients = [
-  { name: 'Hof van Saksen', sector: 'Vakantieparken' },
-  { name: 'Roompot', sector: 'Vakantieparken' },
-  { name: 'Run2Forty2', sector: 'Marathonreizen & training' },
+  { name: 'Hof van Saksen', sector: 'Vakantieparken', logo: '/clients/hof-van-saksen.png' },
+  { name: 'Roompot', sector: 'Vakantieparken', logo: '/clients/roompot.png' },
+  { name: 'Run2Forty2', sector: 'Marathonreizen & training', logo: '/clients/run2forty2.png' },
 ];
 ---
 
@@ -59,12 +70,18 @@ const clients = [
       <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Onze opdrachtgevers</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {clients.map((c) => (
-          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
-            <p class="text-[18px] font-medium text-fg mb-2">{c.name}</p>
-            <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          <div class="p-6 rounded-[14px] bg-white border border-[var(--color-border)] flex items-center justify-center min-h-[140px]">
+            <img src={c.logo} alt={`${c.name} — ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
           </div>
         ))}
       </div>
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-3" aria-hidden="true">
+        {clients.map((c) => (
+          <li class="text-center">
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          </li>
+        ))}
+      </ul>
     </Container>
   </section>
 
@@ -87,6 +104,17 @@ const clients = [
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Surveys, polls en ideeënbus voor tweerichtings-communicatie</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web-admin voor HR en management om content en doelgroepen te beheren</li>
       </ul>
+
+      <figure class="mt-14 p-8 md:p-10 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] relative">
+        <span aria-hidden="true" class="absolute top-4 left-6 font-mono text-[44px] leading-none text-accent/40">"</span>
+        <blockquote class="text-[18px] md:text-[20px] text-fg pl-6" style="line-height: 1.55;">
+          <p>Medewerker.app heeft de afgelopen twee jaar een belangrijke rol gespeeld in de communicatie met alle collega's in onze organisatie. Zo kunnen we iedereen op hetzelfde moment informeren met het laatste nieuws en successen delen. We gebruiken Medewerker.app als centrale app waarin medewerkers alle informatie kunnen vinden die ze nodig hebben, wegwijs maakt en waar iedereen zelf ideeën kan inbrengen.</p>
+        </blockquote>
+        <figcaption class="mt-6 pl-6 flex items-baseline gap-3 flex-wrap">
+          <span class="text-[15px] font-medium text-fg">Eric van der Heijden</span>
+          <span class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">General Manager · Hof van Saksen</span>
+        </figcaption>
+      </figure>
 
       <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech-stack</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
