@@ -79,7 +79,9 @@ function caseLabel(id: string) {
           <p class="text-body text-fg-dim">{t.address.line1}</p>
           <p class="text-body text-fg-dim">{t.address.line2}</p>
           <p class="text-body text-fg-dim">{t.address.line3}</p>
-          <p class="font-mono text-[12px] text-fg-faint pt-1">{t.address.kvk}</p>
+          <p class="font-mono text-[12px] text-fg-faint pt-1">
+            <a href="https://www.kvk.nl/zoeken/?source=all&amp;q=80387578" target="_blank" rel="noopener" class="hover:text-fg-dim transition-colors">{t.address.kvk}</a>
+          </p>
           <p class="text-body pt-2"><a href={`mailto:${t.email}`} class="text-fg-dim hover:text-fg transition-colors">{t.email}</a></p>
         </address>
       </div>
@@ -87,7 +89,7 @@ function caseLabel(id: string) {
 
     <div class="mt-14 pt-6 border-t border-[var(--color-accent-line)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <p class="font-mono text-[12px] text-fg-faint">
-        {t.copyright} · {t.address.kvk}
+        {t.copyright} · <a href="https://www.kvk.nl/zoeken/?source=all&amp;q=80387578" target="_blank" rel="noopener" class="hover:text-fg-dim transition-colors">{t.address.kvk}</a>
       </p>
       <ul class="flex items-center gap-5 font-mono text-[12px] text-fg-faint">
         <li><a href={r.privacy} class="hover:text-fg-dim transition-colors">{t.legal.privacy}</a></li>

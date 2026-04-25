@@ -57,6 +57,9 @@ const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, '
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${baseUrl}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={locale === 'nl' ? 'nl_NL' : 'en_US'} />

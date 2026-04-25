@@ -1,0 +1,115 @@
+---
+/**
+ * RelatedCases — small "verwante projecten" / "related work" strip,
+ * intended to slot in just before each case page's closing CTA.
+ *
+ * Picks two related cases per source case via a static mapping — keeps
+ * cross-linking deliberate (related by domain or platform) rather than
+ * "show all the other ones".
+ *
+ * Usage:
+ *   <RelatedCases currentId="bonaire-app" />
+ */
+
+import { getCurrentLocale, routeMap } from '../../i18n/routes';
+import { getContent } from '../../i18n/content';
+import Container from './Container.astro';
+import MonoEyebrow from './MonoEyebrow.astro';
+
+interface Props { currentId: string; }
+const { currentId } = Astro.props;
+
+const locale = getCurrentLocale(Astro.url.pathname);
+const content = getContent(locale);
+const r = routeMap[locale];
+const allCases = content.home.cases.items;
+
+// Curated relations — same domain (Caribbean tourism) or same platform (Medewerker family).
+const relations: Record<string, string[]> = {
+  'bonaire-app':       ['bonaire-cruisers', 'medewerker-app'],
+  'bonaire-cruisers':  ['bonaire-app', 'gast'],
+  'medewerker-app':    ['gast', 'run2forty2'],
+  'gast':              ['medewerker-app', 'run2forty2'],
+  'run2forty2':        ['medewerker-app', 'gast'],
+};
+
+const ids = relations[currentId] ?? [];
+const related = ids
+  .map((id) => allCases.find((c) => c.id === id))
+  .filter((c): c is typeof allCases[number] => Boolean(c));
+
+const headings = locale === 'nl'
+  ? { eyebrow: '// Verwante projecten', titleA: 'Ook gebouwd door', titleB: 'Blue Business.', viewAll: 'Alle cases' }
+  : { eyebrow: '// Related work', titleA: 'Also built by', titleB: 'Blue Business.', viewAll: 'See all cases' };
+
+const letterById: Record<string, string> = {
+  'bonaire-app': 'B',
+  'bonaire-cruisers': 'C',
+  'medewerker-app': 'M',
+  'gast': 'G',
+  'run2forty2': 'R',
+};
+---
+
+{related.length > 0 && (
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <MonoEyebrow text={headings.eyebrow} tone="accent-hi" class="mb-4 block" />
+          <h2 class="text-h3 md:text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.1;">
+            <span class="block text-fg">{headings.titleA}</span>
+            <span class="block text-accent">{headings.titleB}</span>
+          </h2>
+        </div>
+        <a href={r.cases} class="related-all inline-flex items-center gap-2 text-[14px] text-accent hover:text-accent-hi transition-colors">
+          {headings.viewAll}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+        {related.map((c) => (
+          <li>
+            <a href={`${r.cases}${c.id}/`} class="related-card block h-full p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div
+                class="h-[110px] rounded-[10px] mb-5 relative overflow-hidden"
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
+                aria-hidden="true"
+              >
+                {c.iconSrc ? (
+                  <div class="absolute inset-0 p-4 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[220px] max-h-[80px] bg-white rounded-[10px] shadow-[0_8px_20px_-6px_rgba(0,0,0,0.5)] flex items-center justify-center p-3">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
+                    </div>
+                  </div>
+                ) : (
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-[52px] h-[52px] rounded-[12px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                      <span class="font-mono text-[15px] font-medium" style={`color: ${c.accentColor};`}>{letterById[c.id] ?? '·'}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <span class="font-mono text-[11px] text-accent-hi mb-2 block">{c.label}</span>
+              <h3 class="text-[18px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug); line-height: 1.25;">
+                {c.title.replace(/^\[TBD\]\s*/, '')}
+              </h3>
+              <p class="text-[14px] text-fg-dim" style="line-height: 1.55;">{c.body}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+)}
+
+<style>
+  .related-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) {
+    .related-card:hover { transform: none; }
+  }
+</style>

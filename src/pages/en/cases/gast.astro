@@ -4,6 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 import ScreenshotShowcase from '../../../components/shared/ScreenshotShowcase.astro';
+import RelatedCases from '../../../components/shared/RelatedCases.astro';
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
@@ -42,6 +43,7 @@ const screenshots = [
   title="GAST — guest app for holiday parks | Blue Business"
   description="White-label guest app for holiday parks on the Medewerker.app platform. Live at Hof van Saksen and Roompot. Live since 2020."
   canonicalPath="/en/cases/gast/"
+  ogImage="/og/cases/gast.png"
   breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Work', path: '/en/cases/' }, { name: 'GAST', path: '/en/cases/gast/' }]}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
@@ -156,6 +158,8 @@ const screenshots = [
       <ScreenshotShowcase screenshots={screenshots} accentColor="#A78BFA" />
     </Container>
   </section>
+
+  <RelatedCases currentId="gast" />
 
   <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>

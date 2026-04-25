@@ -19,7 +19,7 @@
       "eyebrow": "// Dutch app studio — NL & Caribbean",
       "h1Line1": "Native apps people",
       "h1Line2": "open every day.",
-      "lead": "Blue Business designs and builds native iOS and Android apps for Dutch SMEs, Caribbean tourism and public-sector organizations. Not landing pages with scroll gimmicks — products users open daily.",
+      "lead": "Blue Business designs and builds native iOS and Android apps for Dutch SMEs, Caribbean tourism and public-sector organizations. Not landing pages with scroll gimmicks. Products people open daily.",
       "ctaPrimary": "Start a project",
       "ctaSecondary": "See our work",
       "stats": [
@@ -35,7 +35,7 @@
     },
     "trust": {
       "eyebrow": "// Live in production",
-      "text": "Native apps in daily use — at Dutch holiday parks, sports communities and visitors of Bonaire.",
+      "text": "Native apps in daily use, at Dutch holiday parks, sports communities and visitors of Bonaire.",
       "logos": [
         { "name": "Visit Bonaire", "src": "/clients/visit-bonaire-logo.png", "alt": "Visit Bonaire — travel app" },
         { "name": "Bonaire Cruisers", "src": "/clients/bonaire-cruisers-logo.png", "alt": "Bonaire Cruisers — golf-cart tour app" },
@@ -48,7 +48,7 @@
       "eyebrow": "// What we build",
       "h2Line1": "Four disciplines.",
       "h2Line2": "One team.",
-      "lead": "Not a 40-person agency with separate departments. One team combining design, native development and product strategy — so the developer building your app actually knows why it's built that way.",
+      "lead": "Not a 40-person agency with separate departments. One team combining design, native development and product strategy, so the developer building your app actually knows why it's built that way.",
       "readMore": "Read more",
       "items": [
         {
@@ -61,19 +61,19 @@
           "id": "web",
           "icon": "web-layer",
           "title": "Web & PWA",
-          "body": "Astro, Next.js, or Remix — chosen per problem, not per trend. Edge deploys, Core Web Vitals above 95 as a fixed gate, and a CMS only when your client actually wants to edit content themselves. No WordPress rebuild with more JavaScript."
+          "body": "Astro, Next.js, or Remix, chosen per problem, not per trend. Edge deploys, Core Web Vitals above 95 as a fixed gate, and a CMS only when your client actually wants to edit content themselves. No WordPress rebuild with more JavaScript."
         },
         {
           "id": "design",
           "icon": "design-compass",
           "title": "Product design & strategy",
-          "body": "We design before we build. A 1-2 week discovery sprint where we validate your key user flows — sometimes with a Figma prototype, sometimes with a single HTML page we put in people's hands the same morning. So we know together what we're building before a line of code is written."
+          "body": "We design before we build. A 1-2 week discovery sprint where we validate your key user flows: sometimes with a Figma prototype, sometimes with a single HTML page we put in people's hands the same morning. So we know together what we're building before a line of code is written."
         },
         {
           "id": "maintain",
           "icon": "maintain-loop",
           "title": "Maintenance & growth",
-          "body": "Shipped apps stall when nobody maintains them. We run monthly release cycles, monitor crash rates via Sentry, and send you a quarterly roadmap proposal based on usage data — not on what we'd enjoy building next."
+          "body": "Shipped apps stall when nobody maintains them. We run monthly release cycles, monitor crash rates via Sentry, and send you a quarterly roadmap proposal based on usage data. Not on what we'd enjoy building next."
         }
       ]
     },
@@ -100,7 +100,7 @@
           "featured": false,
           "label": "// tourism — Caribbean",
           "title": "Bonaire Cruisers — explore Bonaire by golf cart.",
-          "body": "Self-guided audio tours that turn a rental golf cart into an island adventure. Offline routes, points of interest and local stories — works without a data connection.",
+          "body": "Self-guided audio tours that turn a rental golf cart into an island adventure. Offline routes, points of interest and local stories. Works without a data connection.",
           "datapoint": "iOS · Android · NL + EN audio",
           "accentColor": "#22D3EE",
           "iconSrc": "/clients/bonaire-cruisers-logo.png",
@@ -121,7 +121,7 @@
           "featured": false,
           "label": "// hospitality",
           "title": "GAST — guest app on the same platform.",
-          "body": "White-label guest app for holiday parks and hospitality businesses, built on the Medewerker.app platform. From check-in to room info to local tips — works offline.",
+          "body": "White-label guest app for holiday parks and hospitality businesses, built on the Medewerker.app platform. From check-in to room info to local tips. Works offline.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA",
           "iconSrc": "/clients/gast-app.png"
@@ -167,7 +167,7 @@
           "number": "04",
           "title": "Maintain",
           "duration": "ongoing",
-          "body": "Monthly releases, OS upgrades and crash fixes. Each quarter we propose a roadmap based on real usage data — not on what we'd still like to build."
+          "body": "Monthly releases, OS upgrades and crash fixes. Each quarter we propose a roadmap based on real usage data. Not on what we'd still like to build."
         }
       ]
     },
@@ -178,7 +178,7 @@
       "items": [
         {
           "q": "What does an engagement at Blue Business look like?",
-          "a": "A 1-2 week discovery sprint to lock down the real use case and scope, then a build phase with weekly TestFlight builds so you see progress every Monday, and finally App Store and Play Store submission. No open time-and-materials, no 40-page Gantt charts — just one team working on your app from start to finish."
+          "a": "A 1-2 week discovery sprint to lock down the real use case and scope, then a build phase with weekly TestFlight builds so you see progress every Monday, and finally App Store and Play Store submission. No open time-and-materials, no 40-page Gantt charts. One team working on your app from start to finish."
         },
         {
           "q": "How long from idea to App Store?",
@@ -186,7 +186,7 @@
         },
         {
           "q": "Native or cross-platform (React Native, Flutter)?",
-          "a": "Native when performance, platform features or long-term maintenance matter. Cross-platform when time-to-market dominates and the app stays under 100K users. We build both and advise honestly which fits — even if that means recommending a smaller project."
+          "a": "Native when performance, platform features or long-term maintenance matter. Cross-platform when time-to-market dominates and the app stays under 100K users. We build both and advise honestly which fits, even if that means recommending a smaller project."
         },
         {
           "q": "Do you work with existing apps?",
@@ -194,11 +194,11 @@
         },
         {
           "q": "Do you work for Caribbean clients?",
-          "a": "Yes. A significant part of our portfolio is in the Caribbean — Visit Bonaire and Bonaire Cruisers are the most visible examples. We're Netherlands-based but have extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba, including the cultural and operational context that requires."
+          "a": "Yes. A significant part of our portfolio is in the Caribbean. Visit Bonaire and Bonaire Cruisers are the most visible examples. We're Netherlands-based but have extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba, including the cultural and operational context that requires."
         },
         {
           "q": "Do you take on small projects too?",
-          "a": "Yes — everything is welcome. A first MVP, a prototype, a continuation of an existing app, or a platform build for thousands of users — tell us what you have in mind and we'll work out together how to approach it. Honest advice on whether we're the right fit, even when the answer turns out to be different from what you initially asked."
+          "a": "Yes, everything is welcome. A first MVP, a prototype, a continuation of an existing app, or a platform build for thousands of users: tell us what you have in mind and we'll work out together how to approach it. Honest advice on whether we're the right fit, even when the answer turns out to be different from what you initially asked."
         }
       ]
     },
@@ -206,7 +206,7 @@
       "eyebrow": "// no commitments, no NDA, no sales funnel",
       "h2Line1": "An app idea?",
       "h2Line2": "Let's talk.",
-      "lead": "30 minutes with the developer who'd build it — not an account executive. You tell us what you have, we tell you honestly whether we're the right fit.",
+      "lead": "30 minutes with the developer who'd build it. No account executive, no sales funnel. You tell us what you have, we tell you honestly whether we're the right fit.",
       "ctaPrimary": "Schedule a conversation",
       "mailTo": "or email direct: info@bluebusiness.nl"
     }
@@ -236,12 +236,12 @@
   "contact": {
     "meta": {
       "title": "Contact — Blue Business",
-      "description": "Get in touch with Blue Business. 30 minutes with the developer who would build your app — no account executive, no sales funnel."
+      "description": "Get in touch with Blue Business. 30 minutes with the developer who would build your app. No account executive, no sales funnel."
     },
     "eyebrow": "// Let's talk",
     "h1Line1": "Tell us about",
     "h1Line2": "your app idea.",
-    "lead": "30 minutes with the developer who would build it — not an account executive. You tell us what you have, we tell you honestly whether it's a fit and how we'd approach it.",
+    "lead": "30 minutes with the developer who would build it. No account executive, no sales funnel. You tell us what you have, we tell you honestly whether it's a fit and how we'd approach it.",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your name",
@@ -259,18 +259,18 @@
       ],
       "budgetLabel": "Project scale",
       "budgetOptions": [
-        "Small — first MVP or prototype",
-        "Medium — full 1.0",
-        "Large — platform or suite",
-        "Ongoing — maintenance or take-over",
+        "Small (first MVP or prototype)",
+        "Medium (full 1.0)",
+        "Large (platform or suite)",
+        "Ongoing (maintenance or take-over)",
         "Not sure yet"
       ],
       "messageLabel": "Describe your project",
-      "messagePlaceholder": "What do you want to build? For whom? What features are essential? The more context, the better — we don't read slides, we read context.",
+      "messagePlaceholder": "What do you want to build? For whom? What features are essential? The more context, the better. We don't read slides, we read context.",
       "submit": "Send message",
       "submittingText": "Sending…",
       "successTitle": "Thanks for your message.",
-      "successBody": "We usually respond within 1 to 2 business days. No auto-reply, no sales funnel — just a human writing back.",
+      "successBody": "We usually respond within 1 to 2 business days. No auto-reply, no sales funnel. A human writing back.",
       "errorTitle": "Something went wrong.",
       "errorBody": "Please try again or email us directly at info@bluebusiness.nl."
     },
@@ -290,7 +290,7 @@
   "services": {
     "meta": {
       "title": "Services — native iOS, Android & web | Blue Business",
-      "description": "Native iOS and Android apps, web applications and SaaS. Plus product design, strategy and ongoing maintenance — by one small, senior team."
+      "description": "Native iOS and Android apps, web applications and SaaS. Plus product design, strategy and ongoing maintenance, by one small senior team."
     },
     "eyebrow": "// Services",
     "h1Line1": "Four disciplines.",
@@ -300,7 +300,7 @@
     "ctaEyebrow": "// Ready to start?",
     "ctaTitle1": "Which of these",
     "ctaTitle2": "fits your project?",
-    "ctaLead": "Not sure? Describe your case — we advise honestly which service fits best, even if that means something different from what you initially asked for.",
+    "ctaLead": "Not sure? Describe your case. We advise honestly which service fits best, even if that means something different from what you initially asked for.",
     "detail": {
       "native": {
         "forWhom": {
@@ -317,7 +317,7 @@
             "Swift for iOS (iPhone + iPad + Apple Watch where it makes sense)",
             "Kotlin for Android (phone + tablet)",
             "App Store and Play Store submissions including screenshots and store copy",
-            "CI/CD pipelines (Fastlane + GitHub Actions) — one-click to TestFlight",
+            "CI/CD pipelines (Fastlane + GitHub Actions) for one-click TestFlight builds",
             "Analytics, crash reporting (Sentry), feature flags"
           ]
         },
@@ -343,7 +343,7 @@
         "includes": {
           "title": "What we deliver",
           "items": [
-            "Frontend in Astro, Next.js or Remix — chosen per problem",
+            "Frontend in Astro, Next.js or Remix, chosen per problem",
             "Edge deploys on Vercel or Cloudflare",
             "Core Web Vitals ≥ 95 as a fixed quality gate",
             "Authentication, billing, admin dashboard",
@@ -411,7 +411,7 @@
           "items": [
             "A fixed developer as your technical point of contact",
             "Monthly 30-minute sync on what's happening",
-            "Transparent time-tracking — you see exactly where the hours went"
+            "Transparent time-tracking so you see exactly where the hours went"
           ]
         }
       }
@@ -434,7 +434,7 @@
       },
       {
         "title": "Why native",
-        "body": "We know React Native and Flutter, and use them when they fit. But for the kind of products people open daily — tourism apps, employee apps, customer portals — we almost always recommend native. Better scroll, full access to platform APIs, and apps that still work three OS upgrades from now without a rewrite."
+        "body": "We know React Native and Flutter, and use them when they fit. But for the kind of products people open daily (tourism apps, employee apps, customer portals) we almost always recommend native. Better scroll, full access to platform APIs, and apps that still work three OS upgrades from now without a rewrite."
       },
       {
         "title": "Why the Netherlands and the Caribbean",
@@ -442,7 +442,7 @@
       },
       {
         "title": "How we work",
-        "body": "Fixed prices after a 1-2 week discovery sprint. Weekly TestFlight builds so you see progress every Monday. No open time-and-materials, no 40-page Gantt charts, no account executives. You get exactly what was agreed — and an honest conversation if something changes along the way."
+        "body": "Fixed prices after a 1-2 week discovery sprint. Weekly TestFlight builds so you see progress every Monday. No open time-and-materials, no 40-page Gantt charts, no account executives. You get exactly what was agreed, and an honest conversation if something changes along the way."
       }
     ],
     "facts": {
@@ -459,7 +459,7 @@
     "ctaEyebrow": "// Ready to work together?",
     "ctaTitle1": "Curious if we're",
     "ctaTitle2": "a good fit?",
-    "ctaLead": "An intro call costs you 30 minutes. After that you know whether it clicks or not — no sales pressure, no commitments."
+    "ctaLead": "An intro call costs you 30 minutes. After that you know whether it clicks or not. No sales pressure, no commitments."
   },
   "notFound": {
     "eyebrow": "// 404",

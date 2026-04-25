@@ -4,6 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 import ScreenshotShowcase from '../../../components/shared/ScreenshotShowcase.astro';
+import RelatedCases from '../../../components/shared/RelatedCases.astro';
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
@@ -51,6 +52,7 @@ const screenshots = [
   title="Run2Forty2 — sport-app voor marathonreizen | Blue Business"
   description="Native sport-app voor marathon-trainees: trainingsschema's, news-updates, kudos en directe chat met de coach. Gebouwd voor IDC Tech B.V."
   canonicalPath="/nl/cases/run2forty2/"
+  ogImage="/og/cases/run2forty2.png"
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
@@ -156,6 +158,8 @@ const screenshots = [
       <ScreenshotShowcase screenshots={screenshots} accentColor="#84CC16" />
     </Container>
   </section>
+
+  <RelatedCases currentId="run2forty2" />
 
   <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>

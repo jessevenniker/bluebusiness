@@ -19,7 +19,7 @@
       "eyebrow": "// Nederlandse app studio — NL & Caribbean",
       "h1Line1": "Native apps die mensen",
       "h1Line2": "dagelijks openen.",
-      "lead": "Blue Business ontwerpt en bouwt native iOS- en Android-apps voor MKB Nederland, Caribbean tourism en overheid. Geen landing pages met scroll-gimmicks — producten die users dagelijks openen.",
+      "lead": "Blue Business ontwerpt en bouwt native iOS- en Android-apps voor MKB Nederland, Caribbean tourism en overheid. Geen landing pages met scroll-gimmicks. Producten die mensen dagelijks openen.",
       "ctaPrimary": "Start een project",
       "ctaSecondary": "Bekijk onze cases",
       "stats": [
@@ -35,7 +35,7 @@
     },
     "trust": {
       "eyebrow": "// Live in productie",
-      "text": "Native apps die elke dag in gebruik zijn — bij Nederlandse vakantieparken, sportcommunities en bezoekers van Bonaire.",
+      "text": "Native apps die elke dag in gebruik zijn, bij Nederlandse vakantieparken, sportcommunities en bezoekers van Bonaire.",
       "logos": [
         { "name": "Visit Bonaire", "src": "/clients/visit-bonaire-logo.png", "alt": "Visit Bonaire — reisapp" },
         { "name": "Bonaire Cruisers", "src": "/clients/bonaire-cruisers-logo.png", "alt": "Bonaire Cruisers — golf-cart tour app" },
@@ -48,7 +48,7 @@
       "eyebrow": "// Wat we bouwen",
       "h2Line1": "Vier disciplines.",
       "h2Line2": "Eén team.",
-      "lead": "Geen 40-koppig bureau met losse afdelingen. Eén team dat ontwerp, native development en product-strategie combineert — zodat de developer die je app bouwt ook weet waarom 'ie 'm zo bouwt.",
+      "lead": "Geen 40-koppig bureau met losse afdelingen. Eén team dat ontwerp, native development en product-strategie combineert, zodat de developer die je app bouwt ook weet waarom 'ie 'm zo bouwt.",
       "readMore": "Lees meer",
       "items": [
         {
@@ -61,24 +61,24 @@
           "id": "web",
           "icon": "web-layer",
           "title": "Web & PWA",
-          "body": "Astro, Next.js of Remix — afhankelijk van het probleem, niet van wat in 2026 hip is. Edge deploys, Core Web Vitals boven 95 als vaste gate, en een CMS alleen als je klant echt zelf content wil bewerken. Geen WordPress-herbouw met meer JavaScript."
+          "body": "Astro, Next.js of Remix, afhankelijk van het probleem, niet van wat in 2026 hip is. Edge deploys, Core Web Vitals boven 95 als vaste gate, en een CMS alleen als je klant echt zelf content wil bewerken. Geen WordPress-herbouw met meer JavaScript."
         },
         {
           "id": "design",
           "icon": "design-compass",
           "title": "Product design & strategie",
-          "body": "We ontwerpen voordat we bouwen. Discovery-sprint van 1-2 weken waarin we je belangrijkste user flows valideren — soms met een Figma-prototype, soms met één pagina HTML die we 's ochtends in gebruik nemen. Zo weten we samen wat we bouwen voordat er regel code geschreven is."
+          "body": "We ontwerpen voordat we bouwen. Discovery-sprint van 1-2 weken waarin we je belangrijkste user flows valideren: soms met een Figma-prototype, soms met één pagina HTML die we 's ochtends in gebruik nemen. Zo weten we samen wat we bouwen voordat er regel code geschreven is."
         },
         {
           "id": "maintain",
           "icon": "maintain-loop",
           "title": "Onderhoud & groei",
-          "body": "Ge-ship'te apps vallen stil als niemand ze onderhoudt. Wij draaien maandelijkse release cycles, monitoren crash-rates via Sentry, en sturen je elk kwartaal een roadmap-voorstel op basis van gebruiksdata — niet op basis van wat we graag nog zouden willen bouwen."
+          "body": "Ge-ship'te apps vallen stil als niemand ze onderhoudt. Wij draaien maandelijkse release cycles, monitoren crash-rates via Sentry, en sturen je elk kwartaal een roadmap-voorstel op basis van gebruiksdata. Niet op basis van wat we graag nog zouden willen bouwen."
         }
       ]
     },
     "cases": {
-      "eyebrow": "// Live in production",
+      "eyebrow": "// Live in productie",
       "h2Line1": "Apps die mensen",
       "h2Line2": "dagelijks openen.",
       "lead": "Elk van deze producten wordt nu, terwijl je dit leest, door iemand gebruikt. Dat is de enige test die telt.",
@@ -100,7 +100,7 @@
           "featured": false,
           "label": "// tourism — Caribbean",
           "title": "Bonaire Cruisers — explore Bonaire by golf cart.",
-          "body": "Self-guided audio-tours die een golfkar-huurauto veranderen in een eilandavontuur. Offline routes, points-of-interest en lokale stories — werkt zonder dataverbinding.",
+          "body": "Self-guided audio-tours die een golfkar-huurauto veranderen in een eilandavontuur. Offline routes, points-of-interest en lokale stories. Werkt zonder dataverbinding.",
           "datapoint": "iOS · Android · NL + EN audio",
           "accentColor": "#22D3EE",
           "iconSrc": "/clients/bonaire-cruisers-logo.png",
@@ -121,7 +121,7 @@
           "featured": false,
           "label": "// hospitality",
           "title": "GAST — gast-app op hetzelfde platform.",
-          "body": "White-label gast-app voor vakantieparken en hospitality-bedrijven, op het Medewerker.app-platform. Van check-in tot kamer-info tot lokale tips — werkt offline.",
+          "body": "White-label gast-app voor vakantieparken en hospitality-bedrijven, op het Medewerker.app-platform. Van check-in tot kamer-info tot lokale tips. Werkt offline.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA",
           "iconSrc": "/clients/gast-app.png"
@@ -178,7 +178,7 @@
       "items": [
         {
           "q": "Hoe ziet een traject bij Blue Business eruit?",
-          "a": "Discovery-sprint van 1-2 weken (we leggen de échte use case en scope vast), daarna een build-fase met wekelijkse TestFlight builds zodat je elke maandag de voortgang ziet, en tot slot submission naar App Store en Play Store. Geen open time-and-materials, geen 40-pagina Gantt-charts — gewoon één team dat van begin tot eind aan jouw app werkt."
+          "a": "Discovery-sprint van 1-2 weken (we leggen de échte use case en scope vast), daarna een build-fase met wekelijkse TestFlight builds zodat je elke maandag de voortgang ziet, en tot slot submission naar App Store en Play Store. Geen open time-and-materials, geen 40-pagina Gantt-charts. Eén team dat van begin tot eind aan jouw app werkt."
         },
         {
           "q": "Hoelang duurt het van idee tot App Store?",
@@ -186,7 +186,7 @@
         },
         {
           "q": "Native of cross-platform (React Native, Flutter)?",
-          "a": "Native als performance, platform-features of lange-termijn-onderhoud belangrijk zijn. Cross-platform als time-to-market domineert en de app onder de 100K users blijft. We bouwen beide en adviseren eerlijk welke past — ook als dat betekent dat we een kleiner project aanraden."
+          "a": "Native als performance, platform-features of lange-termijn-onderhoud belangrijk zijn. Cross-platform als time-to-market domineert en de app onder de 100K gebruikers blijft. We bouwen beide en adviseren eerlijk welke past, ook als dat betekent dat we een kleiner project aanraden."
         },
         {
           "q": "Werken jullie ook met bestaande apps?",
@@ -194,11 +194,11 @@
         },
         {
           "q": "Werken jullie ook voor klanten in de Caribbean?",
-          "a": "Ja. Een deel van ons portfolio ligt in de Caribbean — Visit Bonaire en Bonaire Cruisers zijn daar de meest zichtbare voorbeelden. We zijn Nederland-based maar hebben ruime ervaring met toerisme- en overheidsprojecten op Bonaire, Curaçao en Aruba, inclusief de culturele en operationele context die daarbij hoort."
+          "a": "Ja. Een deel van ons portfolio ligt in de Caribbean. Visit Bonaire en Bonaire Cruisers zijn daar de meest zichtbare voorbeelden. We zijn Nederland-based maar hebben ruime ervaring met toerisme- en overheidsprojecten op Bonaire, Curaçao en Aruba, inclusief de culturele en operationele context die daarbij hoort."
         },
         {
           "q": "Nemen jullie ook kleine projecten aan?",
-          "a": "Ja, alles is welkom. Een eerste MVP, een prototype, een doorontwikkeling van een bestaande app, of een platform-build voor duizenden gebruikers — vertel wat je voor ogen hebt en we kijken samen hoe we het kunnen aanpakken. Eerlijk advies of het bij ons past, ook als het iets anders blijkt te zijn dan je in eerste instantie vroeg."
+          "a": "Ja, alles is welkom. Een eerste MVP, een prototype, een doorontwikkeling van een bestaande app, of een platform-build voor duizenden gebruikers: vertel wat je voor ogen hebt en we kijken samen hoe we het kunnen aanpakken. Eerlijk advies of het bij ons past, ook als het iets anders blijkt te zijn dan je in eerste instantie vroeg."
         }
       ]
     },
@@ -206,7 +206,7 @@
       "eyebrow": "// geen verplichtingen, geen NDA, geen sales-funnel",
       "h2Line1": "Een app-idee?",
       "h2Line2": "Plan een gesprek.",
-      "lead": "30 minuten met de developer die het zou bouwen — niet met een account executive. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past.",
+      "lead": "30 minuten met de developer die het zou bouwen. Geen account executive, geen sales-funnel. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past.",
       "ctaPrimary": "Plan een gesprek",
       "mailTo": "of mail direct: info@bluebusiness.nl"
     }
@@ -236,12 +236,12 @@
   "contact": {
     "meta": {
       "title": "Contact — Blue Business",
-      "description": "30 minuten met de developer die jouw app zou bouwen — geen account executive, geen sales-funnel. Plan een gesprek met Blue Business."
+      "description": "30 minuten met de developer die jouw app zou bouwen. Geen account executive, geen sales-funnel. Plan een gesprek met Blue Business."
     },
     "eyebrow": "// Laten we praten",
     "h1Line1": "Vertel ons over",
     "h1Line2": "je app-idee.",
-    "lead": "30 minuten met de developer die het zou bouwen — niet met een account executive. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past en hoe we het zouden aanpakken.",
+    "lead": "30 minuten met de developer die het zou bouwen. Geen account executive, geen sales-funnel. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past en hoe we het zouden aanpakken.",
     "form": {
       "nameLabel": "Naam",
       "namePlaceholder": "Jouw naam",
@@ -259,18 +259,18 @@
       ],
       "budgetLabel": "Schaal van het project",
       "budgetOptions": [
-        "Klein — eerste MVP of prototype",
-        "Middel — volledige 1.0",
-        "Groot — platform of suite",
-        "Doorlopend — onderhoud of overname",
+        "Klein (eerste MVP of prototype)",
+        "Middel (volledige 1.0)",
+        "Groot (platform of suite)",
+        "Doorlopend (onderhoud of overname)",
         "Weet ik nog niet"
       ],
       "messageLabel": "Beschrijf je project",
-      "messagePlaceholder": "Wat wil je bouwen? Voor wie? Welke functies zijn essentieel? Hoe eerder hoe beter — we lezen geen slides, we lezen context.",
+      "messagePlaceholder": "Wat wil je bouwen? Voor wie? Welke functies zijn essentieel? Hoe eerder hoe beter. We lezen geen slides, we lezen context.",
       "submit": "Verstuur bericht",
       "submittingText": "Bezig met versturen…",
       "successTitle": "Bedankt voor je bericht.",
-      "successBody": "We reageren meestal binnen 1 à 2 werkdagen. Geen automatische reply, geen sales-funnel — gewoon een mens die terugschrijft.",
+      "successBody": "We reageren meestal binnen 1 à 2 werkdagen. Geen automatische reply, geen sales-funnel. Een mens die terugschrijft.",
       "errorTitle": "Er ging iets mis.",
       "errorBody": "Probeer het opnieuw of mail direct naar info@bluebusiness.nl."
     },
@@ -290,7 +290,7 @@
   "services": {
     "meta": {
       "title": "Diensten — native iOS, Android & web | Blue Business",
-      "description": "Native iOS- en Android-apps, webapplicaties en SaaS. Plus product-design, strategie en doorlopend onderhoud — door één klein, senior team."
+      "description": "Native iOS- en Android-apps, webapplicaties en SaaS. Plus product-design, strategie en doorlopend onderhoud, door één klein senior team."
     },
     "eyebrow": "// Diensten",
     "h1Line1": "Vier disciplines.",
@@ -300,7 +300,7 @@
     "ctaEyebrow": "// Klaar om te beginnen?",
     "ctaTitle1": "Welk van deze",
     "ctaTitle2": "past bij je project?",
-    "ctaLead": "Twijfel je? Leg je case voor — we adviseren eerlijk welke dienst het beste past, ook als dat iets anders is dan wat je in eerste instantie vraagt.",
+    "ctaLead": "Twijfel je? Leg je case voor. We adviseren eerlijk welke dienst het beste past, ook als dat iets anders is dan wat je in eerste instantie vraagt.",
     "detail": {
       "native": {
         "forWhom": {
@@ -466,7 +466,7 @@
       "title": "Cases — Blue Business",
       "description": "Apps van Blue Business: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2. Live bij Hof van Saksen, Roompot en bezoekers van Bonaire."
     },
-    "eyebrow": "// Live in production",
+    "eyebrow": "// Live in productie",
     "h1Line1": "Apps die mensen",
     "h1Line2": "dagelijks openen.",
     "lead": "Elk van deze producten wordt nu, terwijl je dit leest, door iemand gebruikt. Dat is de enige test die telt."

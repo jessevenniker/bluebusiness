@@ -4,6 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 import ScreenshotShowcase from '../../../components/shared/ScreenshotShowcase.astro';
+import RelatedCases from '../../../components/shared/RelatedCases.astro';
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
@@ -72,6 +73,7 @@ const screenshots = [
   title="Visit Bonaire — travel app for Bonaire | Blue Business"
   description="Visit Bonaire — all-in-one travel app for visitors of Bonaire. Offline maps (Mapbox) + realtime content (Firebase). 5.0★ on the Dutch App Store."
   canonicalPath="/en/cases/bonaire-app/"
+  ogImage="/og/cases/bonaire-app.png"
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
@@ -194,6 +196,8 @@ const screenshots = [
       </div>
     </Container>
   </section>
+
+  <RelatedCases currentId="bonaire-app" />
 
   <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>

@@ -4,6 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 import ScreenshotShowcase from '../../../components/shared/ScreenshotShowcase.astro';
+import RelatedCases from '../../../components/shared/RelatedCases.astro';
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
@@ -33,6 +34,7 @@ const screenshots = [
   title="Bonaire Cruisers — golf-cart tour app | Blue Business"
   description="Self-guided audio-tours voor Bonaire op iOS en Android. Offline navigatie, points-of-interest en lokale verhalen — gebouwd door Blue Business."
   canonicalPath="/nl/cases/bonaire-cruisers/"
+  ogImage="/og/cases/bonaire-cruisers.png"
   breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Cases', path: '/nl/cases/' }, { name: 'Bonaire Cruisers', path: '/nl/cases/bonaire-cruisers/' }]}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
@@ -126,6 +128,8 @@ const screenshots = [
       <ScreenshotShowcase screenshots={screenshots} accentColor="#22D3EE" />
     </Container>
   </section>
+
+  <RelatedCases currentId="bonaire-cruisers" />
 
   <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>

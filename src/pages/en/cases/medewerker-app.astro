@@ -4,6 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 import ScreenshotShowcase from '../../../components/shared/ScreenshotShowcase.astro';
+import RelatedCases from '../../../components/shared/RelatedCases.astro';
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
@@ -49,6 +50,7 @@ const screenshots = [
   title="Medewerker.app — internal comms for teams | Blue Business"
   description="Native iOS and Android app for internal comms, learning paths and gamification. Live at Hof van Saksen, Roompot and Run2Forty2."
   canonicalPath="/en/cases/medewerker-app/"
+  ogImage="/og/cases/medewerker-app.png"
   breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Work', path: '/en/cases/' }, { name: 'Medewerker.app', path: '/en/cases/medewerker-app/' }]}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
@@ -195,6 +197,8 @@ const screenshots = [
       </div>
     </Container>
   </section>
+
+  <RelatedCases currentId="medewerker-app" />
 
   <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
