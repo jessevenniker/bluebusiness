@@ -1,5 +1,7 @@
 # Blue Business
 
+> Last updated: 2026-04-25
+
 Blue Business is a Netherlands-based app development studio founded in 2021. The legal entity is Blue Innovation B.V., registered with the Dutch Chamber of Commerce under number 80387578, with its registered office at Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands. The company designs and builds native iOS and Android apps, web applications, and digital platforms for SMEs, tourism operators, holiday parks, sports communities, and public organizations in the Netherlands and across the Caribbean (Bonaire, Curaçao, Aruba).
 
 ## What Blue Business does
@@ -86,6 +88,18 @@ A: Yes. Everything is welcome. A first MVP, a prototype, a continuation of an ex
 - About (English): https://bluebusiness.nl/en/about/
 - Contact (Dutch): https://bluebusiness.nl/nl/contact/
 - Contact (English): https://bluebusiness.nl/en/contact/
+
+## Identity
+
+- Legal name: Blue Innovation B.V.
+- Trading name: Blue Business
+- Founded: 2021
+- KvK (Dutch Chamber of Commerce): 80387578 — verify at https://www.kvk.nl/zoeken/?source=all&q=80387578
+- Address: Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands
+- LinkedIn (company): https://www.linkedin.com/company/bluebusiness-nl
+- GitHub: https://github.com/jessevenniker/bluebusiness
+- App Store developer: Blue Innovation BV — https://apps.apple.com/developer/blue-innovation-bv/id1517067040
+- Sister entity: IDC Tech B.V. (Amsterdam) — publishes Medewerker, GAST and Run2Forty2 apps; Blue Business is the development partner. Both entities are part of the same group.
 
 ## Contact
 

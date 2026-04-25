@@ -12,8 +12,8 @@
   },
   "home": {
     "meta": {
-      "title": "Blue Business — Native app development uit Nederland, voor NL & Caribbean",
-      "description": "Native iOS en Android apps voor MKB, toerisme en Caribbean overheid. Nederlandse app studio, sinds 2021. Cases: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
+      "title": "Blue Business — native iOS & Android apps uit Nederland",
+      "description": "Native iOS en Android apps voor MKB, toerisme en de Caribbean. Cases: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
     },
     "hero": {
       "eyebrow": "// Nederlandse app studio — NL & Caribbean",
@@ -236,7 +236,7 @@
   "contact": {
     "meta": {
       "title": "Contact — Blue Business",
-      "description": "Neem contact op met Blue Business. 30 minuten met de developer die jouw app zou bouwen — geen account executive, geen sales-funnel."
+      "description": "30 minuten met de developer die jouw app zou bouwen — geen account executive, geen sales-funnel. Plan een gesprek met Blue Business."
     },
     "eyebrow": "// Laten we praten",
     "h1Line1": "Vertel ons over",
@@ -289,8 +289,8 @@
   },
   "services": {
     "meta": {
-      "title": "Diensten — Native iOS, Android, Web & onderhoud | Blue Business",
-      "description": "Blue Business ontwerpt en bouwt native iOS- en Android-apps, webapplicaties en SaaS-platformen. Plus product-design, strategie en doorlopend onderhoud."
+      "title": "Diensten — native iOS, Android & web | Blue Business",
+      "description": "Native iOS- en Android-apps, webapplicaties en SaaS. Plus product-design, strategie en doorlopend onderhoud — door één klein, senior team."
     },
     "eyebrow": "// Diensten",
     "h1Line1": "Vier disciplines.",
@@ -420,7 +420,7 @@
   "about": {
     "meta": {
       "title": "Over ons — Blue Business, Nederlandse app studio",
-      "description": "Blue Business (Blue Innovation B.V.) is een Nederlandse app-development studio, opgericht in 2021 en gevestigd in Zwaanshoek. We bouwen native apps voor MKB en Caribbean."
+      "description": "Blue Business is een Nederlandse app-studio, opgericht in 2021, gevestigd in Zwaanshoek. Native iOS en Android voor MKB en Caribbean."
     },
     "eyebrow": "// Over Blue Business",
     "h1Line1": "Een klein team",
@@ -464,7 +464,7 @@
   "casesPage": {
     "meta": {
       "title": "Cases — Blue Business",
-      "description": "Apps die Blue Business heeft gebouwd: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST en Run2Forty2. Live in production, dagelijks in gebruik bij Hof van Saksen, Roompot, Run2Forty2-runners en bezoekers van Bonaire."
+      "description": "Apps van Blue Business: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2. Live bij Hof van Saksen, Roompot en bezoekers van Bonaire."
     },
     "eyebrow": "// Live in production",
     "h1Line1": "Apps die mensen",

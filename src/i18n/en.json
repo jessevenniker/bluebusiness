@@ -12,8 +12,8 @@
   },
   "home": {
     "meta": {
-      "title": "Blue Business — Native app development from the Netherlands, for NL & the Caribbean",
-      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
+      "title": "Blue Business — native iOS & Android apps from NL",
+      "description": "Native iOS and Android apps for SMEs, tourism and the Caribbean. Work: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
     },
     "hero": {
       "eyebrow": "// Dutch app studio — NL & Caribbean",
@@ -289,8 +289,8 @@
   },
   "services": {
     "meta": {
-      "title": "Services — Native iOS, Android, Web & maintenance | Blue Business",
-      "description": "Blue Business designs and builds native iOS and Android apps, web applications and SaaS platforms. Plus product design, strategy and ongoing maintenance."
+      "title": "Services — native iOS, Android & web | Blue Business",
+      "description": "Native iOS and Android apps, web applications and SaaS. Plus product design, strategy and ongoing maintenance — by one small, senior team."
     },
     "eyebrow": "// Services",
     "h1Line1": "Four disciplines.",
@@ -420,7 +420,7 @@
   "about": {
     "meta": {
       "title": "About — Blue Business, Dutch app studio",
-      "description": "Blue Business (Blue Innovation B.V.) is a Dutch app development studio founded in 2021 and based in Zwaanshoek. We build native apps for SMEs and Caribbean clients."
+      "description": "Blue Business is a Dutch app studio, founded in 2021, based in Zwaanshoek. Native iOS and Android for SMEs and the Caribbean."
     },
     "eyebrow": "// About Blue Business",
     "h1Line1": "A small team",
@@ -472,7 +472,7 @@
   "casesPage": {
     "meta": {
       "title": "Work — Blue Business",
-      "description": "Apps Blue Business has built: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST and Run2Forty2. Live in production, used daily by Hof van Saksen, Roompot, Run2Forty2 runners and visitors to Bonaire."
+      "description": "Apps Blue Business has built: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2. Live at Hof van Saksen, Roompot and visitors of Bonaire."
     },
     "eyebrow": "// Live in production",
     "h1Line1": "Apps people",

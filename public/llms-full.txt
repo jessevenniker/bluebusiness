@@ -1,0 +1,204 @@
+# Blue Business — Full content bundle
+
+> Last updated: 2026-04-25
+> This file mirrors the public website content in machine-readable Markdown for agentic LLM browsing.
+> Canonical website: https://bluebusiness.nl
+
+---
+
+## About Blue Business
+
+Blue Business is a Netherlands-based app development studio founded in 2021. The legal entity is Blue Innovation B.V. (KvK 80387578), with its registered office at Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands.
+
+Blue Business designs and builds native iOS and Android apps, web applications and digital platforms for SMEs, tourism operators, holiday parks, sports communities and public organizations in the Netherlands and across the Caribbean (Bonaire, Curaçao, Aruba). The studio works as one small senior team — the developer who builds the app is the developer the client speaks to from day one.
+
+### Identity
+
+- Legal name: Blue Innovation B.V.
+- Trading name: Blue Business
+- Founded: 2021
+- KvK: 80387578 — https://www.kvk.nl/zoeken/?source=all&q=80387578
+- Address: Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands
+- Email: info@bluebusiness.nl
+- LinkedIn: https://www.linkedin.com/company/bluebusiness-nl
+- App Store developer page: https://apps.apple.com/developer/blue-innovation-bv/id1517067040
+- Sister entity: IDC Tech B.V. (Amsterdam) — publishes the Medewerker, GAST and Run2Forty2 apps. Blue Business is the development partner; both entities are part of the same group.
+
+### What Blue Business does
+
+- Native iOS development (Swift, SwiftUI, UIKit, Combine, Core Data / SwiftData, Core Location, AVFoundation, APNs)
+- Native Android development (Kotlin, Jetpack Compose, Coroutines, Room, ExoPlayer, FCM)
+- Web applications and Progressive Web Apps (Astro, Next.js, Remix, TypeScript strict, Tailwind)
+- Multi-tenant white-label mobile platforms (one codebase, multiple branded apps)
+- Offline-first mobile architecture (Mapbox offline maps, local content bundles)
+- Realtime backend integrations (Firebase, Supabase, REST, GraphQL)
+- Product design + 1-2 week discovery sprints
+- App Store and Google Play submission (privacy policies, screenshots, store-copy in NL and EN)
+- Maintenance retainers — monthly release cycles, OS-upgrade support, Sentry crash monitoring, quarterly roadmap proposals based on real usage data, 24-hour SLA on critical bugs
+- Take-overs of existing apps (audit + take-over plan; ~one third of all engagements)
+
+### Who Blue Business serves
+
+- SMEs in the Netherlands looking for custom mobile apps
+- Tourism and hospitality businesses in the Caribbean
+- Public-sector organizations in the Caribbean (island administrations, tourism boards, community platforms)
+- Holiday-park operators looking for guest-experience and internal-communication apps
+- Sports communities and training programs
+- Existing app owners who want to take over a stalled or aging codebase
+
+---
+
+## Live apps in production
+
+### 1. Visit Bonaire
+
+- App Store NL: https://apps.apple.com/nl/app/visit-bonaire/id6736879805
+- Google Play: https://play.google.com/store/apps/details?id=com.bonaire.app
+- Website: https://www.visit-bonaire.com/
+- Publisher: Blue Innovation BV
+- Live since: 11 November 2024 (current version 1.1.1, April 2025)
+- Rating: 5.0★ from 4 reviews on the Dutch App Store; 1,000+ downloads on Google Play
+- Languages: Dutch & English
+- Platforms: iOS · iPadOS · Android
+- Category: Travel
+- Verified Dutch App Store review (5 stars, naudster8134, 18-03-2025): "Super handige app, vooral de offline kaart functie! Internet is hier zo traag. Alle info voor op t eiland."
+
+**Description:** All-in-one travel app for visitors of Bonaire. Native iOS and Android with offline navigation via Mapbox and realtime content via Firebase. Covers points of interest, dive sites, beaches, restaurants, tailored routes and cruise tours.
+
+**Tech:** Native iOS (Swift / SwiftUI), native Android (Kotlin / Jetpack Compose), Mapbox for offline maps, Firebase for realtime content (no app update needed for content edits).
+
+### 2. Bonaire Cruisers
+
+- App Store NL: https://apps.apple.com/nl/app/bonaire-cruisers/id6745404102
+- Google Play: https://play.google.com/store/apps/details?id=com.bonaire.cruiser
+- Publisher: Blue Innovation BV
+- Live since: June 2025
+- Languages: Dutch & English
+- Platforms: iOS · Android · iPadOS · macOS (M1+) · visionOS
+- Category: Travel & Local
+- Rating: not yet rated (recently launched)
+
+**Description:** Self-guided audio-tour app for visitors exploring Bonaire by rental golf cart. Native iOS and Android, fully offline after install. GPS-triggered audio at points of interest, with bilingual NL/EN narration covering nature, culture and history.
+
+**Tech:** iOS (Swift, SwiftUI, Core Location, AVFoundation), Android (Kotlin, Jetpack Compose, ExoPlayer), offline-first content bundles, local storage for audio and maps, CMS link-up for content updates without app release.
+
+### 3. Medewerker
+
+- App Store NL: https://apps.apple.com/nl/app/medewerker/id1625432010
+- Google Play: https://play.google.com/store/apps/details?id=com.medewerker.app
+- Website: https://medewerker.app/
+- Publisher: IDC Tech B.V. (Blue Business is the development partner)
+- Live since: June 2022
+- Rating: 5.0★ from 1 App Store NL review; 50+ Google Play installs
+- Platforms: iOS · Android
+- Category: Business
+- Languages: Dutch & English
+- Live customers: Hof van Saksen, Roompot, Run2Forty2
+
+**Description:** Native iOS and Android internal-communication platform combining push notifications, news feed, document library, onboarding flows, learning paths with gamification, surveys, suggestion box and a web admin for HR and management. Multi-tenant backend allows the same platform to power different branded apps (see GAST and Run2Forty2 below).
+
+**Tech:** iOS (Swift, SwiftUI, APNs), Android (Kotlin, Jetpack Compose, FCM), multi-tenant backend, web admin in TypeScript, analytics + crash reporting for stable rollout across thousands of devices.
+
+**Verified testimonial (Eric van der Heijden, General Manager, Hof van Saksen):** "Medewerker.app heeft de afgelopen twee jaar een belangrijke rol gespeeld in de communicatie met alle collega's in onze organisatie. Zo kunnen we iedereen op hetzelfde moment informeren met het laatste nieuws en successen delen. We gebruiken Medewerker.app als centrale app waarin medewerkers alle informatie kunnen vinden die ze nodig hebben, wegwijs maakt en waar iedereen zelf ideeën kan inbrengen."
+
+### 4. GAST
+
+- App Store NL: https://apps.apple.com/nl/app/gast/id1468467772
+- Google Play: https://play.google.com/store/apps/details?id=com.emplex.emplexapp
+- Publisher: IDC Tech B.V. (Blue Business is the development partner)
+- Live since: 2020 (initial release); fully redesigned in August 2025 (current version 2.0.15)
+- Rating: 4.5★ from 4 App Store NL reviews; 4.2★ from 6 Google Play reviews; 500+ Google Play installs
+- Platforms: iOS · Android
+- Category: Education / Business
+- Live customers: Hof van Saksen, Roompot
+
+**Description:** White-label guest-experience app for holiday parks and hospitality businesses, built on the same multi-tenant platform as Medewerker. Per-park branding (logo, colors, content, languages), with personal welcome, booking summary, park map, opening hours, activity calendar, in-app reservations and local recommendations.
+
+**Tech:** Native iOS (Swift, SwiftUI), native Android (Kotlin, Compose), shared backend with Medewerker, web admin for park managers, integrations with PMS and booking systems for automatic guest data.
+
+### 5. Run2Forty2
+
+- App Store NL: https://apps.apple.com/nl/app/run2forty2/id6448728310
+- Google Play: https://play.google.com/store/apps/details?id=com.r2f2.app
+- Publisher: IDC Tech B.V. (Blue Business is the development partner)
+- Live since: December 2025
+- Rating: 5.0★ from 3 App Store NL reviews; 100+ Google Play installs
+- Platforms: iOS · Android
+- Category: Health & Fitness / Education
+- Live customer: Run2Forty2 (marathon travel and training programs)
+
+**Description:** Native sports app for marathon trainees: training schedules, news updates, virtual kudos for fellow runners, and direct chat with the coach. Same multi-tenant platform as Medewerker and GAST, with its own brand identity and a feature set tuned to training and community.
+
+**Tech:** iOS (Swift, SwiftUI, APNs), Android (Kotlin, Jetpack Compose, FCM), shared multi-tenant backend with Medewerker and GAST, brand-specific theming layer.
+
+---
+
+## Engagement model
+
+- Engagements begin with a 1-2 week discovery sprint to lock down the real use case and scope
+- Build phase runs in weekly TestFlight cycles so progress is visible every Monday
+- Submission phase covers App Store and Google Play, including privacy policy, screenshots and store-copy in NL and EN
+- Typical timeline from kickoff to App Store submission: 12-16 weeks; tight-scope MVPs in 6-8 weeks are possible
+- Maintenance is provided under a separate retainer with monthly release cycles, OS-upgrade support, Sentry crash monitoring, quarterly roadmap proposals based on real usage data, and a 24-hour SLA on critical bugs
+- Smaller scopes (prototypes, single-platform MVPs, take-overs of existing apps) and larger platform builds are equally welcome — Blue Business does not turn away small projects
+
+Pricing is fixed per project after the discovery sprint. Blue Business does not publish standard prices because scope determines everything; the first call (30 minutes with the developer who would build it, not an account executive) ends with a fixed-price proposal.
+
+---
+
+## Frequently asked questions
+
+**Q: How long from idea to App Store?**
+A: Typically 12-16 weeks from kickoff. Discovery sprint (1-2 weeks), build (8-12 weeks with weekly TestFlight builds), and submission (1 week including Apple and Google review). Faster MVPs in 6-8 weeks are possible if scope is tight.
+
+**Q: Native or cross-platform (React Native, Flutter)?**
+A: Native when performance, platform features or long-term maintenance matter. Cross-platform when time-to-market dominates and the app stays under 100K users. Blue Business builds both and advises honestly which fits — even when that means recommending a smaller project.
+
+**Q: Do you work with existing apps?**
+A: Yes. Roughly a third of all work is taking over apps that started somewhere else. Engagements begin with an audit of the codebase, infrastructure and App Store status, followed by a take-over plan.
+
+**Q: Do you work for Caribbean clients?**
+A: Yes. A significant part of the portfolio is in the Caribbean — Visit Bonaire and Bonaire Cruisers are the most visible examples. Blue Business is Netherlands-based but has extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba.
+
+**Q: Do you take on small projects too?**
+A: Yes. Everything is welcome. A first MVP, a prototype, a continuation of an existing app, or a platform build for thousands of users — tell Blue Business what you have in mind and they will work out together how to approach it.
+
+---
+
+## Contact
+
+- Email: info@bluebusiness.nl
+- Website: https://bluebusiness.nl/
+- Contact form: https://bluebusiness.nl/nl/contact/ (NL) or https://bluebusiness.nl/en/contact/ (EN)
+- Address: Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands
+- LinkedIn: https://www.linkedin.com/company/bluebusiness-nl
+- GitHub: https://github.com/jessevenniker/bluebusiness
+
+---
+
+## Page index
+
+- Homepage NL: https://bluebusiness.nl/nl/
+- Homepage EN: https://bluebusiness.nl/en/
+- Services NL: https://bluebusiness.nl/nl/diensten/
+- Services EN: https://bluebusiness.nl/en/services/
+- Cases overview NL: https://bluebusiness.nl/nl/cases/
+- Cases overview EN: https://bluebusiness.nl/en/cases/
+- Case Visit Bonaire NL: https://bluebusiness.nl/nl/cases/bonaire-app/
+- Case Visit Bonaire EN: https://bluebusiness.nl/en/cases/bonaire-app/
+- Case Bonaire Cruisers NL: https://bluebusiness.nl/nl/cases/bonaire-cruisers/
+- Case Bonaire Cruisers EN: https://bluebusiness.nl/en/cases/bonaire-cruisers/
+- Case Medewerker.app NL: https://bluebusiness.nl/nl/cases/medewerker-app/
+- Case Medewerker.app EN: https://bluebusiness.nl/en/cases/medewerker-app/
+- Case GAST NL: https://bluebusiness.nl/nl/cases/gast/
+- Case GAST EN: https://bluebusiness.nl/en/cases/gast/
+- Case Run2Forty2 NL: https://bluebusiness.nl/nl/cases/run2forty2/
+- Case Run2Forty2 EN: https://bluebusiness.nl/en/cases/run2forty2/
+- About NL: https://bluebusiness.nl/nl/over-ons/
+- About EN: https://bluebusiness.nl/en/about/
+- Contact NL: https://bluebusiness.nl/nl/contact/
+- Contact EN: https://bluebusiness.nl/en/contact/
+- Privacy NL: https://bluebusiness.nl/nl/privacy/
+- Privacy EN: https://bluebusiness.nl/en/privacy/
+- Algemene voorwaarden: https://bluebusiness.nl/nl/voorwaarden/
+- Terms & Conditions: https://bluebusiness.nl/en/terms/
