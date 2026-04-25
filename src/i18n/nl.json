@@ -113,7 +113,8 @@
           "title": "Medewerker.app — interne comms voor teams.",
           "body": "Native iOS- en Android-app voor interne communicatie, roosters, leerpaden en gamification. Live bij Hof van Saksen, Roompot en Run2Forty2.",
           "datapoint": "3+ klanten · vakantieparken & sport",
-          "accentColor": "#60A5FA"
+          "accentColor": "#60A5FA",
+          "iconSrc": "/clients/medewerker-app.png"
         },
         {
           "id": "gast",
@@ -122,7 +123,8 @@
           "title": "GAST — gast-app op hetzelfde platform.",
           "body": "White-label gast-app voor vakantieparken en hospitality-bedrijven, op het Medewerker.app-platform. Van check-in tot kamer-info tot lokale tips — werkt offline.",
           "datapoint": "Hof van Saksen · Roompot",
-          "accentColor": "#A78BFA"
+          "accentColor": "#A78BFA",
+          "iconSrc": "/clients/gast-app.png"
         },
         {
           "id": "run2forty2",
