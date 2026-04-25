@@ -11,7 +11,7 @@ const t = content.contact;
 const f = t.form;
 const r = routeMap[locale];
 
-const baseUrl = 'https://bluebusiness.nl';
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [

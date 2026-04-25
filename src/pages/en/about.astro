@@ -10,7 +10,7 @@ const locale = getCurrentLocale(Astro.url.pathname);
 const t = getContent(locale).about;
 const r = routeMap[locale];
 
-const baseUrl = 'https://bluebusiness.nl';
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',

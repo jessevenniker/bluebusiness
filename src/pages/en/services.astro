@@ -14,7 +14,7 @@ const items = content.home.services.items;
 const detail = t.detail as Record<string, any>;
 const r = routeMap[locale];
 
-const baseUrl = 'https://bluebusiness.nl';
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
   '@context': 'https://schema.org',
   '@graph': items.map((s: any) => ({

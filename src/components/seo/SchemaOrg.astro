@@ -7,7 +7,7 @@ interface Props {
 }
 const { locale = 'nl', includeFaq = false } = Astro.props;
 
-const baseUrl = 'https://bluebusiness.nl';
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const content = getContent(locale);
 
 const description =

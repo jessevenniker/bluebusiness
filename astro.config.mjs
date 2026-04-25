@@ -4,8 +4,12 @@ import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
+const site = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.PUBLIC_SITE_URL || 'https://bluebusiness.nl';
+
 export default defineConfig({
-  site: 'https://bluebusiness.nl',
+  site,
   trailingSlash: 'always',
   output: 'static',
   adapter: vercel({

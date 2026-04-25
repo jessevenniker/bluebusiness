@@ -4,7 +4,7 @@ import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
 
-const baseUrl = 'https://bluebusiness.nl';
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
