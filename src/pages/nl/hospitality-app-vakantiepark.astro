@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import { getContent } from '../../i18n/content';
+
+const content = getContent('nl');
+const allCases = content.home.cases.items;
+const featuredCases = allCases.filter((c) => ['gast', 'medewerker-app'].includes(c.id));
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+
+const faq = [
+  {
+    q: 'Mijn vakantiepark heeft een groot personeelsbestand met seizoenkrachten. Werkt dit?',
+    a: 'Juist dán werkt het. Hof van Saksen en Roompot draaien er beide op. Onboarding-flows nemen nieuwe seizoenkrachten in een paar dagen door alle protocollen heen. Push-notificaties bereiken iedereen tegelijk — receptie, animatie, technische dienst, housekeeping. Doorzoekbare document-bibliotheek voor werkinstructies in plaats van prikbord. En voor management: zicht op wie de meldingen heeft gezien.',
+  },
+  {
+    q: 'Wat is het verschil tussen een gast-app en een medewerker-app voor een park?',
+    a: 'Een gast-app richt zich op de bezoeker (boekingsoverzicht, kamer-info, activiteiten-agenda, lokale tips). Een medewerker-app richt zich op het personeel (werkinstructies, dagprogramma\'s, push, learning). Soms wil een park beide — dan kunnen we ze op één technisch platform leveren met aparte branding. Beide apps zijn dan onderhoudbaar als één geheel.',
+  },
+  {
+    q: 'Hoe lang duurt zo\'n implementatie?',
+    a: 'Omdat het Medewerker.app-platform al bestaat, zijn we 30-50% sneller dan vanaf nul. Een typische park-implementatie: 4-6 weken voor branding, content-import, integratie met bestaand HR-systeem, en eerste TestFlight builds voor jouw kernteam. Daarna een gefaseerde uitrol over je medewerkers.',
+  },
+  {
+    q: 'Kan het op meerdere park-locaties tegelijk draaien?',
+    a: 'Ja. Multi-tenant by design. Roompot beheert meerdere parken via één back-office, met content per park én park-overstijgend. Hof van Saksen idem. Centraal management waar het kan, lokale autonomie waar het moet.',
+  },
+  {
+    q: 'Werkt het met onze bestaande HR- en planning-systemen?',
+    a: 'Ja. We koppelen via standaard-API\'s aan de meeste HR-, planning- en boekingssystemen. SSO via SAML of OIDC. Tijdens de discovery breng je je tech-landschap in kaart en bepalen we welke koppelingen nodig zijn voor v1 en welke later kunnen.',
+  },
+  {
+    q: 'Wie is de ontwikkelpartner achter dit platform?',
+    a: 'Blue Business is de development-partner voor IDC Tech B.V., die het Medewerker.app-platform commercieel uitgeeft. Beide entiteiten zijn onderdeel van dezelfde groep. Voor de klant is dit één leverancier, één contract, één aanspreekpunt — maar wel met de transparantie dat de stack technisch volwassen is en niet vanaf nul wordt opgebouwd voor jouw project.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${baseUrl}/nl/hospitality-app-vakantiepark/#service`,
+      name: 'App voor vakantiepark of hospitality-bedrijf',
+      description: 'Medewerker- en gast-apps voor vakantieparken, hotels en campings, op het Medewerker.app-platform. Live bij Hof van Saksen en Roompot.',
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: [{ '@type': 'Country', name: 'Netherlands', identifier: 'NL' }],
+      serviceType: 'Hospitality app development',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="App voor vakantiepark — hospitality | Blue Business"
+  description="Native medewerker-app voor vakantieparken en hospitality. Bewezen platform, live bij Hof van Saksen en Roompot. Onboarding, push, documenten."
+  canonicalPath="/nl/hospitality-app-vakantiepark/"
+  ogImage="/og/cases/gast.png"
+  breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Diensten', path: '/nl/diensten/' }, { name: 'App voor vakantiepark', path: '/nl/hospitality-app-vakantiepark/' }]}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Vakantieparken · hotels · hospitality" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[22ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Een app voor</span>
+        <span class="block text-accent">jouw vakantiepark.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Native medewerker-app voor het personeel van vakantieparken en hospitality-bedrijven. Bewezen technologie, live bij Hof van Saksen en Roompot. Onboarding voor seizoenkrachten, dagprogramma's, document-bibliotheek voor werkinstructies — in jouw merk-jas, op jouw schaal.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        <ArrowButton href="/nl/cases/gast/" variant="secondary">Bekijk de GAST-case</ArrowButton>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Live parken', v: 'Hof van Saksen, Roompot' },
+          { k: 'App Store NL rating', v: '4.5★ · 4 reviews (GAST)' },
+          { k: 'Live sinds', v: '2020 (redesign 2025)' },
+          { k: 'Implementatie', v: '4-6 weken' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-1">
+          <MonoEyebrow text="// Voor wie het werkt" tone="accent-hi" class="mb-5 block" />
+          <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+            <span class="block text-fg">Personeel dat</span>
+            <span class="block text-accent">op locatie staat.</span>
+          </h2>
+          <p class="text-[15px] text-fg-dim mt-5" style="line-height: 1.65;">
+            Receptie, animatie, technische dienst, housekeeping, restaurant — iedereen met de telefoon in de zak. Een prikbord in de personeelsruimte zien ze één keer per dienst, push krijgen ze altijd.
+          </p>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="list">
+            {[
+              ['Receptie', 'Last-minute reserverings-updates, gasten-meldingen, dagprogramma'],
+              ['Animatie', 'Programma-wijzigingen, weersafhankelijke planning, foto-uploads'],
+              ['Technische dienst', 'Werkinstructies, ticket-meldingen vanuit gasten, foto-bewijs'],
+              ['Housekeeping', 'Kamer-status, bijzonderheden per gast, schema-updates'],
+              ['Restaurant', 'Dagmenu\'s, allergeen-info, voorraad-meldingen'],
+              ['Management', 'Cross-team push, surveys, KPI-dashboards in de admin'],
+            ].map(([title, desc]) => (
+              <li class="p-4 rounded-[10px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="text-[15px] font-medium text-fg mb-1">{title}</h3>
+                <p class="text-[13px] text-fg-dim" style="line-height: 1.55;">{desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Live in productie" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Twee parken,</span>
+        <span class="block text-accent">duizenden medewerkers.</span>
+      </h2>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+        {featuredCases.map((c) => (
+          <li>
+            <a href={`/nl/cases/${c.id}/`} class="case-card block h-full p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div
+                class="h-[160px] rounded-[10px] mb-6 relative overflow-hidden"
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
+                aria-hidden="true"
+              >
+                {c.iconSrc && (
+                  <div class="absolute inset-0 p-6 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[260px] max-h-[100px] bg-white rounded-[12px] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.5)] flex items-center justify-center p-5">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <span class="font-mono text-[12px] text-accent-hi mb-3 block">{c.label}</span>
+              <h3 class="text-[20px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug); line-height: 1.2;">{c.title}</h3>
+              <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">{c.body}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// FAQ" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Vragen die park-</span>
+        <span class="block text-accent">management altijd stelt.</span>
+      </h2>
+
+      <ul class="space-y-3" role="list">
+        {faq.map((f) => (
+          <li class="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <details class="group">
+              <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none">
+                <span class="text-[16px] md:text-[17px] font-medium text-fg pr-2" style="line-height: 1.4;">{f.q}</span>
+                <svg class="flex-shrink-0 mt-1 transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-[15px] text-fg-dim" style="line-height: 1.7;">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Een park-app voor jouw team?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Bewezen technologie,</span>
+          <span class="block text-accent">jouw park-merk.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">30 minuten met de developer die het zou implementeren. We delen concrete ervaringen uit Hof van Saksen en Roompot en kijken hoe het bij jouw park past.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+  details summary::-webkit-details-marker { display: none; }
+</style>

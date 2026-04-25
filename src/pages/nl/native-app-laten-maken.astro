@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import { getContent } from '../../i18n/content';
+
+const content = getContent('nl');
+const allCases = content.home.cases.items;
+const featuredCases = allCases.filter((c) => ['bonaire-app', 'medewerker-app', 'run2forty2'].includes(c.id));
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+
+const faq = [
+  {
+    q: 'Wat kost het om een native app te laten maken?',
+    a: 'Dat hangt volledig af van scope. Een eerste MVP voor één platform is een ander gesprek dan een platform-build voor duizenden gebruikers. We werken na een discovery-sprint van 1-2 weken altijd met een vaste prijs, zodat je niet halverwege voor verrassingen komt te staan. Het eerste gesprek (30 minuten) is gratis en eindigt met een onderbouwd voorstel.',
+  },
+  {
+    q: 'Hoelang duurt het van idee tot live in de App Store?',
+    a: 'Typisch 12-16 weken vanaf kick-off. Discovery sprint (1-2 weken), build (8-12 weken met wekelijkse TestFlight builds), submission naar Apple en Google (1 week inclusief review). Strakke MVP\'s in 6-8 weken zijn mogelijk wanneer de scope helder is.',
+  },
+  {
+    q: 'Native of cross-platform (React Native, Flutter)?',
+    a: 'Native als performance, platform-features of lange-termijn-onderhoud belangrijk zijn — en bij producten die mensen dagelijks openen is dat bijna altijd het geval. Cross-platform als time-to-market domineert en de app onder de 100K gebruikers blijft. We bouwen beide en adviseren eerlijk welke past, ook als dat betekent dat we een kleiner project aanraden.',
+  },
+  {
+    q: 'Werken jullie zowel iOS als Android?',
+    a: 'Ja, beide native. Swift en SwiftUI op iOS, Kotlin en Jetpack Compose op Android. Geen "één codebase die zich voordoet als beide" — dat levert apps op die op één van de platforms slechter werken dan het alternatief. Beide platforms krijgen volledige aandacht, eigen design-decisions waar nodig, en eigen QA.',
+  },
+  {
+    q: 'Doen jullie ook de App Store en Play Store submission?',
+    a: 'Ja. Privacy policies, screenshots, store-copy in NL en EN, privacy-questionnaire voor Apple, data-safety-formulier voor Google. We hebben meerdere apps live in de Dutch App Store onder eigen developer-account. Voor klanten die hun eigen developer-account willen behouden, helpen we daar omheen.',
+  },
+  {
+    q: 'Wat gebeurt er na de launch?',
+    a: 'We bieden onderhoud onder een aparte retainer-overeenkomst: maandelijkse releases, OS-upgrade support (iOS 18 → 19 → 20, Android 15 → 16…), Sentry crash-monitoring, en elk kwartaal een roadmap-voorstel op basis van echte gebruiksdata. Niet op basis van wat we graag nog zouden willen bouwen.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${baseUrl}/nl/native-app-laten-maken/#service`,
+      name: 'Native iOS & Android app laten maken',
+      description: 'Een native iOS- en Android-app laten maken door een Nederlandse studio. Swift voor iOS, Kotlin voor Android, vaste prijs na discovery, en een ervaren team dat van begin tot eind aan jouw app werkt.',
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: [
+        { '@type': 'Country', name: 'Netherlands', identifier: 'NL' },
+        { '@type': 'Place', name: 'Bonaire' },
+        { '@type': 'Place', name: 'Curaçao' },
+        { '@type': 'Place', name: 'Aruba' },
+      ],
+      serviceType: 'Native mobile app development',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Native app laten maken — iOS & Android | Blue Business"
+  description="Native iOS- en Android-app laten maken door een Nederlandse studio. Vaste prijs na discovery, wekelijkse TestFlight builds, één team van begin tot eind."
+  canonicalPath="/nl/native-app-laten-maken/"
+  ogImage="/og/cases/bonaire-app.png"
+  breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Diensten', path: '/nl/diensten/' }, { name: 'Native app laten maken', path: '/nl/native-app-laten-maken/' }]}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Native iOS & Android — Nederland & Caribbean" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Een native app</span>
+        <span class="block text-accent">laten maken.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Een Nederlandse studio die native iOS- en Android-apps bouwt. Geen hybride codebase die zich voordoet als beide, geen 40-koppig bureau met losse afdelingen. Eén senior team dat ontwerp, native development en strategie combineert. De developer die je app bouwt is de developer die je spreekt.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        <ArrowButton href="/nl/cases/" variant="secondary">Bekijk live apps</ArrowButton>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Proof bar -->
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Apps live in productie', v: '5 (NL + Caribbean)' },
+          { k: 'Native platforms', v: 'iOS · iPadOS · Android' },
+          { k: 'Klanten op het platform', v: 'Hof van Saksen, Roompot, Run2Forty2' },
+          { k: 'Werkmodel', v: 'Vaste prijs · weekly TestFlight' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- What we deliver -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-1">
+          <MonoEyebrow text="// Wat we leveren" tone="accent-hi" class="mb-5 block" />
+          <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+            <span class="block text-fg">Discovery →</span>
+            <span class="block text-accent">build → ship → groei.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="space-y-6" role="list">
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">1-2 weken discovery sprint</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">We leggen de échte use case en scope vast. Soms met een Figma-prototype, soms met één pagina HTML die we 's ochtends in handen leggen van echte gebruikers. Eindigt met een vaste build-prijs.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Native iOS in Swift / SwiftUI</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">SwiftUI als basis, UIKit waar nodig, Combine voor reactive flows, Core Data of SwiftData voor offline storage. iPad-universal waar het zinvol is.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Native Android in Kotlin / Jetpack Compose</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Compose als UI-laag, Coroutines voor async, Room voor lokale data, ExoPlayer voor media. Material 3 als standaard, eigen design-system waar het merk dat vraagt.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Wekelijkse TestFlight builds</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Elke maandag een verse build naar je telefoon. Geen "grote reveal" na 4 maanden. Je ziet en voelt de app vanaf week 2.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">App Store + Play Store submission</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Privacy policies, screenshots, store-copy in NL en EN, privacy-questionnaire, data-safety-formulier. We zijn ervaren met Apple en Google review-processen.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Onderhoud onder retainer</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Maandelijkse releases, OS-upgrade support, crash monitoring via Sentry, kwartaal-roadmap op basis van echte gebruiksdata. 24-uurs SLA op kritieke bugs.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Cases that fit -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Live apps die we hebben gebouwd" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Native apps,</span>
+        <span class="block text-accent">live in de stores.</span>
+      </h2>
+
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4" role="list">
+        {featuredCases.map((c) => (
+          <li>
+            <a href={`/nl/cases/${c.id}/`} class="case-card block h-full p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div
+                class="h-[120px] rounded-[10px] mb-5 relative overflow-hidden"
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
+                aria-hidden="true"
+              >
+                {c.iconSrc && (
+                  <div class="absolute inset-0 p-4 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[200px] max-h-[80px] bg-white rounded-[10px] shadow-[0_8px_20px_-6px_rgba(0,0,0,0.5)] flex items-center justify-center p-3">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <span class="font-mono text-[11px] text-accent-hi mb-2 block">{c.label}</span>
+              <h3 class="text-[18px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug); line-height: 1.25;">{c.title}</h3>
+              <p class="text-[14px] text-fg-dim" style="line-height: 1.55;">{c.body}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// FAQ" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Vragen die</span>
+        <span class="block text-accent">altijd terugkomen.</span>
+      </h2>
+
+      <ul class="space-y-3" role="list">
+        {faq.map((f) => (
+          <li class="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <details class="group">
+              <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none">
+                <span class="text-[16px] md:text-[17px] font-medium text-fg pr-2" style="line-height: 1.4;">{f.q}</span>
+                <svg class="flex-shrink-0 mt-1 transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-[15px] text-fg-dim" style="line-height: 1.7;">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Een app-idee?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Vertel ons over</span>
+          <span class="block text-accent">jouw app.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">30 minuten met de developer die het zou bouwen. Je vertelt wat je hebt, wij zeggen eerlijk of het bij ons past en hoe we het zouden aanpakken.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+  details summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .case-card:hover { transform: none; }
+    details summary svg { transition: none !important; }
+  }
+</style>

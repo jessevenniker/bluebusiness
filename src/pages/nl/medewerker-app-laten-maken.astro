@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import { getContent } from '../../i18n/content';
+
+const content = getContent('nl');
+const allCases = content.home.cases.items;
+const featuredCases = allCases.filter((c) => ['medewerker-app', 'gast', 'run2forty2'].includes(c.id));
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+
+const faq = [
+  {
+    q: 'Wat zit er typisch in een medewerker-app?',
+    a: 'Voor de meeste organisaties: nieuws-feed, push-notificaties, document-bibliotheek, onboarding-flows voor nieuwe collega\'s, leerpaden met quizzes, gamification (badges, leaderboards), surveys en een ideeënbus. Plus een web-admin voor HR en management om content en doelgroepen te beheren. We stemmen de feature-set af op wat jouw organisatie écht gebruikt.',
+  },
+  {
+    q: 'Hoe is dit anders dan een intranet of WhatsApp-groep?',
+    a: 'Een intranet wordt vooral gelezen aan een bureau; een medewerker-app gaat mee de werkvloer op. WhatsApp is informeel, ongestructureerd en versnippert info. Een eigen app: één plek voor de officiële communicatie, doorzoekbaar, met push-notificaties die wél aankomen, en zonder dat je collega\'s hun privé-WhatsApp moeten delen.',
+  },
+  {
+    q: 'Werkt dit ook bij niet-kantoor-personeel (frontoffice, productie, hospitality)?',
+    a: 'Juist daar werkt het het best. Operationeel personeel zit niet aan een laptop. Een eigen app op hun telefoon — met push voor urgente updates, document-toegang voor protocollen, onboarding-flows voor nieuwe seizoenkrachten — vervangt het altijd-uitstaande prikbord. Onze klanten Hof van Saksen en Roompot draaien hier duizenden medewerkers op.',
+  },
+  {
+    q: 'Kan het multi-tenant of white-label?',
+    a: 'Ja. Het Medewerker.app-platform is multi-tenant: één codebase, meerdere organisaties met elk hun eigen branding (logo, kleuren, content, talen) en hun eigen admin-omgeving. Voor klanten met meerdere merken of locaties betekent dit één technische oplossing voor alle entiteiten.',
+  },
+  {
+    q: 'Is dit hetzelfde platform als GAST en Run2Forty2?',
+    a: 'Ja. Medewerker.app, GAST (vakantiepark-medewerker-app voor Hof van Saksen en Roompot) en Run2Forty2 (sport-app voor marathon-trainees) draaien alle drie op hetzelfde technische platform, met eigen branding en eigen feature-mix per merk. Dat platform is door Blue Business gebouwd voor IDC Tech B.V.',
+  },
+  {
+    q: 'Hoeveel onderhoud kost zo\'n app na launch?',
+    a: 'Onderhoud loopt onder een aparte retainer met maandelijkse releases, OS-upgrade-support, crash-monitoring (Sentry) en kwartaal-roadmap-voorstellen op basis van echte gebruiksdata. Hoeveel exact hangt af van organisatie-grootte en gewenste cadans — we maken een passend voorstel na de discovery.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${baseUrl}/nl/medewerker-app-laten-maken/#service`,
+      name: 'Medewerker-app laten maken',
+      description: 'Native medewerker-app voor interne communicatie, onboarding, leerpaden en gamification. Multi-tenant en white-label, gebouwd op het Medewerker.app-platform dat live draait bij Hof van Saksen, Roompot en Run2Forty2.',
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: [{ '@type': 'Country', name: 'Netherlands', identifier: 'NL' }],
+      serviceType: 'Internal communication app development',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Medewerker-app laten maken | Blue Business"
+  description="Native medewerker-app voor interne communicatie, onboarding en gamification. Live bij Hof van Saksen, Roompot en Run2Forty2 — gebouwd door Blue Business."
+  canonicalPath="/nl/medewerker-app-laten-maken/"
+  ogImage="/og/cases/medewerker-app.png"
+  breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Diensten', path: '/nl/diensten/' }, { name: 'Medewerker-app laten maken', path: '/nl/medewerker-app-laten-maken/' }]}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Interne communicatie · onboarding · learning" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Een medewerker-app</span>
+        <span class="block text-accent">laten maken.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Native iOS- en Android-app voor jouw interne communicatie, onboarding, learning en gamification. Op een bewezen multi-tenant platform dat al draait bij Hof van Saksen, Roompot en Run2Forty2 — niet vanaf nul gebouwd, dus sneller live met minder risico.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        <ArrowButton href="/nl/cases/medewerker-app/" variant="secondary">Bekijk de case</ArrowButton>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Live klanten', v: 'Hof van Saksen, Roompot, Run2Forty2' },
+          { k: 'Schaal', v: 'Duizenden medewerkers per klant' },
+          { k: 'Live sinds', v: 'juni 2022' },
+          { k: 'Architectuur', v: 'Multi-tenant · white-label' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-1">
+          <MonoEyebrow text="// Wat erin zit" tone="accent-hi" class="mb-5 block" />
+          <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+            <span class="block text-fg">Bewezen feature-set,</span>
+            <span class="block text-accent">jouw merk.</span>
+          </h2>
+          <p class="text-[15px] text-fg-dim mt-5" style="line-height: 1.65;">
+            We starten niet vanaf nul. Het Medewerker.app-platform heeft jaren productiehistorie. We passen scope en branding aan jouw organisatie aan en zijn 30-50% sneller live dan een vanaf-nul-build.
+          </p>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="list">
+            {[
+              ['Push-notificaties', 'Voor team-updates, dagprogramma\'s en urgente meldingen'],
+              ['Nieuws-feed', 'Doorzoekbaar archief, met afbeeldingen, video en categorieën'],
+              ['Document-bibliotheek', 'Handboeken, protocollen, formulieren met PDF-preview'],
+              ['Onboarding-flows', 'Stap-voor-stap voor nieuwe medewerkers met checklists'],
+              ['Leerpaden + quizzes', 'Gamified leren met badges en leaderboards'],
+              ['Surveys + ideeënbus', 'Tweerichtings-feedback van management naar medewerker'],
+              ['Web-admin', 'Voor HR en management om content en doelgroepen te beheren'],
+              ['SSO + HR-integratie', 'Koppeling met bestaande identity-provider en HR-systeem'],
+            ].map(([title, desc]) => (
+              <li class="p-4 rounded-[10px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="text-[15px] font-medium text-fg mb-1">{title}</h3>
+                <p class="text-[13px] text-fg-dim" style="line-height: 1.55;">{desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// 3 brand-varianten op één platform" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Eén platform,</span>
+        <span class="block text-accent">drie merken.</span>
+      </h2>
+
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4" role="list">
+        {featuredCases.map((c) => (
+          <li>
+            <a href={`/nl/cases/${c.id}/`} class="case-card block h-full p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div
+                class="h-[120px] rounded-[10px] mb-5 relative overflow-hidden"
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
+                aria-hidden="true"
+              >
+                {c.iconSrc && (
+                  <div class="absolute inset-0 p-4 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[200px] max-h-[80px] bg-white rounded-[10px] shadow-[0_8px_20px_-6px_rgba(0,0,0,0.5)] flex items-center justify-center p-3">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <span class="font-mono text-[11px] text-accent-hi mb-2 block">{c.label}</span>
+              <h3 class="text-[18px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug); line-height: 1.25;">{c.title}</h3>
+              <p class="text-[14px] text-fg-dim" style="line-height: 1.55;">{c.body}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// FAQ" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Vragen die HR</span>
+        <span class="block text-accent">altijd stelt.</span>
+      </h2>
+
+      <ul class="space-y-3" role="list">
+        {faq.map((f) => (
+          <li class="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <details class="group">
+              <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none">
+                <span class="text-[16px] md:text-[17px] font-medium text-fg pr-2" style="line-height: 1.4;">{f.q}</span>
+                <svg class="flex-shrink-0 mt-1 transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-[15px] text-fg-dim" style="line-height: 1.7;">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Een eigen medewerker-app?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Vertel ons over</span>
+          <span class="block text-accent">je organisatie.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">30 minuten met de developer die het zou bouwen. We delen concrete ervaringen uit Hof van Saksen, Roompot en Run2Forty2 en kijken samen wat past.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+  details summary::-webkit-details-marker { display: none; }
+</style>

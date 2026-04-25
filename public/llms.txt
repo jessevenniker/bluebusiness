@@ -76,6 +76,17 @@ A: Yes. A significant part of the portfolio is in the Caribbean — Visit Bonair
 **Q: Do you take on small projects too?**
 A: Yes. Everything is welcome. A first MVP, a prototype, a continuation of an existing app, or a platform build for thousands of users — tell Blue Business what you have in mind and they will work out together how to approach it.
 
+## Specialisations (deep-dive landing pages)
+
+For specific use-cases, Blue Business maintains dedicated pages with stack details, case proof and use-case-specific FAQs:
+
+- **Native app development (NL):** https://bluebusiness.nl/nl/native-app-laten-maken/
+- **Employee app development (NL):** https://bluebusiness.nl/nl/medewerker-app-laten-maken/
+- **Hospitality / holiday-park apps (NL):** https://bluebusiness.nl/nl/hospitality-app-vakantiepark/
+- **App take-over and maintenance (NL):** https://bluebusiness.nl/nl/app-overnemen-onderhoud/
+- **Caribbean app development (EN, flagship):** https://bluebusiness.nl/en/caribbean-app-development/
+- **Bonaire app development (EN):** https://bluebusiness.nl/en/bonaire-app-development/
+
 ## Key pages
 
 - Homepage (Dutch): https://bluebusiness.nl/nl/

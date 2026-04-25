@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+import { getContent } from '../../i18n/content';
+
+const content = getContent('en');
+const allCases = content.home.cases.items;
+const featuredCases = allCases.filter((c) => ['bonaire-app', 'bonaire-cruisers'].includes(c.id));
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+
+const faq = [
+  {
+    q: 'Why a Bonaire-specific app studio?',
+    a: 'Bonaire has unique requirements that mainland EU studios miss: thin mobile coverage outside Kralendijk, bilingual NL/EN audience, cruise traffic seasonality, dive-tourism specifics (Marine Park, dive-tag systems), and a small but tightly connected business community where word travels fast. We have two live apps on Bonaire and a working understanding of these constraints.',
+  },
+  {
+    q: 'Which apps have you actually built for Bonaire?',
+    a: 'Two, both live and verifiable in the App Store. (1) Visit Bonaire — all-in-one travel app with offline maps, points of interest, dive sites and tailored routes. 5.0★ on the Dutch App Store with 4 reviews; 1,000+ downloads on Google Play. Live since November 2024. (2) Bonaire Cruisers — self-guided golf-cart audio tour app for cruise visitors. Native iOS and Android, fully offline, NL/EN audio. Live since June 2025.',
+  },
+  {
+    q: 'Do you build apps for tourism boards, dive operators, or only for general visitors?',
+    a: 'All three. Visit Bonaire targets general visitors and longer-stay tourists. Bonaire Cruisers targets the cruise-passenger segment. We can build for tourism boards (destination apps), dive operators (booking + dive logs), restaurants (loyalty + reservation), and government/island-administration platforms. The technical architecture (offline-first, Mapbox, Firebase) translates across these verticals.',
+  },
+  {
+    q: 'Can you build offline-first apps for the dive sites at Pekelmeer or Slagbaai?',
+    a: 'Yes — that\'s the default for every app we ship for Bonaire. Mapbox offline tiles for the entire island, locally bundled content (POIs, descriptions, audio), GPS-triggered actions that work without any network connection. Visit Bonaire and Bonaire Cruisers both work in dead-signal zones because we tested them there.',
+  },
+  {
+    q: 'Do you have a presence on Bonaire?',
+    a: 'No physical office on the island. We\'re Netherlands-based (Zwaanshoek), and operate remotely with a 4-hour overlap window in Bonaire morning / Netherlands afternoon. For projects that warrant it, we travel to Bonaire for kickoff or major reviews. Our delivery model is built for this exact NL ↔ Caribbean operating mode.',
+  },
+  {
+    q: 'How do bilingual NL/EN apps work in practice?',
+    a: 'Every Bonaire app we build ships with full NL and EN UI, content and audio. Toggle in the app, language detection on first install. Adding Papiamento is structurally easy because we key all content as locale-tagged JSON from the very first day. Spanish is similarly easy to add.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${baseUrl}/en/bonaire-app-development/#service`,
+      name: 'Bonaire app development',
+      description: 'Native iOS and Android app development for Bonaire-based and Bonaire-targeted businesses, tourism operators and government organizations. Two live apps on Bonaire (Visit Bonaire, Bonaire Cruisers).',
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: { '@type': 'Place', name: 'Bonaire' },
+      serviceType: 'Mobile app development',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Bonaire app development — iOS & Android | Blue Business"
+  description="Native app development for Bonaire — tourism, hospitality, dive operators. Two live apps: Visit Bonaire (5.0★) and Bonaire Cruisers."
+  canonicalPath="/en/bonaire-app-development/"
+  ogImage="/og/cases/bonaire-app.png"
+  breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Caribbean app development', path: '/en/caribbean-app-development/' }, { name: 'Bonaire', path: '/en/bonaire-app-development/' }]}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Bonaire — tourism, hospitality, public sector" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">App development</span>
+        <span class="block text-accent">for Bonaire.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        We have two native apps live on Bonaire today: Visit Bonaire (5.0★ Dutch App Store) and Bonaire Cruisers (golf-cart audio tour app). We understand offline-first architecture, NL/EN bilingual UI, dive-site coverage, cruise-traffic seasonality, and how to ship a quality app from the Netherlands to an island where mobile coverage stops at Kralendijk.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
+        <ArrowButton href="/en/cases/bonaire-app/" variant="secondary">See Visit Bonaire case</ArrowButton>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Live apps on Bonaire', v: '2 (Visit Bonaire + Cruisers)' },
+          { k: 'App Store NL rating', v: '5.0★ · 4 reviews (Visit Bonaire)' },
+          { k: 'Languages shipped', v: 'NL + EN (Papiamento ready)' },
+          { k: 'Operating model', v: 'Remote · 4h overlap with NL' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-1">
+          <MonoEyebrow text="// What we know about Bonaire" tone="accent-hi" class="mb-5 block" />
+          <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+            <span class="block text-fg">Two apps in,</span>
+            <span class="block text-accent">we know the terrain.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="space-y-6" role="list">
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Mobile coverage drops outside Kralendijk</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Slagbaai, Pekelmeer, Lac Bay, Sorobon — most of the island has spotty 4G at best. We default to Mapbox-cached offline tiles, locally bundled audio, and Firebase sync only when a network is present.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Cruise-traffic seasonality</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">High season pushes 5,000+ extra users into a service in a single morning, then zero again. We architect for these load spikes — Bonaire Cruisers was built specifically for this audience.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Bilingual NL + EN as standard, Papiamento ready</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">Both Visit Bonaire and Bonaire Cruisers ship full NL/EN UI plus audio. Adding Papiamento or Spanish is structurally easy because content is locale-keyed JSON from day one.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">Dive-site geography in the data model</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">For Visit Bonaire we mapped every official dive site with depth, difficulty and approach notes. We understand STINAPA's tagging system, the Marine Park boundaries, and what a dive operator actually needs in a booking flow.</p>
+            </li>
+            <li>
+              <h3 class="text-[18px] font-medium text-fg mb-2">NL ↔ Bonaire delivery model</h3>
+              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">5-6 hour time difference gives a 4-hour live overlap (your morning, our afternoon). We use that for sync calls, the rest is async TestFlight + written briefs. Optional in-person trips for kickoff or major milestones.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Live apps we built for Bonaire" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Two apps,</span>
+        <span class="block text-accent">live on the island.</span>
+      </h2>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+        {featuredCases.map((c) => (
+          <li>
+            <a href={`/en/cases/${c.id}/`} class="case-card block h-full p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div
+                class="h-[160px] rounded-[10px] mb-6 relative overflow-hidden"
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
+                aria-hidden="true"
+              >
+                {c.iconSrc && (
+                  <div class="absolute inset-0 p-6 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[280px] max-h-[110px] bg-white rounded-[12px] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.5)] flex items-center justify-center p-5">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <span class="font-mono text-[12px] text-accent-hi mb-3 block">{c.label}</span>
+              <h3 class="text-[20px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug); line-height: 1.2;">{c.title}</h3>
+              <p class="text-[14px] text-fg-dim mb-4" style="line-height: 1.6;">{c.body}</p>
+              <span class="font-mono text-[12px] text-accent-hi">{c.datapoint}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// FAQ" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">What Bonaire</span>
+        <span class="block text-accent">prospects always ask.</span>
+      </h2>
+
+      <ul class="space-y-3" role="list">
+        {faq.map((f) => (
+          <li class="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <details class="group">
+              <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none">
+                <span class="text-[16px] md:text-[17px] font-medium text-fg pr-2" style="line-height: 1.4;">{f.q}</span>
+                <svg class="flex-shrink-0 mt-1 transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-[15px] text-fg-dim" style="line-height: 1.7;">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// A Bonaire app project?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Tell us what</span>
+          <span class="block text-accent">you have in mind.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">30 minutes with the developer who would build it. We share what Visit Bonaire and Bonaire Cruisers taught us, and tell you honestly whether we're the right fit.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+  details summary::-webkit-details-marker { display: none; }
+</style>

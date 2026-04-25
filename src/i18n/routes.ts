@@ -24,10 +24,29 @@ export const routeMap = {
 
 export type RouteKey = keyof (typeof routeMap)['nl'];
 
+// SEO landing pages — no full translation yet, so the language toggle falls back
+// to the most thematically-related counterpart in the other locale.
+const landingAlternates: Record<string, string> = {
+  // NL landings → fallback to the EN services overview (no EN counterpart yet)
+  '/nl/native-app-laten-maken/':       '/en/services/',
+  '/nl/medewerker-app-laten-maken/':   '/en/services/',
+  '/nl/hospitality-app-vakantiepark/': '/en/services/',
+  '/nl/app-overnemen-onderhoud/':      '/en/services/',
+  // EN Caribbean landings → NL services overview as fallback
+  '/en/caribbean-app-development/':    '/nl/diensten/',
+  '/en/bonaire-app-development/':      '/nl/diensten/',
+};
+
 export function getAlternateUrl(currentPath: string, targetLocale: Locale): string {
   const normalized = currentPath.endsWith('/') ? currentPath : currentPath + '/';
 
-  // exact match lookup
+  // 1. Direct landing-page alternate
+  if (landingAlternates[normalized]) {
+    const target = landingAlternates[normalized];
+    if (target.startsWith(`/${targetLocale}/`)) return target;
+  }
+
+  // 2. Standard routeMap lookup
   for (const locale of locales) {
     for (const key of Object.keys(routeMap[locale]) as RouteKey[]) {
       if (routeMap[locale][key] === normalized) {
@@ -36,7 +55,7 @@ export function getAlternateUrl(currentPath: string, targetLocale: Locale): stri
     }
   }
 
-  // case detail: /{nl|en}/cases/{slug}/ — slug identical across locales
+  // 3. Case detail: /{nl|en}/cases/{slug}/ — slug identical across locales
   const caseMatch = normalized.match(/^\/(nl|en)\/cases\/([^/]+)\/$/);
   if (caseMatch) {
     return `/${targetLocale}/cases/${caseMatch[2]}/`;

@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../components/shared/ArrowButton.astro';
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+
+const faq = [
+  {
+    q: 'Waarom zou ik mijn app van een ander bureau overnemen?',
+    a: 'Drie veelvoorkomende redenen. (1) Het oorspronkelijke bureau bestaat niet meer of heeft het project laten vallen. (2) De kosten lopen jaarlijks op zonder zichtbare voortgang. (3) Je krijgt geen heldere antwoorden meer op technische vragen. In al deze situaties is een take-over goedkoper en sneller dan opnieuw beginnen — mits er een ervaren partij is die de codebase kan beoordelen. Ongeveer een derde van ons werk is precies dit.',
+  },
+  {
+    q: 'Hoe werkt jullie codebase-audit?',
+    a: 'We doen een vaste-prijs audit waarbij we de codebase, infrastructuur en App Store-status doorlichten: code-quality, technical debt, security-issues, dependency-risk, build-reproduceerbaarheid, App Store / Play Store compliance, OS-versie-coverage en CI/CD. Je krijgt een schriftelijk rapport met concrete bevindingen en een take-over-plan met fasering en risico\'s.',
+  },
+  {
+    q: 'Wat als de bestaande app in React Native of Flutter is gebouwd?',
+    a: 'Geen probleem. We werken met beide. Vaak is een take-over juist een goed moment om te beslissen: doorgaan op het bestaande framework, of geleidelijk migreren naar native (iOS Swift / Android Kotlin) als de app onder de 100K-gebruikers-grens uit groeit en performance/stabiliteit pijnpunten worden. Audit eerst, beslissen later.',
+  },
+  {
+    q: 'Krijg ik mijn broncode + admin-toegang volledig in eigen beheer?',
+    a: 'Ja. Bij start van het onderhoudswerk dragen we het Apple Developer Account, Google Play Console, repository, CI/CD-secrets en eventuele backend-omgevingen volledig over (of behouden ze waar ze al zijn). Geen lock-in, geen "we zitten ertussen". Alle credentials op naam van jouw organisatie.',
+  },
+  {
+    q: 'Hoe lang duurt zo\'n take-over typisch?',
+    a: 'De audit zelf is 2-3 dagen werk. Daarna is een typische soft-handover (toegangen, kennisoverdracht, kleinere aanpassingen om de bouw stabiel te krijgen) 2-4 weken. Vanaf dat punt zit je in normale onderhoudsmodus met maandelijkse releases. Grotere herbouw-trajecten (bijv. native rewrite van een hybride app) kunnen langer duren en worden apart gepland.',
+  },
+  {
+    q: 'En als de bestaande code echt niet te redden is?',
+    a: 'Dat zeggen we eerlijk. In ~10% van de audits adviseren we een gefaseerde rewrite in plaats van take-over-as-is. Je krijgt dan een onderbouwd plan met stappen, kosten en risico\'s. We dwingen niemand een rewrite door als take-over kan, en andersom.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${baseUrl}/nl/app-overnemen-onderhoud/#service`,
+      name: 'App overnemen en onderhoud',
+      description: 'Bestaande iOS- en Android-apps overnemen van een ander bureau, met audit, take-over plan en doorlopend onderhoud onder retainer. ~Een derde van ons werk is take-over van bestaande producten.',
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: [
+        { '@type': 'Country', name: 'Netherlands', identifier: 'NL' },
+        { '@type': 'Place', name: 'Bonaire' },
+        { '@type': 'Place', name: 'Curaçao' },
+        { '@type': 'Place', name: 'Aruba' },
+      ],
+      serviceType: 'Mobile app maintenance and take-over',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="App overnemen & onderhoud — iOS & Android | Blue Business"
+  description="Bestaande iOS- of Android-app overnemen van een ander bureau. Vaste-prijs audit, take-over plan, onderhoud onder retainer. Geen lock-in."
+  canonicalPath="/nl/app-overnemen-onderhoud/"
+  ogImage="/og/cases/medewerker-app.png"
+  breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Diensten', path: '/nl/diensten/' }, { name: 'App overnemen & onderhoud', path: '/nl/app-overnemen-onderhoud/' }]}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <MonoEyebrow text="// Take-over · onderhoud · doorontwikkeling" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">App overnemen</span>
+        <span class="block text-accent">& onderhouden.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Bestaande iOS- of Android-app die niemand meer onderhoudt? Of zit je vast bij een bureau dat niet meer levert? Ongeveer een derde van ons werk is take-over van bestaande producten. We doen een vaste-prijs audit, schrijven een take-over plan en draaien daarna onder een normale retainer-overeenkomst — zonder lock-in.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <ArrowButton href="/nl/contact/" variant="primary">Plan een audit</ArrowButton>
+        <ArrowButton href="/nl/diensten/" variant="secondary">Bekijk alle diensten</ArrowButton>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Proof bar -->
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Aandeel take-overs', v: '~1/3 van het werk' },
+          { k: 'Audit doorlooptijd', v: '2-3 dagen' },
+          { k: 'Soft-handover', v: '2-4 weken' },
+          { k: 'Onderhoud SLA', v: '24 uur kritieke bugs' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Audit checklist -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="md:col-span-1">
+          <MonoEyebrow text="// Audit-checklist" tone="accent-hi" class="mb-5 block" />
+          <h2 class="text-h2 font-medium" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+            <span class="block text-fg">Wat we</span>
+            <span class="block text-accent">doorlichten.</span>
+          </h2>
+          <p class="text-[15px] text-fg-dim mt-5" style="line-height: 1.65;">
+            Vaste-prijs audit van 2-3 dagen. Eindigt met een schriftelijk rapport en een take-over plan met fasering, risico's en geschatte aanlooptijd.
+          </p>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="list">
+            {[
+              ['Code-quality', 'Architectuur, leesbaarheid, test-coverage, hot spots'],
+              ['Technical debt', 'Concrete posten, prioriteit, geschatte effort'],
+              ['Security', 'Dependency-vulnerabilities, secrets-leakage, key-management'],
+              ['Build-reproduceerbaarheid', 'Werkt de build vanaf een schone machine? CI/CD-status'],
+              ['App Store compliance', 'Privacy-policy, data-safety, review-status, in-app purchases'],
+              ['OS-versie-coverage', 'Welke iOS/Android-versies werken? Welke breken?'],
+              ['Backend-koppelingen', 'API-stabiliteit, rate-limiting, foutafhandeling'],
+              ['Deprecated dependencies', 'Wat moet bijgewerkt voor next OS, wat is end-of-life'],
+            ].map(([title, desc]) => (
+              <li class="p-4 rounded-[10px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                <h3 class="text-[15px] font-medium text-fg mb-1">{title}</h3>
+                <p class="text-[13px] text-fg-dim" style="line-height: 1.55;">{desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- No lock-in -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// Geen lock-in" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-8" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Jouw app blijft</span>
+        <span class="block text-accent">jouw eigendom.</span>
+      </h2>
+      <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
+        Bij start van een take-over staan álle credentials op naam van jouw organisatie. Apple Developer Account, Google Play Console, repository, CI/CD-secrets, backend-omgevingen, certificaten. Wij krijgen toegang als beheerder, jij blijft eigenaar. Bij beëindiging van de samenwerking neem je alles mee zonder gedoe.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        Geen "alleen wij hebben de sleutels". Geen "we hosten alles voor je". Geen verborgen API-secrets in een onbereikbare cloud-omgeving. Standaard onderdeel van elke take-over en elk nieuw project.
+      </p>
+    </Container>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// FAQ" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Vragen die</span>
+        <span class="block text-accent">altijd terugkomen.</span>
+      </h2>
+
+      <ul class="space-y-3" role="list">
+        {faq.map((f) => (
+          <li class="rounded-[10px] border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <details class="group">
+              <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none">
+                <span class="text-[16px] md:text-[17px] font-medium text-fg pr-2" style="line-height: 1.4;">{f.q}</span>
+                <svg class="flex-shrink-0 mt-1 transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-[15px] text-fg-dim" style="line-height: 1.7;">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// App die niemand onderhoudt?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Vertel waar je</span>
+          <span class="block text-accent">vastzit.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">30 minuten met de developer die de audit zou doen. Je deelt wat je hebt, wij zeggen eerlijk of overname zinvol is — of dat opnieuw beginnen logischer is.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een audit</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+</style>

@@ -121,6 +121,51 @@ const breadcrumbs = [
     );
   })}
 
+  <!-- Specialisations — links to SEO landing pages per use-case -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Specialisations" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Deep-dive pages</span>
+        <span class="block text-accent">per use-case.</span>
+      </h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+        {[
+          {
+            href: '/en/caribbean-app-development/',
+            title: 'Caribbean app development',
+            body: 'Native iOS + Android for tourism, hospitality and government in Bonaire, Curaçao and Aruba. Offline-first, bilingual NL/EN.',
+          },
+          {
+            href: '/en/bonaire-app-development/',
+            title: 'Bonaire app development',
+            body: 'Two live apps on Bonaire (Visit Bonaire 5.0★, Bonaire Cruisers). Offline maps, bilingual UI, dive-site geography.',
+          },
+        ].map((s) => (
+          <li>
+            <a href={s.href} class="spec-card block h-full p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
+              <div class="flex items-start justify-between gap-4 mb-3">
+                <h3 class="text-[18px] font-medium text-fg" style="letter-spacing: var(--tracking-snug);">{s.title}</h3>
+                <svg class="flex-shrink-0 mt-1 text-accent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">{s.body}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <style>
+    .spec-card:hover { border-color: var(--color-accent-line); transform: translateY(-2px); }
+    @media (prefers-reduced-motion: reduce) {
+      .spec-card:hover { transform: none; }
+    }
+  </style>
+
   <!-- CTA -->
   <section class="py-32 md:py-40 border-t border-[var(--color-accent-line)] relative overflow-hidden">
     <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
