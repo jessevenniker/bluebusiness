@@ -120,8 +120,8 @@
           "id": "gast",
           "featured": false,
           "label": "// hospitality",
-          "title": "GAST — guest app on the same platform.",
-          "body": "White-label guest app for holiday parks and hospitality businesses, built on the Medewerker.app platform. From check-in to room info to local tips. Works offline.",
+          "title": "GAST — employee app for hospitality.",
+          "body": "Native employee app for holiday-park staff, on the Medewerker.app platform. Internal comms, news, documents and onboarding for hospitality teams.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA",
           "iconSrc": "/clients/gast-app.png"

@@ -12,11 +12,11 @@ const schema = {
   '@type': 'SoftwareApplication',
   name: 'GAST',
   operatingSystem: 'iOS, Android',
-  applicationCategory: 'TravelApplication',
+  applicationCategory: 'BusinessApplication',
   url: `${baseUrl}/nl/cases/gast/`,
   inLanguage: 'nl',
   publisher: { '@id': `${baseUrl}/#organization` },
-  about: 'White-label gast-app voor vakantieparken en hospitality — gebouwd op het Medewerker.app-platform, live bij Hof van Saksen en Roompot.',
+  about: 'Medewerker-app voor het personeel van vakantieparken, gebouwd op het Medewerker.app-platform. Live bij Hof van Saksen en Roompot.',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.5',
@@ -32,16 +32,16 @@ const clients = [
 ];
 
 const screenshots = [
-  { src: '/clients/GT-1.webp', alt: 'GAST — startscherm voor de gast' },
-  { src: '/clients/GT-2.webp', alt: 'GAST — verblijf-overzicht' },
-  { src: '/clients/GT-3.webp', alt: 'GAST — park-info en activiteiten' },
-  { src: '/clients/GT-4.webp', alt: 'GAST — communicatie met het park' },
+  { src: '/clients/GT-1.webp', alt: 'GAST — startscherm voor medewerkers' },
+  { src: '/clients/GT-2.webp', alt: 'GAST — nieuws en updates' },
+  { src: '/clients/GT-3.webp', alt: 'GAST — documenten en informatie' },
+  { src: '/clients/GT-4.webp', alt: 'GAST — interne communicatie' },
 ];
 ---
 
 <BaseLayout
-  title="GAST — gast-app voor vakantieparken | Blue Business"
-  description="White-label gast-app voor vakantieparken op het Medewerker.app-platform. Live bij Hof van Saksen en Roompot. Sinds 2020."
+  title="GAST — medewerker-app voor hospitality | Blue Business"
+  description="GAST is de medewerker-app voor het personeel van vakantieparken, op het Medewerker.app-platform. Live bij Hof van Saksen en Roompot. Sinds 2020."
   canonicalPath="/nl/cases/gast/"
   ogImage="/og/cases/gast.png"
   breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Cases', path: '/nl/cases/' }, { name: 'GAST', path: '/nl/cases/gast/' }]}
@@ -60,13 +60,13 @@ const screenshots = [
         </ol>
       </nav>
 
-      <MonoEyebrow text="// hospitality" tone="accent-hi" class="mb-6 block" />
+      <MonoEyebrow text="// hospitality — interne communicatie" tone="accent-hi" class="mb-6 block" />
       <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-        <span class="block text-fg">GAST — gast-app op</span>
-        <span class="block text-accent">hetzelfde platform.</span>
+        <span class="block text-fg">GAST — medewerker-app</span>
+        <span class="block text-accent">voor hospitality.</span>
       </h1>
       <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
-        White-label gast-app voor vakantieparken en hospitality-bedrijven. GAST draait op hetzelfde platform als Medewerker.app, maar dan gericht op de gasten in plaats van het personeel — van check-in tot kamer-info tot lokale tips, in een eigen merk-jas per park.
+        Native iOS- en Android-app voor het personeel van vakantieparken. GAST draait op hetzelfde platform als Medewerker.app, maar dan specifiek gepositioneerd voor hospitality-teams: receptiemedewerkers, animatie-teams, technische dienst en housekeeping krijgen één plek voor nieuws, documenten, roosters en interne communicatie.
       </p>
       <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
         Gebouwd door Blue Business voor IDC Tech B.V. · live sinds 2020, volledig herontworpen in augustus 2025
@@ -104,7 +104,7 @@ const screenshots = [
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {clients.map((c) => (
           <div class="p-6 rounded-[14px] bg-white border border-[var(--color-border)] flex items-center justify-center min-h-[140px]">
-            <img src={c.logo} alt={`${c.name} — ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
+            <img src={c.logo} alt={`${c.name}, ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
           </div>
         ))}
       </div>
@@ -122,28 +122,28 @@ const screenshots = [
     <Container size="narrow">
       <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">Wat we hebben gebouwd</h2>
       <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
-        Een native iOS- en Android-app die gasten van een vakantiepark digitaal door hun verblijf leidt — zonder dat de receptie elke vraag persoonlijk hoeft te beantwoorden. Boekingsdetails, wifi-codes, openingstijden, restaurant-menu's, lokale tips en activiteiten zitten allemaal één tap weg, in de huisstijl van het park.
+        Een native iOS- en Android-app die het personeel van een vakantiepark direct verbindt met management, HR en collega's. Aankondigingen, dagprogramma's, huisregels en operationele updates verschijnen als push-notificatie. Documenten zoals werkinstructies, veiligheidsprotocollen en handboeken zitten één tap weg, in de huisstijl van het park.
       </p>
       <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
-        Doordat GAST en Medewerker.app op één codebase draaien, profiteren beide producten van dezelfde release-cycli, dezelfde stabiliteit en dezelfde admin-tools. Voor parken als Hof van Saksen en Roompot betekent dat: één leverancier, twee apps, één rekening — en doorlopend onderhoud op de échte mobiele werkdag van zowel medewerker als gast.
+        Doordat GAST en Medewerker.app op één codebase draaien, profiteren beide producten van dezelfde release-cycli, dezelfde stabiliteit en dezelfde admin-tools. Voor parken als Hof van Saksen en Roompot betekent dat: één leverancier, twee branding-varianten op één platform, en doorlopend onderhoud op de échte mobiele werkdag van iedereen die op locatie staat.
       </p>
 
       <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Belangrijkste features</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Persoonlijke welkomst en boekingsoverzicht per gast</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Park-info, plattegrond, openingstijden en huisregels</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Activiteiten-agenda en in-app reserveringen voor wellness, restaurants, taxi</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Lokale tips en partner-deals in de omgeving van het park</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push-notificaties voor weer-updates, bezorg-berichten of dagprogramma</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> White-label per park — eigen logo, kleuren, content en talen</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push-notificaties voor operationele updates en aankondigingen</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Nieuws-feed voor team- en park-updates</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Document-bibliotheek voor werkinstructies, protocollen, handboeken</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Onboarding-flows voor nieuwe seizoenkrachten en vaste medewerkers</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Surveys en peilingen voor tweerichtings-communicatie</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> White-label per park: eigen logo, kleuren, content en talen</li>
       </ul>
 
       <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech-stack</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Native iOS (Swift, SwiftUI) en native Android (Kotlin, Compose)</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Gedeeld backend met Medewerker.app — multi-tenant, white-label-baar</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web-admin voor parkbeheer: content, doelgroepen, push-campagnes</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Koppelingen met PMS en boekingssystemen voor automatische gast-data</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Gedeeld backend met Medewerker.app, multi-tenant en white-label-baar</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web-admin voor HR en park-management: content, doelgroepen, push-campagnes</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Koppeling met bestaande HR- en planning-systemen</li>
       </ul>
     </Container>
   </section>
@@ -152,8 +152,8 @@ const screenshots = [
     <Container>
       <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
       <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">Een verblijf,</span>
-        <span class="block text-accent">één tap weg.</span>
+        <span class="block text-fg">Eén app voor</span>
+        <span class="block text-accent">het hele park-team.</span>
       </h2>
       <ScreenshotShowcase screenshots={screenshots} accentColor="#A78BFA" />
     </Container>
@@ -167,10 +167,10 @@ const screenshots = [
       <div class="text-center relative">
         <MonoEyebrow text="// Iets vergelijkbaars bouwen?" tone="dim" class="mb-6 block" />
         <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-          <span class="block text-fg">Hospitality-apps die</span>
-          <span class="block text-accent">gasten dagelijks openen.</span>
+          <span class="block text-fg">Een medewerker-app</span>
+          <span class="block text-accent">voor jouw vakantiepark?</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Vakantiepark, hotelketen of campingbedrijf? GAST is bewezen technologie — we kunnen 'm zo aanpassen aan jouw gasten en jouw merk.</p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Vakantiepark, hotelketen of campingbedrijf met een groot team op locatie? GAST is bewezen technologie. We passen 'm aan jouw teams en jouw merk.</p>
         <div class="flex justify-center">
           <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
         </div>

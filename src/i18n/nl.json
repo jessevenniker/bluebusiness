@@ -120,8 +120,8 @@
           "id": "gast",
           "featured": false,
           "label": "// hospitality",
-          "title": "GAST — gast-app op hetzelfde platform.",
-          "body": "White-label gast-app voor vakantieparken en hospitality-bedrijven, op het Medewerker.app-platform. Van check-in tot kamer-info tot lokale tips. Werkt offline.",
+          "title": "GAST — medewerker-app voor hospitality.",
+          "body": "Native medewerker-app voor het personeel van vakantieparken, op het Medewerker.app-platform. Communicatie, nieuws, documenten en onboarding voor hospitality-teams.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA",
           "iconSrc": "/clients/gast-app.png"

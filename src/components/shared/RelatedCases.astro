@@ -24,10 +24,13 @@ const content = getContent(locale);
 const r = routeMap[locale];
 const allCases = content.home.cases.items;
 
-// Curated relations — same domain (Caribbean tourism) or same platform (Medewerker family).
+// Curated relations: same domain (Caribbean tourism) or same platform (Medewerker family).
+// Bonaire Cruisers ↔ Visit Bonaire (both Caribbean tourism), Medewerker family
+// (Medewerker, GAST, Run2Forty2) cross-links to each other since they're branded
+// variants of the same platform.
 const relations: Record<string, string[]> = {
   'bonaire-app':       ['bonaire-cruisers', 'medewerker-app'],
-  'bonaire-cruisers':  ['bonaire-app', 'gast'],
+  'bonaire-cruisers':  ['bonaire-app', 'medewerker-app'],
   'medewerker-app':    ['gast', 'run2forty2'],
   'gast':              ['medewerker-app', 'run2forty2'],
   'run2forty2':        ['medewerker-app', 'gast'],

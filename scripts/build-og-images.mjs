@@ -44,7 +44,7 @@ const cases = [
     id: 'gast',
     eyebrow: '// hospitality',
     title: 'GAST',
-    tagline: 'Guest app on the same platform.',
+    tagline: 'Employee app for hospitality.',
     accent: '#A78BFA',
   },
   {

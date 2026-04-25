@@ -109,12 +109,12 @@ Blue Business designs and builds native iOS and Android apps, web applications a
 - Live since: 2020 (initial release); fully redesigned in August 2025 (current version 2.0.15)
 - Rating: 4.5★ from 4 App Store NL reviews; 4.2★ from 6 Google Play reviews; 500+ Google Play installs
 - Platforms: iOS · Android
-- Category: Education / Business
+- Category: Business
 - Live customers: Hof van Saksen, Roompot
 
-**Description:** White-label guest-experience app for holiday parks and hospitality businesses, built on the same multi-tenant platform as Medewerker. Per-park branding (logo, colors, content, languages), with personal welcome, booking summary, park map, opening hours, activity calendar, in-app reservations and local recommendations.
+**Description:** Despite the name, GAST is an *employee* app, not a guest app. It is the hospitality-vertical branding of the same multi-tenant platform as Medewerker, deployed for the staff of holiday parks (front-desk, animation, technical service, housekeeping). Push notifications for operational updates, news feed for park-wide announcements, document library for work instructions and protocols, onboarding flows for seasonal staff, and per-park white-labeling (logo, colours, content, languages).
 
-**Tech:** Native iOS (Swift, SwiftUI), native Android (Kotlin, Compose), shared backend with Medewerker, web admin for park managers, integrations with PMS and booking systems for automatic guest data.
+**Tech:** Native iOS (Swift, SwiftUI), native Android (Kotlin, Compose), shared backend with Medewerker, web admin for HR and park managers, integration with existing HR and planning systems.
 
 ### 5. Run2Forty2
 

@@ -12,11 +12,11 @@ const schema = {
   '@type': 'SoftwareApplication',
   name: 'GAST',
   operatingSystem: 'iOS, Android',
-  applicationCategory: 'TravelApplication',
+  applicationCategory: 'BusinessApplication',
   url: `${baseUrl}/en/cases/gast/`,
   inLanguage: 'nl',
   publisher: { '@id': `${baseUrl}/#organization` },
-  about: 'White-label guest app for holiday parks and hospitality — built on the Medewerker.app platform, live at Hof van Saksen and Roompot.',
+  about: 'Employee app for holiday-park staff, built on the Medewerker.app platform. Live at Hof van Saksen and Roompot.',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.5',
@@ -32,16 +32,16 @@ const clients = [
 ];
 
 const screenshots = [
-  { src: '/clients/GT-1.webp', alt: 'GAST — guest home screen' },
-  { src: '/clients/GT-2.webp', alt: 'GAST — stay overview' },
-  { src: '/clients/GT-3.webp', alt: 'GAST — park info and activities' },
-  { src: '/clients/GT-4.webp', alt: 'GAST — communication with the park' },
+  { src: '/clients/GT-1.webp', alt: 'GAST — staff home screen' },
+  { src: '/clients/GT-2.webp', alt: 'GAST — news and updates' },
+  { src: '/clients/GT-3.webp', alt: 'GAST — documents and information' },
+  { src: '/clients/GT-4.webp', alt: 'GAST — internal communication' },
 ];
 ---
 
 <BaseLayout
-  title="GAST — guest app for holiday parks | Blue Business"
-  description="White-label guest app for holiday parks on the Medewerker.app platform. Live at Hof van Saksen and Roompot. Live since 2020."
+  title="GAST — employee app for hospitality | Blue Business"
+  description="GAST is the employee app for holiday-park staff, built on the Medewerker.app platform. Live at Hof van Saksen and Roompot. Live since 2020."
   canonicalPath="/en/cases/gast/"
   ogImage="/og/cases/gast.png"
   breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Work', path: '/en/cases/' }, { name: 'GAST', path: '/en/cases/gast/' }]}
@@ -60,13 +60,13 @@ const screenshots = [
         </ol>
       </nav>
 
-      <MonoEyebrow text="// hospitality" tone="accent-hi" class="mb-6 block" />
+      <MonoEyebrow text="// hospitality — internal comms" tone="accent-hi" class="mb-6 block" />
       <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-        <span class="block text-fg">GAST — guest app on</span>
-        <span class="block text-accent">the same platform.</span>
+        <span class="block text-fg">GAST — employee app</span>
+        <span class="block text-accent">for hospitality.</span>
       </h1>
       <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
-        White-label guest app for holiday parks and hospitality businesses. GAST runs on the same platform as Medewerker.app, but aimed at guests instead of staff — from check-in to room info to local tips, in a brand jacket per park.
+        Native iOS and Android app for the staff of holiday parks. GAST runs on the same platform as Medewerker.app, but specifically positioned for hospitality teams: front-desk staff, animation teams, technical service and housekeeping get one place for news, documents, schedules and internal communication.
       </p>
       <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
         Built by Blue Business for IDC Tech B.V. · live since 2020, fully redesigned in August 2025
@@ -104,7 +104,7 @@ const screenshots = [
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {clients.map((c) => (
           <div class="p-6 rounded-[14px] bg-white border border-[var(--color-border)] flex items-center justify-center min-h-[140px]">
-            <img src={c.logo} alt={`${c.name} — ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
+            <img src={c.logo} alt={`${c.name}, ${c.sector}`} class="max-h-[72px] max-w-full object-contain" loading="lazy" />
           </div>
         ))}
       </div>
@@ -122,28 +122,28 @@ const screenshots = [
     <Container size="narrow">
       <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">What we built</h2>
       <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
-        A native iOS and Android app that guides holiday-park guests through their stay digitally — without the front desk having to answer every question in person. Booking details, Wi-Fi codes, opening hours, restaurant menus, local tips and activities are all one tap away, in the park's own brand.
+        A native iOS and Android app that connects holiday-park staff directly with management, HR and colleagues. Announcements, daily schedules, house rules and operational updates arrive as push notifications. Documents like work instructions, safety protocols and handbooks are one tap away, in the park's own brand.
       </p>
       <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
-        Because GAST and Medewerker.app share one codebase, both products benefit from the same release cycles, the same stability and the same admin tooling. For parks like Hof van Saksen and Roompot that means: one supplier, two apps, one invoice — and ongoing maintenance covering the actual mobile workday of both staff and guest.
+        Because GAST and Medewerker.app share one codebase, both products benefit from the same release cycles, the same stability and the same admin tooling. For parks like Hof van Saksen and Roompot that means: one supplier, two branding variants on one platform, and ongoing maintenance covering the actual mobile workday of everyone on site.
       </p>
 
       <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Key features</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Personal welcome and booking summary per guest</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Park information, map, opening hours and house rules</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Activity calendar and in-app reservations for wellness, restaurants, taxi</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Local tips and partner deals in the park's surroundings</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push notifications for weather updates, delivery messages, daily program</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> White-label per park — own logo, colours, content and languages</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push notifications for operational updates and announcements</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> News feed for team and park updates</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Document library for work instructions, protocols, handbooks</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Onboarding flows for new seasonal and permanent staff</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Surveys and polls for two-way communication</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> White-label per park: own logo, colours, content and languages</li>
       </ul>
 
       <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech stack</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Native iOS (Swift, SwiftUI) and native Android (Kotlin, Compose)</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Shared backend with Medewerker.app — multi-tenant, white-labelable</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web admin for park managers: content, audiences, push campaigns</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Integrations with PMS and booking systems for automatic guest data</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Shared backend with Medewerker.app, multi-tenant and white-labelable</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web admin for HR and park management: content, audiences, push campaigns</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Integration with existing HR and planning systems</li>
       </ul>
     </Container>
   </section>
@@ -152,8 +152,8 @@ const screenshots = [
     <Container>
       <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
       <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">A whole stay,</span>
-        <span class="block text-accent">one tap away.</span>
+        <span class="block text-fg">One app for</span>
+        <span class="block text-accent">the entire park team.</span>
       </h2>
       <ScreenshotShowcase screenshots={screenshots} accentColor="#A78BFA" />
     </Container>
@@ -167,10 +167,10 @@ const screenshots = [
       <div class="text-center relative">
         <MonoEyebrow text="// Building something similar?" tone="dim" class="mb-6 block" />
         <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-          <span class="block text-fg">Hospitality apps</span>
-          <span class="block text-accent">guests open every day.</span>
+          <span class="block text-fg">An employee app</span>
+          <span class="block text-accent">for your holiday park?</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Holiday park, hotel chain or camping group? GAST is proven technology — we can shape it around your guests and your brand.</p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Holiday park, hotel chain or camping group with a large on-site team? GAST is proven technology. We shape it around your teams and your brand.</p>
         <div class="flex justify-center">
           <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
         </div>
