@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "og": "node scripts/build-og-images.mjs"
+    "og": "node scripts/build-og-images.mjs",
+    "staging-sitemap": "node scripts/build-staging-sitemap.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
