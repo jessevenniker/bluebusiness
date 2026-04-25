@@ -18,10 +18,11 @@ Blue Business is a Netherlands-based app development studio founded in 2021. The
 
 ## Key projects
 
-- **Bonaire App** — A mobile app bundling local information, businesses, activities, and practical features for residents and visitors of Bonaire. Rated 4.9 stars on the Dutch App Store in the travel category.
-- **Bonaire Cruisers** — Self-guided audio-tour app for visitors exploring Bonaire by rental golf cart. Native iOS and Android, fully offline after install, bilingual NL/EN. Live since June 2025.
-- **Medewerker.app** — Native iOS and Android internal-communication platform combining news, scheduling, onboarding, learning paths and gamification. Live customers include Hof van Saksen, Roompot and Run2Forty2.
-- **GAST** — White-label guest-experience app for holiday parks and hospitality, built on the same platform as Medewerker.app. Live customers include Hof van Saksen and Roompot.
+- **Visit Bonaire** — All-in-one travel app for visitors of Bonaire. Native iOS and Android with offline navigation via Mapbox and realtime content via Firebase. Published by Blue Innovation BV. 5.0 stars on the Dutch App Store, live since 29 April 2025. https://apps.apple.com/nl/app/visit-bonaire/id6736879805
+- **Bonaire Cruisers** — Self-guided audio-tour app for visitors exploring Bonaire by rental golf cart. Native iOS and Android, fully offline after install, bilingual NL/EN. Published by Blue Innovation BV. Live since June 2025. https://apps.apple.com/nl/app/bonaire-cruisers/id6745404102
+- **Medewerker** — Native iOS and Android internal-communication platform combining news, onboarding, learning paths and gamification. Built by Blue Business for IDC Tech BV. Live customers include Hof van Saksen, Roompot and Run2Forty2. Live since June 2022. https://apps.apple.com/nl/app/medewerker/id1625432010
+- **GAST** — White-label guest-experience app for holiday parks and hospitality, built on the same platform as Medewerker. Built by Blue Business for IDC Tech BV. Live customers include Hof van Saksen and Roompot. Live since August 2025. https://apps.apple.com/nl/app/gast/id1468467772
+- **Run2Forty2** — Native sports app for marathon trainees: training schedules, news updates, kudos for fellow runners and direct chat with the coach. Same multi-tenant platform as Medewerker and GAST, with its own brand. Built by Blue Business for IDC Tech BV. Live since December 2025. https://apps.apple.com/nl/app/run2forty2/id6448728310
 
 ## Pricing and engagement
 

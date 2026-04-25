@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../../components/shared/ArrowButton.astro';
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${baseUrl}/en/cases/run2forty2/#app`,
+      name: 'Run2Forty2',
+      applicationCategory: 'HealthApplication',
+      operatingSystem: 'iOS, Android',
+      description: 'Run2Forty2 is a native sports app for marathon trainees: training schedules, news updates, kudos for fellow runners and direct chat with the coach.',
+      url: `${baseUrl}/en/cases/run2forty2/`,
+      datePublished: '2025-12-03',
+      inLanguage: ['nl', 'en'],
+      publisher: { '@id': `${baseUrl}/#organization` },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        ratingCount: '3',
+        bestRating: '5',
+        worstRating: '1',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'Work', item: `${baseUrl}/en/cases/` },
+        { '@type': 'ListItem', position: 3, name: 'Run2Forty2', item: `${baseUrl}/en/cases/run2forty2/` },
+      ],
+    },
+  ],
+};
+
+const screenshots = [
+  { src: '/clients/RT-1.webp', alt: 'Run2Forty2 — home screen with daily program' },
+  { src: '/clients/RT-2.webp', alt: 'Run2Forty2 — training overview and schedule' },
+  { src: '/clients/RT-3.webp', alt: 'Run2Forty2 — chat with the trainer' },
+  { src: '/clients/RT-4.webp', alt: 'Run2Forty2 — kudos and community feed' },
+];
+---
+
+<BaseLayout
+  title="Run2Forty2 — sports app for marathon trips | Blue Business"
+  description="Run2Forty2 is a native iOS and Android app for marathon trainees: training schedules, news updates, kudos for fellow runners and direct chat with the coach. Built by Blue Business for IDC Tech B.V."
+  canonicalPath="/en/cases/run2forty2/"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/en/" class="hover:text-accent-hi">Home</a></li>
+          <li>/</li>
+          <li><a href="/en/cases/" class="hover:text-accent-hi">Work</a></li>
+          <li>/</li>
+          <li class="text-fg-dim">Run2Forty2</li>
+        </ol>
+      </nav>
+
+      <MonoEyebrow text="// sport — community" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Run2Forty2 —</span>
+        <span class="block text-accent">marathon trips in an app.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Native iOS and Android app for participants of Run2Forty2's marathon trips and training programs. Trainees see their schedule, receive news updates, give kudos to fellow runners and chat directly with their coach — all in one app, on every training session and on race day itself.
+      </p>
+      <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
+        Built by Blue Business for IDC Tech B.V. · live on the App Store since December 2025
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/run2forty2/id6448728310" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 md:py-20 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Live customer</h2>
+      <div class="max-w-[320px]">
+        <div class="p-6 rounded-[14px] bg-white border border-[var(--color-border)] flex items-center justify-center min-h-[140px]">
+          <img src="/clients/run2forty2.png" alt="Run2Forty2 — Marathon travel & training" class="max-h-[72px] max-w-full object-contain" loading="lazy" />
+        </div>
+        <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mt-3 text-center">Marathon travel & training</p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24">
+    <Container size="narrow">
+      <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">What we built</h2>
+      <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
+        Run2Forty2 organises marathon trips and training programs, and their community lives on the road — not in a desktop portal. The app brings the entire journey from sign-up to finish line into one place: the personal training schedule, a direct line to the coach, news updates about trip details, and a feed where runners can give each other kudos.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        Under the hood, Run2Forty2 runs on the same platform as Medewerker.app and GAST — multi-tenant, white-labelable, with a shared admin environment. But to the user it feels like a fully independent sports app, with its own identity and a feature set tuned to training and community.
+      </p>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Key features</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Personal training schedule and activity overview</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Submit and store training results directly</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Chat function between trainees and their coach</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Kudos system for mutual motivation between runners</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> News updates on trip details, events and program changes</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Documents and manuals available in one place</li>
+      </ul>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech stack</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> iOS — Swift, SwiftUI, push notifications via APNs</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Android — Kotlin, Jetpack Compose, FCM</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Shared backend with Medewerker.app and GAST — multi-tenant, white-labelable</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Own brand identity per app: colours, typography, icons, copy</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">From training plan</span>
+        <span class="block text-accent">to finish line.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Building something similar?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Sports apps</span>
+          <span class="block text-accent">that keep communities live.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Running club, fitness platform, sports federation? Run2Forty2 proves that one platform can power multiple brands — tell us what your audience needs.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

@@ -13,7 +13,7 @@
   "home": {
     "meta": {
       "title": "Blue Business — Native app development from the Netherlands, for NL & the Caribbean",
-      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Bonaire App, Bonaire Cruisers, Medewerker.app, GAST."
+      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
     },
     "hero": {
       "eyebrow": "// Dutch app studio — NL & Caribbean",
@@ -117,6 +117,15 @@
           "body": "White-label guest app for holiday parks and hospitality businesses, built on the Medewerker.app platform. From check-in to room info to local tips — works offline.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA"
+        },
+        {
+          "id": "run2forty2",
+          "featured": false,
+          "label": "// sport — community",
+          "title": "Run2Forty2 — marathon trips in an app.",
+          "body": "Native sports app for marathon trainees: training schedules, news updates, kudos for fellow runners and direct chat with the coach. Built on the Medewerker platform with its own brand.",
+          "datapoint": "5.0★ · Dutch App Store · since December 2025",
+          "accentColor": "#84CC16"
         }
       ]
     },
@@ -454,7 +463,7 @@
   "casesPage": {
     "meta": {
       "title": "Work — Blue Business",
-      "description": "Apps Blue Business has built: Bonaire App, Bonaire Cruisers, Medewerker.app and GAST. Live in production, used daily by Hof van Saksen, Roompot, Run2Forty2 and visitors to Bonaire."
+      "description": "Apps Blue Business has built: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST and Run2Forty2. Live in production, used daily by Hof van Saksen, Roompot, Run2Forty2 runners and visitors to Bonaire."
     },
     "eyebrow": "// Live in production",
     "h1Line1": "Apps people",

@@ -42,12 +42,6 @@ const screenshots = [
   { src: '/clients/MW-5.webp', alt: 'Medewerker — documents and handbooks' },
 ];
 
-const platformVariants = [
-  { src: '/clients/RT-1.webp', alt: 'Run2Forty2 — home screen on the Medewerker platform' },
-  { src: '/clients/RT-2.webp', alt: 'Run2Forty2 — training overview' },
-  { src: '/clients/RT-3.webp', alt: 'Run2Forty2 — chat with trainer' },
-  { src: '/clients/RT-4.webp', alt: 'Run2Forty2 — kudos and community' },
-];
 ---
 
 <BaseLayout
@@ -171,20 +165,20 @@ const platformVariants = [
         ))}
       </ul>
 
-      <h3 class="text-h3 font-medium text-fg mt-16 mb-3" style="letter-spacing: var(--tracking-snug);">Same platform, different brand: Run2Forty2</h3>
-      <p class="text-[15px] text-fg-dim mb-6 max-w-[60ch]" style="line-height: 1.65;">
-        Run2Forty2 is a separate App Store app running on the same platform as Medewerker. Marathon trainees get training schedules, news updates and a kudos feature — same technical foundation, different audience and visual identity.
-      </p>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
-        {platformVariants.map((s) => (
-          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
-            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
-          </li>
-        ))}
-      </ul>
-      <p class="font-mono text-[12px] text-fg-faint mt-4">
-        Run2Forty2 on the <a href="https://apps.apple.com/nl/app/run2forty2/id6448728310" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">Dutch App Store</a>
-      </p>
+      <div class="mt-16 p-6 md:p-8 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+        <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Same platform, different brand</span>
+        <h3 class="text-h3 font-medium text-fg mt-3 mb-3" style="letter-spacing: var(--tracking-snug);">Run2Forty2 runs on this too.</h3>
+        <p class="text-[15px] text-fg-dim mb-5 max-w-[60ch]" style="line-height: 1.65;">
+          The Medewerker platform doesn't only power Medewerker and GAST. Run2Forty2 — a sports app for marathon trainees with chat, kudos and training schedules — uses the exact same technical foundation, with its own brand and feature set.
+        </p>
+        <a href="/en/cases/run2forty2/" class="inline-flex items-center gap-2 text-[15px] text-accent hover:text-accent-hi transition-colors">
+          See the Run2Forty2 case
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
     </Container>
   </section>
 

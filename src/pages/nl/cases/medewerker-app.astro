@@ -42,12 +42,6 @@ const screenshots = [
   { src: '/clients/MW-5.webp', alt: 'Medewerker — documenten en handboeken' },
 ];
 
-const platformVariants = [
-  { src: '/clients/RT-1.webp', alt: 'Run2Forty2 — startscherm op het Medewerker-platform' },
-  { src: '/clients/RT-2.webp', alt: 'Run2Forty2 — training-overzicht' },
-  { src: '/clients/RT-3.webp', alt: 'Run2Forty2 — chat met trainer' },
-  { src: '/clients/RT-4.webp', alt: 'Run2Forty2 — kudos en community' },
-];
 ---
 
 <BaseLayout
@@ -168,20 +162,20 @@ const platformVariants = [
         ))}
       </ul>
 
-      <h3 class="text-h3 font-medium text-fg mt-16 mb-3" style="letter-spacing: var(--tracking-snug);">Zelfde platform, andere brand: Run2Forty2</h3>
-      <p class="text-[15px] text-fg-dim mb-6 max-w-[60ch]" style="line-height: 1.65;">
-        Run2Forty2 is een aparte app op de App Store die op hetzelfde platform draait als Medewerker. Marathon-trainees krijgen er trainingsschema's, news-updates en een kudos-functie — exact dezelfde technische basis, een andere doelgroep en visuele identiteit.
-      </p>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
-        {platformVariants.map((s) => (
-          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
-            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
-          </li>
-        ))}
-      </ul>
-      <p class="font-mono text-[12px] text-fg-faint mt-4">
-        Run2Forty2 op de <a href="https://apps.apple.com/nl/app/run2forty2/id6448728310" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">App Store NL</a>
-      </p>
+      <div class="mt-16 p-6 md:p-8 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+        <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Zelfde platform, andere brand</span>
+        <h3 class="text-h3 font-medium text-fg mt-3 mb-3" style="letter-spacing: var(--tracking-snug);">Ook Run2Forty2 draait hierop.</h3>
+        <p class="text-[15px] text-fg-dim mb-5 max-w-[60ch]" style="line-height: 1.65;">
+          Het Medewerker-platform draait niet alleen Medewerker en GAST. Run2Forty2 — een sport-app voor marathon-trainees met chat, kudos en trainingsschema's — gebruikt exact dezelfde technische basis, met een eigen merk en feature-set.
+        </p>
+        <a href="/nl/cases/run2forty2/" class="inline-flex items-center gap-2 text-[15px] text-accent hover:text-accent-hi transition-colors">
+          Bekijk de Run2Forty2 case
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
     </Container>
   </section>
 

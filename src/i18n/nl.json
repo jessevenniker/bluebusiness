@@ -13,7 +13,7 @@
   "home": {
     "meta": {
       "title": "Blue Business — Native app development uit Nederland, voor NL & Caribbean",
-      "description": "Native iOS en Android apps voor MKB, toerisme en Caribbean overheid. Nederlandse app studio, sinds 2021. Cases: Bonaire App, Bonaire Cruisers, Medewerker.app, GAST."
+      "description": "Native iOS en Android apps voor MKB, toerisme en Caribbean overheid. Nederlandse app studio, sinds 2021. Cases: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST, Run2Forty2."
     },
     "hero": {
       "eyebrow": "// Nederlandse app studio — NL & Caribbean",
@@ -117,6 +117,15 @@
           "body": "White-label gast-app voor vakantieparken en hospitality-bedrijven, op het Medewerker.app-platform. Van check-in tot kamer-info tot lokale tips — werkt offline.",
           "datapoint": "Hof van Saksen · Roompot",
           "accentColor": "#A78BFA"
+        },
+        {
+          "id": "run2forty2",
+          "featured": false,
+          "label": "// sport — community",
+          "title": "Run2Forty2 — marathonreizen in de app.",
+          "body": "Native sport-app voor marathon-trainees: trainingsschema's, news-updates, kudos voor mede-runners en directe chat met de coach. Gebouwd op het Medewerker-platform, maar met een eigen merk.",
+          "datapoint": "5.0★ · App Store NL · sinds december 2025",
+          "accentColor": "#84CC16"
         }
       ]
     },
@@ -446,7 +455,7 @@
   "casesPage": {
     "meta": {
       "title": "Cases — Blue Business",
-      "description": "Apps die Blue Business heeft gebouwd: Bonaire App, Bonaire Cruisers, Medewerker.app en GAST. Live in production, dagelijks in gebruik bij Hof van Saksen, Roompot, Run2Forty2 en bezoekers van Bonaire."
+      "description": "Apps die Blue Business heeft gebouwd: Visit Bonaire, Bonaire Cruisers, Medewerker.app, GAST en Run2Forty2. Live in production, dagelijks in gebruik bij Hof van Saksen, Roompot, Run2Forty2-runners en bezoekers van Bonaire."
     },
     "eyebrow": "// Live in production",
     "h1Line1": "Apps die mensen",
