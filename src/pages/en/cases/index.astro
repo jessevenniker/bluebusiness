@@ -42,22 +42,24 @@ const letterById: Record<string, string> = {
             <a href={`${r.cases}${c.id}/`} class="case-card block h-full p-7 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-[240ms]">
               <div
                 class="h-[200px] rounded-[10px] mb-6 relative overflow-hidden"
-                style={`background: linear-gradient(135deg, ${c.accentColor}22 0%, ${c.accentColor}08 100%); border: 0.5px solid ${c.accentColor}33;`}
+                style={`background: radial-gradient(ellipse at center, ${c.accentColor}30 0%, ${c.accentColor}08 70%);`}
                 aria-hidden="true"
               >
-                <div class="absolute inset-0 flex items-center justify-center">
-                  {c.iconSrc ? (
-                    <div class={`w-[88px] h-[88px] rounded-[20px] border border-[var(--color-accent-line)] flex items-center justify-center overflow-hidden ${c.iconTone === 'dark' ? 'bg-[var(--color-bg)]' : 'bg-white'}`}>
-                      <img src={c.iconSrc} alt="" class="max-w-[64px] max-h-[64px] object-contain" loading="lazy" />
+                {c.iconSrc ? (
+                  <div class="absolute inset-0 p-8 flex items-center justify-center">
+                    <div class="w-full h-full max-w-[300px] max-h-[130px] bg-white rounded-[14px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] flex items-center justify-center p-6">
+                      <img src={c.iconSrc} alt="" class="max-w-full max-h-full object-contain" loading="lazy" />
                     </div>
-                  ) : (
+                  </div>
+                ) : (
+                  <div class="absolute inset-0 flex items-center justify-center">
                     <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
                       <span class="font-mono text-[18px] font-medium" style={`color: ${c.accentColor};`}>
                         {letterById[c.id] ?? '·'}
                       </span>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
               <span class="font-mono text-[12px] text-accent-hi mb-3 block">{c.label}</span>
               <h2 class="text-[22px] font-medium text-fg mb-3" style="letter-spacing: var(--tracking-snug); line-height: 1.2;">

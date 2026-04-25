@@ -12,10 +12,15 @@ const r = routeMap[locale];
 const cases = content.home.cases.items;
 const services = content.home.services.items;
 
+const caseLabels: Record<string, string> = {
+  'bonaire-app': 'Visit Bonaire',
+  'bonaire-cruisers': 'Bonaire Cruisers',
+  'medewerker-app': 'Medewerker.app',
+  'gast': 'GAST',
+  'run2forty2': 'Run2Forty2',
+};
 function caseLabel(id: string) {
-  if (id === 'bonaire-app') return 'Bonaire App';
-  if (id === 'medewerker-app') return 'Medewerker App';
-  return 'GAST';
+  return caseLabels[id] ?? id;
 }
 ---
 

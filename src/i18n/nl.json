@@ -37,11 +37,11 @@
       "eyebrow": "// Live in productie",
       "text": "Native apps die elke dag in gebruik zijn — bij Nederlandse vakantieparken, sportcommunities en bezoekers van Bonaire.",
       "logos": [
-        { "name": "Visit Bonaire", "src": "/clients/visit-bonaire-logo.png", "alt": "Visit Bonaire — reisapp", "tone": "dark" },
-        { "name": "Bonaire Cruisers", "src": "/clients/bonaire-cruisers-logo.png", "alt": "Bonaire Cruisers — golf-cart tour app", "tone": "dark" },
-        { "name": "Hof van Saksen", "src": "/clients/hof-van-saksen.png", "alt": "Hof van Saksen", "tone": "light" },
-        { "name": "Roompot", "src": "/clients/roompot.png", "alt": "Roompot vakantieparken", "tone": "light" },
-        { "name": "Run2Forty2", "src": "/clients/run2forty2.png", "alt": "Run2Forty2 marathonreizen en trainingen", "tone": "light" }
+        { "name": "Visit Bonaire", "src": "/clients/visit-bonaire-logo.png", "alt": "Visit Bonaire — reisapp" },
+        { "name": "Bonaire Cruisers", "src": "/clients/bonaire-cruisers-logo.png", "alt": "Bonaire Cruisers — golf-cart tour app" },
+        { "name": "Hof van Saksen", "src": "/clients/hof-van-saksen.png", "alt": "Hof van Saksen" },
+        { "name": "Roompot", "src": "/clients/roompot.png", "alt": "Roompot vakantieparken" },
+        { "name": "Run2Forty2", "src": "/clients/run2forty2.png", "alt": "Run2Forty2 marathonreizen en trainingen" }
       ]
     },
     "services": {

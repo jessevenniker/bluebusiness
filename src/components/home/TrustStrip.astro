@@ -19,9 +19,7 @@ const t = getContent(locale).home.trust;
 
     <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 max-w-[1100px] mx-auto" role="list">
       {t.logos.map((logo) => (
-        <li
-          class={`logo-tile rounded-[14px] border border-[var(--color-border)] flex items-center justify-center min-h-[110px] md:min-h-[120px] p-5 transition-all duration-[240ms] hover:border-[var(--color-accent-line)] ${logo.tone === 'dark' ? 'bg-[var(--color-bg-elevated)]' : 'bg-white'}`}
-        >
+        <li class="logo-tile bg-white rounded-[14px] border border-[var(--color-border)] flex items-center justify-center min-h-[110px] md:min-h-[120px] p-5 transition-all duration-[240ms] hover:border-[var(--color-accent-line)]">
           <img
             src={logo.src}
             alt={logo.alt}
