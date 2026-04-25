@@ -11,51 +11,70 @@ const schema = {
     {
       '@type': 'SoftwareApplication',
       '@id': `${baseUrl}/en/cases/bonaire-app/#app`,
-      name: 'Bonaire App',
+      name: 'Visit Bonaire',
       applicationCategory: 'TravelApplication',
       operatingSystem: 'iOS, Android',
-      description: 'The Bonaire App is the ultimate guide to Bonaire. All highlights, offline navigation, tailored routes and unique tours.',
-      url: 'https://www.visit-bonaire.com/',
-      creator: { '@id': `${baseUrl}/#organization` },
+      description: 'Visit Bonaire is the all-in-one travel app for visitors of Bonaire. Offline navigation via Mapbox, all highlights, tailored routes and cruise tours.',
+      url: `${baseUrl}/en/cases/bonaire-app/`,
+      datePublished: '2025-04-29',
+      inLanguage: ['nl', 'en'],
+      publisher: { '@id': `${baseUrl}/#organization` },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        ratingCount: '4',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      review: {
+        '@type': 'Review',
+        reviewBody: 'Super handige app, vooral de offline kaart functie! Internet is hier zo traag. Alle info voor op t eiland.',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'App Store user' },
+        inLanguage: 'nl',
+      },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
         { '@type': 'ListItem', position: 2, name: 'Work', item: `${baseUrl}/en/cases/` },
-        { '@type': 'ListItem', position: 3, name: 'Bonaire App', item: `${baseUrl}/en/cases/bonaire-app/` },
+        { '@type': 'ListItem', position: 3, name: 'Visit Bonaire', item: `${baseUrl}/en/cases/bonaire-app/` },
       ],
     },
   ],
 };
 
 const features = [
-  'All points of interest on Bonaire',
-  'Offline navigation to all highlights',
-  'Tailored routes with turn-by-turn navigation',
+  'Every point of interest on Bonaire',
+  'Offline navigation via Mapbox',
+  'Tailored routes including turn-by-turn',
   'Cruise tours for day visitors',
-  'In-app purchases for premium content',
-  'Inspiring photos, descriptions and local tips',
+  'Photos, descriptions and local tips',
+  'Realtime content via Firebase — no app update needed',
 ];
 
-const process = [
-  { n: '01', t: 'Understanding user needs', b: 'Interviews with tourists and local businesses set the focus: offline maps, island tours for cruise visitors, and an overview of the highlights.' },
-  { n: '02', t: 'Partnering with local experts', b: 'Partnerships with local guides and entrepreneurs to build an authentic, comprehensive database of highlights.' },
-  { n: '03', t: 'Design and usability', b: 'Intuitive navigation, including offline. UI/UX tuned to the tropical feel of Bonaire. Iteratively tested with real users.' },
-  { n: '04', t: 'Innovative technology', b: 'Mapbox for offline maps, Firebase for realtime data and robust performance. Personalized routes based on interests.' },
-  { n: '05', t: 'Creating engagement', b: 'Inspiring content, favorites, direct navigation — so users open the app multiple times per day, not just once.' },
-  { n: '06', t: 'Launch and optimization', b: 'Soft launch, gather feedback, continuous updates based on usage data. The app team keeps adding new features.' },
+const screenshots = [
+  { src: '/clients/VB-1.webp', alt: 'Visit Bonaire — home screen' },
+  { src: '/clients/VB-2.webp', alt: 'Visit Bonaire — map with points of interest' },
+  { src: '/clients/VB-3.webp', alt: 'Visit Bonaire — location detail page' },
+  { src: '/clients/VB-4.webp', alt: 'Visit Bonaire — tour overview' },
+  { src: '/clients/VB-5.webp', alt: 'Visit Bonaire — dive and snorkel sites' },
+  { src: '/clients/VB-6.webp', alt: 'Visit Bonaire — restaurants and activities' },
+  { src: '/clients/VB-7.webp', alt: 'Visit Bonaire — personalised route' },
+  { src: '/clients/VB-8.webp', alt: 'Visit Bonaire — favourites' },
+  { src: '/clients/VB-9.webp', alt: 'Visit Bonaire — settings and languages' },
 ];
 ---
 
 <BaseLayout
-  title="Bonaire App — case study | Blue Business"
-  description="The Bonaire App is the travel companion for visitors to Bonaire. Offline navigation via Mapbox, realtime data via Firebase. 1,000+ downloads in the first month, 4.9/5 rating."
+  title="Visit Bonaire — all-in-one travel app for Bonaire | Blue Business"
+  description="Visit Bonaire is the all-in-one travel app for visitors of Bonaire — built by Blue Business. Offline navigation via Mapbox, realtime content via Firebase. 5.0★ on the Dutch App Store."
   canonicalPath="/en/cases/bonaire-app/"
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
-  <section class="pt-[140px] md:pt-[180px] pb-20">
+  <section class="pt-[140px] md:pt-[180px] pb-16">
     <Container>
       <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
         <ol class="flex flex-wrap items-center gap-2">
@@ -63,48 +82,80 @@ const process = [
           <li>/</li>
           <li><a href="/en/cases/" class="hover:text-accent-hi">Work</a></li>
           <li>/</li>
-          <li class="text-fg-dim">Bonaire App</li>
+          <li class="text-fg-dim">Visit Bonaire</li>
         </ol>
       </nav>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 items-start">
-        <div class="md:col-span-3">
-          <MonoEyebrow text="// tourism — Caribbean" tone="accent-hi" class="mb-6 block" />
-          <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-            <span class="block text-fg">Bonaire App —</span>
-            <span class="block text-accent">you explore, we guide you.</span>
-          </h1>
-          <p class="text-lead text-fg-dim max-w-[52ch]">
-            The Bonaire App is the ultimate guide for an unforgettable trip to this tropical paradise. From the best snorkeling spots to breathtaking dive locations to unique tours exploring the island.
-          </p>
+      <MonoEyebrow text="// tourism — Caribbean" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Visit Bonaire —</span>
+        <span class="block text-accent">you explore, we guide you.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        The all-in-one travel app for visitors of Bonaire. From dive sites to beaches to restaurants to tailored tours — all offline, with realtime content that updates without an app release.
+      </p>
 
-          <div class="grid grid-cols-3 gap-4 md:gap-8 mt-10 pt-6 border-t border-[var(--color-accent-line)]">
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">1,000+</div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">downloads first month</div>
-            </div>
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">4.9<span class="text-accent">★</span></div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">average rating</div>
-            </div>
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">iOS · Android</div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">native apps</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="md:col-span-2 relative">
-          <div class="rounded-[14px] p-8 md:p-10 flex items-center justify-center aspect-square" style="background: linear-gradient(135deg, rgba(59,130,246,0.14) 0%, rgba(34,211,238,0.08) 100%); border: 0.5px solid var(--color-accent-line);">
-            <div class="w-[96px] h-[96px] rounded-[22px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
-              <span class="font-mono text-[28px] font-medium text-accent">B</span>
-            </div>
-          </div>
-          <p class="font-mono text-[11px] text-fg-faint mt-3 text-center">
-            Live at <a href="https://www.visit-bonaire.com/" class="hover:text-accent-hi underline underline-offset-2">visit-bonaire.com</a>
-          </p>
-        </div>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/visit-bonaire/id6736879805" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+        <a href="https://www.visit-bonaire.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          visit-bonaire.com →
+        </a>
       </div>
+    </Container>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Rating', v: '5.0★ · 4 reviews' },
+          { k: 'Live since', v: '29 April 2025' },
+          { k: 'Platforms', v: 'iOS · Android · iPad · Mac' },
+          { k: 'Languages', v: 'Dutch & English' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <Container size="narrow">
+      <figure class="p-8 md:p-10 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] relative" lang="nl">
+        <span aria-hidden="true" class="absolute top-4 left-6 font-mono text-[44px] leading-none text-accent/40">"</span>
+        <blockquote class="text-[18px] md:text-[20px] text-fg pl-6" style="line-height: 1.55;">
+          <p>Super handige app, vooral de offline kaart functie! Internet is hier zo traag. Alle info voor op t eiland.</p>
+        </blockquote>
+        <p class="text-[14px] text-fg-dim mt-4 pl-6 italic" lang="en" style="line-height: 1.6;">
+          "Really handy app, especially the offline map. Internet is so slow here. All the info you need on the island."
+        </p>
+        <figcaption class="mt-6 pl-6 flex items-baseline gap-3 flex-wrap">
+          <span class="text-[15px] font-medium text-fg">Dutch App Store review</span>
+          <span class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">5 stars</span>
+        </figcaption>
+      </figure>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">One island,</span>
+        <span class="block text-accent">eleven screens away.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
     </Container>
   </section>
 
@@ -126,61 +177,26 @@ const process = [
     </Container>
   </section>
 
-  <section class="py-20 md:py-24">
-    <Container size="narrow">
-      <MonoEyebrow text="// Project approach" tone="accent-hi" class="mb-5 block" />
-      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">How we built</span>
-        <span class="block text-accent">the Bonaire App.</span>
-      </h2>
-      <ol class="space-y-10" role="list">
-        {process.map((step) => (
-          <li class="grid grid-cols-[auto_1fr] gap-6 md:gap-10">
-            <span class="font-mono text-[14px] text-accent-hi pt-1">{step.n}</span>
-            <div>
-              <h3 class="text-[20px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug);">{step.t}</h3>
-              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">{step.b}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </Container>
-  </section>
-
   <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
     <Container size="narrow">
       <MonoEyebrow text="// Tech stack" tone="accent-hi" class="mb-5 block" />
       <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
         <span class="block text-fg">Built for</span>
-        <span class="block text-accent">reliability on the go.</span>
+        <span class="block text-accent">working offline.</span>
       </h2>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
           <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Mapbox</span>
           <h3 class="text-[18px] font-medium text-fg mt-2 mb-2">Offline maps</h3>
-          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Tourists don't always have internet on the move. Mapbox integration means the entire Bonaire map — including POIs, dive spots and routes — is available locally.</p>
+          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Tourists have no data on the island. Mapbox integration means the entire map of Bonaire — including POIs, dive sites and routes — is available locally.</p>
         </div>
         <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
           <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Firebase</span>
           <h3 class="text-[18px] font-medium text-fg mt-2 mb-2">Realtime content</h3>
-          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Opening hours, new highlights and promotional content can be updated without an app release. Realtime data with structured storage for scalability.</p>
+          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Opening hours, new locations and promo content can be updated without an app release. Realtime data with structured storage for scale.</p>
         </div>
       </div>
-    </Container>
-  </section>
-
-  <section class="py-20 md:py-24">
-    <Container size="narrow">
-      <MonoEyebrow text="// Results" tone="accent-hi" class="mb-5 block" />
-      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">The travel companion</span>
-        <span class="block text-accent">for visitors to Bonaire.</span>
-      </h2>
-      <ul class="space-y-4 text-[16px] text-fg-dim max-w-[60ch]" role="list" style="line-height: 1.65;">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> More than 1,000 downloads within the first month.</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Average rating of 4.9/5 from satisfied users.</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Positive impact on the tourism experience and local entrepreneurs.</li>
-      </ul>
     </Container>
   </section>
 
@@ -190,12 +206,10 @@ const process = [
       <div class="text-center relative">
         <MonoEyebrow text="// Your idea, our next case?" tone="dim" class="mb-6 block" />
         <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-          <span class="block text-fg">Curious what</span>
-          <span class="block text-accent">we could do for you?</span>
+          <span class="block text-fg">Tourism apps</span>
+          <span class="block text-accent">that work offline.</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">
-          Get in touch — we'll discuss your app idea and send a concrete proposal.
-        </p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Island guide, regional app, museum tour — tell us what you have in mind and we'll share what we learned from Visit Bonaire and Bonaire Cruisers.</p>
         <div class="flex justify-center">
           <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
         </div>

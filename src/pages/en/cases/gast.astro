@@ -21,6 +21,13 @@ const clients = [
   { name: 'Hof van Saksen', sector: 'Holiday parks', logo: '/clients/hof-van-saksen.png' },
   { name: 'Roompot', sector: 'Holiday parks', logo: '/clients/roompot.png' },
 ];
+
+const screenshots = [
+  { src: '/clients/GT-1.webp', alt: 'GAST — guest home screen' },
+  { src: '/clients/GT-2.webp', alt: 'GAST — stay overview' },
+  { src: '/clients/GT-3.webp', alt: 'GAST — park info and activities' },
+  { src: '/clients/GT-4.webp', alt: 'GAST — communication with the park' },
+];
 ---
 
 <BaseLayout
@@ -50,6 +57,15 @@ const clients = [
       <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
         White-label guest app for holiday parks and hospitality businesses. GAST runs on the same platform as Medewerker.app, but aimed at guests instead of staff — from check-in to room info to local tips, in a brand jacket per park.
       </p>
+      <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
+        Built by Blue Business for IDC Tech B.V. · live on the App Store since August 2025
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/gast/id1468467772" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+      </div>
     </Container>
   </section>
 
@@ -99,6 +115,23 @@ const clients = [
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Shared backend with Medewerker.app — multi-tenant, white-labelable</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web admin for park managers: content, audiences, push campaigns</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Integrations with PMS and booking systems for automatic guest data</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">A whole stay,</span>
+        <span class="block text-accent">one tap away.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
       </ul>
     </Container>
   </section>

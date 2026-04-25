@@ -24,17 +24,23 @@
       "ctaSecondary": "Bekijk onze cases",
       "stats": [
         { "value": "2021", "label": "opgericht in Nederland" },
-        { "value": "4.9★", "label": "Bonaire App · App Store NL" },
+        { "value": "5.0★", "label": "Visit Bonaire · App Store NL" },
         { "value": "iOS · Android", "label": "native ontwikkeling" }
       ],
       "cycler": [
         "> build succeeded in 12.3s",
         "> submitted to App Store",
-        "> 4.9 ★ — Bonaire App"
+        "> 5.0 ★ — Visit Bonaire"
       ]
     },
     "trust": {
-      "text": "Gemaakt voor ondernemers in Nederland én de Caribbean — van familiebedrijven tot toerisme-platforms tot overheidsdiensten."
+      "eyebrow": "// In productie bij",
+      "text": "Native apps die elke dag in gebruik zijn — bij Nederlandse vakantieparken, sportcommunities en bezoekers van Bonaire.",
+      "logos": [
+        { "name": "Hof van Saksen", "src": "/clients/hof-van-saksen.png", "alt": "Hof van Saksen" },
+        { "name": "Roompot", "src": "/clients/roompot.png", "alt": "Roompot vakantieparken" },
+        { "name": "Run2Forty2", "src": "/clients/run2forty2.png", "alt": "Run2Forty2 marathonreizen en trainingen" }
+      ]
     },
     "services": {
       "eyebrow": "// Wat we bouwen",
@@ -80,9 +86,9 @@
           "id": "bonaire-app",
           "featured": true,
           "label": "// tourism — Caribbean",
-          "title": "Bonaire App — you explore, we guide you.",
-          "body": "De ultieme reisgids voor Bonaire. Offline navigatie via Mapbox, alle points-of-interest, op maat gemaakte routes en cruise-tours. Realtime data via Firebase.",
-          "datapoint": "4.9★ · 1.000+ downloads in eerste maand",
+          "title": "Visit Bonaire — you explore, we guide you.",
+          "body": "De ultieme reisgids voor Bonaire. Offline navigatie via Mapbox, alle points-of-interest, op maat gemaakte routes en cruise-tours. Realtime content via Firebase.",
+          "datapoint": "5.0★ · App Store NL · sinds april 2025",
           "accentColor": "#3B82F6"
         },
         {

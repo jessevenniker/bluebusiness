@@ -33,6 +33,21 @@ const clients = [
   { name: 'Roompot', sector: 'Holiday parks', logo: '/clients/roompot.png' },
   { name: 'Run2Forty2', sector: 'Marathon travel & training', logo: '/clients/run2forty2.png' },
 ];
+
+const screenshots = [
+  { src: '/clients/mw-1.webp', alt: 'Medewerker — home screen' },
+  { src: '/clients/MW-2.webp', alt: 'Medewerker — news feed' },
+  { src: '/clients/MW-3.webp', alt: 'Medewerker — onboarding flow' },
+  { src: '/clients/MW-4.webp', alt: 'Medewerker — learning paths and quiz' },
+  { src: '/clients/MW-5.webp', alt: 'Medewerker — documents and handbooks' },
+];
+
+const platformVariants = [
+  { src: '/clients/RT-1.webp', alt: 'Run2Forty2 — home screen on the Medewerker platform' },
+  { src: '/clients/RT-2.webp', alt: 'Run2Forty2 — training overview' },
+  { src: '/clients/RT-3.webp', alt: 'Run2Forty2 — chat with trainer' },
+  { src: '/clients/RT-4.webp', alt: 'Run2Forty2 — kudos and community' },
+];
 ---
 
 <BaseLayout
@@ -60,8 +75,20 @@ const clients = [
         <span class="block text-accent">internal comms for teams.</span>
       </h1>
       <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
-        Native iOS and Android app that combines push notifications, news, scheduling, onboarding, learning paths and gamification in one tool. Replaces scattered WhatsApp groups, intranet portals and email blasts with one platform that staff actually open — because it's faster than the alternative.
+        Native iOS and Android app that combines push notifications, news, onboarding, learning paths and gamification in one tool. Replaces scattered WhatsApp groups, intranet portals and email blasts with one platform that staff actually open — because it's faster than the alternative.
       </p>
+      <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
+        Built by Blue Business for IDC Tech B.V. · live on the App Store since June 2022
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/medewerker/id1625432010" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+        <a href="https://medewerker.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          medewerker.app →
+        </a>
+      </div>
     </Container>
   </section>
 
@@ -126,6 +153,38 @@ const clients = [
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Backend: multi-tenant, white-labelable, web admin in TypeScript</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Analytics + crash reporting for stable rollout across thousands of devices</li>
       </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">One app,</span>
+        <span class="block text-accent">thousands of staff.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
+
+      <h3 class="text-h3 font-medium text-fg mt-16 mb-3" style="letter-spacing: var(--tracking-snug);">Same platform, different brand: Run2Forty2</h3>
+      <p class="text-[15px] text-fg-dim mb-6 max-w-[60ch]" style="line-height: 1.65;">
+        Run2Forty2 is a separate App Store app running on the same platform as Medewerker. Marathon trainees get training schedules, news updates and a kudos feature — same technical foundation, different audience and visual identity.
+      </p>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
+        {platformVariants.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
+      <p class="font-mono text-[12px] text-fg-faint mt-4">
+        Run2Forty2 on the <a href="https://apps.apple.com/nl/app/run2forty2/id6448728310" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">Dutch App Store</a>
+      </p>
     </Container>
   </section>
 

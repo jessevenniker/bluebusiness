@@ -16,6 +16,16 @@ const schema = {
   publisher: { '@id': `${baseUrl}/#organization` },
   about: 'Self-guided audio tours voor Bonaire per golfkar — offline routes, points-of-interest en lokale verhalen.',
 };
+
+const screenshots = [
+  { src: '/clients/BC-1.webp', alt: 'Bonaire Cruisers — startscherm' },
+  { src: '/clients/BC-2.webp', alt: 'Bonaire Cruisers — tour-keuze' },
+  { src: '/clients/BC-3.webp', alt: 'Bonaire Cruisers — kaart met route' },
+  { src: '/clients/BC-4.webp', alt: 'Bonaire Cruisers — point-of-interest detail' },
+  { src: '/clients/BC-5.webp', alt: 'Bonaire Cruisers — audio-speler' },
+  { src: '/clients/BC-6.webp', alt: 'Bonaire Cruisers — routedetail' },
+  { src: '/clients/BC-7.webp', alt: 'Bonaire Cruisers — instellingen en talen' },
+];
 ---
 
 <BaseLayout
@@ -100,6 +110,23 @@ const schema = {
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Android — Kotlin, Jetpack Compose, ExoPlayer</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Offline-first content-bundles, lokale storage voor audio en kaarten</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> CMS-koppeling voor het uitbreiden van tours zonder app-update</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Een tour</span>
+        <span class="block text-accent">in zeven schermen.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
       </ul>
     </Container>
   </section>

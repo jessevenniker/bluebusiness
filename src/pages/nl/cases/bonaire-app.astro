@@ -11,19 +11,35 @@ const schema = {
     {
       '@type': 'SoftwareApplication',
       '@id': `${baseUrl}/nl/cases/bonaire-app/#app`,
-      name: 'Bonaire App',
+      name: 'Visit Bonaire',
       applicationCategory: 'TravelApplication',
       operatingSystem: 'iOS, Android',
-      description: 'De Bonaire App is de ultieme gids voor een onvergetelijke reis naar Bonaire. Alle highlights, offline navigatie, op maat gemaakte routes en unieke tours.',
-      url: 'https://www.visit-bonaire.com/',
-      creator: { '@id': `${baseUrl}/#organization` },
+      description: 'Visit Bonaire is de alles-in-één reisapp voor bezoekers van Bonaire. Offline navigatie via Mapbox, alle highlights, op maat gemaakte routes en cruise-tours.',
+      url: `${baseUrl}/nl/cases/bonaire-app/`,
+      datePublished: '2025-04-29',
+      inLanguage: ['nl', 'en'],
+      publisher: { '@id': `${baseUrl}/#organization` },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        ratingCount: '4',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      review: {
+        '@type': 'Review',
+        reviewBody: 'Super handige app, vooral de offline kaart functie! Internet is hier zo traag. Alle info voor op t eiland.',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'App Store-gebruiker' },
+        inLanguage: 'nl',
+      },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/nl/` },
         { '@type': 'ListItem', position: 2, name: 'Cases', item: `${baseUrl}/nl/cases/` },
-        { '@type': 'ListItem', position: 3, name: 'Bonaire App', item: `${baseUrl}/nl/cases/bonaire-app/` },
+        { '@type': 'ListItem', position: 3, name: 'Visit Bonaire', item: `${baseUrl}/nl/cases/bonaire-app/` },
       ],
     },
   ],
@@ -31,56 +47,35 @@ const schema = {
 
 const features = [
   'Alle points-of-interest van Bonaire',
-  'Offline navigatie naar alle highlights',
-  'Op maat gemaakte routes inclusief navigatie',
+  'Offline navigatie via Mapbox',
+  'Op maat gemaakte routes inclusief turn-by-turn',
   'Cruise-tours voor dagtoeristen',
-  'In-app aankopen voor premium content',
   'Inspirerende foto\u2019s, beschrijvingen en lokale tips',
+  'Realtime content via Firebase — geen app-update nodig',
 ];
 
-const process = [
-  {
-    n: '01',
-    t: 'Begrip van de gebruikersbehoeften',
-    b: 'Interviews met toeristen en lokale bedrijven bepaalden de focus: offline kaarten, eiland-tours voor cruisetoeristen en een overzicht van de highlights.',
-  },
-  {
-    n: '02',
-    t: 'Samenwerking met lokale experts',
-    b: 'Partnerships met lokale gidsen en ondernemers om een authentieke, volledige database van highlights samen te stellen.',
-  },
-  {
-    n: '03',
-    t: 'Ontwerp en gebruiksvriendelijkheid',
-    b: 'Intuïtieve navigatie, ook offline. UI/UX afgestemd op de tropische sfeer van Bonaire. Iteratief getest met echte gebruikers.',
-  },
-  {
-    n: '04',
-    t: 'Innovatieve technologie',
-    b: 'Mapbox voor offline kaarten, Firebase voor realtime data en robuuste prestaties. Gepersonaliseerde routes op basis van interesses.',
-  },
-  {
-    n: '05',
-    t: 'Betrokkenheid creëren',
-    b: 'Inspirerende content, favorieten-functionaliteit, directe routebeschrijvingen — zodat gebruikers de app niet één keer openen maar meerdere malen per dag.',
-  },
-  {
-    n: '06',
-    t: 'Lancering en optimalisatie',
-    b: 'Soft launch, feedback verzamelen, doorlopende updates op basis van gebruiksdata. Het app-team blijft nieuwe features toevoegen.',
-  },
+const screenshots = [
+  { src: '/clients/VB-1.webp', alt: 'Visit Bonaire — startscherm' },
+  { src: '/clients/VB-2.webp', alt: 'Visit Bonaire — kaart met points-of-interest' },
+  { src: '/clients/VB-3.webp', alt: 'Visit Bonaire — detailpagina van een locatie' },
+  { src: '/clients/VB-4.webp', alt: 'Visit Bonaire — tour-overzicht' },
+  { src: '/clients/VB-5.webp', alt: 'Visit Bonaire — duik- en snorkelplekken' },
+  { src: '/clients/VB-6.webp', alt: 'Visit Bonaire — restaurants en activiteiten' },
+  { src: '/clients/VB-7.webp', alt: 'Visit Bonaire — gepersonaliseerde route' },
+  { src: '/clients/VB-8.webp', alt: 'Visit Bonaire — favorieten' },
+  { src: '/clients/VB-9.webp', alt: 'Visit Bonaire — instellingen en talen' },
 ];
 ---
 
 <BaseLayout
-  title="Bonaire App — case study | Blue Business"
-  description="De Bonaire App is dé reisgenoot voor bezoekers van Bonaire. Offline navigatie met Mapbox, realtime data via Firebase. 1.000+ downloads in de eerste maand, 4.9/5 beoordeling."
+  title="Visit Bonaire — alles-in-één reisapp voor Bonaire | Blue Business"
+  description="Visit Bonaire is de alles-in-één reisapp voor bezoekers van Bonaire — gebouwd door Blue Business. Offline navigatie via Mapbox, realtime content via Firebase. 5.0★ in de App Store NL."
   canonicalPath="/nl/cases/bonaire-app/"
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
   <!-- Hero -->
-  <section class="pt-[140px] md:pt-[180px] pb-20">
+  <section class="pt-[140px] md:pt-[180px] pb-16">
     <Container>
       <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
         <ol class="flex flex-wrap items-center gap-2">
@@ -88,52 +83,80 @@ const process = [
           <li>/</li>
           <li><a href="/nl/cases/" class="hover:text-accent-hi">Cases</a></li>
           <li>/</li>
-          <li class="text-fg-dim">Bonaire App</li>
+          <li class="text-fg-dim">Visit Bonaire</li>
         </ol>
       </nav>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 items-start">
-        <div class="md:col-span-3">
-          <MonoEyebrow text="// tourism — Caribbean" tone="accent-hi" class="mb-6 block" />
-          <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-            <span class="block text-fg">Bonaire App —</span>
-            <span class="block text-accent">you explore, we guide you.</span>
-          </h1>
-          <p class="text-lead text-fg-dim max-w-[52ch]">
-            De Bonaire App is de ultieme gids voor een onvergetelijke reis naar dit tropische paradijs. Van de beste snorkelplekken tot adembenemende duiklocaties tot unieke tours om het eiland te verkennen.
-          </p>
+      <MonoEyebrow text="// tourism — Caribbean" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Visit Bonaire —</span>
+        <span class="block text-accent">you explore, we guide you.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        De alles-in-één reisapp voor bezoekers van Bonaire. Van duikspots tot stranden tot restaurants tot op maat gemaakte tours — alles offline, met realtime content die zonder app-update bijgewerkt kan worden.
+      </p>
 
-          <div class="grid grid-cols-3 gap-4 md:gap-8 mt-10 pt-6 border-t border-[var(--color-accent-line)]">
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">1.000+</div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">downloads eerste maand</div>
-            </div>
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">4.9<span class="text-accent">★</span></div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">gemiddelde rating</div>
-            </div>
-            <div>
-              <div class="text-[22px] font-medium text-fg mb-1">iOS · Android</div>
-              <div class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em]">native apps</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Visual -->
-        <div class="md:col-span-2 relative">
-          <div
-            class="rounded-[14px] p-8 md:p-10 flex items-center justify-center aspect-square"
-            style="background: linear-gradient(135deg, rgba(59,130,246,0.14) 0%, rgba(34,211,238,0.08) 100%); border: 0.5px solid var(--color-accent-line);"
-          >
-            <div class="w-[96px] h-[96px] rounded-[22px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
-              <span class="font-mono text-[28px] font-medium text-accent">B</span>
-            </div>
-          </div>
-          <p class="font-mono text-[11px] text-fg-faint mt-3 text-center">
-            Live op <a href="https://www.visit-bonaire.com/" class="hover:text-accent-hi underline underline-offset-2">visit-bonaire.com</a>
-          </p>
-        </div>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/visit-bonaire/id6736879805" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+        <a href="https://www.visit-bonaire.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          visit-bonaire.com →
+        </a>
       </div>
+    </Container>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Rating', v: '5.0★ · 4 reviews' },
+          { k: 'Live sinds', v: '29 april 2025' },
+          { k: 'Platforms', v: 'iOS · Android · iPad · Mac' },
+          { k: 'Talen', v: 'Nederlands & Engels' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-16 md:py-20">
+    <Container size="narrow">
+      <figure class="p-8 md:p-10 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] relative">
+        <span aria-hidden="true" class="absolute top-4 left-6 font-mono text-[44px] leading-none text-accent/40">"</span>
+        <blockquote class="text-[18px] md:text-[20px] text-fg pl-6" style="line-height: 1.55;">
+          <p>Super handige app, vooral de offline kaart functie! Internet is hier zo traag. Alle info voor op t eiland.</p>
+        </blockquote>
+        <figcaption class="mt-6 pl-6 flex items-baseline gap-3 flex-wrap">
+          <span class="text-[15px] font-medium text-fg">Review op de App Store NL</span>
+          <span class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">5 sterren</span>
+        </figcaption>
+      </figure>
+    </Container>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Eén eiland,</span>
+        <span class="block text-accent">elf schermen ver.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
     </Container>
   </section>
 
@@ -156,66 +179,27 @@ const process = [
     </Container>
   </section>
 
-  <!-- Process -->
-  <section class="py-20 md:py-24">
-    <Container size="narrow">
-      <MonoEyebrow text="// Project aanpak" tone="accent-hi" class="mb-5 block" />
-      <h2 class="text-h2 font-medium mb-12" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">Hoe we de</span>
-        <span class="block text-accent">Bonaire App hebben gebouwd.</span>
-      </h2>
-
-      <ol class="space-y-10" role="list">
-        {process.map((step) => (
-          <li class="grid grid-cols-[auto_1fr] gap-6 md:gap-10">
-            <span class="font-mono text-[14px] text-accent-hi pt-1">{step.n}</span>
-            <div>
-              <h3 class="text-[20px] font-medium text-fg mb-2" style="letter-spacing: var(--tracking-snug);">{step.t}</h3>
-              <p class="text-[15px] text-fg-dim" style="line-height: 1.65;">{step.b}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </Container>
-  </section>
-
   <!-- Tech stack -->
   <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
     <Container size="narrow">
-      <MonoEyebrow text="// Tech stack" tone="accent-hi" class="mb-5 block" />
+      <MonoEyebrow text="// Tech-stack" tone="accent-hi" class="mb-5 block" />
       <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
         <span class="block text-fg">Gebouwd voor</span>
-        <span class="block text-accent">betrouwbaarheid onderweg.</span>
+        <span class="block text-accent">offline werken.</span>
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
           <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Mapbox</span>
           <h3 class="text-[18px] font-medium text-fg mt-2 mb-2">Offline kaarten</h3>
-          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Toeristen hebben onderweg geen internet. Mapbox-integratie betekent dat de hele kaart van Bonaire — inclusief POIs, duikspots en routes — lokaal beschikbaar is.</p>
+          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Toeristen hebben onderweg geen internet. Mapbox-integratie zorgt dat de hele kaart van Bonaire — inclusief points-of-interest, duikspots en routes — lokaal beschikbaar is.</p>
         </div>
         <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
           <span class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em]">Firebase</span>
           <h3 class="text-[18px] font-medium text-fg mt-2 mb-2">Realtime content</h3>
-          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Openingstijden, nieuwe highlights en promo-content kunnen zonder app-update worden aangepast. Realtime data met gestructureerde opslag voor schaalbaarheid.</p>
+          <p class="text-[14px] text-fg-dim" style="line-height: 1.6;">Openingstijden, nieuwe locaties en promo-content kunnen zonder app-update worden aangepast. Realtime data met gestructureerde opslag voor schaalbaarheid.</p>
         </div>
       </div>
-    </Container>
-  </section>
-
-  <!-- Result -->
-  <section class="py-20 md:py-24">
-    <Container size="narrow">
-      <MonoEyebrow text="// Resultaat" tone="accent-hi" class="mb-5 block" />
-      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-        <span class="block text-fg">De reisgenoot voor</span>
-        <span class="block text-accent">bezoekers van Bonaire.</span>
-      </h2>
-      <ul class="space-y-4 text-[16px] text-fg-dim max-w-[60ch]" role="list" style="line-height: 1.65;">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Meer dan 1.000 downloads binnen de eerste maand.</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Gemiddelde beoordeling van 4.9/5 door tevreden gebruikers.</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Positieve impact op de toeristische ervaring en lokale ondernemers.</li>
-      </ul>
     </Container>
   </section>
 
@@ -226,12 +210,10 @@ const process = [
       <div class="text-center relative">
         <MonoEyebrow text="// Jouw idee, onze volgende case?" tone="dim" class="mb-6 block" />
         <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
-          <span class="block text-fg">Benieuwd naar wat</span>
-          <span class="block text-accent">we voor jou kunnen betekenen?</span>
+          <span class="block text-fg">Toerisme-apps die</span>
+          <span class="block text-accent">offline gewoon werken.</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">
-          Neem contact op — dan bespreken we je app-idee en sturen we een concreet voorstel.
-        </p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Eiland-gids, regio-app, museum-route — vertel wat je voor ogen hebt, dan delen we wat we van Visit Bonaire en Bonaire Cruisers hebben geleerd.</p>
         <div class="flex justify-center">
           <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
         </div>

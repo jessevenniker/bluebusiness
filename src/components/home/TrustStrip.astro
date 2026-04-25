@@ -2,15 +2,33 @@
 import { getCurrentLocale } from '../../i18n/routes';
 import { getContent } from '../../i18n/content';
 import Container from '../shared/Container.astro';
+import MonoEyebrow from '../shared/MonoEyebrow.astro';
 
 const locale = getCurrentLocale(Astro.url.pathname);
 const t = getContent(locale).home.trust;
 ---
 
-<section class="py-20 border-y border-[var(--color-accent-line)] reveal">
+<section class="py-20 md:py-24 border-y border-[var(--color-accent-line)] reveal">
   <Container>
-    <p class="text-lead text-fg-dim text-center max-w-[60ch] mx-auto">
-      {t.text}
-    </p>
+    <div class="text-center mb-10 md:mb-12">
+      <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-4 inline-block" />
+      <p class="text-[16px] md:text-[18px] text-fg-dim max-w-[60ch] mx-auto" style="line-height: 1.6;">
+        {t.text}
+      </p>
+    </div>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-[900px] mx-auto" role="list">
+      {t.logos.map((logo) => (
+        <li class="bg-white rounded-[14px] border border-[var(--color-border)] flex items-center justify-center min-h-[120px] p-6 transition-colors hover:border-[var(--color-accent-line)]">
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            class="max-h-[68px] max-w-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </li>
+      ))}
+    </ul>
   </Container>
 </section>

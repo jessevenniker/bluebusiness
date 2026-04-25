@@ -21,6 +21,13 @@ const clients = [
   { name: 'Hof van Saksen', sector: 'Vakantieparken', logo: '/clients/hof-van-saksen.png' },
   { name: 'Roompot', sector: 'Vakantieparken', logo: '/clients/roompot.png' },
 ];
+
+const screenshots = [
+  { src: '/clients/GT-1.webp', alt: 'GAST — startscherm voor de gast' },
+  { src: '/clients/GT-2.webp', alt: 'GAST — verblijf-overzicht' },
+  { src: '/clients/GT-3.webp', alt: 'GAST — park-info en activiteiten' },
+  { src: '/clients/GT-4.webp', alt: 'GAST — communicatie met het park' },
+];
 ---
 
 <BaseLayout
@@ -50,6 +57,15 @@ const clients = [
       <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
         White-label gast-app voor vakantieparken en hospitality-bedrijven. GAST draait op hetzelfde platform als Medewerker.app, maar dan gericht op de gasten in plaats van het personeel — van check-in tot kamer-info tot lokale tips, in een eigen merk-jas per park.
       </p>
+      <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em] mt-6">
+        Gebouwd door Blue Business voor IDC Tech B.V. · live op de App Store sinds augustus 2025
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/nl/app/gast/id1468467772" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+      </div>
     </Container>
   </section>
 
@@ -99,6 +115,23 @@ const clients = [
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Gedeeld backend met Medewerker.app — multi-tenant, white-label-baar</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web-admin voor parkbeheer: content, doelgroepen, push-campagnes</li>
         <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Koppelingen met PMS en boekingssystemen voor automatische gast-data</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <MonoEyebrow text="// Screenshots" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-10" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Een verblijf,</span>
+        <span class="block text-accent">één tap weg.</span>
+      </h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4" role="list">
+        {screenshots.map((s) => (
+          <li class="rounded-[14px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+            <img src={s.src} alt={s.alt} class="block w-full h-auto" loading="lazy" decoding="async" />
+          </li>
+        ))}
       </ul>
     </Container>
   </section>
