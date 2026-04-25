@@ -6,7 +6,7 @@ import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
 
 <BaseLayout
   title="Privacy Policy — Blue Business"
-  description="Privacy Policy of Blue Innovation B.V. (Blue Business). How we collect, use and protect data in accordance with GDPR."
+  description="Privacy Policy of Blue Innovation B.V. (Blue Business). No tracking cookies, no analytics tools. The data we do process, why and for how long."
   canonicalPath="/en/privacy/"
   breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Privacy Policy', path: '/en/privacy/' }]}
 >
@@ -17,9 +17,12 @@ import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
         <span class="block text-fg">Privacy</span>
         <span class="block text-accent">Policy.</span>
       </h1>
+      <p class="text-body text-fg-dim mt-6 max-w-[60ch]">
+        Blue Innovation B.V., version April 2026. Registered with the Dutch Chamber of Commerce under number 80387578, with registered office at Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands.
+      </p>
       <div class="mt-6 p-4 rounded-[10px] bg-[var(--color-accent)]/[0.06] border border-[var(--color-accent-line)] max-w-[60ch]">
         <p class="text-[14px] text-fg-dim">
-          This is an informational English translation. The legally binding version is the Dutch Privacy Policy. <a href="/nl/privacy/" class="text-accent hover:text-accent-hi underline underline-offset-2">Read the Dutch version</a>.
+          This English version is provided for convenience. The legally binding version is the Dutch <a href="/nl/privacy/" class="text-accent hover:text-accent-hi underline underline-offset-2">Privacy Policy</a>. In case of any discrepancy, the Dutch version prevails.
         </p>
       </div>
     </Container>
@@ -27,83 +30,70 @@ import MonoEyebrow from '../../components/shared/MonoEyebrow.astro';
 
   <section class="pb-24">
     <Container size="narrow">
-      <div class="space-y-6 text-[15px] text-fg-dim" style="line-height: 1.7;">
+      <div class="prose-legal space-y-6 text-[15px] text-fg-dim" style="line-height: 1.7;">
         <p>
-          This is the Privacy Policy of Blue Innovation B.V. (hereafter "Bluebusiness", "we", "us" or "our"), a company with registered address Rietsingel 46, Zwaanshoek, the Netherlands. Bluebusiness is registered with the Dutch Chamber of Commerce under number 80387578. This Privacy Policy explains how we collect, use, share and protect data in relation to our services. We collect this data when you use our services. We process personal data in a manner consistent with the General Data Protection Regulation ("GDPR"), the GDPR-based implementing legislation and other applicable privacy law.
+          This website (<a href="https://bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">bluebusiness.nl</a>) is intentionally minimal when it comes to data. No analytics tools that follow you around, no advertising cookies, no social-media trackers, no cookie banner — because there's nothing to ask consent for. Below we explain exactly what data we do process, why, for how long, and who has access.
         </p>
 
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Data controller</h2>
         <p>
-          Our Privacy Policy applies to anyone who uses our services. By using our services, you understand and agree to the collection and use of information in accordance with this privacy policy.
+          Blue Innovation B.V. (trading as Blue Business), Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands, KvK 80387578. Email: <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a>. For privacy questions you can use the same address.
         </p>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">What data do we collect?</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">What data do we process?</h2>
         <p>
-          We collect personal data that you provide to us. Personal data means any information relating to an identified or identifiable natural person. This includes:
+          Only data that you actively provide. Specifically:
         </p>
-        <ul class="list-[lower-alpha] pl-6 space-y-1.5">
-          <li>Contact and address information</li>
-          <li>Email address</li>
-          <li>Financial information</li>
-          <li>Account information</li>
-          <li>Other personal data you provide</li>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong class="text-fg font-medium">Contact form</strong> — if you fill in the form on <a href="/en/contact/" class="text-accent hover:text-accent-hi underline underline-offset-2">/contact/</a>: your name, email address, optionally your company name, project type, project scale and your description of the project. Purpose: to get in touch and answer your question. Legal basis: your request (pre-contractual measures, art. 6(1)(b) GDPR).</li>
+          <li><strong class="text-fg font-medium">Email correspondence</strong> — if you email <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a> directly: your email address, possibly your name and signature, and the contents of the message. Purpose: to answer your question. Legal basis: your request.</li>
         </ul>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Purposes of data processing</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">How long do we keep it?</h2>
         <p>
-          By using our services, you leave certain data with us, for example by creating an account. This may include information such as name, email address, phone number and payment details. Bluebusiness collects and processes this data to make our services accessible. We also collect information about your device (such as IP address and browser type) so we can improve our services. Personal data is not shared with third parties unless we are required to do so by law.
+          Contact form submissions and email correspondence are retained for up to two (2) years after the last contact, unless an engagement results from it — in which case they fall under the retention period of the related administration (seven years on a tax basis).
         </p>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">How is this information shared?</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Processors and third parties</h2>
         <p>
-          We will not rent or sell your personal data to third parties unless you give us permission or to comply with a legal obligation.
+          To run the site we use three external services. All three have a data processing agreement (DPA) with us, or offer one as standard:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong class="text-fg font-medium">Vercel Inc. (USA)</strong> — hosting and CDN. With every page request Vercel processes your IP address, user agent and path for caching, security (DDoS) and debugging. Vercel does not store identifiers to track you back. We use Vercel Web Analytics — cookieless, hashed-and-anonymised IP, no data shared with third parties. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">Vercel privacy policy</a>.</li>
+          <li><strong class="text-fg font-medium">Formspree Inc. (USA)</strong> — contact form processing. When you submit the form, the filled-in fields go via Formspree to our inbox. Formspree temporarily stores the submission for forwarding and spam filtering. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">Formspree privacy policy</a>.</li>
+          <li><strong class="text-fg font-medium">Google Fonts (Google LLC, USA)</strong> — typography (Geist and Geist Mono) is served from Google's font CDN. When loading a page, Google processes your IP address and user agent. No cookies. We're investigating self-hosting to remove this dependency in a future update.</li>
+        </ul>
+        <p>
+          Both US parties operate under the EU-US Data Privacy Framework. For onward transfers, Standard Contractual Clauses (SCCs) apply.
         </p>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Legal requests and harm prevention</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">No analytics, no advertising cookies, no social trackers</h2>
         <p>
-          On the basis of a legal request, we are entitled to access your information and retain and/or share it in response to a legal request (such as a search warrant, court order or subpoena). We are also entitled to retain and/or share your information where we believe this is necessary to detect, prevent and address fraud or other illegal activity, and to protect ourselves, you and others. Information we receive about you may be accessed, processed and retained for a longer period where necessary due to a legal request or obligation, an investigation concerning our terms or policies, or to otherwise prevent harm.
+          This website uses <strong class="text-fg font-medium">no</strong> Google Analytics, no Hotjar, no Meta Pixel, no LinkedIn Insights, no Facebook/Instagram/X/YouTube cookies, no retargeting, and no profiling. The only cookies your browser may store are strictly functional (e.g. local CSS preferences) and contain no personal data. That's why you see no cookie banner — there's no consent to ask for data we don't collect.
         </p>
 
         <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Security</h2>
         <p>
-          Bluebusiness has implemented appropriate technical and organizational measures to protect your data against any form of unlawful processing.
+          Traffic to the site goes over HTTPS. Contact form submissions travel encrypted to Formspree and from there encrypted to our inbox (TLS). Emails are kept inside our email environment with multi-factor authentication.
         </p>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Website disclaimer</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Your rights</h2>
         <p>
-          By using the website you agree to the disclaimer. Bluebusiness reserves the right to change the content of its website and/or this disclaimer at any time without informing its clients and/or users of the website. The content of the website has been compiled with the greatest possible care, but may nevertheless contain inaccuracies or be incomplete. Bluebusiness accepts no liability whatsoever for any damage arising from or resulting from the use of the website. The use of this website is entirely at the user's own expense and risk. No rights can be derived from the content of the website. All texts on the website are protected by copyright and owned by Bluebusiness insofar as they do not belong to third parties.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Cookie statement</h2>
-        <p>
-          Bluebusiness uses technical and functional cookies to optimize the website. Cookies are small text files sent along when visiting a website to make visitors' user experiences more efficient. Under applicable law, Bluebusiness may store cookies on your device if these cookies are strictly necessary to operate the website. For other types of cookies, your consent is required. We recommend accepting cookies for website usability. Bluebusiness uses functional cookies that ensure the website functions properly. These cookies have no effect on personal privacy, so consent is not required. The Bluebusiness website also uses Google Analytics cookies. If you have questions, contact <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a>.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Social media use</h2>
-        <p>
-          Bluebusiness uses third-party cookies to optimize the website. Some cookies are placed by third-party services displayed on the website. Third parties include Google Analytics and social media (Instagram, Facebook, Twitter and Youtube). The privacy and cookie policy of the relevant company applies to the use of cookies from other companies (third parties). For cookies from social media parties and the data and/or personal data they collect, Bluebusiness refers you to the privacy and cookie statements of those parties.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Retention</h2>
-        <p>
-          In accordance with the GDPR and other applicable legislation, Bluebusiness does not retain personal data longer than necessary for achieving the purposes for which it is collected or processed. If you want more information on how long your specific personal data is retained, contact <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a>.
-        </p>
-
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Right of access, correction, objection and data portability</h2>
-        <p>
-          If you wish to access your personal data, change or delete your data, or transfer your personal data in whole or in part to yourself or a third party, you can contact us by emailing <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a>.
-        </p>
-        <p>
-          If you object to the way we handle your data, you can file a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).
+          Under the GDPR you have the right to access, correction, deletion, restriction of processing, data portability and objection. Send an email to <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a> with your request; we'll respond within 30 days. For verification we may ask for additional information. Have a complaint about how we handle your data? You can contact the <a href="https://www.autoriteitpersoonsgegevens.nl/en" target="_blank" rel="noopener" class="text-accent hover:text-accent-hi underline underline-offset-2">Dutch Data Protection Authority</a>.
         </p>
 
         <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Changes</h2>
         <p>
-          Bluebusiness may update this Privacy Policy from time to time. You are therefore advised to consult this Privacy Policy regularly. Changes to this Privacy Policy take effect at the moment they are published on our website.
+          We may update this policy when our tools, processes or the law change. The date at the top always reflects the most recent version.
         </p>
 
-        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Contact</h2>
+        <h2 class="text-h3 font-medium text-fg mt-10 mb-3">Apps we build</h2>
         <p>
-          If you have questions about this Privacy Policy, you can contact Bluebusiness by emailing <a href="mailto:info@bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">info@bluebusiness.nl</a>.
+          This policy only covers the website <a href="https://bluebusiness.nl" class="text-accent hover:text-accent-hi underline underline-offset-2">bluebusiness.nl</a>. The apps we've built for clients and as our own products (Visit Bonaire, Bonaire Cruisers, Medewerker, GAST, Run2Forty2) have their own privacy statements — find them in the App Store and Play Store of each app, and on the publisher's website.
+        </p>
+
+        <p class="text-body text-fg-faint mt-16 pt-6 border-t border-[var(--color-border)]">
+          Last updated: April 2026.
         </p>
       </div>
     </Container>

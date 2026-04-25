@@ -90,7 +90,7 @@
           "label": "// tourism — Caribbean",
           "title": "Visit Bonaire — you explore, we guide you.",
           "body": "The ultimate guide to Bonaire. Offline navigation via Mapbox, all points of interest, tailored routes and cruise tours. Realtime content via Firebase.",
-          "datapoint": "5.0★ · App Store NL · since April 2025",
+          "datapoint": "5.0★ · App Store NL · since November 2024",
           "accentColor": "#3B82F6",
           "iconSrc": "/clients/visit-bonaire-logo.png",
           "iconTone": "dark"
@@ -241,7 +241,7 @@
     "eyebrow": "// Let's talk",
     "h1Line1": "Tell us about",
     "h1Line2": "your app idea.",
-    "lead": "30 minutes with the developer who would build it — not an account executive. You tell us what you have, we tell you honestly whether it fits and what a realistic budget and timeline look like.",
+    "lead": "30 minutes with the developer who would build it — not an account executive. You tell us what you have, we tell you honestly whether it's a fit and how we'd approach it.",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your name",
