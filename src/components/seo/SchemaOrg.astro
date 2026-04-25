@@ -1,11 +1,22 @@
 ---
+/**
+ * SchemaOrg — site-wide structured data graph.
+ *
+ * Emits one big @graph with stable @ids so cross-linking between nodes
+ * works (Organization, WebSite, Services, FAQPage, BreadcrumbList).
+ * The Organization is typed as ProfessionalService — more specific than
+ * Organization for an agency, and earns extra rich-result eligibility.
+ */
 import { getContent } from '../../i18n/content';
+
+interface BreadcrumbItem { name: string; path: string; }
 
 interface Props {
   locale?: 'nl' | 'en';
   includeFaq?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
 }
-const { locale = 'nl', includeFaq = false } = Astro.props;
+const { locale = 'nl', includeFaq = false, breadcrumbs } = Astro.props;
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const content = getContent(locale);
@@ -15,9 +26,48 @@ const description =
     ? 'Blue Business is a Dutch app development studio founded in 2021, specializing in native iOS and Android apps for SMEs, tourism operators, and Caribbean governments.'
     : 'Blue Business is een Nederlandse app development studio opgericht in 2021, gespecialiseerd in native iOS en Android apps voor MKB, toerisme en Caribbean overheid.';
 
+const slogan =
+  locale === 'en'
+    ? 'Native apps people open every day.'
+    : 'Native apps die mensen dagelijks openen.';
+
+// Things Blue Business demonstrably knows about (fed back to LLMs and
+// Knowledge Graph as topical authority signals).
+const knowsAbout = [
+  'Native iOS app development',
+  'Native Android app development',
+  'Swift',
+  'SwiftUI',
+  'Kotlin',
+  'Jetpack Compose',
+  'Mapbox',
+  'Firebase',
+  'Multi-tenant white-label mobile platforms',
+  'Offline-first mobile applications',
+  'App Store and Google Play submission',
+  'Mobile app maintenance and OS upgrade support',
+  'Astro web framework',
+  'Next.js',
+  'Caribbean tourism technology',
+  'Holiday park guest experience apps',
+  'Internal employee communication apps',
+];
+
+// Place objects beat ISO codes for area-served signals — searchers in the
+// Caribbean find us better when each island is its own Place node.
+const areaServed = [
+  { '@type': 'Country', name: 'Netherlands', identifier: 'NL' },
+  { '@type': 'Place', name: 'Bonaire' },
+  { '@type': 'Place', name: 'Curaçao' },
+  { '@type': 'Place', name: 'Aruba' },
+];
+
+const services = content.home.services.items;
+const r = locale === 'nl' ? '/nl/diensten/' : '/en/services/';
+
 const graph: Record<string, unknown>[] = [
   {
-    '@type': 'Organization',
+    '@type': 'ProfessionalService',
     '@id': `${baseUrl}/#organization`,
     name: 'Blue Business',
     legalName: 'Blue Innovation B.V.',
@@ -28,15 +78,21 @@ const graph: Record<string, unknown>[] = [
       width: 512,
       height: 512,
     },
+    image: `${baseUrl}/og/home.png`,
+    slogan,
     foundingDate: '2021',
+    foundingLocation: { '@type': 'Place', name: 'Netherlands' },
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rietsingel 46',
       postalCode: '2136 LB',
       addressLocality: 'Zwaanshoek',
+      addressRegion: 'Noord-Holland',
       addressCountry: 'NL',
     },
-    areaServed: ['NL', 'CW', 'AW', 'BQ'],
+    areaServed,
+    knowsAbout,
+    knowsLanguage: ['nl', 'en'],
     sameAs: [
       'https://www.linkedin.com/company/bluebusiness-nl',
       'https://github.com/jessevenniker/bluebusiness',
@@ -44,6 +100,22 @@ const graph: Record<string, unknown>[] = [
     email: 'info@bluebusiness.nl',
     identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: '80387578' },
     description,
+    serviceType: ['Native iOS app development', 'Native Android app development', 'Web application development', 'Mobile app maintenance'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: locale === 'en' ? 'Services' : 'Diensten',
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${baseUrl}${r}#${s.id}`,
+          name: s.title,
+          description: s.body,
+          provider: { '@id': `${baseUrl}/#organization` },
+          areaServed,
+        },
+      })),
+    },
   },
   {
     '@type': 'WebSite',
@@ -58,6 +130,7 @@ const graph: Record<string, unknown>[] = [
 if (includeFaq) {
   graph.push({
     '@type': 'FAQPage',
+    '@id': `${baseUrl}${locale === 'nl' ? '/nl/' : '/en/'}#faq`,
     mainEntity: content.home.faq.items.map((item) => ({
       '@type': 'Question',
       name: item.q,
@@ -65,6 +138,22 @@ if (includeFaq) {
         '@type': 'Answer',
         text: item.a,
       },
+    })),
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['details summary', 'details > div'],
+    },
+  });
+}
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: b.name,
+      item: `${baseUrl}${b.path}`,
     })),
   });
 }

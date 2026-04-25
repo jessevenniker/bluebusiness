@@ -14,23 +14,18 @@ const items = content.home.services.items;
 const detail = t.detail as Record<string, any>;
 const r = routeMap[locale];
 
-const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
-const schema = {
-  '@context': 'https://schema.org',
-  '@graph': items.map((s: any) => ({
-    '@type': 'Service',
-    '@id': `${baseUrl}${r.services}#${s.id}`,
-    name: s.title,
-    description: s.body,
-    provider: { '@id': `${baseUrl}/#organization` },
-    areaServed: ['NL', 'CW', 'AW', 'BQ'],
-    serviceType: s.title,
-  })),
-};
+const breadcrumbs = [
+  { name: 'Home', path: '/en/' },
+  { name: 'Services', path: '/en/services/' },
+];
 ---
 
-<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath={r.services}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+<BaseLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  canonicalPath={r.services}
+  breadcrumbs={breadcrumbs}
+>
 
   <!-- Hero -->
   <section class="pt-[140px] md:pt-[180px] pb-16">

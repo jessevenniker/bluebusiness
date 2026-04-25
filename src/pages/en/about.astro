@@ -19,9 +19,19 @@ const schema = {
   name: locale === 'en' ? 'About Blue Business' : 'Over Blue Business',
   mainEntity: { '@id': `${baseUrl}/#organization` },
 };
+
+const breadcrumbs = [
+  { name: 'Home', path: '/en/' },
+  { name: 'About', path: '/en/about/' },
+];
 ---
 
-<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath={r.about}>
+<BaseLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  canonicalPath={r.about}
+  breadcrumbs={breadcrumbs}
+>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
   <!-- Hero -->

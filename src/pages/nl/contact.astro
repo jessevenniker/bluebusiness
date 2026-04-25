@@ -33,7 +33,12 @@ const schema = {
 };
 ---
 
-<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath={r.contact}>
+<BaseLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  canonicalPath={r.contact}
+  breadcrumbs={[{ name: 'Home', path: '/nl/' }, { name: 'Contact', path: '/nl/contact/' }]}
+>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
   <section class="pt-[140px] md:pt-[180px] pb-12">

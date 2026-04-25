@@ -22,7 +22,12 @@ const letterById: Record<string, string> = {
 };
 ---
 
-<BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath={r.cases}>
+<BaseLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  canonicalPath={r.cases}
+  breadcrumbs={[{ name: 'Home', path: '/en/' }, { name: 'Work', path: '/en/cases/' }]}
+>
   <section class="pt-[140px] md:pt-[180px] pb-16">
     <Container>
       <MonoEyebrow text={t.eyebrow} tone="accent-hi" class="mb-5 block" />

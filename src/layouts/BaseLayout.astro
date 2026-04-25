@@ -5,6 +5,8 @@ import Footer from '../components/layout/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import { getCurrentLocale, getAlternateUrl } from '../i18n/routes';
 
+interface BreadcrumbItem { name: string; path: string; }
+
 interface Props {
   title: string;
   description: string;
@@ -12,6 +14,7 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   includeFaqSchema?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
 }
 const {
   title,
@@ -20,6 +23,7 @@ const {
   ogImage = '/og/home.png',
   noindex = false,
   includeFaqSchema = false,
+  breadcrumbs,
 } = Astro.props;
 
 const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
@@ -76,7 +80,7 @@ const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, '
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"
     />
 
-    <SchemaOrg locale={locale} includeFaq={includeFaqSchema} />
+    <SchemaOrg locale={locale} includeFaq={includeFaqSchema} breadcrumbs={breadcrumbs} />
   </head>
   <body>
     <Nav />
