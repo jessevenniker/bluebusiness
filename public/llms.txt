@@ -19,8 +19,9 @@ Blue Business is a Netherlands-based app development studio founded in 2021. The
 ## Key projects
 
 - **Bonaire App** — A mobile app bundling local information, businesses, activities, and practical features for residents and visitors of Bonaire. Rated 4.9 stars on the Dutch App Store in the travel category.
-- **Medewerker App** — Internal-communication and scheduling app for teams.
-- **GAST** — Hospitality guest-journey app.
+- **Bonaire Cruisers** — Self-guided audio-tour app for visitors exploring Bonaire by rental golf cart. Native iOS and Android, fully offline after install, bilingual NL/EN. Live since June 2025.
+- **Medewerker.app** — Native iOS and Android internal-communication platform combining news, scheduling, onboarding, learning paths and gamification. Live customers include Hof van Saksen, Roompot and Run2Forty2.
+- **GAST** — White-label guest-experience app for holiday parks and hospitality, built on the same platform as Medewerker.app. Live customers include Hof van Saksen and Roompot.
 
 ## Pricing and engagement
 

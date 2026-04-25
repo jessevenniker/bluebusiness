@@ -12,6 +12,13 @@ const r = routeMap[locale];
 const cases = content.home.cases.items;
 
 function cleanTitle(s: string) { return s.replace(/^\[TBD\]\s*/, ''); }
+
+const letterById: Record<string, string> = {
+  'bonaire-app': 'B',
+  'bonaire-cruisers': 'C',
+  'medewerker-app': 'M',
+  'gast': 'G',
+};
 ---
 
 <BaseLayout title={t.meta.title} description={t.meta.description} canonicalPath={r.cases}>
@@ -40,7 +47,7 @@ function cleanTitle(s: string) { return s.replace(/^\[TBD\]\s*/, ''); }
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
                     <span class="font-mono text-[18px] font-medium" style={`color: ${c.accentColor};`}>
-                      {c.id === 'bonaire-app' ? 'B' : c.id === 'medewerker-app' ? 'M' : 'G'}
+                      {letterById[c.id] ?? '·'}
                     </span>
                   </div>
                 </div>

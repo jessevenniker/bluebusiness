@@ -3,15 +3,34 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'GAST',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'TravelApplication',
+  url: `${baseUrl}/en/cases/gast/`,
+  inLanguage: 'nl',
+  publisher: { '@id': `${baseUrl}/#organization` },
+  about: 'White-label guest app for holiday parks and hospitality — built on the Medewerker.app platform, live at Hof van Saksen and Roompot.',
+};
+
+const clients = [
+  { name: 'Hof van Saksen', sector: 'Holiday parks' },
+  { name: 'Roompot', sector: 'Holiday parks' },
+];
 ---
 
 <BaseLayout
-  title="GAST — case study | Blue Business"
-  description="Guest app for the hospitality sector. Case study follows once the client approves publication."
+  title="GAST — guest app for holiday parks | Blue Business"
+  description="GAST is a white-label guest app for holiday parks and hospitality, built on the Medewerker.app platform by Blue Business. Live at Hof van Saksen and Roompot."
   canonicalPath="/en/cases/gast/"
-  noindex={true}
 >
-  <section class="pt-[140px] md:pt-[180px] pb-20">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
     <Container>
       <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
         <ol class="flex flex-wrap items-center gap-2">
@@ -24,33 +43,56 @@ import ArrowButton from '../../../components/shared/ArrowButton.astro';
       </nav>
 
       <MonoEyebrow text="// hospitality" tone="accent-hi" class="mb-6 block" />
-      <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-        <span class="block text-fg">GAST —</span>
-        <span class="block text-accent">case study in preparation.</span>
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">GAST — guest app on</span>
+        <span class="block text-accent">the same platform.</span>
       </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        White-label guest app for holiday parks and hospitality businesses. GAST runs on the same platform as Medewerker.app, but aimed at guests instead of staff — from check-in to room info to local tips, in a brand jacket per park.
+      </p>
+    </Container>
+  </section>
 
-      <div class="mt-10 p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] max-w-[60ch]">
-        <p class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">Status</p>
-        <p class="text-[16px] text-fg mb-3">This case is awaiting written client approval to publish name, numbers and screenshots.</p>
-        <p class="text-[14px] text-fg-dim">In the meantime: want to know what kind of guest app we built here? Send an email — we're happy to share more under NDA.</p>
+  <section class="py-16 md:py-20 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Live customers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {clients.map((c) => (
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <p class="text-[18px] font-medium text-fg mb-2">{c.name}</p>
+            <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          </div>
+        ))}
       </div>
     </Container>
   </section>
 
-  <section class="pb-20 md:pb-24">
+  <section class="py-20 md:py-24">
     <Container size="narrow">
       <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">What we built</h2>
       <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
-        A guest app that digitizes the entire journey from booking to stay to check-out. From confirming reservations, to sharing room information, to in-app requests for extra services — without an expensive all-in-one hotel software suite. Runs on a simple backend that staff can learn in 15 minutes.
+        A native iOS and Android app that guides holiday-park guests through their stay digitally — without the front desk having to answer every question in person. Booking details, Wi-Fi codes, opening hours, restaurant menus, local tips and activities are all one tap away, in the park's own brand.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        Because GAST and Medewerker.app share one codebase, both products benefit from the same release cycles, the same stability and the same admin tooling. For parks like Hof van Saksen and Roompot that means: one supplier, two apps, one invoice — and ongoing maintenance covering the actual mobile workday of both staff and guest.
       </p>
 
-      <h2 class="text-h3 font-medium text-fg mt-10 mb-4" style="letter-spacing: var(--tracking-snug);">Key features</h2>
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Key features</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Digital check-in and check-out</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Room info, WiFi codes and house rules</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> In-app requests (towels, taxi, late check-out)</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Local recommendations and partner deals</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Review request after check-out</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Personal welcome and booking summary per guest</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Park information, map, opening hours and house rules</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Activity calendar and in-app reservations for wellness, restaurants, taxi</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Local tips and partner deals in the park's surroundings</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push notifications for weather updates, delivery messages, daily program</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> White-label per park — own logo, colours, content and languages</li>
+      </ul>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech stack</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Native iOS (Swift, SwiftUI) and native Android (Kotlin, Compose)</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Shared backend with Medewerker.app — multi-tenant, white-labelable</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web admin for park managers: content, audiences, push campaigns</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Integrations with PMS and booking systems for automatic guest data</li>
       </ul>
     </Container>
   </section>
@@ -62,9 +104,9 @@ import ArrowButton from '../../../components/shared/ArrowButton.astro';
         <MonoEyebrow text="// Building something similar?" tone="dim" class="mb-6 block" />
         <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
           <span class="block text-fg">Hospitality apps</span>
-          <span class="block text-accent">guests open daily.</span>
+          <span class="block text-accent">guests open every day.</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Tell us what you have in mind and we'll share concrete experiences and numbers from similar projects.</p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Holiday park, hotel chain or camping group? GAST is proven technology — we can shape it around your guests and your brand.</p>
         <div class="flex justify-center">
           <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
         </div>

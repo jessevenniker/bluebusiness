@@ -9,11 +9,18 @@ const content = getContent(locale);
 const t = content.home.cases;
 const r = routeMap[locale];
 const featured = t.items.find((c) => c.featured)!;
-const rest = t.items.filter((c) => !c.featured);
+const rest = t.items.filter((c) => !c.featured).slice(0, 2);
 
 function cleanTitle(title: string) {
   return title.replace(/^\[TBD\]\s*/, '');
 }
+
+const letterById: Record<string, string> = {
+  'bonaire-app': 'B',
+  'bonaire-cruisers': 'C',
+  'medewerker-app': 'M',
+  'gast': 'G',
+};
 ---
 
 <section class="py-24 md:py-32 reveal">
@@ -65,7 +72,7 @@ function cleanTitle(title: string) {
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-[42px] h-[42px] rounded-[10px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
                   <span class="font-mono text-[13px] font-medium" style={`color: ${c.accentColor};`}>
-                    {c.id === 'medewerker-app' ? 'M' : 'G'}
+                    {letterById[c.id] ?? '·'}
                   </span>
                 </div>
               </div>

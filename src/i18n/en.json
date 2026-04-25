@@ -13,7 +13,7 @@
   "home": {
     "meta": {
       "title": "Blue Business — Native app development from the Netherlands, for NL & the Caribbean",
-      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Bonaire App, Medewerker App, GAST."
+      "description": "Native iOS and Android apps for SMEs, tourism and Caribbean public sector. Dutch app studio, since 2021. Work: Bonaire App, Bonaire Cruisers, Medewerker.app, GAST."
     },
     "hero": {
       "eyebrow": "// Dutch app studio — NL & Caribbean",
@@ -86,22 +86,31 @@
           "accentColor": "#3B82F6"
         },
         {
+          "id": "bonaire-cruisers",
+          "featured": false,
+          "label": "// tourism — Caribbean",
+          "title": "Bonaire Cruisers — explore Bonaire by golf cart.",
+          "body": "Self-guided audio tours that turn a rental golf cart into an island adventure. Offline routes, points of interest and local stories — works without a data connection.",
+          "datapoint": "iOS · Android · NL + EN audio",
+          "accentColor": "#22D3EE"
+        },
+        {
           "id": "medewerker-app",
           "featured": false,
           "label": "// B2B — employee platform",
-          "title": "[TBD] One app for the whole team.",
-          "body": "[PLACEHOLDER — awaiting client approval] Employee app for internal communication, scheduling and team updates. Replaces scattered tools with one platform managers and staff actually open.",
-          "datapoint": "[TBD — companies / users]",
+          "title": "Medewerker.app — internal comms for teams.",
+          "body": "Native iOS and Android app for internal communication, scheduling, learning paths and gamification. Live at Hof van Saksen, Roompot and Run2Forty2.",
+          "datapoint": "3+ clients · holiday parks & sport",
           "accentColor": "#60A5FA"
         },
         {
           "id": "gast",
           "featured": false,
           "label": "// hospitality",
-          "title": "[TBD] Guest app for the hospitality sector.",
-          "body": "[PLACEHOLDER — awaiting client approval] App that digitizes the guest journey — booking, stay, check-out — without a heavy hotel-software suite.",
-          "datapoint": "[TBD — numbers to follow]",
-          "accentColor": "#22D3EE"
+          "title": "GAST — guest app on the same platform.",
+          "body": "White-label guest app for holiday parks and hospitality businesses, built on the Medewerker.app platform. From check-in to room info to local tips — works offline.",
+          "datapoint": "Hof van Saksen · Roompot",
+          "accentColor": "#A78BFA"
         }
       ]
     },
@@ -439,7 +448,7 @@
   "casesPage": {
     "meta": {
       "title": "Work — Blue Business",
-      "description": "Apps Blue Business has built: Bonaire App, Medewerker App, GAST. Live in production, used daily."
+      "description": "Apps Blue Business has built: Bonaire App, Bonaire Cruisers, Medewerker.app and GAST. Live in production, used daily by Hof van Saksen, Roompot, Run2Forty2 and visitors to Bonaire."
     },
     "eyebrow": "// Live in production",
     "h1Line1": "Apps people",

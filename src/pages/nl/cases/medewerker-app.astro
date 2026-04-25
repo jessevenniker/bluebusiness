@@ -3,15 +3,35 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Container from '../../../components/shared/Container.astro';
 import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
 import ArrowButton from '../../../components/shared/ArrowButton.astro';
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Medewerker.app',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'BusinessApplication',
+  url: `${baseUrl}/nl/cases/medewerker-app/`,
+  inLanguage: 'nl',
+  publisher: { '@id': `${baseUrl}/#organization` },
+  about: 'Native iOS- en Android-app voor interne communicatie, planning, leerpaden en gamification — live bij Hof van Saksen, Roompot en Run2Forty2.',
+};
+
+const clients = [
+  { name: 'Hof van Saksen', sector: 'Vakantieparken' },
+  { name: 'Roompot', sector: 'Vakantieparken' },
+  { name: 'Run2Forty2', sector: 'Marathonreizen & training' },
+];
 ---
 
 <BaseLayout
-  title="Medewerker App — case study | Blue Business"
-  description="Medewerker-platform voor interne communicatie, roosters en updates. Case study volgt zodra de klant goedkeuring geeft voor publicatie."
+  title="Medewerker.app — interne communicatie-platform | Blue Business"
+  description="Medewerker.app is een native iOS- en Android-app voor interne communicatie, roosters, leerpaden en gamification. Gebouwd door Blue Business, live bij Hof van Saksen, Roompot en Run2Forty2."
   canonicalPath="/nl/cases/medewerker-app/"
-  noindex={true}
 >
-  <section class="pt-[140px] md:pt-[180px] pb-20">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
     <Container>
       <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
         <ol class="flex flex-wrap items-center gap-2">
@@ -19,39 +39,61 @@ import ArrowButton from '../../../components/shared/ArrowButton.astro';
           <li>/</li>
           <li><a href="/nl/cases/" class="hover:text-accent-hi">Cases</a></li>
           <li>/</li>
-          <li class="text-fg-dim">Medewerker App</li>
+          <li class="text-fg-dim">Medewerker.app</li>
         </ol>
       </nav>
 
       <MonoEyebrow text="// B2B — medewerker-platform" tone="accent-hi" class="mb-6 block" />
-      <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
-        <span class="block text-fg">Medewerker App —</span>
-        <span class="block text-accent">case study in voorbereiding.</span>
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Medewerker.app —</span>
+        <span class="block text-accent">interne comms voor teams.</span>
       </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Native iOS- en Android-app die push-notificaties, nieuws, roosters, onboarding, leerpaden en gamification combineert in één tool. Vervangt losse WhatsApp-groepen, intranet-portalen en e-mail-distributies met één platform dat medewerkers vrijwillig openen — omdat het gewoon sneller werkt dan het alternatief.
+      </p>
+    </Container>
+  </section>
 
-      <div class="mt-10 p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] max-w-[60ch]">
-        <p class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">Status</p>
-        <p class="text-[16px] text-fg mb-3">Deze case wacht op schriftelijke goedkeuring van de klant voor publicatie van naam, cijfers en screenshots.</p>
-        <p class="text-[14px] text-fg-dim">In de tussentijd: wil je weten wat voor soort medewerker-platform we hier hebben gebouwd? Stuur een mail — onder NDA delen we graag meer.</p>
+  <section class="py-16 md:py-20 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Onze opdrachtgevers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {clients.map((c) => (
+          <div class="p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+            <p class="text-[18px] font-medium text-fg mb-2">{c.name}</p>
+            <p class="font-mono text-[12px] text-fg-faint uppercase tracking-[0.04em]">{c.sector}</p>
+          </div>
+        ))}
       </div>
     </Container>
   </section>
 
-  <!-- Abstract summary (safe to share) -->
-  <section class="pb-20 md:pb-24">
+  <section class="py-20 md:py-24">
     <Container size="narrow">
       <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">Wat we hebben gebouwd</h2>
       <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
-        Een medewerker-app voor interne communicatie, rooster-inzage en team-updates. Native iOS en Android, met een lichte web-admin voor HR en management. Vervangt losse WhatsApp-groepen, gedeelde Excel-bestanden en e-mail-lijsten met één tool die medewerkers vrijwillig openen — omdat het sneller is dan het alternatief.
+        Een mobiele app die voor managers en HR een directe lijn opent naar hun medewerkers — zonder via mail-distributielijsten of prikborden te hoeven werken. Aankondigingen verschijnen als push-notificatie, nieuwsberichten zijn doorzoekbaar, en documenten zoals huishoudelijk reglement of veiligheidsinstructies zitten één tap weg.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        Voor medewerkers is het een dagelijkse plek om hun rooster te checken, mee te doen aan een quiz, een idee in te dienen via de ideeënbus, of een nieuwe collega welkom te heten in een onboarding-traject. Het platform draait nu bij vakantieparken (Hof van Saksen, Roompot) waar het schaalt over duizenden medewerkers, en bij Run2Forty2 voor de communicatie naar marathon-trainees.
       </p>
 
-      <h2 class="text-h3 font-medium text-fg mt-10 mb-4" style="letter-spacing: var(--tracking-snug);">Belangrijkste features</h2>
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Belangrijkste features</h2>
       <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push-notificaties voor team-updates en rooster-wijzigingen</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Persoonlijke rooster-weergave met ruil-aanvragen</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Nieuws-feed voor interne communicatie</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Document-library voor handboeken en procedures</li>
-        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> SSO-integratie met bestaande HR-systemen</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push-notificaties en nieuws-feed voor interne aankondigingen</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Document-bibliotheek voor handboeken, regelingen, instructies</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Onboarding-flows voor nieuwe medewerkers met checklists en uitleg</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Leerpaden en quizzes met gamification, badges en leaderboards</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Surveys, polls en ideeënbus voor tweerichtings-communicatie</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Web-admin voor HR en management om content en doelgroepen te beheren</li>
+      </ul>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech-stack</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> iOS — Swift, SwiftUI, push-notificaties via APNs</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Android — Kotlin, Jetpack Compose, FCM</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Backend: multi-tenant, white-label-baar, web-admin in TypeScript</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Analytics + crash-reporting voor stabiele uitrol over duizenden devices</li>
       </ul>
     </Container>
   </section>
@@ -65,7 +107,7 @@ import ArrowButton from '../../../components/shared/ArrowButton.astro';
           <span class="block text-fg">Medewerker-apps zijn</span>
           <span class="block text-accent">ons dagelijks werk.</span>
         </h2>
-        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Vertel wat je voor ogen hebt, dan delen we concrete ervaringen en cijfers uit vergelijkbare projecten.</p>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Vertel wat je voor ogen hebt, dan delen we concrete ervaringen en cijfers uit Hof van Saksen, Roompot of Run2Forty2.</p>
         <div class="flex justify-center">
           <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
         </div>

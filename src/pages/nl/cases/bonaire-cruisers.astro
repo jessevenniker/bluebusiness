@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../../components/shared/ArrowButton.astro';
+
+const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Bonaire Cruisers',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'TravelApplication',
+  url: `${baseUrl}/nl/cases/bonaire-cruisers/`,
+  inLanguage: ['nl', 'en'],
+  publisher: { '@id': `${baseUrl}/#organization` },
+  about: 'Self-guided audio tours voor Bonaire per golfkar — offline routes, points-of-interest en lokale verhalen.',
+};
+---
+
+<BaseLayout
+  title="Bonaire Cruisers — golf-cart tour app | Blue Business"
+  description="Self-guided audio-tours voor Bonaire op iOS en Android. Offline navigatie, points-of-interest en lokale verhalen — gebouwd door Blue Business."
+  canonicalPath="/nl/cases/bonaire-cruisers/"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
+  <section class="pt-[140px] md:pt-[180px] pb-16">
+    <Container>
+      <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/nl/" class="hover:text-accent-hi">Home</a></li>
+          <li>/</li>
+          <li><a href="/nl/cases/" class="hover:text-accent-hi">Cases</a></li>
+          <li>/</li>
+          <li class="text-fg-dim">Bonaire Cruisers</li>
+        </ol>
+      </nav>
+
+      <MonoEyebrow text="// tourism — Caribbean" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium max-w-[20ch]" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Bonaire by golf-cart —</span>
+        <span class="block text-accent">an island in audio.</span>
+      </h1>
+      <p class="text-lead text-fg-dim mt-8 max-w-[60ch]">
+        Voor cruise-bezoekers en vakantiegangers die Bonaire verkennen met een huur-golfkar. De app verandert die rit in een self-guided audio-tour — met offline routes, points-of-interest en lokale verhalen die op het juiste moment op de juiste plek opspelen.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://apps.apple.com/app/bonaire-cruisers/id6745404102" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          App Store →
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.bonaire.cruiser" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
+          Google Play →
+        </a>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 md:py-20 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'Live sinds', v: 'juni 2025' },
+          { k: 'Platforms', v: 'iOS · Android · iPad · Mac' },
+          { k: 'Talen', v: 'Nederlands & Engels' },
+          { k: 'Werking', v: '100% offline na install' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 md:py-24">
+    <Container size="narrow">
+      <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">Wat we hebben gebouwd</h2>
+      <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
+        Een native iOS- en Android-app waarin de hele tour-content vooraf wordt gedownload, zodat hij midden op het eiland werkt — daar waar dataverbinding niet vanzelfsprekend is. GPS triggert audio-fragmenten op het juiste punt, met een kaart die ook offline alle stops, stranden, duikplekken en restaurants laat zien.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        De app is gebouwd voor cruise-passagiers met een paar uur in de haven en voor vakantiegangers die zelfstandig op pad willen — geen app die alleen werkt als de gids 'm aanzet, maar een complete tour die meegaat in elke huur-golfkar.
+      </p>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Belangrijkste features</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> GPS-getriggerde audio-tours over natuur, cultuur en historie</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Curated points-of-interest: stranden, duikspots, restaurants, lokale shops</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Volledig offline na install — geen data nodig op het eiland</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Tweetalig (Nederlands en Engels) audio + UI</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Native iOS, native Android, iPadOS en macOS (M1+)</li>
+      </ul>
+
+      <h2 class="text-h3 font-medium text-fg mt-12 mb-4" style="letter-spacing: var(--tracking-snug);">Tech-stack</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> iOS — Swift, SwiftUI, Core Location, AVFoundation</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Android — Kotlin, Jetpack Compose, ExoPlayer</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Offline-first content-bundles, lokale storage voor audio en kaarten</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> CMS-koppeling voor het uitbreiden van tours zonder app-update</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Iets vergelijkbaars bouwen?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Toerisme-apps die</span>
+          <span class="block text-accent">offline gewoon werken.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Een tour-app, een eiland-gids, een zelf-rijdende route — vertel wat je voor ogen hebt, dan delen we wat we van Bonaire-projecten hebben geleerd.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/nl/contact/" variant="primary">Plan een gesprek</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
