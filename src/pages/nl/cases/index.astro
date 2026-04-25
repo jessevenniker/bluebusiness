@@ -46,11 +46,17 @@ const letterById: Record<string, string> = {
                 aria-hidden="true"
               >
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
-                    <span class="font-mono text-[18px] font-medium" style={`color: ${c.accentColor};`}>
-                      {letterById[c.id] ?? '·'}
-                    </span>
-                  </div>
+                  {c.iconSrc ? (
+                    <div class={`w-[88px] h-[88px] rounded-[20px] border border-[var(--color-accent-line)] flex items-center justify-center overflow-hidden ${c.iconTone === 'dark' ? 'bg-[var(--color-bg)]' : 'bg-white'}`}>
+                      <img src={c.iconSrc} alt="" class="max-w-[64px] max-h-[64px] object-contain" loading="lazy" />
+                    </div>
+                  ) : (
+                    <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                      <span class="font-mono text-[18px] font-medium" style={`color: ${c.accentColor};`}>
+                        {letterById[c.id] ?? '·'}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
               <span class="font-mono text-[12px] text-accent-hi mb-3 block">{c.label}</span>

@@ -34,12 +34,14 @@
       ]
     },
     "trust": {
-      "eyebrow": "// In productie bij",
+      "eyebrow": "// Live in productie",
       "text": "Native apps die elke dag in gebruik zijn — bij Nederlandse vakantieparken, sportcommunities en bezoekers van Bonaire.",
       "logos": [
-        { "name": "Hof van Saksen", "src": "/clients/hof-van-saksen.png", "alt": "Hof van Saksen" },
-        { "name": "Roompot", "src": "/clients/roompot.png", "alt": "Roompot vakantieparken" },
-        { "name": "Run2Forty2", "src": "/clients/run2forty2.png", "alt": "Run2Forty2 marathonreizen en trainingen" }
+        { "name": "Visit Bonaire", "src": "/clients/visit-bonaire-logo.png", "alt": "Visit Bonaire — reisapp", "tone": "dark" },
+        { "name": "Bonaire Cruisers", "src": "/clients/bonaire-cruisers-logo.png", "alt": "Bonaire Cruisers — golf-cart tour app", "tone": "dark" },
+        { "name": "Hof van Saksen", "src": "/clients/hof-van-saksen.png", "alt": "Hof van Saksen", "tone": "light" },
+        { "name": "Roompot", "src": "/clients/roompot.png", "alt": "Roompot vakantieparken", "tone": "light" },
+        { "name": "Run2Forty2", "src": "/clients/run2forty2.png", "alt": "Run2Forty2 marathonreizen en trainingen", "tone": "light" }
       ]
     },
     "services": {
@@ -89,7 +91,9 @@
           "title": "Visit Bonaire — you explore, we guide you.",
           "body": "De ultieme reisgids voor Bonaire. Offline navigatie via Mapbox, alle points-of-interest, op maat gemaakte routes en cruise-tours. Realtime content via Firebase.",
           "datapoint": "5.0★ · App Store NL · sinds april 2025",
-          "accentColor": "#3B82F6"
+          "accentColor": "#3B82F6",
+          "iconSrc": "/clients/visit-bonaire-logo.png",
+          "iconTone": "dark"
         },
         {
           "id": "bonaire-cruisers",
@@ -98,7 +102,9 @@
           "title": "Bonaire Cruisers — explore Bonaire by golf cart.",
           "body": "Self-guided audio-tours die een golfkar-huurauto veranderen in een eilandavontuur. Offline routes, points-of-interest en lokale stories — werkt zonder dataverbinding.",
           "datapoint": "iOS · Android · NL + EN audio",
-          "accentColor": "#22D3EE"
+          "accentColor": "#22D3EE",
+          "iconSrc": "/clients/bonaire-cruisers-logo.png",
+          "iconTone": "dark"
         },
         {
           "id": "medewerker-app",
@@ -125,7 +131,9 @@
           "title": "Run2Forty2 — marathonreizen in de app.",
           "body": "Native sport-app voor marathon-trainees: trainingsschema's, news-updates, kudos voor mede-runners en directe chat met de coach. Gebouwd op het Medewerker-platform, maar met een eigen merk.",
           "datapoint": "5.0★ · App Store NL · sinds december 2025",
-          "accentColor": "#84CC16"
+          "accentColor": "#84CC16",
+          "iconSrc": "/clients/run2forty2.png",
+          "iconTone": "light"
         }
       ]
     },

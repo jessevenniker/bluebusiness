@@ -47,9 +47,15 @@ const letterById: Record<string, string> = {
           aria-hidden="true"
         >
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
-              <span class="font-mono text-[18px] font-medium text-accent">B</span>
-            </div>
+            {featured.iconSrc ? (
+              <div class={`w-[88px] h-[88px] rounded-[20px] border border-[var(--color-accent-line)] flex items-center justify-center overflow-hidden ${featured.iconTone === 'dark' ? 'bg-[var(--color-bg)]' : 'bg-white'}`}>
+                <img src={featured.iconSrc} alt="" class="max-w-[64px] max-h-[64px] object-contain" loading="lazy" />
+              </div>
+            ) : (
+              <div class="w-[72px] h-[72px] rounded-[18px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                <span class="font-mono text-[18px] font-medium text-accent">{letterById[featured.id] ?? '·'}</span>
+              </div>
+            )}
           </div>
         </div>
         <span class="font-mono text-[12px] text-accent-hi mb-3">{featured.label}</span>
@@ -71,11 +77,17 @@ const letterById: Record<string, string> = {
               aria-hidden="true"
             >
               <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[42px] h-[42px] rounded-[10px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
-                  <span class="font-mono text-[13px] font-medium" style={`color: ${c.accentColor};`}>
-                    {letterById[c.id] ?? '·'}
-                  </span>
-                </div>
+                {c.iconSrc ? (
+                  <div class={`w-[52px] h-[52px] rounded-[12px] border border-[var(--color-accent-line)] flex items-center justify-center overflow-hidden ${c.iconTone === 'dark' ? 'bg-[var(--color-bg)]' : 'bg-white'}`}>
+                    <img src={c.iconSrc} alt="" class="max-w-[36px] max-h-[36px] object-contain" loading="lazy" />
+                  </div>
+                ) : (
+                  <div class="w-[42px] h-[42px] rounded-[10px] bg-[var(--color-bg)] border border-[var(--color-accent-line)] flex items-center justify-center">
+                    <span class="font-mono text-[13px] font-medium" style={`color: ${c.accentColor};`}>
+                      {letterById[c.id] ?? '·'}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
             <span class="font-mono text-[11px] text-accent-hi mb-2">{c.label}</span>

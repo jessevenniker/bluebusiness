@@ -17,13 +17,15 @@ const t = getContent(locale).home.trust;
       </p>
     </div>
 
-    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-[900px] mx-auto" role="list">
+    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 max-w-[1100px] mx-auto" role="list">
       {t.logos.map((logo) => (
-        <li class="bg-white rounded-[14px] border border-[var(--color-border)] flex items-center justify-center min-h-[120px] p-6 transition-colors hover:border-[var(--color-accent-line)]">
+        <li
+          class={`logo-tile rounded-[14px] border border-[var(--color-border)] flex items-center justify-center min-h-[110px] md:min-h-[120px] p-5 transition-all duration-[240ms] hover:border-[var(--color-accent-line)] ${logo.tone === 'dark' ? 'bg-[var(--color-bg-elevated)]' : 'bg-white'}`}
+        >
           <img
             src={logo.src}
             alt={logo.alt}
-            class="max-h-[68px] max-w-full object-contain"
+            class="max-h-[60px] md:max-h-[68px] max-w-full object-contain"
             loading="lazy"
             decoding="async"
           />
@@ -32,3 +34,11 @@ const t = getContent(locale).home.trust;
     </ul>
   </Container>
 </section>
+
+<style>
+  .logo-tile { transition-property: transform, border-color; }
+  .logo-tile:hover { transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-tile:hover { transform: none; }
+  }
+</style>
