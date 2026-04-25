@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="4" fill="#3B82F6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+  <text x="18" y="52" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace" font-weight="800" font-size="44" fill="#ffffff">B</text>
+  <rect x="48" y="22" width="10" height="32" fill="#22d3ee"/>
+</svg>

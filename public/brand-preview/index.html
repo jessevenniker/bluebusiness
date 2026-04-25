@@ -3,191 +3,283 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Blue Business — brand concepts</title>
+<title>Blue Business — tech brand concepts</title>
 <style>
   :root {
-    --navy: #0b2545;
-    --navy-2: #13315c;
-    --blue: #1d4ed8;
-    --electric: #2f7cff;
+    --bg: #0a0f1f;
+    --panel: #0f1530;
+    --ink: #e6edff;
+    --muted: #8a97b8;
+    --line: rgba(255,255,255,.08);
+    --accent: #4f8cff;
     --cyan: #22d3ee;
-    --ink: #0a0f1f;
-    --bg: #f6f7fb;
-    --card: #ffffff;
-    --line: #e5e7eb;
-    --muted: #6b7280;
+    --violet: #8b5cf6;
+    --lime: #a3e635;
   }
   * { box-sizing: border-box }
-  html,body { margin:0; background:var(--bg); color:var(--ink); font: 14px/1.5 ui-sans-serif,system-ui,-apple-system,"Inter",sans-serif; }
-  header { padding: 32px 40px 8px; }
-  h1 { font-size: 22px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  html,body { margin:0; background:var(--bg); color:var(--ink); font: 14px/1.5 ui-sans-serif,system-ui,"Inter","SF Pro Text",sans-serif; -webkit-font-smoothing: antialiased; }
+  header { padding: 40px 40px 8px; max-width: 1400px; }
+  h1 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.02em; }
   header p { color: var(--muted); margin: 0; }
-  .wrap { padding: 24px 40px 64px; display: grid; gap: 28px; }
-  .section-title { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 4px; }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(360px,1fr)); }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
-  .card h3 { margin: 0 0 4px; font-size: 14px; letter-spacing: -0.01em; }
-  .card .sub { color: var(--muted); font-size: 12px; margin-bottom: 16px; }
-  .logo-stage { display:flex; align-items:center; justify-content:center; min-height: 110px; border:1px dashed var(--line); border-radius: 10px; padding: 16px; background: #fff; }
-  .logo-stage.dark { background: #0b2545; border-color:#0b2545; }
+  code.kbd { font-family: "JetBrains Mono","SF Mono",ui-monospace,monospace; background: rgba(255,255,255,.06); padding: 1px 6px; border-radius: 4px; font-size: 12px; }
+  .wrap { padding: 24px 40px 64px; display: grid; gap: 32px; max-width: 1400px; }
+  .section-title { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(400px,1fr)); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .card h3 { margin: 0 0 4px; font-size: 15px; letter-spacing: -0.01em; }
+  .card .sub { color: var(--muted); font-size: 12.5px; margin-bottom: 16px; line-height:1.55; }
+  .logo-stage { display:flex; align-items:center; justify-content:center; min-height: 120px; border:1px solid var(--line); border-radius: 12px; padding: 18px; background: #050914; position:relative; overflow:hidden; }
+  .logo-stage.light { background: #f5f7ff; }
+  .logo-stage.grid::before {
+    content:""; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
   .row { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-  /* favicon previews */
-  .fav-grid { display:grid; gap: 14px; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); }
-  .fav { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; }
+  .fav-grid { display:grid; gap: 14px; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); }
+  .fav { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; }
   .fav h4 { margin:0 0 12px; font-size:13px; }
-  .fav-row { display:flex; align-items:center; gap:14px; }
+  .fav-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
   .fav-chip { width:64px; height:64px; border-radius:14px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-  .fav-sm { width:32px; height:32px; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-  .fav-xs { width:16px; height:16px; border-radius:4px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-  .fav-meta { color:var(--muted); font-size:12px; }
-  /* og image previews */
-  .og { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; }
-  .og svg { width:100%; height:auto; display:block; border-radius:8px; }
-  .og h4 { margin: 0 0 10px; font-size: 13px; }
-  /* browser tab mock */
-  .tab { display:inline-flex; align-items:center; gap:8px; background:#e9eef7; padding:6px 12px; border-radius:8px 8px 0 0; font-size:12px; color:#1f2937; }
+  .fav-sm { width:32px; height:32px; border-radius:8px; overflow:hidden; }
+  .fav-xs { width:16px; height:16px; border-radius:4px; overflow:hidden; }
+  .tab { display:inline-flex; align-items:center; gap:8px; background:#1a2340; padding:6px 12px; border-radius:8px 8px 0 0; font-size:12px; color:#cfd8ee; border:1px solid var(--line); border-bottom:none;}
   .tab .fav-xs { width:14px; height:14px; border-radius:3px; }
+  .og { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .og svg { width:100%; height:auto; display:block; border-radius:10px; }
+  .og h4 { margin: 0 0 12px; font-size: 13px; }
+  .pill { display:inline-block; padding:2px 10px; border-radius:99px; background: rgba(79,140,255,.12); color: #9ec2ff; font-size: 11px; letter-spacing:.06em; text-transform: uppercase; margin-left: 8px; }
+  @keyframes blink { 50% { opacity: 0 } }
+  .cursor { animation: blink 1s steps(1) infinite; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Blue Business — modern brand concepts</h1>
-  <p>Drie richtingen voor logo, favicon en og-image. Kies een richting, dan werken we die uit.</p>
+  <h1>Blue Business — tech &amp; modernization <span class="pill">v2</span></h1>
+  <p>Drie richtingen die expliciet naar tech leunen: code/terminal, netwerk/graph, en AI-gradient. Geen generieke corporate-look meer.</p>
 </header>
 
 <main class="wrap">
 
+  <!-- =========================== LOGOS =========================== -->
   <div>
     <div class="section-title">Logo concepten</div>
     <div class="grid">
 
-      <!-- CONCEPT A: Monogram BB in rounded square -->
+      <!-- D: TERMINAL / CODE BRACKET -->
       <div class="card">
-        <h3>A — Monogram "BB" mark + wordmark</h3>
-        <div class="sub">Geometrisch, compact, sterk op klein formaat. Navy + electric blue accent.</div>
-        <div class="logo-stage">
-          <svg viewBox="0 0 320 64" width="320" height="64" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo A">
+        <h3>D — Terminal bracket <code class="kbd">&lt;B/&gt;</code></h3>
+        <div class="sub">Developer-taal: hoekige brackets + knipperende cursor. Suggereert automation, API's, maatwerk. Scherp monospace-accent naast een warmere wordmark.</div>
+        <div class="logo-stage grid">
+          <svg viewBox="0 0 380 72" width="360" height="68" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo D">
             <defs>
-              <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#13315c"/>
-                <stop offset="1" stop-color="#2f7cff"/>
+              <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#4f8cff"/>
+                <stop offset="1" stop-color="#22d3ee"/>
               </linearGradient>
             </defs>
-            <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gA)"/>
-            <!-- two B-shapes interlocked -->
-            <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
-            <circle cx="46" cy="48" r="5" fill="#22d3ee"/>
-            <text x="80" y="42" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.5" fill="#0b2545">Blue <tspan fill="#2f7cff">Business</tspan></text>
+            <!-- bracket group -->
+            <g font-family="JetBrains Mono, SF Mono, monospace" font-weight="600" font-size="44" fill="url(#dGrad)">
+              <text x="0" y="50">&lt;</text>
+              <text x="26" y="50" fill="#fff">B</text>
+              <text x="58" y="50">/&gt;</text>
+            </g>
+            <!-- wordmark -->
+            <text x="116" y="47" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#fff">Blue <tspan fill="#9ec2ff" font-weight="400">Business</tspan></text>
+            <!-- blinking cursor -->
+            <rect class="cursor" x="320" y="26" width="10" height="26" fill="#22d3ee"/>
           </svg>
         </div>
         <div class="row">
-          <div class="logo-stage dark">
-            <svg viewBox="0 0 320 64" width="300" height="60" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="64" height="64" rx="14" fill="#fff"/>
-              <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#0b2545"/>
-              <circle cx="46" cy="48" r="5" fill="#22d3ee"/>
-              <text x="80" y="42" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.5" fill="#fff">Blue <tspan fill="#22d3ee">Business</tspan></text>
+          <div class="logo-stage light">
+            <svg viewBox="0 0 380 72" width="340" height="62" xmlns="http://www.w3.org/2000/svg">
+              <g font-family="JetBrains Mono, SF Mono, monospace" font-weight="600" font-size="44" fill="#4f8cff">
+                <text x="0" y="50">&lt;</text>
+                <text x="26" y="50" fill="#0a0f1f">B</text>
+                <text x="58" y="50">/&gt;</text>
+              </g>
+              <text x="116" y="47" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#0a0f1f">Blue <tspan fill="#4f8cff" font-weight="500">Business</tspan></text>
             </svg>
           </div>
-          <div class="logo-stage">
-            <svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#gA2)"/>
+          <div class="logo-stage grid">
+            <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f" stroke="#1f2a4a"/>
+              <text x="12" y="48" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="28" fill="#4f8cff">&lt;</text>
+              <text x="28" y="48" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="28" fill="#fff">B</text>
+              <rect class="cursor" x="48" y="30" width="4" height="20" fill="#22d3ee"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- E: NETWORK NODE -->
+      <div class="card">
+        <h3>E — Node graph "B"</h3>
+        <div class="sub">Een B opgebouwd uit verbonden nodes — integraties, data-flows, automatisering. Staat voor "systemen die samenwerken".</div>
+        <div class="logo-stage grid">
+          <svg viewBox="0 0 380 80" width="360" height="76" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo E">
+            <defs>
+              <radialGradient id="eGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#4f8cff" stop-opacity=".6"/>
+                <stop offset="1" stop-color="#4f8cff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <g transform="translate(8 8)">
+              <circle cx="32" cy="32" r="30" fill="url(#eGlow)"/>
+              <!-- B shape as node lattice -->
+              <g stroke="#4f8cff" stroke-width="1.5" stroke-linecap="round">
+                <line x1="10" y1="8"  x2="10" y2="56"/>
+                <line x1="10" y1="8"  x2="38" y2="8"/>
+                <line x1="38" y1="8"  x2="50" y2="20"/>
+                <line x1="50" y1="20" x2="38" y2="32"/>
+                <line x1="10" y1="32" x2="38" y2="32"/>
+                <line x1="38" y1="32" x2="52" y2="44"/>
+                <line x1="52" y1="44" x2="38" y2="56"/>
+                <line x1="10" y1="56" x2="38" y2="56"/>
+                <line x1="10" y1="8"  x2="38" y2="32"/>
+                <line x1="10" y1="56" x2="38" y2="32"/>
+              </g>
+              <!-- nodes -->
+              <g fill="#0a0f1f" stroke="#22d3ee" stroke-width="2">
+                <circle cx="10" cy="8"  r="4.5"/>
+                <circle cx="38" cy="8"  r="4.5"/>
+                <circle cx="50" cy="20" r="4.5"/>
+                <circle cx="10" cy="32" r="4.5"/>
+                <circle cx="38" cy="32" r="4.5"/>
+                <circle cx="52" cy="44" r="4.5"/>
+                <circle cx="10" cy="56" r="4.5"/>
+                <circle cx="38" cy="56" r="4.5"/>
+              </g>
+              <circle cx="38" cy="32" r="6" fill="#22d3ee"/>
+            </g>
+            <text x="96" y="50" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#fff">Blue Business</text>
+          </svg>
+        </div>
+        <div class="row">
+          <div class="logo-stage light">
+            <svg viewBox="0 0 380 80" width="340" height="70" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(8 8)">
+                <g stroke="#0a0f1f" stroke-width="1.5" stroke-linecap="round" opacity=".4">
+                  <line x1="10" y1="8"  x2="10" y2="56"/>
+                  <line x1="10" y1="8"  x2="38" y2="8"/>
+                  <line x1="38" y1="8"  x2="50" y2="20"/>
+                  <line x1="50" y1="20" x2="38" y2="32"/>
+                  <line x1="10" y1="32" x2="38" y2="32"/>
+                  <line x1="38" y1="32" x2="52" y2="44"/>
+                  <line x1="52" y1="44" x2="38" y2="56"/>
+                  <line x1="10" y1="56" x2="38" y2="56"/>
+                  <line x1="10" y1="8"  x2="38" y2="32"/>
+                  <line x1="10" y1="56" x2="38" y2="32"/>
+                </g>
+                <g fill="#0a0f1f">
+                  <circle cx="10" cy="8"  r="4.5"/>
+                  <circle cx="38" cy="8"  r="4.5"/>
+                  <circle cx="50" cy="20" r="4.5"/>
+                  <circle cx="10" cy="32" r="4.5"/>
+                  <circle cx="52" cy="44" r="4.5"/>
+                  <circle cx="10" cy="56" r="4.5"/>
+                  <circle cx="38" cy="56" r="4.5"/>
+                </g>
+                <circle cx="38" cy="32" r="6" fill="#4f8cff"/>
+              </g>
+              <text x="96" y="50" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#0a0f1f">Blue Business</text>
+            </svg>
+          </div>
+          <div class="logo-stage grid">
+            <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <g transform="translate(4 6)">
+                <g stroke="#4f8cff" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="10" y1="8"  x2="10" y2="56"/>
+                  <line x1="10" y1="8"  x2="38" y2="8"/>
+                  <line x1="38" y1="8"  x2="50" y2="20"/>
+                  <line x1="50" y1="20" x2="38" y2="32"/>
+                  <line x1="10" y1="32" x2="38" y2="32"/>
+                  <line x1="38" y1="32" x2="52" y2="44"/>
+                  <line x1="52" y1="44" x2="38" y2="56"/>
+                  <line x1="10" y1="56" x2="38" y2="56"/>
+                </g>
+                <g fill="#22d3ee">
+                  <circle cx="10" cy="8"  r="3.5"/>
+                  <circle cx="38" cy="8"  r="3.5"/>
+                  <circle cx="50" cy="20" r="3.5"/>
+                  <circle cx="10" cy="32" r="3.5"/>
+                  <circle cx="52" cy="44" r="3.5"/>
+                  <circle cx="10" cy="56" r="3.5"/>
+                  <circle cx="38" cy="56" r="3.5"/>
+                </g>
+                <circle cx="38" cy="32" r="5" fill="#fff"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- F: AURORA / AI GRADIENT -->
+      <div class="card">
+        <h3>F — Aurora gradient mark</h3>
+        <div class="sub">Glanzende mark in Linear/Vercel/Arc-stijl: zachte aurora van violet → blauw → cyaan, met een scherpe slice. AI- &amp; SaaS-vibe zonder cliché.</div>
+        <div class="logo-stage grid">
+          <svg viewBox="0 0 380 80" width="360" height="76" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo F">
+            <defs>
+              <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8b5cf6"/>
+                <stop offset=".5" stop-color="#4f8cff"/>
+                <stop offset="1" stop-color="#22d3ee"/>
+              </linearGradient>
+              <linearGradient id="auroraShine" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6"/>
+              </filter>
+            </defs>
+            <!-- glow behind -->
+            <g transform="translate(8 8)">
+              <circle cx="32" cy="32" r="30" fill="#4f8cff" opacity=".35" filter="url(#soft)"/>
+              <rect width="64" height="64" rx="16" fill="url(#aurora)"/>
+              <rect width="64" height="32" rx="16" fill="url(#auroraShine)"/>
+              <!-- minimal B: two chambers with diagonal slice -->
+              <path d="M18 14 H36 C42 14 46 18 46 23 C46 28 42 31 37 31 H18 Z
+                       M18 33 H39 C45 33 49 37 49 42 C49 47 45 50 39 50 H18 Z" fill="#0a0f1f"/>
+              <!-- slice highlight -->
+              <path d="M8 42 L56 6" stroke="#fff" stroke-width="1.5" stroke-opacity=".35" stroke-linecap="round"/>
+            </g>
+            <text x="96" y="50" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#fff">Blue Business</text>
+          </svg>
+        </div>
+        <div class="row">
+          <div class="logo-stage light">
+            <svg viewBox="0 0 380 80" width="340" height="70" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="gA2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#13315c"/>
-                  <stop offset="1" stop-color="#2f7cff"/>
+                <linearGradient id="aurora2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#8b5cf6"/>
+                  <stop offset=".5" stop-color="#4f8cff"/>
+                  <stop offset="1" stop-color="#22d3ee"/>
                 </linearGradient>
               </defs>
-              <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
-              <circle cx="46" cy="48" r="5" fill="#22d3ee"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONCEPT B: Abstract bolt/parcel -->
-      <div class="card">
-        <h3>B — Parcel + motion mark</h3>
-        <div class="sub">Knikt naar het oude karretje, maar abstract: een pakket in beweging. Modern, vriendelijker.</div>
-        <div class="logo-stage">
-          <svg viewBox="0 0 340 64" width="340" height="64" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo B">
-            <!-- motion lines -->
-            <g stroke="#2f7cff" stroke-width="3" stroke-linecap="round" opacity=".9">
-              <line x1="2" y1="22" x2="14" y2="22"/>
-              <line x1="0" y1="34" x2="18" y2="34"/>
-              <line x1="4" y1="46" x2="14" y2="46"/>
-            </g>
-            <!-- isometric box -->
-            <g transform="translate(20 10)">
-              <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#2f7cff"/>
-              <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#13315c"/>
-              <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#0b2545"/>
-              <path d="M11 5 L33 15" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="82" y="42" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.6" fill="#0b2545">Blue Business</text>
-          </svg>
-        </div>
-        <div class="row">
-          <div class="logo-stage dark">
-            <svg viewBox="0 0 340 64" width="320" height="60" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="#22d3ee" stroke-width="3" stroke-linecap="round">
-                <line x1="2" y1="22" x2="14" y2="22"/>
-                <line x1="0" y1="34" x2="18" y2="34"/>
-                <line x1="4" y1="46" x2="14" y2="46"/>
-              </g>
-              <g transform="translate(20 10)">
-                <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#22d3ee"/>
-                <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#93c5fd"/>
-                <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#60a5fa"/>
-              </g>
-              <text x="82" y="42" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.6" fill="#fff">Blue Business</text>
-            </svg>
-          </div>
-          <div class="logo-stage">
-            <svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="64" rx="14" fill="#0b2545"/>
-              <g transform="translate(10 10)">
-                <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#2f7cff"/>
-                <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#93c5fd"/>
-                <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#60a5fa"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONCEPT C: Wordmark met custom B -->
-      <div class="card">
-        <h3>C — Pure wordmark met custom "B"</h3>
-        <div class="sub">Meest modern/minimaal: typografische mark. De B heeft een subtiele opening — een pijl naar rechts (voortgang).</div>
-        <div class="logo-stage">
-          <svg viewBox="0 0 360 64" width="360" height="64" xmlns="http://www.w3.org/2000/svg" aria-label="Blue Business logo C">
-            <!-- Custom B with arrow notch -->
-            <g transform="translate(8 8)">
-              <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#0b2545"/>
-              <!-- arrow accent slicing through -->
-              <path d="M36 18 L48 24 L36 30 Z" fill="#2f7cff"/>
-            </g>
-            <text x="72" y="42" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#0b2545">lue Business</text>
-          </svg>
-        </div>
-        <div class="row">
-          <div class="logo-stage dark">
-            <svg viewBox="0 0 360 64" width="340" height="60" xmlns="http://www.w3.org/2000/svg">
               <g transform="translate(8 8)">
-                <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#fff"/>
-                <path d="M36 18 L48 24 L36 30 Z" fill="#22d3ee"/>
+                <rect width="64" height="64" rx="16" fill="url(#aurora2)"/>
+                <path d="M18 14 H36 C42 14 46 18 46 23 C46 28 42 31 37 31 H18 Z M18 33 H39 C45 33 49 37 49 42 C49 47 45 50 39 50 H18 Z" fill="#fff"/>
               </g>
-              <text x="72" y="42" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#fff">lue Business</text>
+              <text x="96" y="50" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.8" fill="#0a0f1f">Blue Business</text>
             </svg>
           </div>
-          <div class="logo-stage">
-            <svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="64" rx="14" fill="#f1f5ff"/>
-              <g transform="translate(8 8)">
-                <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#0b2545"/>
-                <path d="M36 18 L48 24 L36 30 Z" fill="#2f7cff"/>
-              </g>
+          <div class="logo-stage grid">
+            <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="aurora3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#8b5cf6"/>
+                  <stop offset=".5" stop-color="#4f8cff"/>
+                  <stop offset="1" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+              <rect width="72" height="72" rx="18" fill="url(#aurora3)"/>
+              <path d="M22 18 H42 C49 18 53 23 53 28 C53 34 49 37 43 37 H22 Z M22 39 H46 C53 39 57 44 57 50 C57 55 53 58 46 58 H22 Z" fill="#0a0f1f"/>
             </svg>
           </div>
         </div>
@@ -196,133 +288,133 @@
     </div>
   </div>
 
+  <!-- =========================== FAVICONS =========================== -->
   <div>
-    <div class="section-title">Favicons (16 / 32 / 64 px)</div>
+    <div class="section-title">Favicons (64 / 32 / 16 + browser tab)</div>
     <div class="fav-grid">
 
       <div class="fav">
-        <h4>A — monogram</h4>
+        <h4>D — terminal bracket</h4>
         <div class="fav-row">
           <div class="fav-chip">
-            <svg viewBox="0 0 64 64" width="64" height="64">
-              <defs><linearGradient id="fg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#13315c"/><stop offset="1" stop-color="#2f7cff"/></linearGradient></defs>
-              <rect width="64" height="64" rx="14" fill="url(#fg1)"/>
-              <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
-              <circle cx="46" cy="48" r="5" fill="#22d3ee"/>
+            <svg viewBox="0 0 72 72" width="64" height="64">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <text x="10" y="49" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="30" fill="#4f8cff">&lt;</text>
+              <text x="27" y="49" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="30" fill="#fff">B</text>
+              <rect class="cursor" x="49" y="30" width="5" height="22" fill="#22d3ee"/>
             </svg>
           </div>
           <div class="fav-sm">
-            <svg viewBox="0 0 64 64" width="32" height="32">
-              <rect width="64" height="64" rx="14" fill="url(#fg1)"/>
-              <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
-              <circle cx="46" cy="48" r="5" fill="#22d3ee"/>
+            <svg viewBox="0 0 72 72" width="32" height="32">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <text x="10" y="49" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="30" fill="#4f8cff">&lt;</text>
+              <text x="27" y="49" font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="30" fill="#fff">B</text>
+              <rect class="cursor" x="49" y="30" width="5" height="22" fill="#22d3ee"/>
             </svg>
           </div>
           <div class="fav-xs">
-            <svg viewBox="0 0 64 64" width="16" height="16">
-              <rect width="64" height="64" rx="14" fill="url(#fg1)"/>
-              <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
+            <svg viewBox="0 0 72 72" width="16" height="16">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <text x="18" y="52" font-family="JetBrains Mono, SF Mono, monospace" font-weight="800" font-size="44" fill="#fff">B</text>
+              <rect class="cursor" x="48" y="22" width="10" height="32" fill="#22d3ee"/>
             </svg>
           </div>
           <div class="tab">
             <div class="fav-xs">
-              <svg viewBox="0 0 64 64" width="14" height="14">
-                <rect width="64" height="64" rx="14" fill="url(#fg1)"/>
-                <path d="M16 16 h16 a8 8 0 0 1 0 16 h-16 z M16 32 h18 a8 8 0 0 1 0 16 h-18 z" fill="#fff"/>
+              <svg viewBox="0 0 72 72" width="14" height="14">
+                <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+                <text x="18" y="52" font-family="JetBrains Mono, monospace" font-weight="800" font-size="44" fill="#fff">B</text>
+                <rect x="48" y="22" width="10" height="32" fill="#22d3ee"/>
               </svg>
             </div>
-            Blue Business
-          </div>
-        </div>
-        <div class="fav-meta" style="margin-top:10px">Scherp op 16px, herkenbaar op tab.</div>
-      </div>
-
-      <div class="fav">
-        <h4>B — parcel</h4>
-        <div class="fav-row">
-          <div class="fav-chip">
-            <svg viewBox="0 0 64 64" width="64" height="64">
-              <rect width="64" height="64" rx="14" fill="#0b2545"/>
-              <g transform="translate(10 10)">
-                <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#2f7cff"/>
-                <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#93c5fd"/>
-                <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#60a5fa"/>
-              </g>
-            </svg>
-          </div>
-          <div class="fav-sm">
-            <svg viewBox="0 0 64 64" width="32" height="32">
-              <rect width="64" height="64" rx="14" fill="#0b2545"/>
-              <g transform="translate(10 10)">
-                <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#2f7cff"/>
-                <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#93c5fd"/>
-                <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#60a5fa"/>
-              </g>
-            </svg>
-          </div>
-          <div class="fav-xs">
-            <svg viewBox="0 0 64 64" width="16" height="16">
-              <rect width="64" height="64" rx="14" fill="#0b2545"/>
-              <path d="M32 10 L54 20 L32 30 L10 20 Z" fill="#2f7cff"/>
-              <path d="M10 20 L32 30 L32 54 L10 44 Z" fill="#93c5fd"/>
-              <path d="M54 20 L32 30 L32 54 L54 44 Z" fill="#60a5fa"/>
-            </svg>
-          </div>
-          <div class="tab">
-            <div class="fav-xs">
-              <svg viewBox="0 0 64 64" width="14" height="14">
-                <rect width="64" height="64" rx="14" fill="#0b2545"/>
-                <path d="M32 10 L54 20 L32 30 L10 20 Z" fill="#2f7cff"/>
-                <path d="M10 20 L32 30 L32 54 L10 44 Z" fill="#93c5fd"/>
-                <path d="M54 20 L32 30 L32 54 L54 44 Z" fill="#60a5fa"/>
-              </svg>
-            </div>
-            Blue Business
+            Blue Business — automation
           </div>
         </div>
       </div>
 
       <div class="fav">
-        <h4>C — B-arrow</h4>
+        <h4>E — node graph</h4>
         <div class="fav-row">
           <div class="fav-chip">
-            <svg viewBox="0 0 64 64" width="64" height="64">
-              <rect width="64" height="64" rx="14" fill="#f1f5ff"/>
-              <g transform="translate(8 8)">
-                <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#0b2545"/>
-                <path d="M36 18 L48 24 L36 30 Z" fill="#2f7cff"/>
+            <svg viewBox="0 0 72 72" width="64" height="64">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <g transform="translate(4 6)">
+                <g stroke="#4f8cff" stroke-width="1.5"><line x1="10" y1="8" x2="10" y2="56"/><line x1="10" y1="8" x2="38" y2="8"/><line x1="38" y1="8" x2="50" y2="20"/><line x1="50" y1="20" x2="38" y2="32"/><line x1="10" y1="32" x2="38" y2="32"/><line x1="38" y1="32" x2="52" y2="44"/><line x1="52" y1="44" x2="38" y2="56"/><line x1="10" y1="56" x2="38" y2="56"/></g>
+                <g fill="#22d3ee"><circle cx="10" cy="8" r="3.5"/><circle cx="38" cy="8" r="3.5"/><circle cx="50" cy="20" r="3.5"/><circle cx="10" cy="32" r="3.5"/><circle cx="52" cy="44" r="3.5"/><circle cx="10" cy="56" r="3.5"/><circle cx="38" cy="56" r="3.5"/></g>
+                <circle cx="38" cy="32" r="5" fill="#fff"/>
               </g>
             </svg>
           </div>
           <div class="fav-sm">
-            <svg viewBox="0 0 64 64" width="32" height="32">
-              <rect width="64" height="64" rx="14" fill="#f1f5ff"/>
-              <g transform="translate(8 8)">
-                <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#0b2545"/>
-                <path d="M36 18 L48 24 L36 30 Z" fill="#2f7cff"/>
+            <svg viewBox="0 0 72 72" width="32" height="32">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <g transform="translate(4 6)">
+                <g stroke="#4f8cff" stroke-width="1.5"><line x1="10" y1="8" x2="10" y2="56"/><line x1="10" y1="8" x2="38" y2="8"/><line x1="38" y1="8" x2="50" y2="20"/><line x1="50" y1="20" x2="38" y2="32"/><line x1="10" y1="32" x2="38" y2="32"/><line x1="38" y1="32" x2="52" y2="44"/><line x1="52" y1="44" x2="38" y2="56"/><line x1="10" y1="56" x2="38" y2="56"/></g>
+                <g fill="#22d3ee"><circle cx="10" cy="8" r="3.5"/><circle cx="38" cy="8" r="3.5"/><circle cx="50" cy="20" r="3.5"/><circle cx="10" cy="32" r="3.5"/><circle cx="52" cy="44" r="3.5"/><circle cx="10" cy="56" r="3.5"/><circle cx="38" cy="56" r="3.5"/></g>
+                <circle cx="38" cy="32" r="5" fill="#fff"/>
               </g>
             </svg>
           </div>
           <div class="fav-xs">
-            <svg viewBox="0 0 64 64" width="16" height="16">
-              <rect width="64" height="64" rx="14" fill="#0b2545"/>
-              <g transform="translate(8 8)">
-                <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#fff"/>
-                <path d="M36 18 L48 24 L36 30 Z" fill="#22d3ee"/>
+            <svg viewBox="0 0 72 72" width="16" height="16">
+              <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+              <g transform="translate(10 10)" fill="#22d3ee">
+                <circle cx="8" cy="8" r="6"/>
+                <circle cx="8" cy="44" r="6"/>
+                <circle cx="44" cy="26" r="6"/>
+                <line x1="8" y1="8" x2="44" y2="26" stroke="#4f8cff" stroke-width="3"/>
+                <line x1="8" y1="44" x2="44" y2="26" stroke="#4f8cff" stroke-width="3"/>
+                <line x1="8" y1="8" x2="8" y2="44" stroke="#4f8cff" stroke-width="3"/>
               </g>
             </svg>
           </div>
           <div class="tab">
             <div class="fav-xs">
-              <svg viewBox="0 0 64 64" width="14" height="14">
-                <rect width="64" height="64" rx="14" fill="#0b2545"/>
-                <g transform="translate(8 8)">
-                  <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#fff"/>
-                  <path d="M36 18 L48 24 L36 30 Z" fill="#22d3ee"/>
+              <svg viewBox="0 0 72 72" width="14" height="14">
+                <rect width="72" height="72" rx="16" fill="#0a0f1f"/>
+                <g transform="translate(10 10)" fill="#22d3ee">
+                  <circle cx="8" cy="8" r="6"/><circle cx="8" cy="44" r="6"/><circle cx="44" cy="26" r="6"/>
+                  <line x1="8" y1="8" x2="44" y2="26" stroke="#4f8cff" stroke-width="3"/>
+                  <line x1="8" y1="44" x2="44" y2="26" stroke="#4f8cff" stroke-width="3"/>
+                  <line x1="8" y1="8" x2="8" y2="44" stroke="#4f8cff" stroke-width="3"/>
                 </g>
               </svg>
             </div>
-            Blue Business
+            Blue Business — integrations
+          </div>
+        </div>
+      </div>
+
+      <div class="fav">
+        <h4>F — aurora gradient</h4>
+        <div class="fav-row">
+          <div class="fav-chip">
+            <svg viewBox="0 0 72 72" width="64" height="64">
+              <defs><linearGradient id="fGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset=".5" stop-color="#4f8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+              <rect width="72" height="72" rx="18" fill="url(#fGrad)"/>
+              <path d="M22 18 H42 C49 18 53 23 53 28 C53 34 49 37 43 37 H22 Z M22 39 H46 C53 39 57 44 57 50 C57 55 53 58 46 58 H22 Z" fill="#0a0f1f"/>
+            </svg>
+          </div>
+          <div class="fav-sm">
+            <svg viewBox="0 0 72 72" width="32" height="32">
+              <rect width="72" height="72" rx="18" fill="url(#fGrad)"/>
+              <path d="M22 18 H42 C49 18 53 23 53 28 C53 34 49 37 43 37 H22 Z M22 39 H46 C53 39 57 44 57 50 C57 55 53 58 46 58 H22 Z" fill="#0a0f1f"/>
+            </svg>
+          </div>
+          <div class="fav-xs">
+            <svg viewBox="0 0 72 72" width="16" height="16">
+              <rect width="72" height="72" rx="18" fill="url(#fGrad)"/>
+              <path d="M22 18 H42 C49 18 53 23 53 28 C53 34 49 37 43 37 H22 Z M22 39 H46 C53 39 57 44 57 50 C57 55 53 58 46 58 H22 Z" fill="#0a0f1f"/>
+            </svg>
+          </div>
+          <div class="tab">
+            <div class="fav-xs">
+              <svg viewBox="0 0 72 72" width="14" height="14">
+                <rect width="72" height="72" rx="18" fill="url(#fGrad)"/>
+                <path d="M22 18 H42 C49 18 53 23 53 28 C53 34 49 37 43 37 H22 Z M22 39 H46 C53 39 57 44 57 50 C57 55 53 58 46 58 H22 Z" fill="#0a0f1f"/>
+              </svg>
+            </div>
+            Blue Business — platform
           </div>
         </div>
       </div>
@@ -330,90 +422,169 @@
     </div>
   </div>
 
+  <!-- =========================== OG IMAGES =========================== -->
   <div>
     <div class="section-title">OG images (1200×630)</div>
-    <div class="grid">
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));">
 
-      <!-- OG A -->
+      <!-- OG D: terminal -->
       <div class="og">
-        <h4>A — monogram, gradient navy → electric</h4>
+        <h4>D — terminal / CLI</h4>
         <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="ogA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#0b2545"/>
-              <stop offset="1" stop-color="#13315c"/>
+            <linearGradient id="ogDbg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#050914"/>
+              <stop offset="1" stop-color="#0f1530"/>
             </linearGradient>
-            <radialGradient id="ogA2" cx="85%" cy="15%" r="60%">
-              <stop offset="0" stop-color="#2f7cff" stop-opacity=".6"/>
-              <stop offset="1" stop-color="#2f7cff" stop-opacity="0"/>
+            <radialGradient id="ogDglow" cx="20%" cy="20%" r="60%">
+              <stop offset="0" stop-color="#22d3ee" stop-opacity=".25"/>
+              <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
             </radialGradient>
           </defs>
-          <rect width="1200" height="630" fill="url(#ogA)"/>
-          <rect width="1200" height="630" fill="url(#ogA2)"/>
-          <!-- soft grid -->
-          <g stroke="#ffffff" stroke-opacity=".05" stroke-width="1">
-            <path d="M0 100 H1200 M0 200 H1200 M0 300 H1200 M0 400 H1200 M0 500 H1200"/>
-            <path d="M200 0 V630 M400 0 V630 M600 0 V630 M800 0 V630 M1000 0 V630"/>
+          <rect width="1200" height="630" fill="url(#ogDbg)"/>
+          <rect width="1200" height="630" fill="url(#ogDglow)"/>
+          <!-- grid -->
+          <g stroke="#ffffff" stroke-opacity=".04" stroke-width="1">
+            <path d="M0 80 H1200 M0 160 H1200 M0 240 H1200 M0 320 H1200 M0 400 H1200 M0 480 H1200 M0 560 H1200"/>
+            <path d="M80 0 V630 M200 0 V630 M320 0 V630 M440 0 V630 M560 0 V630 M680 0 V630 M800 0 V630 M920 0 V630 M1040 0 V630"/>
           </g>
-          <!-- monogram -->
-          <g transform="translate(96 180)">
-            <rect width="160" height="160" rx="36" fill="#fff"/>
-            <path d="M40 40 h40 a20 20 0 0 1 0 40 h-40 z M40 80 h45 a20 20 0 0 1 0 40 h-45 z" fill="#0b2545"/>
-            <circle cx="115" cy="120" r="12" fill="#22d3ee"/>
+          <!-- terminal window -->
+          <g transform="translate(80 140)">
+            <rect width="560" height="340" rx="14" fill="#0a0f1f" stroke="#1f2a4a"/>
+            <g transform="translate(20 20)" fill="#3a466c"><circle cx="6" cy="6" r="6"/><circle cx="26" cy="6" r="6"/><circle cx="46" cy="6" r="6"/></g>
+            <g font-family="JetBrains Mono, SF Mono, monospace" font-size="22" fill="#cfd8ee">
+              <text x="24" y="84"><tspan fill="#22d3ee">$</tspan> bb deploy --prod</text>
+              <text x="24" y="120" fill="#6b7aa0">› scanning stack...</text>
+              <text x="24" y="152" fill="#a3e635">✓ automations connected</text>
+              <text x="24" y="184" fill="#a3e635">✓ integrations live</text>
+              <text x="24" y="216" fill="#a3e635">✓ dashboard shipped</text>
+              <text x="24" y="260"><tspan fill="#4f8cff">→</tspan> business modernized <tspan fill="#6b7aa0">in 14 days</tspan></text>
+              <text x="24" y="300"><tspan fill="#22d3ee">$</tspan> <tspan fill="#fff">_</tspan></text>
+            </g>
           </g>
-          <text x="300" y="300" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="86" letter-spacing="-2" fill="#fff">Blue Business</text>
-          <text x="300" y="360" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="30" fill="#cbd5e1">Slimmer zakendoen. Sneller schalen.</text>
-          <g transform="translate(300 430)">
-            <rect width="220" height="56" rx="28" fill="#22d3ee"/>
-            <text x="110" y="36" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20" fill="#0b2545">bluebusiness.nl</text>
-          </g>
-        </svg>
-      </div>
-
-      <!-- OG B -->
-      <div class="og">
-        <h4>B — parcel mark, lichte split-layout</h4>
-        <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1200" height="630" fill="#f6f9ff"/>
-          <rect x="720" width="480" height="630" fill="#0b2545"/>
-          <!-- left content -->
-          <text x="80" y="240" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="80" letter-spacing="-2" fill="#0b2545">Blue</text>
-          <text x="80" y="330" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="80" letter-spacing="-2" fill="#2f7cff">Business</text>
-          <text x="80" y="400" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="26" fill="#475569">Modern e-commerce, pragmatische aanpak.</text>
-          <g transform="translate(80 460)" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#0b2545">
-            <rect width="120" height="44" rx="22" fill="#e2edff"/>
-            <text x="60" y="29" text-anchor="middle">Strategie</text>
-            <rect x="136" width="110" height="44" rx="22" fill="#e2edff"/>
-            <text x="191" y="29" text-anchor="middle">Shopify</text>
-            <rect x="262" width="130" height="44" rx="22" fill="#e2edff"/>
-            <text x="327" y="29" text-anchor="middle">Automation</text>
-          </g>
-          <!-- right parcel -->
-          <g transform="translate(820 160) scale(6)">
-            <path d="M22 0 L44 10 L22 20 L0 10 Z" fill="#2f7cff"/>
-            <path d="M0 10 L22 20 L22 44 L0 34 Z" fill="#1d4ed8"/>
-            <path d="M44 10 L22 20 L22 44 L44 34 Z" fill="#60a5fa"/>
-            <path d="M11 5 L33 15" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+          <!-- brand block -->
+          <g transform="translate(700 170)">
+            <g font-family="JetBrains Mono, SF Mono, monospace" font-weight="700" font-size="72" fill="#4f8cff">
+              <text x="0" y="64">&lt;</text>
+              <text x="44" y="64" fill="#fff">B</text>
+              <text x="96" y="64">/&gt;</text>
+            </g>
+            <text x="0" y="140" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="60" letter-spacing="-1.5" fill="#fff">Blue Business</text>
+            <text x="0" y="190" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="26" fill="#9ec2ff">Tech-first modernisering voor MKB.</text>
+            <g transform="translate(0 240)" font-family="Inter, system-ui, sans-serif">
+              <rect width="220" height="52" rx="26" fill="#22d3ee"/>
+              <text x="110" y="34" text-anchor="middle" font-weight="600" font-size="18" fill="#0a0f1f">bluebusiness.nl →</text>
+            </g>
           </g>
         </svg>
       </div>
 
-      <!-- OG C -->
+      <!-- OG E: node graph -->
       <div class="og">
-        <h4>C — wordmark, editorial minimal</h4>
+        <h4>E — node graph / integrations</h4>
         <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1200" height="630" fill="#fbfcff"/>
-          <!-- hairline frame -->
-          <rect x="40" y="40" width="1120" height="550" rx="24" fill="none" stroke="#0b2545" stroke-opacity=".08"/>
-          <!-- big B mark -->
-          <g transform="translate(96 160) scale(3.2)">
-            <path d="M0 0 H28 C40 0 46 6 46 14 C46 20 42 23 38 24 C44 25 50 29 50 36 C50 46 42 48 28 48 H0 Z M10 8 V22 H24 C30 22 34 20 34 15 C34 10 30 8 24 8 Z M10 28 V40 H26 C32 40 38 38 38 34 C38 30 32 28 26 28 Z" fill="#0b2545"/>
-            <path d="M36 18 L48 24 L36 30 Z" fill="#2f7cff"/>
+          <rect width="1200" height="630" fill="#050914"/>
+          <!-- subtle radial -->
+          <defs>
+            <radialGradient id="ogEg" cx="70%" cy="50%" r="55%">
+              <stop offset="0" stop-color="#4f8cff" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#4f8cff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="1200" height="630" fill="url(#ogEg)"/>
+          <!-- dotted background -->
+          <g fill="#1f2a4a">
+            <circle cx="80" cy="80" r="1.5"/><circle cx="160" cy="80" r="1.5"/><circle cx="240" cy="80" r="1.5"/><circle cx="320" cy="80" r="1.5"/><circle cx="400" cy="80" r="1.5"/><circle cx="480" cy="80" r="1.5"/>
+            <circle cx="80" cy="160" r="1.5"/><circle cx="160" cy="160" r="1.5"/><circle cx="240" cy="160" r="1.5"/><circle cx="320" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="480" cy="160" r="1.5"/>
+            <circle cx="80" cy="240" r="1.5"/><circle cx="160" cy="240" r="1.5"/><circle cx="240" cy="240" r="1.5"/>
+            <circle cx="80" cy="320" r="1.5"/><circle cx="160" cy="320" r="1.5"/><circle cx="240" cy="320" r="1.5"/><circle cx="320" cy="320" r="1.5"/>
+            <circle cx="80" cy="400" r="1.5"/><circle cx="160" cy="400" r="1.5"/>
+            <circle cx="80" cy="480" r="1.5"/><circle cx="160" cy="480" r="1.5"/><circle cx="240" cy="480" r="1.5"/><circle cx="320" cy="480" r="1.5"/><circle cx="400" cy="480" r="1.5"/>
+            <circle cx="80" cy="560" r="1.5"/><circle cx="160" cy="560" r="1.5"/><circle cx="240" cy="560" r="1.5"/>
           </g>
-          <text x="500" y="300" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="76" letter-spacing="-2" fill="#0b2545">Blue Business</text>
-          <line x1="500" y1="340" x2="1060" y2="340" stroke="#0b2545" stroke-opacity=".15"/>
-          <text x="500" y="400" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="26" fill="#475569">Groei voor ambitieuze B2B-merken.</text>
-          <text x="500" y="520" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="20" fill="#2f7cff" letter-spacing=".04em">BLUEBUSINESS.NL →</text>
+          <!-- brand -->
+          <g transform="translate(80 200)">
+            <text font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="88" letter-spacing="-2" fill="#fff">
+              <tspan x="0" y="0">Modernisering</tspan>
+              <tspan x="0" y="100">die </tspan>
+              <tspan fill="#22d3ee">samenwerkt.</tspan>
+            </text>
+            <text x="0" y="190" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#9ec2ff">Blue Business koppelt je systemen, data en mensen.</text>
+          </g>
+          <!-- node graph cluster right -->
+          <g transform="translate(720 140)">
+            <g stroke="#4f8cff" stroke-width="1.6">
+              <line x1="80" y1="40" x2="220" y2="100"/>
+              <line x1="80" y1="40" x2="60" y2="200"/>
+              <line x1="220" y1="100" x2="60" y2="200"/>
+              <line x1="220" y1="100" x2="320" y2="220"/>
+              <line x1="320" y1="220" x2="60" y2="200"/>
+              <line x1="320" y1="220" x2="160" y2="340"/>
+              <line x1="60" y1="200" x2="160" y2="340"/>
+              <line x1="160" y1="340" x2="280" y2="360"/>
+              <line x1="220" y1="100" x2="280" y2="360"/>
+            </g>
+            <g>
+              <g transform="translate(80 40)"><circle r="22" fill="#0a0f1f" stroke="#22d3ee" stroke-width="2"/><text text-anchor="middle" y="6" font-family="JetBrains Mono, monospace" font-size="16" fill="#22d3ee">API</text></g>
+              <g transform="translate(220 100)"><circle r="28" fill="#22d3ee"/><text text-anchor="middle" y="6" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#0a0f1f">B</text></g>
+              <g transform="translate(60 200)"><circle r="22" fill="#0a0f1f" stroke="#4f8cff" stroke-width="2"/><text text-anchor="middle" y="6" font-family="JetBrains Mono, monospace" font-size="14" fill="#9ec2ff">CRM</text></g>
+              <g transform="translate(320 220)"><circle r="22" fill="#0a0f1f" stroke="#4f8cff" stroke-width="2"/><text text-anchor="middle" y="6" font-family="JetBrains Mono, monospace" font-size="14" fill="#9ec2ff">ERP</text></g>
+              <g transform="translate(160 340)"><circle r="22" fill="#0a0f1f" stroke="#4f8cff" stroke-width="2"/><text text-anchor="middle" y="6" font-family="JetBrains Mono, monospace" font-size="14" fill="#9ec2ff">AI</text></g>
+              <g transform="translate(280 360)"><circle r="22" fill="#0a0f1f" stroke="#4f8cff" stroke-width="2"/><text text-anchor="middle" y="6" font-family="JetBrains Mono, monospace" font-size="14" fill="#9ec2ff">DB</text></g>
+            </g>
+          </g>
+          <text x="80" y="580" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="20" fill="#4f8cff" letter-spacing=".06em">BLUEBUSINESS.NL</text>
+        </svg>
+      </div>
+
+      <!-- OG F: aurora -->
+      <div class="og">
+        <h4>F — aurora gradient / AI-SaaS</h4>
+        <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ogFbg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#07091a"/>
+              <stop offset="1" stop-color="#0c1333"/>
+            </linearGradient>
+            <radialGradient id="ogFa" cx="20%" cy="30%" r="55%">
+              <stop offset="0" stop-color="#8b5cf6" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="ogFb" cx="80%" cy="80%" r="55%">
+              <stop offset="0" stop-color="#22d3ee" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ogFmark" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b5cf6"/>
+              <stop offset=".5" stop-color="#4f8cff"/>
+              <stop offset="1" stop-color="#22d3ee"/>
+            </linearGradient>
+            <filter id="noise">
+              <feTurbulence baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+              <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .04 0"/>
+            </filter>
+          </defs>
+          <rect width="1200" height="630" fill="url(#ogFbg)"/>
+          <rect width="1200" height="630" fill="url(#ogFa)"/>
+          <rect width="1200" height="630" fill="url(#ogFb)"/>
+          <rect width="1200" height="630" filter="url(#noise)"/>
+          <!-- mark -->
+          <g transform="translate(90 160)">
+            <rect width="220" height="220" rx="56" fill="url(#ogFmark)"/>
+            <path d="M64 50 H140 C170 50 185 70 185 90 C185 110 170 125 150 125 H64 Z
+                     M64 130 H156 C186 130 200 150 200 172 C200 192 186 205 156 205 H64 Z" fill="#07091a"/>
+          </g>
+          <!-- text -->
+          <text x="360" y="260" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="84" letter-spacing="-2" fill="#fff">Blue Business</text>
+          <text x="360" y="330" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="30" fill="#cfd8ee">Moderniseer je bedrijf. Met tech die wél werkt.</text>
+          <!-- feature row -->
+          <g transform="translate(90 460)" font-family="JetBrains Mono, SF Mono, monospace" font-size="18">
+            <g><rect width="230" height="50" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)"/><text x="115" y="32" text-anchor="middle" fill="#9ec2ff">// automation</text></g>
+            <g transform="translate(250 0)"><rect width="230" height="50" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)"/><text x="115" y="32" text-anchor="middle" fill="#9ec2ff">// AI-integratie</text></g>
+            <g transform="translate(500 0)"><rect width="230" height="50" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)"/><text x="115" y="32" text-anchor="middle" fill="#9ec2ff">// data-platforms</text></g>
+            <g transform="translate(750 0)"><rect width="260" height="50" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)"/><text x="130" y="32" text-anchor="middle" fill="#9ec2ff">// cloud-migratie</text></g>
+          </g>
+          <text x="90" y="570" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="20" fill="#22d3ee" letter-spacing=".08em">BLUEBUSINESS.NL →</text>
         </svg>
       </div>
 

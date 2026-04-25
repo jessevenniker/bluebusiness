@@ -1,4 +1,8 @@
 {
+  "common": {
+    "planCall": "Plan een gesprek",
+    "readMore": "Lees meer"
+  },
   "nav": {
     "services": "Diensten",
     "cases": "Cases",
@@ -423,6 +427,26 @@
     "ctaTitle1": "Benieuwd of we",
     "ctaTitle2": "bij elkaar passen?",
     "ctaLead": "Een kennismakingsgesprek kost je 30 minuten. Daarna weet je of het klikt of niet — geen sales-druk, geen verplichtingen."
+  },
+  "casesPage": {
+    "meta": {
+      "title": "Cases — Blue Business",
+      "description": "Apps die Blue Business heeft gebouwd: Bonaire App, Medewerker App, GAST. Live in production, dagelijks in gebruik."
+    },
+    "eyebrow": "// Live in production",
+    "h1Line1": "Apps die mensen",
+    "h1Line2": "dagelijks openen.",
+    "lead": "Elk van deze producten wordt nu, terwijl je dit leest, door iemand gebruikt. Dat is de enige test die telt."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy — Blue Business",
+      "description": "Privacy Policy van Blue Innovation B.V. (Blue Business). Hoe wij gegevens verzamelen, gebruiken en beschermen in overeenstemming met de AVG."
+    },
+    "terms": {
+      "title": "Algemene Voorwaarden — Blue Business",
+      "description": "Algemene voorwaarden van Blue Innovation B.V. (Blue Business), versie 2021. Ingeschreven bij KvK onder nummer 80387578."
+    }
   },
   "notFound": {
     "eyebrow": "// 404",

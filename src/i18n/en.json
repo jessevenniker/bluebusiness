@@ -1,4 +1,8 @@
 {
+  "common": {
+    "planCall": "Schedule a call",
+    "readMore": "Read more"
+  },
   "nav": {
     "services": "Services",
     "cases": "Work",
@@ -194,5 +198,266 @@
     },
     "allCases": "All work",
     "copyright": "© 2026 Blue Business"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Blue Business",
+      "description": "Get in touch with Blue Business. 30 minutes with the developer who would build your app — no account executive, no sales funnel."
+    },
+    "eyebrow": "// Let's talk",
+    "h1Line1": "Tell us about",
+    "h1Line2": "your app idea.",
+    "lead": "30 minutes with the developer who would build it — not an account executive. You tell us what you have, we tell you honestly whether it fits and what a realistic budget and timeline look like.",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@company.com",
+      "companyLabel": "Company (optional)",
+      "companyPlaceholder": "Your organization",
+      "typeLabel": "Project type",
+      "typeOptions": [
+        "New native app (iOS + Android)",
+        "New web / SaaS application",
+        "Take over or rebuild an existing app",
+        "Maintenance / ongoing development",
+        "Other / not sure yet"
+      ],
+      "budgetLabel": "Indicative budget",
+      "budgetOptions": [
+        "< €25,000 (not what we do)",
+        "€25,000 – €50,000 (MVP)",
+        "€50,000 – €100,000 (full 1.0)",
+        "€100,000 – €250,000",
+        "€250,000+",
+        "Not sure yet"
+      ],
+      "messageLabel": "Describe your project",
+      "messagePlaceholder": "What do you want to build? For whom? What features are essential? The more context, the better — we don't read slides, we read context.",
+      "submit": "Send message",
+      "submittingText": "Sending…",
+      "successTitle": "Thanks for your message.",
+      "successBody": "We usually respond within 1 to 2 business days. No auto-reply, no sales funnel — just a human writing back.",
+      "errorTitle": "Something went wrong.",
+      "errorBody": "Please try again or email us directly at info@bluebusiness.nl."
+    },
+    "sidebar": {
+      "emailTitle": "Email",
+      "addressTitle": "Office",
+      "hoursTitle": "Hours",
+      "hoursValue": "Mon – Fri · 09:00 – 18:00 CET",
+      "responseTitle": "Response time",
+      "responseValue": "Usually within 1–2 business days"
+    },
+    "fallback": {
+      "text": "Rather not use a form? Email us directly at",
+      "link": "info@bluebusiness.nl"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services — Native iOS, Android, Web & maintenance | Blue Business",
+      "description": "Blue Business designs and builds native iOS and Android apps, web applications and SaaS platforms. Plus product design, strategy and ongoing maintenance."
+    },
+    "eyebrow": "// Services",
+    "h1Line1": "Four disciplines.",
+    "h1Line2": "One team.",
+    "lead": "Blue Business works as one small, senior team combining design, native development and product strategy. Not four separate departments finding each other via Jira tickets.",
+    "indexLabel": "In this page",
+    "ctaEyebrow": "// Ready to start?",
+    "ctaTitle1": "Which of these",
+    "ctaTitle2": "fits your project?",
+    "ctaLead": "Not sure? Describe your case — we advise honestly which service fits best, even if that means something different from what you initially asked for.",
+    "detail": {
+      "native": {
+        "forWhom": {
+          "title": "For whom",
+          "items": [
+            "Businesses building an app for customers, guests, visitors or employees",
+            "Products that need performance, battery efficiency or offline support",
+            "Tourism, hospitality, healthcare and government services built to last 3+ years"
+          ]
+        },
+        "includes": {
+          "title": "What we deliver",
+          "items": [
+            "Swift for iOS (iPhone + iPad + Apple Watch where it makes sense)",
+            "Kotlin for Android (phone + tablet)",
+            "App Store and Play Store submissions including screenshots and store copy",
+            "CI/CD pipelines (Fastlane + GitHub Actions) — one-click to TestFlight",
+            "Analytics, crash reporting (Sentry), feature flags"
+          ]
+        },
+        "tech": {
+          "title": "Tech stack",
+          "items": [
+            "iOS: Swift, SwiftUI / UIKit, Combine, Core Data / SwiftData",
+            "Android: Kotlin, Jetpack Compose, Coroutines, Room",
+            "Backend integrations: REST, GraphQL, Firebase, Supabase",
+            "Maps: Mapbox for offline, MapKit / Google Maps for online"
+          ]
+        }
+      },
+      "web": {
+        "forWhom": {
+          "title": "For whom",
+          "items": [
+            "Startups that want to ship a product quickly",
+            "SaaS companies with an existing app ready for version 2",
+            "Businesses building a client portal or dashboard"
+          ]
+        },
+        "includes": {
+          "title": "What we deliver",
+          "items": [
+            "Frontend in Astro, Next.js or Remix — chosen per problem",
+            "Edge deploys on Vercel or Cloudflare",
+            "Core Web Vitals ≥ 95 as a fixed quality gate",
+            "Authentication, billing, admin dashboard",
+            "Marketing site combined with product or explicitly separated"
+          ]
+        },
+        "tech": {
+          "title": "Tech stack",
+          "items": [
+            "TypeScript strict, React 19, Tailwind 4",
+            "Databases: Postgres via Supabase or Neon, Drizzle or Prisma",
+            "Auth: Clerk, Supabase Auth, or custom",
+            "Payments: Stripe, Mollie"
+          ]
+        }
+      },
+      "design": {
+        "forWhom": {
+          "title": "For whom",
+          "items": [
+            "Companies with an idea but no clear picture of scope",
+            "Organizations that had a disappointing app build in the past",
+            "Product teams that want an external pair of hands and eyes"
+          ]
+        },
+        "includes": {
+          "title": "What we deliver",
+          "items": [
+            "1–2 week discovery sprint with user interviews and competitor analysis",
+            "Clickable Figma prototype, or sometimes just a single HTML page we put in people's hands the same morning",
+            "Scope document with user flows, features and a fixed build price",
+            "UI/UX design system ready to build against"
+          ]
+        },
+        "tech": {
+          "title": "How we work",
+          "items": [
+            "Figma for UI and prototypes",
+            "FigJam or Miro for user-flow mapping",
+            "Notion for scope docs that stay readable during the build"
+          ]
+        }
+      },
+      "maintain": {
+        "forWhom": {
+          "title": "For whom",
+          "items": [
+            "Clients whose apps we've already built",
+            "Businesses whose app was built elsewhere but need ongoing development",
+            "Products running stable but needing OS-upgrade support"
+          ]
+        },
+        "includes": {
+          "title": "What we deliver",
+          "items": [
+            "Monthly retainer from €1,200/month",
+            "Monthly release cycles with crash-rate monitoring (Sentry)",
+            "OS-upgrade support (iOS 18, iOS 19, Android 15, 16…)",
+            "Quarterly roadmap proposal based on real usage data",
+            "24-hour SLA for critical bugs"
+          ]
+        },
+        "tech": {
+          "title": "How we work",
+          "items": [
+            "A fixed developer as your technical point of contact",
+            "Monthly 30-minute sync on what's happening",
+            "Transparent time-tracking — you see exactly where the hours went"
+          ]
+        }
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About — Blue Business, Dutch app studio",
+      "description": "Blue Business (Blue Innovation B.V.) is a Dutch app development studio founded in 2021 and based in Zwaanshoek. We build native apps for SMEs and Caribbean clients."
+    },
+    "eyebrow": "// About Blue Business",
+    "h1Line1": "A small team",
+    "h1Line2": "that actually builds apps.",
+    "leadP1": "Blue Business is the trade name of Blue Innovation B.V., a Dutch app development studio founded in 2021. We work from Zwaanshoek and build native iOS and Android apps, web applications and SaaS platforms for Dutch SMEs and Caribbean organizations.",
+    "leadP2": "Our story starts with something simple: too often we see companies hire a large agency for an app build, receive something six months later that doesn't do what it should, and nobody remembers exactly what happened. Blue Business is explicitly different: small team, senior people, you talk directly to the developer building your app.",
+    "sections": [
+      {
+        "title": "Why small and senior",
+        "body": "We don't run a junior-senior pyramid where seniors sell proposals and juniors write code. Every developer at Blue Business has at least 5 years of experience with the platform they work on. That means: less time on management, more time on building, and a product that doesn't need to be rebuilt from scratch in version 2 because the architecture is shaky."
+      },
+      {
+        "title": "Why native",
+        "body": "We know React Native and Flutter, and use them when they fit. But for the kind of products people open daily — tourism apps, employee apps, customer portals — we almost always recommend native. Better scroll, full access to platform APIs, and apps that still work three OS upgrades from now without a rewrite."
+      },
+      {
+        "title": "Why the Netherlands and the Caribbean",
+        "body": "We're Netherlands-based but a significant part of our portfolio is in the Caribbean. Bonaire App is the most visible example, but we also work on projects for entrepreneurs on Curaçao and Aruba. That gives us a rare combination: Dutch agency standards with firsthand experience of what Caribbean tourism and government organizations actually need."
+      },
+      {
+        "title": "How we work",
+        "body": "Fixed prices after a 1-2 week discovery sprint. Weekly TestFlight builds so you see progress every Monday. No open time-and-materials, no 40-page Gantt charts, no account executives. You get exactly what was agreed — and an honest conversation if something changes along the way."
+      }
+    ],
+    "facts": {
+      "title": "Quick facts",
+      "items": [
+        { "k": "Trade name", "v": "Blue Business" },
+        { "k": "Legal entity", "v": "Blue Innovation B.V." },
+        { "k": "Founded", "v": "2021" },
+        { "k": "Chamber of Commerce", "v": "80387578" },
+        { "k": "Office", "v": "Rietsingel 46, 2136 LB Zwaanshoek" },
+        { "k": "Legal form", "v": "Besloten vennootschap (Dutch BV)" }
+      ]
+    },
+    "ctaEyebrow": "// Ready to work together?",
+    "ctaTitle1": "Curious if we're",
+    "ctaTitle2": "a good fit?",
+    "ctaLead": "An intro call costs you 30 minutes. After that you know whether it clicks or not — no sales pressure, no commitments."
+  },
+  "notFound": {
+    "eyebrow": "// 404",
+    "h1Line1": "This page",
+    "h1Line2": "doesn't exist.",
+    "lead": "The link you followed points to something we can't find. It may have moved, or the browser typed a wrong address somewhere.",
+    "ctaPrimary": "Back to home",
+    "ctaSecondary": "See our work"
+  },
+  "casesPage": {
+    "meta": {
+      "title": "Work — Blue Business",
+      "description": "Apps Blue Business has built: Bonaire App, Medewerker App, GAST. Live in production, used daily."
+    },
+    "eyebrow": "// Live in production",
+    "h1Line1": "Apps people",
+    "h1Line2": "open every day.",
+    "lead": "Each of these products is being used right now, while you read this, by someone. That's the only test that matters."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy — Blue Business",
+      "description": "Privacy Policy of Blue Innovation B.V. (Blue Business). How we collect, use and protect data in accordance with GDPR.",
+      "note": "This is an informational English translation. The legally binding version is the Dutch Privacy Policy.",
+      "noteLink": "Read the Dutch version"
+    },
+    "terms": {
+      "title": "Terms & Conditions — Blue Business",
+      "description": "General terms and conditions of Blue Innovation B.V. (Blue Business), version 2021. Registered with the Dutch Chamber of Commerce under number 80387578.",
+      "note": "This is an informational English translation. The legally binding version is the Dutch Algemene Voorwaarden.",
+      "noteLink": "Read the Dutch version"
+    }
   }
 }

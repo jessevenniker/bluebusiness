@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import MonoEyebrow from '../../../components/shared/MonoEyebrow.astro';
+import ArrowButton from '../../../components/shared/ArrowButton.astro';
+---
+
+<BaseLayout
+  title="Medewerker App — case study | Blue Business"
+  description="Employee platform for internal communication, scheduling and updates. Case study follows once the client approves publication."
+  canonicalPath="/en/cases/medewerker-app/"
+  noindex={true}
+>
+  <section class="pt-[140px] md:pt-[180px] pb-20">
+    <Container>
+      <nav aria-label="Breadcrumb" class="mb-10 font-mono text-[12px] text-fg-faint">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/en/" class="hover:text-accent-hi">Home</a></li>
+          <li>/</li>
+          <li><a href="/en/cases/" class="hover:text-accent-hi">Work</a></li>
+          <li>/</li>
+          <li class="text-fg-dim">Medewerker App</li>
+        </ol>
+      </nav>
+
+      <MonoEyebrow text="// B2B — employee platform" tone="accent-hi" class="mb-6 block" />
+      <h1 class="text-h1 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.02;">
+        <span class="block text-fg">Medewerker App —</span>
+        <span class="block text-accent">case study in preparation.</span>
+      </h1>
+
+      <div class="mt-10 p-6 rounded-[14px] bg-[var(--color-bg-elevated)] border border-[var(--color-accent-line)] max-w-[60ch]">
+        <p class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-3">Status</p>
+        <p class="text-[16px] text-fg mb-3">This case is awaiting written client approval to publish name, numbers and screenshots.</p>
+        <p class="text-[14px] text-fg-dim">In the meantime: want to know what kind of employee platform we built here? Send an email — we're happy to share more under NDA.</p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="pb-20 md:pb-24">
+    <Container size="narrow">
+      <h2 class="text-h3 font-medium text-fg mb-4" style="letter-spacing: var(--tracking-snug);">What we built</h2>
+      <p class="text-[16px] text-fg-dim mb-6" style="line-height: 1.7;">
+        An employee app for internal communication, schedule viewing and team updates. Native iOS and Android, with a lightweight web admin for HR and management. Replaces scattered WhatsApp groups, shared Excel files and email lists with one tool that employees voluntarily open — because it's faster than the alternative.
+      </p>
+
+      <h2 class="text-h3 font-medium text-fg mt-10 mb-4" style="letter-spacing: var(--tracking-snug);">Key features</h2>
+      <ul class="space-y-3 text-[15px] text-fg-dim" role="list">
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Push notifications for team updates and schedule changes</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Personal schedule view with shift-swap requests</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> News feed for internal communication</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> Document library for handbooks and procedures</li>
+        <li class="flex gap-3"><span class="text-accent mt-[6px]">→</span> SSO integration with existing HR systems</li>
+      </ul>
+    </Container>
+  </section>
+
+  <section class="py-24 md:py-32 border-t border-[var(--color-accent-line)] relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);"></div>
+    <Container size="narrow">
+      <div class="text-center relative">
+        <MonoEyebrow text="// Building something similar?" tone="dim" class="mb-6 block" />
+        <h2 class="text-h2 font-medium mb-6" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+          <span class="block text-fg">Employee apps are</span>
+          <span class="block text-accent">our daily work.</span>
+        </h2>
+        <p class="text-lead text-fg-dim mb-10 max-w-[50ch] mx-auto">Tell us what you have in mind and we'll share concrete experiences and numbers from similar projects.</p>
+        <div class="flex justify-center">
+          <ArrowButton href="/en/contact/" variant="primary">Schedule a call</ArrowButton>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
