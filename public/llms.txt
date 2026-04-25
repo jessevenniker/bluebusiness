@@ -24,13 +24,12 @@ Blue Business is a Netherlands-based app development studio founded in 2021. The
 - **GAST** — White-label guest-experience app for holiday parks and hospitality, built on the same platform as Medewerker. Built by Blue Business for IDC Tech BV. Live customers include Hof van Saksen and Roompot. Live since August 2025. https://apps.apple.com/nl/app/gast/id1468467772
 - **Run2Forty2** — Native sports app for marathon trainees: training schedules, news updates, kudos for fellow runners and direct chat with the coach. Same multi-tenant platform as Medewerker and GAST, with its own brand. Built by Blue Business for IDC Tech BV. Live since December 2025. https://apps.apple.com/nl/app/run2forty2/id6448728310
 
-## Pricing and engagement
+## Engagement
 
-- Native iOS + Android MVP projects typically start at €25,000
-- Full 1.0 builds usually fall between €40,000 and €80,000
-- Larger platform builds run to €250,000 and above
+- Engagements begin with a 1-2 week discovery sprint to lock down scope
+- Build phase runs in weekly TestFlight cycles so progress is visible every Monday
 - Typical timeline from kickoff to App Store submission: 12-16 weeks
-- Engagements begin with a 1-2 week discovery sprint ending in a fixed build price
+- Smaller scopes (prototypes, single-platform MVPs, take-overs of existing apps) and larger platform builds are equally welcome — Blue Business does not turn away small projects
 
 ## Key pages
 

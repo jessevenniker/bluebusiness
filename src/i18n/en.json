@@ -167,7 +167,7 @@
           "number": "04",
           "title": "Maintain",
           "duration": "ongoing",
-          "body": "Monthly retainer from €1,200/month. OS upgrades, crash fixes, and quarterly roadmaps based on real usage."
+          "body": "Monthly releases, OS upgrades and crash fixes. Each quarter we propose a roadmap based on real usage data — not on what we'd still like to build."
         }
       ]
     },
@@ -177,8 +177,8 @@
       "h2Line2": "always ask.",
       "items": [
         {
-          "q": "What does an app cost at Blue Business?",
-          "a": "A native iOS and Android MVP starts at €25,000 and typically lands between €40,000–€80,000 for a finished 1.0. Large platform builds run to €250,000+. First two conversations are free and end with a fixed price — no open time-and-materials."
+          "q": "What does an engagement at Blue Business look like?",
+          "a": "A 1-2 week discovery sprint to lock down the real use case and scope, then a build phase with weekly TestFlight builds so you see progress every Monday, and finally App Store and Play Store submission. No open time-and-materials, no 40-page Gantt charts — just one team working on your app from start to finish."
         },
         {
           "q": "How long from idea to App Store?",
@@ -190,15 +190,15 @@
         },
         {
           "q": "Do you work with existing apps?",
-          "a": "Yes. We regularly take over apps that started somewhere else. A 2-day fixed-price audit where we review the codebase, infrastructure and App Store status, followed by a take-over plan. Around a third of our work is 'resurrecting' existing products."
+          "a": "Yes. We regularly take over apps that started somewhere else. We start with an audit of the codebase, infrastructure and App Store status, followed by a take-over plan. Around a third of our work is 'resurrecting' existing products."
         },
         {
           "q": "Do you work for Caribbean clients?",
-          "a": "Yes. A significant part of our portfolio is in the Caribbean — Bonaire App is the most visible example. We're Netherlands-based but have extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba, including the cultural and operational context that requires."
+          "a": "Yes. A significant part of our portfolio is in the Caribbean — Visit Bonaire and Bonaire Cruisers are the most visible examples. We're Netherlands-based but have extensive experience with tourism and government projects on Bonaire, Curaçao and Aruba, including the cultural and operational context that requires."
         },
         {
-          "q": "Do you take on small projects?",
-          "a": "Not under €25,000. Below that we can't build a full-stack native app without cutting corners that bite back later. For smaller budgets we happily refer you to freelance or template-based studios."
+          "q": "Do you take on small projects too?",
+          "a": "Yes — everything is welcome. A first MVP, a prototype, a continuation of an existing app, or a platform build for thousands of users — tell us what you have in mind and we'll work out together how to approach it. Honest advice on whether we're the right fit, even when the answer turns out to be different from what you initially asked."
         }
       ]
     },
@@ -257,13 +257,12 @@
         "Maintenance / ongoing development",
         "Other / not sure yet"
       ],
-      "budgetLabel": "Indicative budget",
+      "budgetLabel": "Project scale",
       "budgetOptions": [
-        "< €25,000 (not what we do)",
-        "€25,000 – €50,000 (MVP)",
-        "€50,000 – €100,000 (full 1.0)",
-        "€100,000 – €250,000",
-        "€250,000+",
+        "Small — first MVP or prototype",
+        "Medium — full 1.0",
+        "Large — platform or suite",
+        "Ongoing — maintenance or take-over",
         "Not sure yet"
       ],
       "messageLabel": "Describe your project",
@@ -400,11 +399,11 @@
         "includes": {
           "title": "What we deliver",
           "items": [
-            "Monthly retainer from €1,200/month",
             "Monthly release cycles with crash-rate monitoring (Sentry)",
             "OS-upgrade support (iOS 18, iOS 19, Android 15, 16…)",
             "Quarterly roadmap proposal based on real usage data",
-            "24-hour SLA for critical bugs"
+            "24-hour SLA for critical bugs",
+            "A dedicated developer as your technical point of contact"
           ]
         },
         "tech": {

@@ -16,6 +16,13 @@ const schema = {
   inLanguage: 'nl',
   publisher: { '@id': `${baseUrl}/#organization` },
   about: 'White-label guest app for holiday parks and hospitality — built on the Medewerker.app platform, live at Hof van Saksen and Roompot.',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.5',
+    ratingCount: '4',
+    bestRating: '5',
+    worstRating: '1',
+  },
 };
 
 const clients = [
@@ -66,6 +73,24 @@ const screenshots = [
         <a href="https://apps.apple.com/nl/app/gast/id1468467772" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] border border-[var(--color-border-strong)] hover:border-accent-line transition-colors text-[14px] text-fg">
           App Store →
         </a>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'App Store NL', v: '4.5★ · 4 reviews' },
+          { k: 'Google Play', v: '4.2★ · 6 reviews · 500+' },
+          { k: 'Live since', v: 'August 2025' },
+          { k: 'Platforms', v: 'iOS · Android' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
       </div>
     </Container>
   </section>

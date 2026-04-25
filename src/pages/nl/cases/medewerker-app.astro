@@ -87,6 +87,24 @@ const screenshots = [
     </Container>
   </section>
 
+  <section class="py-12 md:py-16 border-t border-[var(--color-accent-line)]">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {[
+          { k: 'App Store NL', v: '5.0★ · 1 review' },
+          { k: 'Google Play', v: '50+ downloads' },
+          { k: 'Live sinds', v: 'juni 2022' },
+          { k: 'Platforms', v: 'iOS · Android' },
+        ].map((s) => (
+          <div>
+            <p class="font-mono text-[11px] text-fg-faint uppercase tracking-[0.04em] mb-2">{s.k}</p>
+            <p class="text-[16px] text-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
   <section class="py-16 md:py-20 border-t border-[var(--color-accent-line)]">
     <Container>
       <h2 class="font-mono text-[12px] text-accent-hi uppercase tracking-[0.04em] mb-8">Onze opdrachtgevers</h2>

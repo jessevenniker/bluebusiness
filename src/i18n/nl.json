@@ -167,7 +167,7 @@
           "number": "04",
           "title": "Maintain",
           "duration": "doorlopend",
-          "body": "Monthly retainer vanaf €1.200/maand. OS-upgrades, crash fixes, en kwartaal-roadmaps op basis van real usage."
+          "body": "Maandelijkse releases, OS-upgrades en crash fixes. Elk kwartaal een roadmap-voorstel op basis van echte gebruiksdata — niet op basis van wat we nog graag zouden willen bouwen."
         }
       ]
     },
@@ -177,8 +177,8 @@
       "h2Line2": "altijd stellen.",
       "items": [
         {
-          "q": "Wat kost een app bij Blue Business?",
-          "a": "Een native iOS en Android MVP start bij €25.000 en komt doorgaans uit tussen €40.000–€80.000 voor een afgeronde 1.0. Grote platform-builds lopen tot €250.000+. Eerste twee gesprekken zijn gratis en eindigen met een vaste prijs — geen open time-and-materials."
+          "q": "Hoe ziet een traject bij Blue Business eruit?",
+          "a": "Discovery-sprint van 1-2 weken (we leggen de échte use case en scope vast), daarna een build-fase met wekelijkse TestFlight builds zodat je elke maandag de voortgang ziet, en tot slot submission naar App Store en Play Store. Geen open time-and-materials, geen 40-pagina Gantt-charts — gewoon één team dat van begin tot eind aan jouw app werkt."
         },
         {
           "q": "Hoelang duurt het van idee tot App Store?",
@@ -190,15 +190,15 @@
         },
         {
           "q": "Werken jullie ook met bestaande apps?",
-          "a": "Ja. We nemen regelmatig apps over die ergens anders zijn begonnen. Audit (2 dagen, vaste prijs) waarin we de codebase, infrastructuur en App Store-status doorlopen, daarna een take-over plan. Ongeveer een derde van ons werk is \"reanimatie\" van bestaande producten."
+          "a": "Ja. We nemen regelmatig apps over die ergens anders zijn begonnen. We doen eerst een audit van de codebase, infrastructuur en App Store-status, daarna een take-over plan. Ongeveer een derde van ons werk is \"reanimatie\" van bestaande producten."
         },
         {
           "q": "Werken jullie ook voor klanten in de Caribbean?",
-          "a": "Ja. Een deel van ons portfolio ligt in de Caribbean — Bonaire App is daar het meest zichtbare voorbeeld. We zijn Nederland-based maar hebben ruime ervaring met toerisme- en overheidsprojecten op Bonaire, Curaçao en Aruba, inclusief de culturele en operationele context die daarbij hoort."
+          "a": "Ja. Een deel van ons portfolio ligt in de Caribbean — Visit Bonaire en Bonaire Cruisers zijn daar de meest zichtbare voorbeelden. We zijn Nederland-based maar hebben ruime ervaring met toerisme- en overheidsprojecten op Bonaire, Curaçao en Aruba, inclusief de culturele en operationele context die daarbij hoort."
         },
         {
-          "q": "Nemen jullie kleine projecten aan?",
-          "a": "Niet onder €25.000. Onder dat bedrag kunnen we geen full-stack native app bouwen zonder korners te snijden die zich later wreken. Voor kleinere budgets verwijzen we graag door naar collega-bureaus die freelance of template-gebaseerd werken."
+          "q": "Nemen jullie ook kleine projecten aan?",
+          "a": "Ja, alles is welkom. Een eerste MVP, een prototype, een doorontwikkeling van een bestaande app, of een platform-build voor duizenden gebruikers — vertel wat je voor ogen hebt en we kijken samen hoe we het kunnen aanpakken. Eerlijk advies of het bij ons past, ook als het iets anders blijkt te zijn dan je in eerste instantie vroeg."
         }
       ]
     },
@@ -257,13 +257,12 @@
         "Onderhoud / doorontwikkeling",
         "Anders / weet ik nog niet"
       ],
-      "budgetLabel": "Indicatief budget",
+      "budgetLabel": "Schaal van het project",
       "budgetOptions": [
-        "< €25.000 (niet wat we doen)",
-        "€25.000 – €50.000 (MVP)",
-        "€50.000 – €100.000 (full 1.0)",
-        "€100.000 – €250.000",
-        "€250.000+",
+        "Klein — eerste MVP of prototype",
+        "Middel — volledige 1.0",
+        "Groot — platform of suite",
+        "Doorlopend — onderhoud of overname",
         "Weet ik nog niet"
       ],
       "messageLabel": "Beschrijf je project",
@@ -400,11 +399,11 @@
         "includes": {
           "title": "Wat we leveren",
           "items": [
-            "Monthly retainer vanaf €1.200/maand",
             "Maandelijkse release cycles met crash-rate monitoring (Sentry)",
             "OS-upgrade support (iOS 18, iOS 19, Android 15, 16…)",
             "Kwartaal-roadmap-voorstel op basis van echte gebruiksdata",
-            "SLA voor kritieke bugs binnen 24 uur"
+            "SLA voor kritieke bugs binnen 24 uur",
+            "Een vaste developer als technisch aanspreekpunt"
           ]
         },
         "tech": {
