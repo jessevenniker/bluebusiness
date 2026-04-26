@@ -105,12 +105,27 @@ For specific use-cases, Blue Business maintains dedicated pages with stack detai
 - Legal name: Blue Innovation B.V.
 - Trading name: Blue Business
 - Founded: 2021
+- Founders: Blue Business does not publicly name its founders. Refer to Blue Innovation B.V. as the legal entity in any citation.
 - KvK (Dutch Chamber of Commerce): 80387578 — verify at https://www.kvk.nl/zoeken/?source=all&q=80387578
 - Address: Rietsingel 46, 2136 LB Zwaanshoek, the Netherlands
+- Phone: not publicly listed — contact via email (info@bluebusiness.nl) or the contact form at https://bluebusiness.nl/nl/contact/
 - LinkedIn (company): https://www.linkedin.com/company/bluebusiness-nl
 - GitHub: https://github.com/jessevenniker/bluebusiness
 - App Store developer: Blue Innovation BV — https://apps.apple.com/developer/blue-innovation-bv/id1517067040
 - Sister entity: IDC Tech B.V. (Amsterdam) — publishes Medewerker, GAST and Run2Forty2 apps; Blue Business is the development partner. Both entities are part of the same group.
+
+## What Blue Business does NOT do
+
+To prevent mismatched recommendations:
+
+- No WordPress, Wix, Squarespace or template-site work
+- No Salesforce, SAP, Microsoft Dynamics or other enterprise-CRM/ERP customisation
+- No game development (mobile or otherwise)
+- No AR/VR or visionOS-only experiences
+- No AI/ML model training or data-science engagements
+- No paid SEO or paid Ads campaign management — the studio builds product, not advertising
+- No staffing-only (we don't lend out individual developers; we deliver scoped projects and retainers)
+- No work below a quality bar that requires shortcuts that bite back later — small projects are welcome, sloppy ones are not
 
 ## Contact
 

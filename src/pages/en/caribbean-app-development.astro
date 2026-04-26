@@ -14,7 +14,7 @@ const baseUrl = Astro.site ? Astro.site.origin : 'https://bluebusiness.nl';
 const faq = [
   {
     q: 'Why hire a Dutch app studio for a Caribbean project?',
-    a: 'Because the alternative is either a Caribbean freelancer who can\'t deliver a multi-platform native app, or a US/EU agency that has never set foot on Bonaire. Blue Business sits in the middle: senior native iOS and Android developers based in the Netherlands, with a track record of two live apps for Bonaire (Visit Bonaire and Bonaire Cruisers, both 2024-2025), bilingual NL/EN delivery, and an actual understanding of why offline-first matters when your users are halfway between Lac Bay and Sorobon.',
+    a: 'Senior native iOS and Android developers based in the Netherlands, with a track record of two live apps for Bonaire (Visit Bonaire and Bonaire Cruisers), bilingual NL/EN delivery, and operational understanding of why offline-first matters on the islands. Halfway between a Caribbean freelancer who can\'t deliver multi-platform native, and a US/EU agency that has never visited Bonaire.',
   },
   {
     q: 'Do you work with tourism boards and government clients?',
@@ -189,6 +189,23 @@ const schema = {
 
       <p class="text-[14px] text-fg-dim mt-8 max-w-[60ch]">
         Both apps share offline-first architecture, bilingual NL/EN UI and a Mapbox/Firebase backend. Visit Bonaire targets day-trippers and longer-stay visitors; Bonaire Cruisers is built specifically for cruise passengers exploring the island by golf cart.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Curaçao + Aruba — pattern transfer -->
+  <section class="py-20 md:py-24 border-t border-[var(--color-accent-line)]">
+    <Container size="narrow">
+      <MonoEyebrow text="// Curaçao + Aruba" tone="accent-hi" class="mb-5 block" />
+      <h2 class="text-h2 font-medium mb-8" style="letter-spacing: var(--tracking-tight); line-height: 1.08;">
+        <span class="block text-fg">Same patterns,</span>
+        <span class="block text-accent">other islands.</span>
+      </h2>
+      <p class="text-[16px] text-fg-dim mb-5" style="line-height: 1.7;">
+        We have not yet shipped public apps for Curaçao or Aruba — every claim on this page is anchored to verifiable Bonaire work. But the technical patterns translate directly: same coverage gaps outside the main town, same NL/EN audience plus Papiamento, same cruise-traffic seasonality, same need for offline-first architecture that does not assume connectivity.
+      </p>
+      <p class="text-[16px] text-fg-dim" style="line-height: 1.7;">
+        For prospects in Willemstad, Oranjestad or anywhere else in the ABC islands: the Bonaire codebases are real, the operational know-how is real, and the same delivery model (remote, weekly TestFlight builds, optional in-person trips for kickoff) applies. Tell us about your project — we'll be honest about what carries over and what's new.
       </p>
     </Container>
   </section>

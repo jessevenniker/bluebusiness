@@ -34,6 +34,13 @@ const locale = getCurrentLocale(Astro.url.pathname);
 const isPreview = process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production';
 const shouldNoindex = noindex || isPreview;
 
+// OG-image hostname override — for the pre-DNS-flip period the canonical
+// bluebusiness.nl host returns 404, so social-card previews of the staging URL
+// would break. Set PUBLIC_OG_HOST=bluebusiness-v2.vercel.app in Vercel env vars
+// to use the staging hostname for og:image. Remove the env var once DNS flips.
+const ogHostOverride = import.meta.env.PUBLIC_OG_HOST;
+const ogBase = ogHostOverride ? `https://${ogHostOverride}` : baseUrl;
+
 const altNl = locale === 'nl' ? canonicalPath : getAlternateUrl(canonicalPath, 'nl');
 const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, 'en');
 ---
@@ -58,7 +65,7 @@ const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, '
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${baseUrl}${ogImage}`} />
+    <meta property="og:image" content={`${ogBase}${ogImage}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
@@ -69,7 +76,7 @@ const altEn = locale === 'en' ? canonicalPath : getAlternateUrl(canonicalPath, '
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${baseUrl}${ogImage}`} />
+    <meta name="twitter:image" content={`${ogBase}${ogImage}`} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
